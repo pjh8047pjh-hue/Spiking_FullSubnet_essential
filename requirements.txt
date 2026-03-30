@@ -1,0 +1,6 @@
+# Minimal runtime dependencies for inference.
+torch
+numpy
+soundfile
+einops
+toml; python_version < "3.11"
