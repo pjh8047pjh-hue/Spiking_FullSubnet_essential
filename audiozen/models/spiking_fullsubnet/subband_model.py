@@ -1,51 +1,6 @@
-import torch
 import torch.nn as nn
-from einops import rearrange
-from torch.nn import functional as F
 
-from audiozen.models.spiking_fullsubnet.sequence_model import SequenceModel
-
-
-class SubBandSequenceModel(SequenceModel):
-    def __init__(self, df_order, num_spks, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.df_order = df_order
-        self.num_spks = num_spks
-
-    def forward(self, input_features):
-        """How to process the subband features.
-
-        - `fs`: number of frequency bins in the subband.
-        - `fc`: number of frequency bins in the center frequency.
-        - `df`: order of the deep filter.
-        - `n`: number of subbands.
-        - `s`: number of speakers.
-        - `c`: number of channels.
-
-        Args:
-            input (`torch.Tensor` of shape `(batch_size, num_subbands, num_channels, sb_freq_size, sequence_length)`):
-                Subband feature at a particular frequency.
-
-        Returns:
-            output (`torch.Tensor` of shape `(batch_size, df_order, num_subbands * ctr_freq_size, sequence_length, num_channels)`):
-                Complex output tensor. The last dimension (`num_channels`) is the real and imaginary parts.
-        """
-        batch_size, num_subbands, num_channels, _, _ = input_features.shape
-        assert num_channels == 1, "Only mono audio is supported."
-
-        input_features = rearrange(input_features, "b n c fs t -> (b n) (c fs) t")
-        output, all_layer_outputs = super().forward(input_features)
-
-        output = rearrange(
-            output,
-            "(b n) (c fc df s) t -> b df s (n fc) t c",
-            b=batch_size,
-            s=self.num_spks,
-            c=num_channels * 2,
-            df=self.df_order,
-        )
-
-        return output, all_layer_outputs
+from audiozen.models.spiking_fullsubnet.subband_stage import SubbandStage
 
 
 class SubbandModel(nn.Module):
@@ -73,13 +28,18 @@ class SubbandModel(nn.Module):
         """
         super().__init__()
         assert len(freq_cutoffs) - 1 == len(center_freq_sizes), "Number of subbands must be equal to len(cutoffs)."
+        assert len(center_freq_sizes) == len(neighbor_freq_sizes) == len(df_orders), "Subband parameter lengths must match."
 
         sb_models = []
-        for ctr_freq, nbr_freq, df_order in zip(center_freq_sizes, neighbor_freq_sizes, df_orders):
+        for lower_cutoff_freq, upper_cutoff_freq, ctr_freq, nbr_freq, df_order in zip(
+            freq_cutoffs[:-1], freq_cutoffs[1:], center_freq_sizes, neighbor_freq_sizes, df_orders
+        ):
             sb_models.append(
-                SubBandSequenceModel(
-                    input_size=(ctr_freq + nbr_freq * 2) + ctr_freq,
-                    proj_size=2 * ctr_freq * df_order * num_spks,
+                SubbandStage(
+                    lower_cutoff_freq=lower_cutoff_freq,
+                    upper_cutoff_freq=upper_cutoff_freq,
+                    ctr_freq=ctr_freq,
+                    nbr_freq=nbr_freq,
                     df_order=df_order,
                     num_spks=num_spks,
                     **kwargs,
@@ -110,71 +70,14 @@ class SubbandModel(nn.Module):
             fb_output (`torch.Tensor` of shape `(batch_size, num_channels, num_freqs, num_frames)`):
                 Repeated fullband embedding aligned with the noisy input.
         """
-        batch_size, num_channels, _, _ = noisy_input.size()
+        _, num_channels, _, _ = noisy_input.size()
         assert num_channels == 1, "Only mono audio is supported."
 
         output = []
         all_layer_outputs = []
-        for idx, sb_model in enumerate(self.sb_models):
-            noisy_subbands = self._freq_unfold(
-                input=noisy_input,
-                lower_cutoff_freq=self.freq_cutoffs[idx],
-                upper_cutoff_freq=self.freq_cutoffs[idx + 1],
-                ctr_freq=self.center_freq_sizes[idx],
-                nbr_freq=self.neighbor_freq_sizes[idx],
-            )
-
-            fb_subbands = self._freq_unfold(
-                input=fb_output,
-                lower_cutoff_freq=self.freq_cutoffs[idx],
-                upper_cutoff_freq=self.freq_cutoffs[idx + 1],
-                ctr_freq=self.center_freq_sizes[idx],
-                nbr_freq=0,
-            )
-
-            sb_input = torch.cat([noisy_subbands, fb_subbands], dim=-2)
-            sb_output, sb_all_layer_outputs = sb_model(sb_input)
+        for sb_model in self.sb_models:
+            sb_output, sb_all_layer_outputs = sb_model(noisy_input, fb_output)
             output += [sb_output]
             all_layer_outputs += [sb_all_layer_outputs]
 
         return output, all_layer_outputs
-
-    def _freq_unfold(self, input, lower_cutoff_freq, upper_cutoff_freq, ctr_freq, nbr_freq):
-        """Unfold the frequency bins based on a given lower and upper cutoff frequency bondaries.
-
-        Args:
-            input (`torch.Tensor` of shape `(batch_size, num_channels, num_freqs, num_frames)`):
-                Noisy input spectrogram.
-            lower_cutoff_freq: lower cutoff frequency of current section.
-            upper_cutoff_freq: upper cutoff frequency of current section.
-            ctr_freq: number of frequency bins in the center frequency.
-            nbr_freq: number of neighboring frequency bins.
-
-        Returns:
-            output (`torch.Tensor` of shape `(batch_size, num_subbands, num_channels, sb_freq_size, num_frames)`):
-                Unfolded tensor.
-        """
-        _, num_channels, num_freqs, num_frames = input.size()
-        assert num_channels == 1, "Only mono audio is supported."
-
-        if (upper_cutoff_freq - lower_cutoff_freq) % ctr_freq != 0:
-            raise ValueError(
-                f"Number of frequency bins must be divisible by the center frequency."
-                f"GOT: {ctr_freq=}, {upper_cutoff_freq=}, {lower_cutoff_freq=}"
-            )
-
-        if lower_cutoff_freq == 0:
-            valid_input = input[..., : upper_cutoff_freq + nbr_freq, :]
-            valid_input = F.pad(valid_input, (0, 0, nbr_freq, 0), mode="reflect")
-        elif upper_cutoff_freq == num_freqs:
-            valid_input = input[..., lower_cutoff_freq - nbr_freq :, :]
-            valid_input = F.pad(valid_input, (0, 0, 0, nbr_freq), mode="reflect")
-        else:
-            valid_input = input[..., lower_cutoff_freq - nbr_freq : upper_cutoff_freq + nbr_freq, :]
-
-        output = F.unfold(
-            input=valid_input, kernel_size=(ctr_freq + nbr_freq * 2, num_frames), stride=(ctr_freq, num_frames)
-        )
-        output = rearrange(output, "b (c fs t) n -> b n c fs t", c=num_channels, fs=ctr_freq + nbr_freq * 2)
-
-        return output
