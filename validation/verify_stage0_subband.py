@@ -2,12 +2,23 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import torch
 
 from infer import DEFAULT_CHECKPOINT, DEFAULT_CONFIG, load_audio, load_checkpoint, load_toml_config
 from audiozen.models.spiking_fullsubnet.modeling_spiking_fullsubnet import SpikingFullSubNet
 from subband_stage0_ref import BAND_SPECS, build_band_ref
+
+
+DEFAULT_INPUT_PATH = REPO_ROOT / "JH_test" / "test1.wav"
+DEFAULT_CONFIG_PATH = REPO_ROOT / DEFAULT_CONFIG
+DEFAULT_CHECKPOINT_PATH = REPO_ROOT / DEFAULT_CHECKPOINT
 
 
 def compare_tensors(name, lhs, rhs):
@@ -41,9 +52,9 @@ def build_packed_subband_input(sb_model, noisy_input, fb_output, band_spec):
 
 def main():
     parser = argparse.ArgumentParser(description="Verify packed-input subband reference against the current model stage.")
-    parser.add_argument("-i", "--input", default="JH_test/test1.wav", help="Input WAV path for verification.")
-    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG), help="Model config path.")
-    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT), help="Checkpoint path.")
+    parser.add_argument("-i", "--input", default=str(DEFAULT_INPUT_PATH), help="Input WAV path for verification.")
+    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG_PATH), help="Model config path.")
+    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT_PATH), help="Checkpoint path.")
     args = parser.parse_args()
 
     config_path = Path(args.config).expanduser().resolve()

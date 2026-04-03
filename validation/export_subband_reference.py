@@ -2,11 +2,23 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import torch
 
 from infer import DEFAULT_CHECKPOINT, DEFAULT_CONFIG, load_audio, load_checkpoint, load_toml_config
 from audiozen.models.spiking_fullsubnet.modeling_spiking_fullsubnet import SpikingFullSubNet
+
+
+DEFAULT_INPUT_PATH = REPO_ROOT / "JH_test" / "test1.wav"
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "subband_cpp_dump"
+DEFAULT_CONFIG_PATH = REPO_ROOT / DEFAULT_CONFIG
+DEFAULT_CHECKPOINT_PATH = REPO_ROOT / DEFAULT_CHECKPOINT
 
 
 def save_tensor(path: Path, tensor: torch.Tensor) -> None:
@@ -113,10 +125,10 @@ def export_band_reference(sb_model, stage, noisy_input: torch.Tensor, fb_output:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export baseline subband tensors and weights for the C++ reference.")
-    parser.add_argument("-i", "--input", default="JH_test/test1.wav", help="Input WAV path.")
-    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG), help="Model config path.")
-    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT), help="Checkpoint path.")
-    parser.add_argument("-o", "--output-dir", default="subband_cpp_dump", help="Output directory.")
+    parser.add_argument("-i", "--input", default=str(DEFAULT_INPUT_PATH), help="Input WAV path.")
+    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG_PATH), help="Model config path.")
+    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT_PATH), help="Checkpoint path.")
+    parser.add_argument("-o", "--output-dir", default=str(DEFAULT_OUTPUT_DIR), help="Output directory.")
     args = parser.parse_args()
 
     config_path = Path(args.config).expanduser().resolve()

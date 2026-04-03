@@ -3,6 +3,12 @@ from __future__ import annotations
 import argparse
 import math
 from pathlib import Path
+import sys
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import numpy as np
 import torch
@@ -16,6 +22,10 @@ Q_SCALE = 1 << Q_FRAC
 Q_ZERO = np.int16(0)
 Q_ONE = np.int16(Q_SCALE)
 HIDDEN_SIZE = 224
+DEFAULT_INPUT_PATH = REPO_ROOT / "JH_test" / "test1.wav"
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "subband_q610_dump"
+DEFAULT_CONFIG_PATH = REPO_ROOT / DEFAULT_CONFIG
+DEFAULT_CHECKPOINT_PATH = REPO_ROOT / DEFAULT_CHECKPOINT
 
 
 def saturate_int16(values: np.ndarray) -> np.ndarray:
@@ -368,10 +378,10 @@ def export_band_reference_q610(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export Q6.10 subband reference buffers and weights.")
-    parser.add_argument("-i", "--input", default="JH_test/test1.wav", help="Input WAV path.")
-    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG), help="Model config path.")
-    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT), help="Checkpoint path.")
-    parser.add_argument("-o", "--output-dir", default="subband_q610_dump", help="Output directory.")
+    parser.add_argument("-i", "--input", default=str(DEFAULT_INPUT_PATH), help="Input WAV path.")
+    parser.add_argument("-c", "--config", default=str(DEFAULT_CONFIG_PATH), help="Model config path.")
+    parser.add_argument("-k", "--checkpoint", default=str(DEFAULT_CHECKPOINT_PATH), help="Checkpoint path.")
+    parser.add_argument("-o", "--output-dir", default=str(DEFAULT_OUTPUT_DIR), help="Output directory.")
     args = parser.parse_args()
 
     config_path = Path(args.config).expanduser().resolve()
