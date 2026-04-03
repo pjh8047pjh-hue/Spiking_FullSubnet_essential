@@ -1,3 +1,0 @@
-batch_size=1
-num_freqs=256
-num_frames=2415
