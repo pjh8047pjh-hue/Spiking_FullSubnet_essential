@@ -17,20 +17,16 @@ struct GSUWeightsQ610Owner {
   std::vector<int16_t> weight_ih;
   std::vector<int16_t> weight_hh;
   std::vector<int16_t> bias_ih;
-  std::vector<int16_t> bn_running_mean;
-  std::vector<int16_t> bn_running_var;
-  std::vector<int16_t> bn_weight;
-  std::vector<int16_t> bn_bias;
+  std::vector<int16_t> bn_mul;
+  std::vector<int16_t> bn_add;
 
   subband_q610::GSUWeightsQ610 View() const {
     return {
         weight_ih.data(),
         weight_hh.data(),
         bias_ih.data(),
-        bn_running_mean.data(),
-        bn_running_var.data(),
-        bn_weight.data(),
-        bn_bias.data(),
+        bn_mul.data(),
+        bn_add.data(),
     };
   }
 };
@@ -152,10 +148,8 @@ GSUWeightsQ610Owner LoadLayerWeights(const fs::path& weights_dir, int layer_inde
   weights.weight_ih = ReadInt16Binary(weights_dir / (prefix + "weight_ih.bin"));
   weights.weight_hh = ReadInt16Binary(weights_dir / (prefix + "weight_hh.bin"));
   weights.bias_ih = ReadInt16Binary(weights_dir / (prefix + "bias_ih.bin"));
-  weights.bn_running_mean = ReadInt16Binary(weights_dir / (prefix + "bn_running_mean.bin"));
-  weights.bn_running_var = ReadInt16Binary(weights_dir / (prefix + "bn_running_var.bin"));
-  weights.bn_weight = ReadInt16Binary(weights_dir / (prefix + "bn_weight.bin"));
-  weights.bn_bias = ReadInt16Binary(weights_dir / (prefix + "bn_bias.bin"));
+  weights.bn_mul = ReadInt16Binary(weights_dir / (prefix + "bn_mul.bin"));
+  weights.bn_add = ReadInt16Binary(weights_dir / (prefix + "bn_add.bin"));
   return weights;
 }
 
@@ -253,7 +247,7 @@ void WriteBandOutputs(
 
 int main(int argc, char** argv) {
   try {
-    const fs::path dump_root = argc > 1 ? fs::path(argv[1]) : fs::path("subband_q610_dump");
+    const fs::path dump_root = argc > 1 ? fs::path(argv[1]) : fs::path("subband_q610_hls_dump");
     const auto metadata = ReadMetadata(dump_root / "metadata.txt");
 
     const int batch_size = std::stoi(metadata.at("batch_size"));
@@ -271,6 +265,13 @@ int main(int argc, char** argv) {
       throw std::runtime_error("Invalid fb_output_q610.bin element count.");
     }
 
+    if (batch_size != subband_q610::kFixedBatchSize) {
+      throw std::runtime_error("Band0 top currently supports batch_size=1 only.");
+    }
+    if (num_frames != subband_q610::kFixedNumFrames) {
+      throw std::runtime_error("Band0 top currently supports the fixed frame count only.");
+    }
+
     const std::array<BandWeightsQ610Owner, subband_q610::kNumBands> weight_owners = {{
         LoadBandWeights(dump_root, subband_q610::GetBandSpec(0)),
         LoadBandWeights(dump_root, subband_q610::GetBandSpec(1)),
@@ -279,8 +280,9 @@ int main(int argc, char** argv) {
 
     for (int band_index = 0; band_index < subband_q610::kNumBands; ++band_index) {
       const subband_q610::BandSpec& spec = subband_q610::GetBandSpec(band_index);
+      const BandWeightsQ610Owner& weight_owner = weight_owners[band_index];
+      const subband_q610::BandWeightsQ610 weights = weight_owner.View();
       BandBufferOwner buffers = AllocateBandBuffers(spec, batch_size, num_frames);
-      const subband_q610::BandWeightsQ610 weights = weight_owners[band_index].View();
 
       subband_q610::RunBandQ610(
           spec,
@@ -302,6 +304,31 @@ int main(int argc, char** argv) {
           buffers.layer1_output.data(),
           buffers.projected_output.data(),
           buffers.df_coef.data());
+
+      if (band_index == 0) {
+        std::vector<int16_t> top_df_coef(static_cast<std::size_t>(subband_q610::kBand0DfCoefElementCount), 0);
+        subband_q610::SubbandBand0TopQ610(
+            noisy_input_q610.data(),
+            fb_output_q610.data(),
+            weight_owner.layers[0].weight_ih.data(),
+            weight_owner.layers[0].weight_hh.data(),
+            weight_owner.layers[0].bias_ih.data(),
+            weight_owner.layers[0].bn_mul.data(),
+            weight_owner.layers[0].bn_add.data(),
+            weight_owner.layers[1].weight_ih.data(),
+            weight_owner.layers[1].weight_hh.data(),
+            weight_owner.layers[1].bias_ih.data(),
+            weight_owner.layers[1].bn_mul.data(),
+            weight_owner.layers[1].bn_add.data(),
+            weight_owner.proj.weight.data(),
+            weight_owner.proj.bias.data(),
+            top_df_coef.data());
+
+        if (top_df_coef != buffers.df_coef) {
+          throw std::runtime_error("Band0 top output mismatch against RunBand0Q610.");
+        }
+        buffers.df_coef = top_df_coef;
+      }
 
       WriteBandOutputs(dump_root, spec, batch_size, num_frames, buffers);
       std::cout << "band" << band_index << " written to "

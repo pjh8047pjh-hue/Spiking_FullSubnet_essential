@@ -23,9 +23,18 @@ Q_ZERO = np.int16(0)
 Q_ONE = np.int16(Q_SCALE)
 HIDDEN_SIZE = 224
 DEFAULT_INPUT_PATH = REPO_ROOT / "JH_test" / "test1.wav"
-DEFAULT_OUTPUT_DIR = REPO_ROOT / "subband_q610_dump"
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "subband_q610_hls_dump"
 DEFAULT_CONFIG_PATH = REPO_ROOT / DEFAULT_CONFIG
 DEFAULT_CHECKPOINT_PATH = REPO_ROOT / DEFAULT_CHECKPOINT
+
+SIGMOID_PWL_KNOTS_Q610 = np.asarray(
+    [0, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 5120, 6144, 7168, 8192],
+    dtype=np.int16,
+)
+SIGMOID_PWL_VALUES_Q610 = np.asarray(
+    [512, 576, 637, 695, 749, 796, 837, 872, 902, 946, 975, 994, 1006, 1017, 1021, 1023, 1024],
+    dtype=np.int16,
+)
 
 
 def saturate_int16(values: np.ndarray) -> np.ndarray:
@@ -88,36 +97,53 @@ def step_activation_q610(values: np.ndarray) -> np.ndarray:
     return np.where(values >= 0, Q_ONE, Q_ZERO).astype(np.int16)
 
 
-def sigmoid_q610_host_ref(values_q610: np.ndarray) -> np.ndarray:
+def sigmoid_pwl_q610(values_q610: np.ndarray) -> np.ndarray:
     output = np.empty_like(values_q610, dtype=np.int16)
     flat_input = values_q610.reshape(-1)
     flat_output = output.reshape(-1)
     for index, value_q610 in enumerate(flat_input):
-        value_f32 = q610_to_float_scalar(value_q610)
-        sigmoid_value = 1.0 / (1.0 + math.exp(-value_f32))
-        flat_output[index] = float_to_q610_scalar(sigmoid_value)
+        value_int = int(value_q610)
+        if value_int >= int(SIGMOID_PWL_KNOTS_Q610[-1]):
+            flat_output[index] = Q_ONE
+            continue
+        if value_int <= -int(SIGMOID_PWL_KNOTS_Q610[-1]):
+            flat_output[index] = Q_ZERO
+            continue
+
+        is_negative = value_int < 0
+        abs_input = -value_int if is_negative else value_int
+
+        segment_index = 0
+        while abs_input > int(SIGMOID_PWL_KNOTS_Q610[segment_index + 1]):
+            segment_index += 1
+
+        x0 = int(SIGMOID_PWL_KNOTS_Q610[segment_index])
+        x1 = int(SIGMOID_PWL_KNOTS_Q610[segment_index + 1])
+        y0 = int(SIGMOID_PWL_VALUES_Q610[segment_index])
+        y1 = int(SIGMOID_PWL_VALUES_Q610[segment_index + 1])
+        delta_x = x1 - x0
+        delta_y = y1 - y0
+        interpolated = y0 + ((abs_input - x0) * delta_y + (delta_x // 2)) // delta_x
+        positive_value = np.int16(max(min(interpolated, 32767), -32768))
+        flat_output[index] = np.int16(int(Q_ONE) - int(positive_value)) if is_negative else positive_value
     return output
 
 
-def batchnorm_eval_q610_host_ref(values_q610: np.ndarray, weights: dict[str, np.ndarray]) -> np.ndarray:
-    if weights["bn_running_mean"].size == 0:
+def batchnorm_fold_q610(running_mean: np.ndarray, running_var: np.ndarray, gamma: np.ndarray, beta: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    running_mean_f32 = running_mean.astype(np.float32)
+    running_var_f32 = running_var.astype(np.float32)
+    gamma_f32 = gamma.astype(np.float32)
+    beta_f32 = beta.astype(np.float32)
+    bn_mul = gamma_f32 / np.sqrt(running_var_f32 + np.float32(1.0e-5))
+    bn_add = beta_f32 - (running_mean_f32 * bn_mul)
+    return float_to_q610(bn_mul), float_to_q610(bn_add)
+
+
+def batchnorm_folded_q610(values_q610: np.ndarray, weights: dict[str, np.ndarray]) -> np.ndarray:
+    if weights["bn_mul"].size == 0:
         return values_q610.astype(np.int16, copy=False)
-
-    batch_size, hidden_size = values_q610.shape
-    output = np.empty_like(values_q610, dtype=np.int16)
-
-    for batch_index in range(batch_size):
-        for hidden_index in range(hidden_size):
-            x = q610_to_float_scalar(values_q610[batch_index, hidden_index])
-            mean = q610_to_float_scalar(weights["bn_running_mean"][hidden_index])
-            var = q610_to_float_scalar(weights["bn_running_var"][hidden_index])
-            gamma = q610_to_float_scalar(weights["bn_weight"][hidden_index])
-            beta = q610_to_float_scalar(weights["bn_bias"][hidden_index])
-
-            normalized = (x - mean) / math.sqrt(var + 1.0e-5)
-            output[batch_index, hidden_index] = float_to_q610_scalar((gamma * normalized) + beta)
-
-    return output
+    scaled_q610 = mul_q610(values_q610, weights["bn_mul"][None, :])
+    return add_q610(scaled_q610, weights["bn_add"][None, :])
 
 
 def reflect_frequency_index(freq_index: int, num_freqs: int) -> int:
@@ -180,13 +206,13 @@ def run_gsu_layer_q610(sequence_input_q610: np.ndarray, weights: dict[str, np.nd
         forget_preact_q610 = saturate_int16(round_shift_right(forget_q20, Q_FRAC))
         cell_preact_q610 = saturate_int16(round_shift_right(cell_q20, Q_FRAC))
 
-        forget_gate_q610 = sigmoid_q610_host_ref(forget_preact_q610)
+        forget_gate_q610 = sigmoid_pwl_q610(forget_preact_q610)
         one_minus_forget_q610 = sub_q610(np.full_like(forget_gate_q610, Q_ONE), forget_gate_q610)
 
         retained_q610 = mul_q610(forget_gate_q610, cx_q610)
         injected_q610 = mul_q610(one_minus_forget_q610, cell_preact_q610)
         cy_q610 = add_q610(retained_q610, injected_q610)
-        cy_q610 = batchnorm_eval_q610_host_ref(cy_q610, weights)
+        cy_q610 = batchnorm_folded_q610(cy_q610, weights)
         hy_q610 = step_activation_q610(cy_q610)
 
         cx_q610 = cy_q610
@@ -255,14 +281,19 @@ def export_band_weights_q610(stage, output_dir: Path) -> None:
             "weight_ih": cell.weight_ih,
             "weight_hh": cell.weight_hh,
             "bias_ih": cell.bias_ih,
-            "bn_running_mean": cell.batchnorm.running_mean,
-            "bn_running_var": cell.batchnorm.running_var,
-            "bn_weight": cell.batchnorm.weight,
-            "bn_bias": cell.batchnorm.bias,
         }
 
         for name, tensor in tensors.items():
             save_int16(prefix.with_name(prefix.name + f"{name}.bin"), float_to_q610(tensor.detach().cpu().numpy()))
+
+        bn_mul_q610, bn_add_q610 = batchnorm_fold_q610(
+            cell.batchnorm.running_mean.detach().cpu().numpy(),
+            cell.batchnorm.running_var.detach().cpu().numpy(),
+            cell.batchnorm.weight.detach().cpu().numpy(),
+            cell.batchnorm.bias.detach().cpu().numpy(),
+        )
+        save_int16(prefix.with_name(prefix.name + "bn_mul.bin"), bn_mul_q610)
+        save_int16(prefix.with_name(prefix.name + "bn_add.bin"), bn_add_q610)
 
     save_int16(output_dir / "proj_weight.bin", float_to_q610(stage.proj.weight.detach().cpu().numpy()))
     save_int16(output_dir / "proj_bias.bin", float_to_q610(stage.proj.bias.detach().cpu().numpy()))
@@ -294,15 +325,19 @@ def collect_layer_weights_q610(stage) -> list[dict[str, np.ndarray]]:
     output = []
     for gsu_layer in stage.sequence_model.layers:
         cell = gsu_layer.cell
+        bn_mul_q610, bn_add_q610 = batchnorm_fold_q610(
+            cell.batchnorm.running_mean.detach().cpu().numpy(),
+            cell.batchnorm.running_var.detach().cpu().numpy(),
+            cell.batchnorm.weight.detach().cpu().numpy(),
+            cell.batchnorm.bias.detach().cpu().numpy(),
+        )
         output.append(
             {
                 "weight_ih": float_to_q610(cell.weight_ih.detach().cpu().numpy()),
                 "weight_hh": float_to_q610(cell.weight_hh.detach().cpu().numpy()),
                 "bias_ih": float_to_q610(cell.bias_ih.detach().cpu().numpy()),
-                "bn_running_mean": float_to_q610(cell.batchnorm.running_mean.detach().cpu().numpy()),
-                "bn_running_var": float_to_q610(cell.batchnorm.running_var.detach().cpu().numpy()),
-                "bn_weight": float_to_q610(cell.batchnorm.weight.detach().cpu().numpy()),
-                "bn_bias": float_to_q610(cell.batchnorm.bias.detach().cpu().numpy()),
+                "bn_mul": bn_mul_q610,
+                "bn_add": bn_add_q610,
             }
         )
     return output
