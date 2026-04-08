@@ -1,18 +1,16 @@
 #include "subband_ref_q610.hpp"
 
-#include <array>
 #include <cassert>
-#include <cmath>
 #include <cstdint>
 #include <limits>
 
 namespace subband_q610 {
 
-const std::array<BandSpec, kNumBands> kBandSpecs = {{
+const BandSpec kBandSpecs[kNumBands] = {
     {0, 0, 32, 4, 15, 5, 8, 34, 4, 38, 40},
     {1, 32, 128, 32, 15, 3, 3, 62, 32, 94, 192},
     {2, 128, 256, 64, 15, 1, 2, 94, 64, 158, 128},
-}};
+};
 
 namespace {
 
@@ -23,6 +21,10 @@ constexpr q_data_t kSigmoidPwlKnotsQ610[kSigmoidPwlSegmentCount + 1] = {
 constexpr q_data_t kSigmoidPwlValuesQ610[kSigmoidPwlSegmentCount + 1] = {
     512, 576, 637, 695, 749, 796, 837, 872, 902, 946, 975, 994, 1006, 1017, 1021, 1023, 1024,
 };
+
+static_assert(kBand0ProjSize == (2 * kBand0CtrFreq * kBand0DfOrder), "Band0 projection layout must match DF layout.");
+static_assert(kBand1ProjSize == (2 * kBand1CtrFreq * kBand1DfOrder), "Band1 projection layout must match DF layout.");
+static_assert(kBand2ProjSize == (2 * kBand2CtrFreq * kBand2DfOrder), "Band2 projection layout must match DF layout.");
 
 void AssertBandSpecBounds(const BandSpec& spec) {
   assert(spec.band_index >= 0 && spec.band_index < kNumBands);
@@ -77,6 +79,24 @@ void StreamToPointerQ610(hls::stream<q_data_t>& input_stream, q_data_t* output) 
   for (int index = 0; index < N; ++index) {
     #pragma HLS pipeline II=1
     output[index] = input_stream.read();
+  }
+}
+
+template <int N>
+void ReadVectorFromStreamQ610(hls::stream<q_data_t>& input_stream, q_data_t (&buffer)[N], int vector_size) {
+  assert(vector_size >= 0 && vector_size <= N);
+  for (int index = 0; index < vector_size; ++index) {
+    #pragma HLS pipeline II=1
+    buffer[index] = input_stream.read();
+  }
+}
+
+template <int N>
+void WriteVectorToStreamQ610(const q_data_t (&buffer)[N], int vector_size, hls::stream<q_data_t>& output_stream) {
+  assert(vector_size >= 0 && vector_size <= N);
+  for (int index = 0; index < vector_size; ++index) {
+    #pragma HLS pipeline II=1
+    output_stream.write(buffer[index]);
   }
 }
 
@@ -149,18 +169,6 @@ accum_q_t RoundShiftRight(accum_q_t value, int shift_bits) {
   return -(((-value) + half) >> shift_bits);
 }
 
-q_data_t FloatToQ610(float value) {
-  const float scaled = value * static_cast<float>(kQScale);
-  const accum_q_t rounded = (scaled >= 0.0f)
-      ? static_cast<accum_q_t>(scaled + 0.5f)
-      : static_cast<accum_q_t>(scaled - 0.5f);
-  return SaturateInt16(rounded);
-}
-
-float Q610ToFloat(q_data_t value) {
-  return static_cast<float>(value) / static_cast<float>(kQScale);
-}
-
 q_data_t MulQ610(q_data_t lhs, q_data_t rhs) {
   const accum_q_t product_q20 = static_cast<accum_q_t>(lhs) * static_cast<accum_q_t>(rhs);
   return SaturateInt16(RoundShiftRight(product_q20, kQFrac));
@@ -187,7 +195,10 @@ q_data_t SigmoidPwlQ610(q_data_t input_value_q610) {
   }
 
   const bool is_negative = input_value_q610 < 0;
-  const q_data_t abs_input_q610 = static_cast<q_data_t>(is_negative ? -input_value_q610 : input_value_q610);
+  q_data_t abs_input_q610 = input_value_q610;
+  if (is_negative) {
+    abs_input_q610 = static_cast<q_data_t>(-static_cast<accum_q_t>(input_value_q610));
+  }
 
   int segment_index = kSigmoidPwlSegmentCount - 1;
   for (int segment = 0; segment < kSigmoidPwlSegmentCount; ++segment) {
@@ -628,6 +639,184 @@ void ProjectToDfCoefQ610(
   }
 }
 
+namespace {
+
+void GenerateBand0SequenceStreamQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    hls::stream<q_data_t>& sequence_stream) {
+  #pragma HLS inline off
+  constexpr int kBand0NbrFreq = (kBand0NoisyFreqSize - kBand0CtrFreq) / 2;
+
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      const int center_start = subband_index * kBand0CtrFreq;
+      for (int noisy_freq_index = 0; noisy_freq_index < kBand0NoisyFreqSize; ++noisy_freq_index) {
+        #pragma HLS pipeline II=1
+        int source_freq = center_start + noisy_freq_index - kBand0NbrFreq;
+        if (source_freq < 0) {
+          source_freq = -source_freq;
+        }
+        sequence_stream.write(noisy_input_q610[InputIndex(0, source_freq, frame_index, kFixedNumFrames)]);
+      }
+      for (int fb_freq_index = 0; fb_freq_index < kBand0FbFreqSize; ++fb_freq_index) {
+        #pragma HLS pipeline II=1
+        const int source_freq = center_start + fb_freq_index;
+        sequence_stream.write(fb_output_q610[InputIndex(0, source_freq, frame_index, kFixedNumFrames)]);
+      }
+    }
+  }
+}
+
+void RunGSULayerStreamQ610(
+    hls::stream<q_data_t>& sequence_input_stream,
+    int batch_subbands,
+    int num_frames,
+    int input_size,
+    const GSUWeightsQ610& weights,
+    q_data_t* hx_state_q610,
+    q_data_t* cx_state_q610,
+    hls::stream<q_data_t>& sequence_output_stream) {
+  AssertBatchSubbandsBounds(batch_subbands);
+  AssertInputSizeBounds(input_size);
+  assert(num_frames >= 0 && num_frames <= kMaxNumFrames);
+
+  q_data_t input_buffer[kMaxCellInputSize];
+  q_data_t output_buffer[kSbHiddenSize];
+
+  for (int frame_index = 0; frame_index < num_frames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+    for (int sample_index = 0; sample_index < batch_subbands; ++sample_index) {
+      const std::size_t state_offset = static_cast<std::size_t>(sample_index) * kSbHiddenSize;
+      ReadVectorFromStreamQ610(sequence_input_stream, input_buffer, input_size);
+      RunGSUCellQ610(
+          input_buffer,
+          input_size,
+          weights,
+          &hx_state_q610[state_offset],
+          &cx_state_q610[state_offset],
+          output_buffer);
+      WriteVectorToStreamQ610(output_buffer, kSbHiddenSize, sequence_output_stream);
+    }
+  }
+}
+
+void RunProjectionStreamQ610(
+    hls::stream<q_data_t>& sequence_input_stream,
+    int batch_subbands,
+    int num_frames,
+    int proj_size,
+    const LinearWeightsQ610& weights,
+    hls::stream<q_data_t>& sequence_output_stream) {
+  AssertBatchSubbandsBounds(batch_subbands);
+  AssertProjectionSizeBounds(proj_size);
+  assert(num_frames >= 0 && num_frames <= kMaxNumFrames);
+
+  q_data_t input_buffer[kSbHiddenSize];
+
+  for (int frame_index = 0; frame_index < num_frames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+    for (int sample_index = 0; sample_index < batch_subbands; ++sample_index) {
+      ReadVectorFromStreamQ610(sequence_input_stream, input_buffer, kSbHiddenSize);
+      for (int proj_index = 0; proj_index < proj_size; ++proj_index) {
+        const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+        accum_q_t sum_q20 = static_cast<accum_q_t>(weights.bias[proj_index]) * q_scale_q20;
+        const q_data_t* weight_ptr = &weights.weight[static_cast<std::size_t>(proj_index) * kSbHiddenSize];
+        for (int hidden_index = 0; hidden_index < kSbHiddenSize; ++hidden_index) {
+          sum_q20 += static_cast<accum_q_t>(input_buffer[hidden_index]) *
+                     static_cast<accum_q_t>(weight_ptr[hidden_index]);
+        }
+        sequence_output_stream.write(SaturateInt16(RoundShiftRight(sum_q20, kQFrac)));
+      }
+    }
+  }
+}
+
+void ProjectBand0DfCoefQ610(hls::stream<q_data_t>& projected_stream, q_data_t* df_coef_q610) {
+  #pragma HLS inline off
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      for (int feature_index = 0; feature_index < kBand0ProjSize; ++feature_index) {
+        #pragma HLS pipeline II=1
+        const q_data_t value_q610 = projected_stream.read();
+        const int complex_index = feature_index / (kBand0CtrFreq * kBand0DfOrder);
+        const int feature_remainder = feature_index % (kBand0CtrFreq * kBand0DfOrder);
+        const int ctr_index = feature_remainder / kBand0DfOrder;
+        const int df_index = feature_remainder % kBand0DfOrder;
+        const int merged_freq_index = subband_index * kBand0CtrFreq + ctr_index;
+        df_coef_q610[DfCoefIndex(
+            0,
+            df_index,
+            merged_freq_index,
+            frame_index,
+            complex_index,
+            kBand0DfOrder,
+            kBand0TotalFreqs,
+            kFixedNumFrames)] = value_q610;
+      }
+    }
+  }
+}
+
+void RunBand0StreamingCoreQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    const BandWeightsQ610& weights_q610,
+    q_data_t* layer0_hx_state_q610,
+    q_data_t* layer0_cx_state_q610,
+    q_data_t* layer1_hx_state_q610,
+    q_data_t* layer1_cx_state_q610,
+    q_data_t* df_coef_q610) {
+  #pragma HLS inline off
+  hls::stream<q_data_t> sequence_stream;
+  hls::stream<q_data_t> layer0_output_stream;
+  hls::stream<q_data_t> layer1_output_stream;
+  hls::stream<q_data_t> projected_output_stream;
+
+  #pragma HLS stream variable=sequence_stream depth=64
+  #pragma HLS stream variable=layer0_output_stream depth=64
+  #pragma HLS stream variable=layer1_output_stream depth=64
+  #pragma HLS stream variable=projected_output_stream depth=64
+
+  ClearBufferQ610(layer0_hx_state_q610, kBand0StateElementCount);
+  ClearBufferQ610(layer0_cx_state_q610, kBand0StateElementCount);
+  ClearBufferQ610(layer1_hx_state_q610, kBand0StateElementCount);
+  ClearBufferQ610(layer1_cx_state_q610, kBand0StateElementCount);
+
+  #pragma HLS dataflow
+  GenerateBand0SequenceStreamQ610(noisy_input_q610, fb_output_q610, sequence_stream);
+  RunGSULayerStreamQ610(
+      sequence_stream,
+      kBand0NumSubbands,
+      kFixedNumFrames,
+      kBand0PackedInputSize,
+      weights_q610.layers[0],
+      layer0_hx_state_q610,
+      layer0_cx_state_q610,
+      layer0_output_stream);
+  RunGSULayerStreamQ610(
+      layer0_output_stream,
+      kBand0NumSubbands,
+      kFixedNumFrames,
+      kSbHiddenSize,
+      weights_q610.layers[1],
+      layer1_hx_state_q610,
+      layer1_cx_state_q610,
+      layer1_output_stream);
+  RunProjectionStreamQ610(
+      layer1_output_stream,
+      kBand0NumSubbands,
+      kFixedNumFrames,
+      kBand0ProjSize,
+      weights_q610.proj,
+      projected_output_stream);
+  ProjectBand0DfCoefQ610(projected_output_stream, df_coef_q610);
+}
+
+}  // namespace
+
 void RunBandQ610(
     const BandSpec& spec,
     const q_data_t* noisy_input_q610,
@@ -758,18 +947,10 @@ void ComputeBand0FromStreamsQ610(
   #pragma HLS inline off
   static q_data_t noisy_input_local[kBand0InputElementCount];
   static q_data_t fb_output_local[kBand0InputElementCount];
-  static q_data_t noisy_subbands_q610[kBand0NoisySubbandsElementCount];
-  static q_data_t fb_subbands_q610[kBand0FbSubbandsElementCount];
-  static q_data_t sb_input_q610[kBand0SbInputElementCount];
-  static q_data_t packed_input_q610[kBand0PackedInputElementCount];
-  static q_data_t sequence_input_q610[kBand0SequenceElementCount];
   static q_data_t layer0_hx_state_q610[kBand0StateElementCount];
   static q_data_t layer0_cx_state_q610[kBand0StateElementCount];
-  static q_data_t layer0_output_q610[kBand0LayerOutputElementCount];
   static q_data_t layer1_hx_state_q610[kBand0StateElementCount];
   static q_data_t layer1_cx_state_q610[kBand0StateElementCount];
-  static q_data_t layer1_output_q610[kBand0LayerOutputElementCount];
-  static q_data_t projected_output_q610[kBand0DfCoefElementCount];
   static q_data_t df_coef_local[kBand0DfCoefElementCount];
 
   StreamToPointerQ610<kBand0InputElementCount>(noisy_input_stream, noisy_input_local);
@@ -795,24 +976,14 @@ void ComputeBand0FromStreamsQ610(
       proj_bias_q610,
   };
 
-  RunBand0Q610(
+  RunBand0StreamingCoreQ610(
       noisy_input_local,
       fb_output_local,
-      kFixedBatchSize,
-      kFixedNumFrames,
       weights_q610,
-      noisy_subbands_q610,
-      fb_subbands_q610,
-      sb_input_q610,
-      packed_input_q610,
-      sequence_input_q610,
       layer0_hx_state_q610,
       layer0_cx_state_q610,
-      layer0_output_q610,
       layer1_hx_state_q610,
       layer1_cx_state_q610,
-      layer1_output_q610,
-      projected_output_q610,
       df_coef_local);
 
   PointerToStreamQ610<kBand0DfCoefElementCount>(df_coef_local, df_coef_stream);

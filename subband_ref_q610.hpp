@@ -1,48 +1,16 @@
 #ifndef SUBBAND_REF_Q610_HPP
 #define SUBBAND_REF_Q610_HPP
 
-#include <array>
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
-#include <deque>
-
-#if defined(__SYNTHESIS__) || defined(SUBBAND_Q610_USE_HLS_TYPES)
 #include "ap_int.h"
 #include "hls_stream.h"
-#else
-namespace hls {
-template <typename T>
-class stream {
- public:
-  stream() = default;
-
-  void write(const T& value) { queue_.push_back(value); }
-
-  T read() {
-    assert(!queue_.empty());
-    const T value = queue_.front();
-    queue_.pop_front();
-    return value;
-  }
-
-  bool empty() const { return queue_.empty(); }
-
- private:
-  std::deque<T> queue_;
-};
-}  // namespace hls
-#endif
 
 namespace subband_q610 {
 
-#if defined(__SYNTHESIS__) || defined(SUBBAND_Q610_USE_HLS_TYPES)
 using q_data_t = ap_int<16>;
 using accum_q_t = ap_int<64>;
-#else
-using q_data_t = int16_t;
-using accum_q_t = int64_t;
-#endif
 
 constexpr int kQFrac = 10;
 constexpr int kQScale = 1 << kQFrac;
@@ -60,25 +28,31 @@ constexpr int kFixedBatchSize = 1;
 constexpr int kFixedNumFrames = 2415;
 
 constexpr int kBand0NumSubbands = 8;
+constexpr int kBand0CtrFreq = 4;
 constexpr int kBand0NoisyFreqSize = 34;
 constexpr int kBand0FbFreqSize = 4;
 constexpr int kBand0PackedInputSize = 38;
 constexpr int kBand0ProjSize = 40;
 constexpr int kBand0DfOrder = 5;
+constexpr int kBand0TotalFreqs = kBand0NumSubbands * kBand0CtrFreq;
 
 constexpr int kBand1NumSubbands = 3;
+constexpr int kBand1CtrFreq = 32;
 constexpr int kBand1NoisyFreqSize = 62;
 constexpr int kBand1FbFreqSize = 32;
 constexpr int kBand1PackedInputSize = 94;
 constexpr int kBand1ProjSize = 192;
 constexpr int kBand1DfOrder = 3;
+constexpr int kBand1TotalFreqs = kBand1NumSubbands * kBand1CtrFreq;
 
 constexpr int kBand2NumSubbands = 2;
+constexpr int kBand2CtrFreq = 64;
 constexpr int kBand2NoisyFreqSize = 94;
 constexpr int kBand2FbFreqSize = 64;
 constexpr int kBand2PackedInputSize = 158;
 constexpr int kBand2ProjSize = 128;
 constexpr int kBand2DfOrder = 1;
+constexpr int kBand2TotalFreqs = kBand2NumSubbands * kBand2CtrFreq;
 
 constexpr int kBand0InputElementCount = kFixedBatchSize * kNumFreqs * kFixedNumFrames;
 constexpr int kBand0NoisySubbandsElementCount =
@@ -94,12 +68,12 @@ constexpr int kBand0SequenceElementCount =
 constexpr int kBand0StateElementCount = kBand0NumSubbands * kSbHiddenSize;
 constexpr int kBand0LayerOutputElementCount = kFixedNumFrames * kBand0NumSubbands * kSbHiddenSize;
 constexpr int kBand0DfCoefElementCount =
-    kFixedBatchSize * kBand0DfOrder * kNumSpks * (kBand0NumSubbands * 4) * kFixedNumFrames * 2;
+    kFixedBatchSize * kBand0DfOrder * kNumSpks * kBand0TotalFreqs * kFixedNumFrames * 2;
 
 constexpr int kBand1DfCoefElementCount =
-    kFixedBatchSize * kBand1DfOrder * kNumSpks * (kBand1NumSubbands * 32) * kFixedNumFrames * 2;
+    kFixedBatchSize * kBand1DfOrder * kNumSpks * kBand1TotalFreqs * kFixedNumFrames * 2;
 constexpr int kBand2DfCoefElementCount =
-    kFixedBatchSize * kBand2DfOrder * kNumSpks * (kBand2NumSubbands * 64) * kFixedNumFrames * 2;
+    kFixedBatchSize * kBand2DfOrder * kNumSpks * kBand2TotalFreqs * kFixedNumFrames * 2;
 
 constexpr int kMaxBatchSize = kFixedBatchSize;
 constexpr int kMaxNumFrames = kFixedNumFrames;
@@ -153,16 +127,14 @@ struct LinearWeightsQ610 {
 };
 
 struct BandWeightsQ610 {
-  std::array<GSUWeightsQ610, kSbNumLayers> layers;
+  GSUWeightsQ610 layers[kSbNumLayers];
   LinearWeightsQ610 proj;
 };
 
-extern const std::array<BandSpec, kNumBands> kBandSpecs;
+extern const BandSpec kBandSpecs[kNumBands];
 
 q_data_t SaturateInt16(accum_q_t value);
 accum_q_t RoundShiftRight(accum_q_t value, int shift_bits);
-q_data_t FloatToQ610(float value);
-float Q610ToFloat(q_data_t value);
 q_data_t MulQ610(q_data_t lhs, q_data_t rhs);
 q_data_t AddQ610(q_data_t lhs, q_data_t rhs);
 q_data_t SubQ610(q_data_t lhs, q_data_t rhs);
