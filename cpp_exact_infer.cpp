@@ -15,9 +15,8 @@ struct Options {
   fs::path output_path;
   fs::path python_path = fs::path("C:\\Users\\JH\\anaconda3\\envs\\spiking-fullsubnet\\python.exe");
   fs::path infer_script = fs::path("infer.py");
-  fs::path config_path = fs::path("recipes\\intel_ndns\\spiking_fullsubnet\\baseline_m.toml");
-  fs::path checkpoint_path =
-      fs::path("model_zoo\\intel_ndns\\spike_fsb\\baseline_m\\checkpoints\\best\\pytorch_model.bin");
+  fs::path config_path = fs::path("recipes\\intel_ndns\\spiking_fullsubnet\\baseline_m_qat.toml");
+  fs::path checkpoint_path = fs::path("best_model_qat.pt");
 };
 
 std::wstring ToWide(const std::string& text) {

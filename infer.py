@@ -10,8 +10,8 @@ import torch
 from audiozen.models.spiking_fullsubnet.modeling_spiking_fullsubnet import SpikingFullSubNet
 
 
-DEFAULT_CONFIG = Path("recipes/intel_ndns/spiking_fullsubnet/baseline_m.toml")
-DEFAULT_CHECKPOINT = Path("model_zoo/intel_ndns/spike_fsb/baseline_m/checkpoints/best/pytorch_model.bin")
+DEFAULT_CONFIG = Path("recipes/intel_ndns/spiking_fullsubnet/baseline_m_qat.toml")
+DEFAULT_CHECKPOINT = Path("best_model_qat.pt")
 
 
 def load_toml_config(config_path: Path) -> dict:
@@ -37,10 +37,18 @@ def load_checkpoint(checkpoint_path: Path) -> dict:
     except TypeError:
         checkpoint = torch.load(checkpoint_path, map_location="cpu")
 
-    if isinstance(checkpoint, dict) and "module" in checkpoint:
-        return checkpoint["module"]
     if not isinstance(checkpoint, dict):
         raise TypeError(f"Unsupported checkpoint type: {type(checkpoint)}")
+
+    # Support both inference-ready state_dict files and training checkpoints.
+    for key in ("model_state_dict", "state_dict", "module"):
+        nested_state = checkpoint.get(key)
+        if isinstance(nested_state, dict):
+            checkpoint = nested_state
+            break
+
+    if not isinstance(checkpoint, dict):
+        raise TypeError(f"Unsupported checkpoint contents in: {checkpoint_path}")
     return checkpoint
 
 

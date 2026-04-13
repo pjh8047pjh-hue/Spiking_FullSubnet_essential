@@ -17,8 +17,8 @@ subband 관련 리팩터링이나 하드웨어 준비 작업 이후에도 추론
 - 기준 출력 1: `JH_test/test1_refactor_check.wav`
 - 기준 출력 2: `JH_test/test2_refactor_check.wav`
 - 추론 스크립트: `infer.py`
-- 설정 파일: `recipes/intel_ndns/spiking_fullsubnet/baseline_m.toml`
-- 체크포인트: `model_zoo/intel_ndns/spike_fsb/baseline_m/checkpoints/best/pytorch_model.bin`
+- 설정 파일: `recipes/intel_ndns/spiking_fullsubnet/baseline_m_qat.toml`
+- 체크포인트: `best_model_qat.pt`
 - Python: `C:\Users\JH\anaconda3\envs\spiking-fullsubnet\python.exe`
 
 ## 검증 절차
