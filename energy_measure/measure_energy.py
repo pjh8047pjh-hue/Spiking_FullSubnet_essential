@@ -45,6 +45,8 @@ DEFAULT_Q610_RESULT_DIR = Path("energy_measure/result_snn_q610_full")
 DEFAULT_Q610_CPP_SUBBAND_LIB = Path("energy_measure/native/libsubband_q610_full.so")
 DEFAULT_Q610_FAST_RESULT_DIR = Path("energy_measure/result_snn_q610_fast")
 DEFAULT_Q610_FAST_CPP_SUBBAND_LIB = Path("energy_measure/native/libsubband_q610_fast.so")
+DEFAULT_Q610_FULL_INFER_RESULT_DIR = Path("energy_measure/result_snn_q610_full_infer")
+DEFAULT_Q610_FULL_INFER_CPP_LIB = Path("energy_measure/native/libq610_full_infer.so")
 Q610_FRAC_BITS = 10
 Q610_SCALE = 1 << Q610_FRAC_BITS
 
@@ -338,6 +340,14 @@ def q610_to_float(values: np.ndarray) -> np.ndarray:
     return np.asarray(values, dtype=np.int16).astype(np.float32) / np.float32(Q610_SCALE)
 
 
+def q610_ones(size: int) -> np.ndarray:
+    return np.full(size, Q610_SCALE, dtype=np.int16)
+
+
+def q610_zeros(size: int) -> np.ndarray:
+    return np.zeros(size, dtype=np.int16)
+
+
 class Q610SubbandRunner:
     def __init__(self, lib_path: Path, model: torch.nn.Module):
         self.lib_path = lib_path
@@ -348,6 +358,7 @@ class Q610SubbandRunner:
         self.run_sequence.restype = ctypes.c_int
         self.band_weights = [self.collect_stage_weights(stage) for stage in model.sb_model.sb_models]
         self.last_df_coef_shapes: list[tuple[int, ...]] = []
+        self.last_stage_timings: dict[str, float] = {}
 
     def ptr(self, values: np.ndarray):
         if values.dtype != np.int16 or not values.flags.c_contiguous:
@@ -495,6 +506,7 @@ class Q610FullSubbandRunner(Q610SubbandRunner):
         self.run_full_band.restype = ctypes.c_int
         self.band_weights = [self.collect_stage_weights(stage) for stage in model.sb_model.sb_models]
         self.last_df_coef_shapes: list[tuple[int, ...]] = []
+        self.last_stage_timings: dict[str, float] = {}
 
     def run(self, model: torch.nn.Module, noisy_mag: torch.Tensor, fb_output: torch.Tensor) -> list[torch.Tensor]:
         if int(model.num_spks) != 1:
@@ -502,10 +514,14 @@ class Q610FullSubbandRunner(Q610SubbandRunner):
 
         batch_size = int(noisy_mag.shape[0])
         num_frames = int(noisy_mag.shape[-1])
+        conversion_start = time.perf_counter()
         noisy_input_q610 = float_to_q610(noisy_mag.detach().cpu().numpy()).reshape(-1)
         fb_output_q610 = float_to_q610(fb_output.detach().cpu().numpy()).reshape(-1)
+        conversion_time = time.perf_counter() - conversion_start
         outputs: list[torch.Tensor] = []
         self.last_df_coef_shapes = []
+        cpp_time = 0.0
+        df_coef_to_torch_time = 0.0
 
         for band_index, _stage in enumerate(model.sb_model.sb_models):
             spec = self.band_spec(model.sb_model, band_index, int(model.num_spks))
@@ -521,6 +537,7 @@ class Q610FullSubbandRunner(Q610SubbandRunner):
             weights = self.band_weights[band_index]
             layer0, layer1 = weights["layers"]
 
+            cpp_start = time.perf_counter()
             return_code = self.run_full_band(
                 band_index,
                 batch_size,
@@ -545,14 +562,22 @@ class Q610FullSubbandRunner(Q610SubbandRunner):
                 self.ptr(weights["proj_bias"]),
                 self.ptr(df_coef_q610),
             )
+            cpp_time += time.perf_counter() - cpp_start
             if return_code != 0:
                 raise RuntimeError(f"run_full_band_q610 failed for band {band_index}: rc={return_code}")
 
             self.last_df_coef_shapes.append(tuple(int(dim) for dim in df_coef_q610.shape))
+            torch_start = time.perf_counter()
             outputs.append(
                 torch.from_numpy(q610_to_float(df_coef_q610)).to(device=noisy_mag.device, dtype=noisy_mag.dtype)
             )
+            df_coef_to_torch_time += time.perf_counter() - torch_start
 
+        self.last_stage_timings = {
+            "q610_conversion": conversion_time,
+            "cpp_subband": cpp_time,
+            "df_coef_to_torch": df_coef_to_torch_time,
+        }
         return outputs
 
 
@@ -572,6 +597,7 @@ class Q610FastFullSubbandRunner(Q610SubbandRunner):
         self.run_fast.restype = ctypes.c_int
         self.band_weights = [self.collect_stage_weights(stage) for stage in model.sb_model.sb_models]
         self.last_df_coef_shapes: list[tuple[int, ...]] = []
+        self.last_stage_timings: dict[str, float] = {}
         self.context: int | None = None
         self.context_shape: tuple[int, int] | None = None
         self.output_buffers: dict[tuple[int, tuple[int, ...]], np.ndarray] = {}
@@ -654,10 +680,14 @@ class Q610FastFullSubbandRunner(Q610SubbandRunner):
 
         batch_size = int(noisy_mag.shape[0])
         num_frames = int(noisy_mag.shape[-1])
+        conversion_start = time.perf_counter()
         noisy_input_q610 = float_to_q610(noisy_mag.detach().cpu().numpy()).reshape(-1)
         fb_output_q610 = float_to_q610(fb_output.detach().cpu().numpy()).reshape(-1)
+        conversion_time = time.perf_counter() - conversion_start
         outputs: list[torch.Tensor] = []
         self.last_df_coef_shapes = []
+        cpp_time = 0.0
+        df_coef_to_torch_time = 0.0
 
         for band_index, _stage in enumerate(model.sb_model.sb_models):
             spec = self.band_spec(model.sb_model, band_index, int(model.num_spks))
@@ -670,13 +700,183 @@ class Q610FastFullSubbandRunner(Q610SubbandRunner):
                 2,
             )
             df_coef_q610 = self.get_output_buffer(band_index, df_coef_shape)
+            cpp_start = time.perf_counter()
             self.run_band_core(band_index, batch_size, num_frames, noisy_input_q610, fb_output_q610, df_coef_q610)
+            cpp_time += time.perf_counter() - cpp_start
             self.last_df_coef_shapes.append(tuple(int(dim) for dim in df_coef_q610.shape))
+            torch_start = time.perf_counter()
             outputs.append(
                 torch.from_numpy(q610_to_float(df_coef_q610)).to(device=noisy_mag.device, dtype=noisy_mag.dtype)
             )
+            df_coef_to_torch_time += time.perf_counter() - torch_start
 
+        self.last_stage_timings = {
+            "q610_conversion": conversion_time,
+            "cpp_subband": cpp_time,
+            "df_coef_to_torch": df_coef_to_torch_time,
+        }
         return outputs
+
+
+class Q610FullInferenceRunner(Q610SubbandRunner):
+    def __init__(self, lib_path: Path, model: torch.nn.Module):
+        self.lib_path = lib_path
+        self.int16_ptr = ctypes.POINTER(ctypes.c_int16)
+        self.int16_ptr_ptr = ctypes.POINTER(self.int16_ptr)
+        self.int_ptr = ctypes.POINTER(ctypes.c_int)
+        self.float_ptr = ctypes.POINTER(ctypes.c_float)
+        self.library = ctypes.CDLL(lib_path.as_posix())
+        self.create_context = self.library.create_q610_infer_context
+        self.create_context.argtypes = [self.int_ptr, ctypes.c_int, ctypes.c_int, self.int16_ptr_ptr]
+        self.create_context.restype = ctypes.c_void_p
+        self.destroy_context = self.library.destroy_q610_infer_context
+        self.destroy_context.argtypes = [ctypes.c_void_p]
+        self.destroy_context.restype = None
+        self.run_infer = self.library.run_q610_infer
+        self.run_infer.argtypes = [ctypes.c_void_p, self.float_ptr, ctypes.c_int, self.float_ptr]
+        self.run_infer.restype = ctypes.c_int
+        self.last_df_coef_shapes: list[tuple[int, ...]] = []
+        self.last_stage_timings: dict[str, float] = {}
+        self.context: int | None = None
+
+        self.validate_supported_model(model)
+        self.band_specs = self.collect_band_specs(model)
+        self.weight_buffers = self.collect_infer_weights(model)
+        pointer_array_type = self.int16_ptr * len(self.weight_buffers)
+        self.weight_ptrs = pointer_array_type(*(self.ptr(buffer) for buffer in self.weight_buffers))
+        use_pre_layer_norm_fb = int(bool(getattr(model.fb_model, "use_pre_layer_norm", False)))
+        sb_layer_norm_flags = [
+            bool(getattr(stage, "use_pre_layer_norm", False)) for stage in model.sb_model.sb_models
+        ]
+        if len(set(sb_layer_norm_flags)) != 1:
+            raise ValueError("Q6.10 full inference runner requires all subband stages to share layer-norm usage.")
+        use_pre_layer_norm_sb = int(sb_layer_norm_flags[0])
+        context = self.create_context(
+            self.band_specs.ctypes.data_as(self.int_ptr),
+            use_pre_layer_norm_fb,
+            use_pre_layer_norm_sb,
+            self.weight_ptrs,
+        )
+        if context is None:
+            raise RuntimeError("create_q610_infer_context failed.")
+        self.context = int(context)
+
+    def close(self) -> None:
+        if self.context is not None:
+            self.destroy_context(self.context)
+            self.context = None
+
+    def __del__(self):
+        try:
+            self.close()
+        except Exception:
+            pass
+
+    def ptr(self, values: np.ndarray):
+        if values.dtype != np.int16 or not values.flags.c_contiguous:
+            raise ValueError("Q6.10 C++ bridge expects contiguous int16 NumPy buffers.")
+        return values.ctypes.data_as(self.int16_ptr)
+
+    def float_ptr_from_array(self, values: np.ndarray):
+        if values.dtype != np.float32 or not values.flags.c_contiguous:
+            raise ValueError("Q6.10 full inference runner expects contiguous float32 NumPy buffers.")
+        return values.ctypes.data_as(self.float_ptr)
+
+    def validate_supported_model(self, model: torch.nn.Module) -> None:
+        if int(model.num_spks) != 1:
+            raise ValueError("Q6.10 full inference runner currently supports num_spks=1 only.")
+        if int(model.n_fft) != 512 or int(model.hop_length) != 128 or int(model.win_length) != 512:
+            raise ValueError("Q6.10 full inference runner currently supports n_fft=512, hop=128, win=512 only.")
+        if int(model.fb_model.input_size) != 64:
+            raise ValueError("Q6.10 full inference runner currently supports fb_input_size=64 only.")
+        if int(model.fb_model.hidden_size) != 320 or int(model.fb_model.num_layers) != 2:
+            raise ValueError("Q6.10 full inference runner currently supports fullband hidden=320, layers=2 only.")
+        if len(model.sb_model.sb_models) != 3:
+            raise ValueError("Q6.10 full inference runner currently supports exactly three subband stages.")
+        for layer in model.fb_model.sequence_model.layers:
+            cell = layer.cell
+            if not bool(getattr(cell, "shared_weights", False)) or not hasattr(cell, "batchnorm"):
+                raise ValueError("Q6.10 full inference runner requires shared-weight, batchnorm-enabled GSU cells.")
+        for stage in model.sb_model.sb_models:
+            if int(stage.hidden_size) != 224 or int(stage.num_layers) != 2:
+                raise ValueError("Q6.10 full inference runner currently supports subband hidden=224, layers=2 only.")
+            for layer in stage.sequence_model.layers:
+                cell = layer.cell
+                if not bool(getattr(cell, "shared_weights", False)) or not hasattr(cell, "batchnorm"):
+                    raise ValueError("Q6.10 full inference runner requires shared-weight, batchnorm-enabled GSU cells.")
+
+    def collect_band_specs(self, model: torch.nn.Module) -> np.ndarray:
+        specs: list[int] = []
+        for band_index in range(len(model.sb_model.sb_models)):
+            spec = self.band_spec(model.sb_model, band_index, int(model.num_spks))
+            specs.extend(
+                [
+                    spec["lower"],
+                    spec["upper"],
+                    spec["ctr_freq"],
+                    spec["nbr_freq"],
+                    spec["df_order"],
+                ]
+            )
+        return np.ascontiguousarray(np.asarray(specs, dtype=np.int32))
+
+    def collect_layer_norm(self, module: torch.nn.Module, feature_size: int) -> tuple[np.ndarray, np.ndarray]:
+        if getattr(module, "use_pre_layer_norm", False):
+            return self.tensor_to_q610(module.pre_layer_norm.weight), self.tensor_to_q610(module.pre_layer_norm.bias)
+        return q610_ones(feature_size), q610_zeros(feature_size)
+
+    def add_layer_weights(self, buffers: list[np.ndarray], gsu_layer) -> None:
+        weights = self.collect_layer_weights(gsu_layer)
+        buffers.extend(
+            [
+                weights["weight_ih"],
+                weights["weight_hh"],
+                weights["bias_ih"],
+                weights["bn_running_mean"],
+                weights["bn_running_var"],
+                weights["bn_weight"],
+                weights["bn_bias"],
+            ]
+        )
+
+    def collect_infer_weights(self, model: torch.nn.Module) -> list[np.ndarray]:
+        buffers: list[np.ndarray] = []
+        full_ln_weight, full_ln_bias = self.collect_layer_norm(model.fb_model, int(model.fb_model.input_size))
+        buffers.extend([full_ln_weight, full_ln_bias])
+        for layer in model.fb_model.sequence_model.layers:
+            self.add_layer_weights(buffers, layer)
+        buffers.extend([self.tensor_to_q610(model.fb_model.proj.weight), self.tensor_to_q610(model.fb_model.proj.bias)])
+
+        for band_index, stage in enumerate(model.sb_model.sb_models):
+            spec = self.band_spec(model.sb_model, band_index, int(model.num_spks))
+            sb_ln_weight, sb_ln_bias = self.collect_layer_norm(stage, spec["input_size"])
+            buffers.extend([sb_ln_weight, sb_ln_bias])
+            for layer in stage.sequence_model.layers:
+                self.add_layer_weights(buffers, layer)
+            buffers.extend([self.tensor_to_q610(stage.proj.weight), self.tensor_to_q610(stage.proj.bias)])
+
+        return [np.ascontiguousarray(buffer, dtype=np.int16) for buffer in buffers]
+
+    def run(self, noisy: torch.Tensor) -> torch.Tensor:
+        if self.context is None:
+            raise RuntimeError("Q6.10 full inference context has been closed.")
+        if noisy.ndim != 2 or int(noisy.shape[0]) != 1:
+            raise ValueError("Q6.10 full inference runner expects mono input shaped [1, num_samples].")
+
+        input_np = np.ascontiguousarray(noisy.detach().cpu().numpy().reshape(-1).astype(np.float32))
+        output_np = np.empty_like(input_np)
+        native_start = time.perf_counter()
+        return_code = self.run_infer(
+            self.context,
+            self.float_ptr_from_array(input_np),
+            int(input_np.shape[0]),
+            self.float_ptr_from_array(output_np),
+        )
+        native_time = time.perf_counter() - native_start
+        if return_code != 0:
+            raise RuntimeError(f"run_q610_infer failed: rc={return_code}")
+        self.last_stage_timings = {"native_full_infer": native_time}
+        return torch.from_numpy(output_np.reshape(1, -1)).to(device=noisy.device, dtype=noisy.dtype)
 
 
 @torch.no_grad()
@@ -690,6 +890,8 @@ def run_snn_qat_q610_inference(
     from audiozen.models.spiking_fullsubnet.deepfiltering import deepfiltering
 
     _, sequence_length = noisy.shape
+    timings: dict[str, float] = {}
+    stage_start = time.perf_counter()
     noisy_mag, _, noisy_real, noisy_imag = model.stft(noisy)
     noisy_cmp = torch.complex(real=noisy_real, imag=noisy_imag)
     noisy_cmp = rearrange(noisy_cmp, "b f t -> b 1 f t")
@@ -697,24 +899,37 @@ def run_snn_qat_q610_inference(
     noisy_mag = rearrange(noisy_mag, "b f t -> b 1 f t")
     noisy_mag = noisy_mag**model.fdrc
     noisy_mag = noisy_mag[..., :-1, :]
+    timings["stft_fdrc"] = time.perf_counter() - stage_start
 
+    stage_start = time.perf_counter()
     fb_output, _ = model.fb_model(noisy_mag)
+    timings["fullband_pytorch"] = time.perf_counter() - stage_start
+
+    stage_start = time.perf_counter()
     df_coef_list = q610_runner.run(model, noisy_mag, fb_output)
+    timings["subband_runner_total"] = time.perf_counter() - stage_start
+    timings.update(getattr(q610_runner, "last_stage_timings", {}))
 
     num_filtered_freqs = 0
     enh_freqs_list = []
+    stage_start = time.perf_counter()
     for df_coef, df_order in zip(df_coef_list, model.df_orders):
         num_freqs = df_coef.shape[3]
         comp_stft_in = noisy_cmp[..., num_filtered_freqs : num_filtered_freqs + num_freqs, :]
         enh_freqs = deepfiltering(comp_stft_in, df_coef, int(df_order), int(model.num_spks))
         enh_freqs_list.append(enh_freqs)
         num_filtered_freqs += num_freqs
+    timings["deepfiltering"] = time.perf_counter() - stage_start
 
+    stage_start = time.perf_counter()
     enh_freqs = torch.cat(enh_freqs_list, dim=-2)
     enh_stft = repeat(noisy_cmp, "b 1 f t -> b 1 s f t", s=int(model.num_spks)).clone()
     enh_stft[..., :-1, :] = enh_freqs
     enh_stft = enh_stft.squeeze(1).squeeze(1)
-    return model.istft(enh_stft, length=sequence_length)
+    output = model.istft(enh_stft, length=sequence_length)
+    timings["istft"] = time.perf_counter() - stage_start
+    q610_runner.last_stage_timings = timings
+    return output
 
 
 def save_wav(path: Path, waveform: torch.Tensor, sample_rate: int) -> None:
@@ -875,9 +1090,15 @@ def write_outputs(result_dir: Path, rows: list[dict[str, Any]], metadata: dict[s
         key: summarize([float(row[key]) for row in rows if math.isfinite(float(row[key]))])
         for key in ("pkg_uj", "dram_uj", "total_uj", "duration_us", "power_mw")
     }
+    stage_keys = sorted({key for row in rows for key in row if key.startswith("stage_")})
+    stage_summary = {
+        key: summarize([float(row[key]) for row in rows if key in row and math.isfinite(float(row[key]))])
+        for key in stage_keys
+    }
     summary = {
         "metadata": metadata,
         "metrics": metric_summary,
+        "stage_metrics_us": stage_summary,
         "csv_path": str(csv_path),
     }
     (result_dir / "energy_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -925,6 +1146,18 @@ def write_outputs(result_dir: Path, rows: list[dict[str, Any]], metadata: dict[s
         lines.append(
             f"| `{key}` | {stats['mean']:.6f} | {stats['std']:.6f} | {stats['min']:.6f} | {stats['max']:.6f} |"
         )
+    if stage_summary:
+        lines.extend(
+            [
+                "",
+                "| Stage timing (us) | Mean | Std | Min | Max |",
+                "| --- | ---: | ---: | ---: | ---: |",
+            ]
+        )
+        for key, stats in stage_summary.items():
+            lines.append(
+                f"| `{key}` | {stats['mean']:.6f} | {stats['std']:.6f} | {stats['min']:.6f} | {stats['max']:.6f} |"
+            )
     (result_dir / "energy_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     print(f"\nSaved CSV: {csv_path}")
@@ -935,7 +1168,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Measure FullSubNet inference energy with Intel RAPL/pyRAPL.")
     parser.add_argument(
         "--model-type",
-        choices=("ann", "snn", "snn_infer_py", "snn_q610_full", "snn_q610_fast", "snn_qat_pytorch", "snn_qat_q610"),
+        choices=(
+            "ann",
+            "snn",
+            "snn_infer_py",
+            "snn_q610_full",
+            "snn_q610_fast",
+            "snn_q610_full_infer",
+            "snn_qat_pytorch",
+            "snn_qat_q610",
+        ),
         default="ann",
     )
     parser.add_argument("--snn-root", default=str(DEFAULT_SNN_ROOT))
@@ -981,10 +1223,15 @@ def resolve_measurement_paths(args: argparse.Namespace) -> tuple[Path, Path, Pat
             resolve_path(snn_root),
         )
 
-    if args.model_type in ("snn_q610_full", "snn_q610_fast"):
+    if args.model_type in ("snn_q610_full", "snn_q610_fast", "snn_q610_full_infer"):
         checkpoint = str(DEFAULT_Q610_CHECKPOINT) if args.checkpoint == str(DEFAULT_CHECKPOINT) else args.checkpoint
         config = str(DEFAULT_Q610_CONFIG) if args.config == str(DEFAULT_CONFIG) else args.config
-        default_result = DEFAULT_Q610_FAST_RESULT_DIR if args.model_type == "snn_q610_fast" else DEFAULT_Q610_RESULT_DIR
+        if args.model_type == "snn_q610_fast":
+            default_result = DEFAULT_Q610_FAST_RESULT_DIR
+        elif args.model_type == "snn_q610_full_infer":
+            default_result = DEFAULT_Q610_FULL_INFER_RESULT_DIR
+        else:
+            default_result = DEFAULT_Q610_RESULT_DIR
         result_dir = str(default_result) if args.result_dir == str(DEFAULT_RESULT_DIR) else args.result_dir
         snn_root = str(DEFAULT_Q610_ROOT) if args.snn_root == str(DEFAULT_SNN_ROOT) else args.snn_root
         return (
@@ -1050,6 +1297,30 @@ def main() -> None:
         infer_py_path = snn_root / "infer.py"
         audio_loader = infer_module.load_audio
         audio_loader_name = "infer.py::load_audio"
+    elif args.model_type == "snn_q610_full_infer":
+        if snn_root is None:
+            raise ValueError("--snn-root is required for --model-type snn_q610_full_infer.")
+        model_name = "SpikingFullSubNet_SNN_Q610_FULL_INFER_CPP"
+        print("Loading SpikingFullSubNet through infer.py and full C++ Q6.10 inference engine...")
+        model, checkpoint_info, infer_module = load_snn_infer_py_model(config, checkpoint_path, snn_root)
+        infer_py_path = snn_root / "infer.py"
+        audio_loader = infer_module.load_audio
+        audio_loader_name = "infer.py::load_audio"
+        cpp_lib_arg = args.cpp_subband_lib
+        if cpp_lib_arg == str(DEFAULT_QAT_CPP_SUBBAND_LIB):
+            cpp_lib_arg = str(DEFAULT_Q610_FULL_INFER_CPP_LIB)
+        cpp_subband_lib_path = resolve_path(cpp_lib_arg)
+        q610_runner = Q610FullInferenceRunner(cpp_subband_lib_path, model)
+
+        def inference_fn(
+            inference_model: torch.nn.Module,
+            inference_noisy: torch.Tensor,
+            inference_config: dict[str, Any],
+        ) -> torch.Tensor:
+            if q610_runner is None:
+                raise RuntimeError("Q6.10 full inference runner was not initialized.")
+            return q610_runner.run(inference_noisy)
+
     elif args.model_type in ("snn_q610_full", "snn_q610_fast"):
         if snn_root is None:
             raise ValueError(f"--snn-root is required for --model-type {args.model_type}.")
@@ -1134,18 +1405,20 @@ def main() -> None:
         duration_us = int(meter.result.duration)
         total_uj = pkg_uj + dram_uj
         power_mw = (total_uj / duration_us * 1000.0) if duration_us > 0 else float("nan")
-        rows.append(
-            {
-                "model": model_name,
-                "run": run_index,
-                "pkg_uj": pkg_uj,
-                "dram_uj": dram_uj,
-                "total_uj": total_uj,
-                "duration_us": duration_us,
-                "power_mw": power_mw,
-                "wall_elapsed_s": wall_elapsed_s,
-            }
-        )
+        row = {
+            "model": model_name,
+            "run": run_index,
+            "pkg_uj": pkg_uj,
+            "dram_uj": dram_uj,
+            "total_uj": total_uj,
+            "duration_us": duration_us,
+            "power_mw": power_mw,
+            "wall_elapsed_s": wall_elapsed_s,
+        }
+        if q610_runner is not None:
+            for stage_name, elapsed_s in getattr(q610_runner, "last_stage_timings", {}).items():
+                row[f"stage_{stage_name}_us"] = float(elapsed_s) * 1_000_000.0
+        rows.append(row)
         print(
             f"run={run_index:03d} pkg_uj={pkg_uj} dram_uj={dram_uj} "
             f"duration_us={duration_us} power_mw={power_mw:.3f}"
@@ -1173,7 +1446,7 @@ def main() -> None:
         "infer_py": str(infer_py_path) if infer_py_path is not None else None,
         "audio_loader": audio_loader_name,
         "cpp_subband_lib": str(cpp_subband_lib_path) if cpp_subband_lib_path is not None else None,
-        "q610_df_coef_shapes": q610_runner.last_df_coef_shapes if q610_runner is not None else None,
+        "q610_df_coef_shapes": getattr(q610_runner, "last_df_coef_shapes", None) if q610_runner is not None else None,
         "input": str(input_path),
         "reference_wav": str(reference_wav_path) if reference_wav_path is not None else None,
         "output_wav": str(output_wav_path) if output_wav_path is not None else None,

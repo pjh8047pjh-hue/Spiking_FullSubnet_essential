@@ -1,0 +1,96 @@
+{
+  "metrics": [
+    {
+      "Model": "Noisy",
+      "WB-PESQ": 1.4122145175933838,
+      "STOI": 0.8655730830694432,
+      "SI-SDR (dB)": 1.066175147204608,
+      "Delta WB-PESQ vs Noisy": 0.0,
+      "Delta STOI vs Noisy": 0.0,
+      "Delta SI-SDR vs Noisy": 0.0
+    },
+    {
+      "Model": "ANN FullSubNet",
+      "WB-PESQ": 2.391789197921753,
+      "STOI": 0.9428546734651099,
+      "SI-SDR (dB)": 11.720530906430465,
+      "Delta WB-PESQ vs Noisy": 0.9795746803283691,
+      "Delta STOI vs Noisy": 0.07728159039566662,
+      "Delta SI-SDR vs Noisy": 10.654355759225858
+    },
+    {
+      "Model": "SNN",
+      "WB-PESQ": 1.5074889659881592,
+      "STOI": 0.8180174902357457,
+      "SI-SDR (dB)": 5.9235827748802,
+      "Delta WB-PESQ vs Noisy": 0.09527444839477539,
+      "Delta STOI vs Noisy": -0.04755559283369759,
+      "Delta SI-SDR vs Noisy": 4.857407627675592
+    },
+    {
+      "Model": "SNN Q6.10",
+      "WB-PESQ": 1.4879082441329956,
+      "STOI": 0.7980472981864641,
+      "SI-SDR (dB)": 5.51679036856247,
+      "Delta WB-PESQ vs Noisy": 0.07569372653961182,
+      "Delta STOI vs Noisy": -0.06752578488297911,
+      "Delta SI-SDR vs Noisy": 4.450615221357862
+    }
+  ],
+  "sanity": {
+    "q610_vs_snn_rmse": 0.004485940617756042,
+    "q610_vs_snn_snr_db": 11.988731246302425,
+    "noisy_snr_vs_clean_db": 1.0522216504779325,
+    "clean_vs_car_noise_power_snr_db": 1.052217779045254,
+    "ann_vs_snn_rmse": 0.008403228088468563,
+    "ann_vs_snn_snr_db": 6.536878618499605,
+    "ann_inference_seconds": 11.120786499999667,
+    "snn_inference_seconds": 3.154203999998572,
+    "q610_inference_seconds": 1.0647750999996788
+  },
+  "audio": {
+    "clean": {
+      "path": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\JH_test\\wav\\JH_Clean_voice.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 789744,
+      "duration": 16.453,
+      "format": "WAV",
+      "subtype": "PCM_16"
+    },
+    "noisy": {
+      "path": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\JH_test\\wav\\JH_ditry_voice.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 789744,
+      "duration": 16.453,
+      "format": "WAV",
+      "subtype": "PCM_16"
+    },
+    "noise": {
+      "path": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\JH_test\\wav\\JH_Car_noise.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 789744,
+      "duration": 16.453,
+      "format": "WAV",
+      "subtype": "PCM_16"
+    }
+  },
+  "paths": {
+    "ann_config": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\FullSubNet\\recipes\\dns_interspeech_2020\\fullsubnet\\inference.toml",
+    "ann_checkpoint": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\FullSubNet\\fullsubnet_best_model_58epochs.tar",
+    "config": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\recipes\\intel_ndns\\spiking_fullsubnet\\baseline_m.toml",
+    "checkpoint": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\model_zoo\\intel_ndns\\spike_fsb\\baseline_m\\checkpoints\\best\\pytorch_model.bin",
+    "q610_lib": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\energy_measure\\native\\libq610_full_infer.dll",
+    "ann_output": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\energy_measure\\speech_metrics_result\\ann_fullsubnet_enhanced.wav",
+    "snn_output": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\energy_measure\\speech_metrics_result\\snn_enhanced.wav",
+    "q610_output": "C:\\Users\\User\\Documents\\\uc0c8 \ud3f4\ub354\\Spiking_FullSubnet_Q6.10\\energy_measure\\speech_metrics_result\\q610_full_infer_enhanced.wav"
+  },
+  "sample_rate": 16000,
+  "torch_threads": 1,
+  "checkpoint_epoch": null,
+  "checkpoint_best_val_si_sdr": null,
+  "ann_checkpoint_epoch": 58,
+  "measured_at": "2026-05-13T16:05:14+09:00"
+}

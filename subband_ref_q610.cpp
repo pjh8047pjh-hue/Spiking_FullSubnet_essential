@@ -433,7 +433,7 @@ void ProjectToDfCoefQ610(
                   num_frames)] = projected_sequence_q610[SequenceIndex(
                   frame_index,
                   sample_index,
-                  feature_index,
+                  feature_index,   
                   batch_subbands,
                   spec.proj_size)];
             }

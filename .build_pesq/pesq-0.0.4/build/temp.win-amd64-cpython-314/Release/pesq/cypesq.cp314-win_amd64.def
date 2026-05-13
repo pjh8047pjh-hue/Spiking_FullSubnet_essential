@@ -1,0 +1,3 @@
+LIBRARY cypesq.cp314-win_amd64.pyd
+EXPORTS
+PyInit_cypesq
