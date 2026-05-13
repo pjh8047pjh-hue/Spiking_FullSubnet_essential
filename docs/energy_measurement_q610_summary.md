@@ -62,6 +62,30 @@ The current Python `infer.py` output was compared with `JH_test/enhanced_test2.w
 
 A faster C++ Q6.10 path was implemented while keeping the original reference implementation intact.
 
+Code files added for reproducibility:
+
+- `energy_measure/measure_energy.py`
+- `energy_measure/profile_subband_q610.py`
+- `energy_measure/native/subband_q610_fast_c_api.cpp`
+- `energy_measure/native/subband_q610_full_c_api.cpp`
+- `energy_measure/native/subband_q610_qat_c_api.cpp`
+- `subband_ref_q610.cpp`
+- `subband_ref_q610.hpp`
+- `subband_ref.cpp`
+- `subband_ref.hpp`
+- `energy_measure/configs/baseline_m_qat.toml`
+- `energy_measure/requirements.txt`
+
+Build command for the fast C++ library:
+
+```bash
+g++ -O3 -std=c++17 -march=native -flto -DNDEBUG -shared -fPIC \
+  -I. \
+  energy_measure/native/subband_q610_fast_c_api.cpp \
+  subband_ref_q610.cpp \
+  -o energy_measure/native/libsubband_q610_fast.so
+```
+
 Main optimizations:
 
 - Persistent C++ workspace/context to avoid repeated large buffer allocation.
