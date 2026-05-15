@@ -1,0 +1,341 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_LoadBand0Weights2DQ610'
+================================================================
+* Date:           Wed May 13 19:58:21 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   169999|   169999|  1.700 ms|  1.700 ms|  169999|  169999|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.30>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%layer0_weight_ih_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer0_weight_ih_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 25 'read' 'layer0_weight_ih_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (7.30ns)   --->   "%call_ln1748 = call void @(anonymous namespace)LoadMatrixQ610<224, 38>, i16 %weights, i32 %layer0_weight_ih_q610_read, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 26 'call' 'call_ln1748' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 27 [1/2] (0.00ns)   --->   "%call_ln1748 = call void @(anonymous namespace)LoadMatrixQ610<224, 38>, i16 %weights, i32 %layer0_weight_ih_q610_read, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 27 'call' 'call_ln1748' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%layer0_weight_hh_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer0_weight_hh_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 28 'read' 'layer0_weight_hh_q610_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [2/2] (7.30ns)   --->   "%call_ln1749 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer0_weight_hh_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1749]   --->   Operation 29 'call' 'call_ln1749' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 30 [1/2] (0.00ns)   --->   "%call_ln1749 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer0_weight_hh_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1749]   --->   Operation 30 'call' 'call_ln1749' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%layer0_bias_ih_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer0_bias_ih_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 31 'read' 'layer0_bias_ih_q610_read' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [2/2] (7.30ns)   --->   "%call_ln1750 = call void @(anonymous namespace)LoadMatrixQ610<2, 224>, i16 %weights, i32 %layer0_bias_ih_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1750]   --->   Operation 32 'call' 'call_ln1750' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln1750 = call void @(anonymous namespace)LoadMatrixQ610<2, 224>, i16 %weights, i32 %layer0_bias_ih_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1750]   --->   Operation 33 'call' 'call_ln1750' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 34 [1/1] (0.00ns)   --->   "%layer0_bn_mul_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer0_bn_mul_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 34 'read' 'layer0_bn_mul_q610_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 35 [2/2] (7.30ns)   --->   "%call_ln1751 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer0_bn_mul_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1751]   --->   Operation 35 'call' 'call_ln1751' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 36 [1/2] (0.00ns)   --->   "%call_ln1751 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer0_bn_mul_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1751]   --->   Operation 36 'call' 'call_ln1751' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 37 [1/1] (0.00ns)   --->   "%layer0_bn_add_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer0_bn_add_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 37 'read' 'layer0_bn_add_q610_read' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 38 [2/2] (7.30ns)   --->   "%call_ln1752 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer0_bn_add_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1752]   --->   Operation 38 'call' 'call_ln1752' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln1752 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer0_bn_add_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1752]   --->   Operation 39 'call' 'call_ln1752' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 40 [1/1] (0.00ns)   --->   "%layer1_weight_ih_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer1_weight_ih_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 40 'read' 'layer1_weight_ih_q610_read' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 41 [2/2] (7.30ns)   --->   "%call_ln1753 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer1_weight_ih_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1753]   --->   Operation 41 'call' 'call_ln1753' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 42 [1/2] (0.00ns)   --->   "%call_ln1753 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer1_weight_ih_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1753]   --->   Operation 42 'call' 'call_ln1753' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 43 [1/1] (0.00ns)   --->   "%layer1_weight_hh_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer1_weight_hh_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 43 'read' 'layer1_weight_hh_q610_read' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 44 [2/2] (7.30ns)   --->   "%call_ln1754 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer1_weight_hh_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1754]   --->   Operation 44 'call' 'call_ln1754' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 45 [1/2] (0.00ns)   --->   "%call_ln1754 = call void @(anonymous namespace)LoadMatrixQ610<224, 224>, i16 %weights, i32 %layer1_weight_hh_q610_read, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1754]   --->   Operation 45 'call' 'call_ln1754' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 46 [1/1] (0.00ns)   --->   "%layer1_bias_ih_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer1_bias_ih_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 46 'read' 'layer1_bias_ih_q610_read' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 47 [2/2] (7.30ns)   --->   "%call_ln1755 = call void @(anonymous namespace)LoadMatrixQ610<2, 224>, i16 %weights, i32 %layer1_bias_ih_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1755]   --->   Operation 47 'call' 'call_ln1755' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 48 [1/2] (0.00ns)   --->   "%call_ln1755 = call void @(anonymous namespace)LoadMatrixQ610<2, 224>, i16 %weights, i32 %layer1_bias_ih_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1755]   --->   Operation 48 'call' 'call_ln1755' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 49 [1/1] (0.00ns)   --->   "%layer1_bn_mul_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer1_bn_mul_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 49 'read' 'layer1_bn_mul_q610_read' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 50 [2/2] (7.30ns)   --->   "%call_ln1756 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer1_bn_mul_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1756]   --->   Operation 50 'call' 'call_ln1756' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 51 [1/2] (0.00ns)   --->   "%call_ln1756 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer1_bn_mul_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1756]   --->   Operation 51 'call' 'call_ln1756' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 7.30>
+ST_19 : Operation 52 [1/1] (0.00ns)   --->   "%layer1_bn_add_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %layer1_bn_add_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 52 'read' 'layer1_bn_add_q610_read' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 53 [2/2] (7.30ns)   --->   "%call_ln1757 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer1_bn_add_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1757]   --->   Operation 53 'call' 'call_ln1757' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 0.00>
+ST_20 : Operation 54 [1/2] (0.00ns)   --->   "%call_ln1757 = call void @(anonymous namespace)LoadVectorQ610<224>, i16 %weights, i32 %layer1_bn_add_q610_read, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1757]   --->   Operation 54 'call' 'call_ln1757' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 21 <SV = 20> <Delay = 7.30>
+ST_21 : Operation 55 [1/1] (0.00ns)   --->   "%proj_weight_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %proj_weight_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 55 'read' 'proj_weight_q610_read' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 56 [2/2] (7.30ns)   --->   "%call_ln1758 = call void @(anonymous namespace)LoadMatrixQ610<40, 224>, i16 %weights, i32 %proj_weight_q610_read, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1758]   --->   Operation 56 'call' 'call_ln1758' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 21> <Delay = 0.00>
+ST_22 : Operation 57 [1/2] (0.00ns)   --->   "%call_ln1758 = call void @(anonymous namespace)LoadMatrixQ610<40, 224>, i16 %weights, i32 %proj_weight_q610_read, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1758]   --->   Operation 57 'call' 'call_ln1758' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 7.30>
+ST_23 : Operation 58 [1/1] (0.00ns)   --->   "%proj_bias_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %proj_bias_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748]   --->   Operation 58 'read' 'proj_bias_q610_read' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 59 [2/2] (7.30ns)   --->   "%call_ln1759 = call void @(anonymous namespace)LoadVectorQ610<40>, i16 %weights, i32 %proj_bias_q610_read, i16 %proj_bias_local" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1759]   --->   Operation 59 'call' 'call_ln1759' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 0.00>
+ST_24 : Operation 60 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11"   --->   Operation 60 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 61 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12"   --->   Operation 61 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 62 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i"   --->   Operation 62 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 63 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2"   --->   Operation 63 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 64 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4"   --->   Operation 64 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 65 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14"   --->   Operation 65 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 66 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1"   --->   Operation 66 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 67 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3"   --->   Operation 67 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 68 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13"   --->   Operation 68 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 69 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 69 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 70 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 70 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 71 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 71 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 72 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 72 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 73 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 73 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 74 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 74 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 75 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %weights, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 8512, void @empty_177, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 75 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 76 [1/2] (0.00ns)   --->   "%call_ln1759 = call void @(anonymous namespace)LoadVectorQ610<40>, i16 %weights, i32 %proj_bias_q610_read, i16 %proj_bias_local" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1759]   --->   Operation 76 'call' 'call_ln1759' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 77 [1/1] (0.00ns)   --->   "%ret_ln1760 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1760]   --->   Operation 77 'ret' 'ret_ln1760' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer0_weight_ih_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer0_weight_ih_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [63]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1748', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) to '(anonymous namespace)LoadMatrixQ610<224, 38>' [64]  (7.300 ns)
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer0_weight_hh_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer0_weight_hh_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [62]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1749', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1749) to '(anonymous namespace)LoadMatrixQ610<224, 224>' [65]  (7.300 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer0_bias_ih_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer0_bias_ih_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [61]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1750', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1750) to '(anonymous namespace)LoadMatrixQ610<2, 224>' [66]  (7.300 ns)
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer0_bn_mul_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer0_bn_mul_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [60]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1751', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1751) to '(anonymous namespace)LoadVectorQ610<224>' [67]  (7.300 ns)
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer0_bn_add_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer0_bn_add_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [59]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1752', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1752) to '(anonymous namespace)LoadVectorQ610<224>' [68]  (7.300 ns)
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+ <State 11>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer1_weight_ih_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer1_weight_ih_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [58]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1753', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1753) to '(anonymous namespace)LoadMatrixQ610<224, 224>' [69]  (7.300 ns)
+
+ <State 12>: 0.000ns
+The critical path consists of the following:
+
+ <State 13>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer1_weight_hh_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer1_weight_hh_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [57]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1754', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1754) to '(anonymous namespace)LoadMatrixQ610<224, 224>' [70]  (7.300 ns)
+
+ <State 14>: 0.000ns
+The critical path consists of the following:
+
+ <State 15>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer1_bias_ih_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer1_bias_ih_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [56]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1755', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1755) to '(anonymous namespace)LoadMatrixQ610<2, 224>' [71]  (7.300 ns)
+
+ <State 16>: 0.000ns
+The critical path consists of the following:
+
+ <State 17>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer1_bn_mul_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer1_bn_mul_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [55]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1756', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1756) to '(anonymous namespace)LoadVectorQ610<224>' [72]  (7.300 ns)
+
+ <State 18>: 0.000ns
+The critical path consists of the following:
+
+ <State 19>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('layer1_bn_add_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'layer1_bn_add_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [54]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1757', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1757) to '(anonymous namespace)LoadVectorQ610<224>' [73]  (7.300 ns)
+
+ <State 20>: 0.000ns
+The critical path consists of the following:
+
+ <State 21>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('proj_weight_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'proj_weight_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [53]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1758', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1758) to '(anonymous namespace)LoadMatrixQ610<40, 224>' [74]  (7.300 ns)
+
+ <State 22>: 0.000ns
+The critical path consists of the following:
+
+ <State 23>: 7.300ns
+The critical path consists of the following:
+	wire read operation ('proj_bias_q610_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) on port 'proj_bias_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1748) [52]  (0.000 ns)
+	'call' operation 0 bit ('call_ln1759', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1759) to '(anonymous namespace)LoadVectorQ610<40>' [75]  (7.300 ns)
+
+ <State 24>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

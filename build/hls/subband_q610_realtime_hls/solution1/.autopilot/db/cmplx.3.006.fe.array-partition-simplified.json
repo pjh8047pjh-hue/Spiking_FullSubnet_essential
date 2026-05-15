@@ -1,0 +1,342 @@
+{
+  "0": {
+    "basicblocks": 3,
+    "calls": "20 18 21 21 21 16",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 3342,
+    "instructions": 92,
+    "name": "SubbandRealtimeTopQ610Ip",
+    "total_instructions": 47815
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2782,
+    "instructions": 11,
+    "name": "RunRealtimeGSUCellSharedQ610",
+    "total_instructions": 4894
+  },
+  "10": {
+    "basicblocks": 27,
+    "calls": "22 4 22 4 4 22 4 22 4 22 4 22 4 22 4 4 22 4 22 4 22 4",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1877,
+    "instructions": 689,
+    "loads": {
+      "G": 6,
+      "L": 244
+    },
+    "name": "RunGSUGatePhaseBand0Q610<2, true>",
+    "stores": {
+      "L": 18
+    },
+    "total_instructions": 1035
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "17 19 13",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2757,
+    "instructions": 455,
+    "name": "RunRealtimeGSUCellFixedQ610<224, 2, 32, 32, true>",
+    "total_instructions": 5546
+  },
+  "12": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2733,
+    "instructions": 2435,
+    "loads": {
+      "L": 416
+    },
+    "name": "RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>",
+    "total_instructions": 2435
+  },
+  "13": {
+    "basicblocks": 45,
+    "calls": "22 4 22 4 4 22 4 22 4 22 4 22 4 22 4 4 22 4 22 4 22 4",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1877,
+    "instructions": 771,
+    "loads": {
+      "G": 6,
+      "L": 248
+    },
+    "name": "RunGSUGatePhaseBand0Q610<2, true>",
+    "stores": {
+      "L": 24
+    },
+    "total_instructions": 1117
+  },
+  "14": {
+    "basicblocks": 27,
+    "calls": "22 4 22 4 4 22 4 22 4 22 4 22 4 22 4 4 22 4 22 4 22 4",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1877,
+    "instructions": 700,
+    "loads": {
+      "G": 6,
+      "L": 244
+    },
+    "name": "RunGSUGatePhaseBand0Q610<2, true>",
+    "stores": {
+      "L": 18
+    },
+    "total_instructions": 1046
+  },
+  "15": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2733,
+    "instructions": 2367,
+    "loads": {
+      "L": 416
+    },
+    "name": "RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>",
+    "total_instructions": 2367
+  },
+  "16": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2465,
+    "instructions": 41,
+    "loads": {
+      "G": 1
+    },
+    "name": "EmitRealtimeOutputChunkQ610",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 41
+  },
+  "17": {
+    "basicblocks": 116,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1921,
+    "instructions": 1049,
+    "loads": {
+      "L": 8
+    },
+    "name": "SnapshotGSUStateQ610<2>",
+    "stores": {
+      "L": 448
+    },
+    "total_instructions": 1049
+  },
+  "18": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2483,
+    "instructions": 64,
+    "name": "ClearRealtimeStatesQ610",
+    "stores": {
+      "G": 8
+    },
+    "total_instructions": 64
+  },
+  "19": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2733,
+    "instructions": 2925,
+    "loads": {
+      "L": 704
+    },
+    "name": "RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>",
+    "total_instructions": 2925
+  },
+  "2": {
+    "basicblocks": 244,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 3029,
+    "instructions": 2196,
+    "loads": {
+      "G": 35,
+      "L": 5
+    },
+    "name": "RunRealtimeProjectionBandQ610",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 2196
+  },
+  "20": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2443,
+    "instructions": 77,
+    "loads": {
+      "L": 2
+    },
+    "name": "ReadRealtimeInputChunkQ610",
+    "stores": {
+      "G": 2
+    },
+    "total_instructions": 77
+  },
+  "21": {
+    "basicblocks": 1,
+    "calls": "8 3 2",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 3077,
+    "instructions": 14,
+    "loads": {
+      "L": 2
+    },
+    "name": "RunRealtimeBandQ610",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 15847
+  },
+  "22": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 164,
+    "instructions": 19,
+    "loads": {
+      "L": 1
+    },
+    "name": "RoundShiftRight",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 19
+  },
+  "23": {
+    "basicblocks": 116,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1921,
+    "instructions": 1027,
+    "loads": {
+      "L": 4
+    },
+    "name": "SnapshotGSUStateQ610<2>",
+    "stores": {
+      "L": 448
+    },
+    "total_instructions": 1027
+  },
+  "24": {
+    "basicblocks": 1,
+    "calls": "11",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2782,
+    "instructions": 2,
+    "name": "RunRealtimeGSUCellSharedQ610",
+    "total_instructions": 5548
+  },
+  "3": {
+    "basicblocks": 41,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2591,
+    "instructions": 308,
+    "loads": {
+      "L": 4
+    },
+    "name": "LoadRealtimeProjectionWeightsQ610",
+    "stores": {
+      "G": 48,
+      "L": 2
+    },
+    "total_instructions": 308
+  },
+  "4": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 152,
+    "instructions": 13,
+    "loads": {
+      "L": 1
+    },
+    "name": "SaturateInt16",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 13
+  },
+  "5": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2502,
+    "instructions": 748,
+    "loads": {
+      "L": 8
+    },
+    "name": "LoadRealtimeGSULayerWeightsQ610",
+    "stores": {
+      "G": 176,
+      "L": 5
+    },
+    "total_instructions": 748
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "23 15 10",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2757,
+    "instructions": 454,
+    "name": "RunRealtimeGSUCellFixedQ610<224, 2, 32, 32, true>",
+    "total_instructions": 4883
+  },
+  "7": {
+    "basicblocks": 116,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1921,
+    "instructions": 1031,
+    "loads": {
+      "L": 4
+    },
+    "name": "SnapshotGSUStateQ610<2>",
+    "stores": {
+      "L": 448
+    },
+    "total_instructions": 1031
+  },
+  "8": {
+    "basicblocks": 242,
+    "calls": "5 9 24 24",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2866,
+    "instructions": 742,
+    "loads": {
+      "G": 2,
+      "L": 2
+    },
+    "name": "RunRealtimeGSULayersSharedBandQ610",
+    "stores": {
+      "L": 224
+    },
+    "total_instructions": 13329
+  },
+  "9": {
+    "basicblocks": 240,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2643,
+    "instructions": 743,
+    "loads": {
+      "L": 7
+    },
+    "name": "BuildRealtimeBandInputQ610",
+    "stores": {
+      "L": 224
+    },
+    "total_instructions": 743
+  }
+}

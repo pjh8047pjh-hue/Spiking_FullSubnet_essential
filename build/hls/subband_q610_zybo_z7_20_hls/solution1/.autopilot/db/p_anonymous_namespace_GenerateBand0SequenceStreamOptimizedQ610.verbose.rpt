@@ -1,0 +1,1311 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610'
+================================================================
+* Date:           Wed May 13 19:58:44 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  1391041|  1391041|  13.910 ms|  13.910 ms|  1391041|  1391041|       no|
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                                                               |                                                                                     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                                            Instance                                           |                                        Module                                       |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90  |p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1  |       48|       48|  0.480 us|  0.480 us|   48|   48|       no|
+        |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_fu_101   |p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO    |       18|       18|  0.180 us|  0.180 us|   18|   18|       no|
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +---------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                                       |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |               Loop Name               |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +---------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_1798_1_VITIS_LOOP_1800_2  |  1391040|  1391040|        72|          -|          -|  19320|        no|
+        +---------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     96|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    2|     183|    317|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    292|    -|
+|Register         |        -|    -|      60|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    2|     243|    705|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   ~0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |                                            Instance                                           |                                        Module                                       | BRAM_18K| DSP| FF | LUT | URAM|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_fu_101   |p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO    |        0|   1|  90|  132|    0|
+    |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90  |p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1  |        0|   1|  93|  185|    0|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |Total                                                                                          |                                                                                     |        0|   2| 183|  317|    0|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln1798_1_fu_136_p2     |         +|   0|  0|  20|          15|           1|
+    |add_ln1798_fu_148_p2       |         +|   0|  0|  12|          12|           1|
+    |add_ln1800_fu_180_p2       |         +|   0|  0|  13|           4|           1|
+    |icmp_ln1798_fu_130_p2      |      icmp|   0|  0|  20|          15|          15|
+    |icmp_ln1800_fu_154_p2      |      icmp|   0|  0|  13|           4|           5|
+    |ap_block_state1            |        or|   0|  0|   2|           1|           1|
+    |select_ln1798_1_fu_168_p3  |    select|   0|  0|  12|           1|          12|
+    |select_ln1798_fu_160_p3    |    select|   0|  0|   4|           1|           1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  96|          53|          37|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  42|          8|    1|          8|
+    |ap_done                 |   9|          2|    1|          2|
+    |frame_index_fu_70       |   9|          2|   12|         24|
+    |indvar_flatten_fu_74    |   9|          2|   15|         30|
+    |m_axi_gmem_in_ARADDR    |  14|          3|   32|         96|
+    |m_axi_gmem_in_ARBURST   |  14|          3|    2|          6|
+    |m_axi_gmem_in_ARCACHE   |  14|          3|    4|         12|
+    |m_axi_gmem_in_ARID      |  14|          3|    1|          3|
+    |m_axi_gmem_in_ARLEN     |  14|          3|   32|         96|
+    |m_axi_gmem_in_ARLOCK    |  14|          3|    2|          6|
+    |m_axi_gmem_in_ARPROT    |  14|          3|    3|          9|
+    |m_axi_gmem_in_ARQOS     |  14|          3|    4|         12|
+    |m_axi_gmem_in_ARREGION  |  14|          3|    4|         12|
+    |m_axi_gmem_in_ARSIZE    |  14|          3|    3|          9|
+    |m_axi_gmem_in_ARUSER    |  14|          3|    1|          3|
+    |m_axi_gmem_in_ARVALID   |  14|          3|    1|          3|
+    |m_axi_gmem_in_RREADY    |  14|          3|    1|          3|
+    |real_start              |   9|          2|    1|          2|
+    |sequence_stream_din     |   9|          2|   16|         32|
+    |sequence_stream_write   |  14|          3|    1|          3|
+    |subband_index_fu_66     |   9|          2|    4|          8|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 292|         62|  141|        379|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                                    Name                                                    | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                                                   |   7|   0|    7|          0|
+    |ap_done_reg                                                                                                 |   1|   0|    1|          0|
+    |frame_index_fu_70                                                                                           |  12|   0|   12|          0|
+    |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90_ap_start_reg  |   1|   0|    1|          0|
+    |grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_fu_101_ap_start_reg   |   1|   0|    1|          0|
+    |indvar_flatten_fu_74                                                                                        |  15|   0|   15|          0|
+    |select_ln1798_1_reg_243                                                                                     |  12|   0|   12|          0|
+    |shl_ln_reg_254                                                                                              |   3|   0|    5|          2|
+    |start_once_reg                                                                                              |   1|   0|    1|          0|
+    |subband_index_fu_66                                                                                         |   4|   0|    4|          0|
+    |trunc_ln1801_reg_249                                                                                        |   3|   0|    3|          0|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                                       |  60|   0|   62|          2|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+|            RTL Ports           | Dir | Bits|  Protocol  |                         Source Object                         |    C Type    |
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+|ap_clk                          |   in|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_rst                          |   in|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_start                        |   in|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|start_full_n                    |   in|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_done                         |  out|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_continue                     |   in|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_idle                         |  out|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|ap_ready                        |  out|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|start_out                       |  out|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|start_write                     |  out|    1|  ap_ctrl_hs|  (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610|  return value|
+|m_axi_gmem_in_AWVALID           |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWREADY           |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWADDR            |  out|   32|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWID              |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWLEN             |  out|   32|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWSIZE            |  out|    3|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWBURST           |  out|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWLOCK            |  out|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWCACHE           |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWPROT            |  out|    3|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWQOS             |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWREGION          |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_AWUSER            |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WVALID            |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WREADY            |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WDATA             |  out|   16|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WSTRB             |  out|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WLAST             |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WID               |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_WUSER             |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARVALID           |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARREADY           |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARADDR            |  out|   32|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARID              |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARLEN             |  out|   32|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARSIZE            |  out|    3|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARBURST           |  out|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARLOCK            |  out|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARCACHE           |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARPROT            |  out|    3|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARQOS             |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARREGION          |  out|    4|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_ARUSER            |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RVALID            |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RREADY            |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RDATA             |   in|   16|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RLAST             |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RID               |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RFIFONUM          |   in|    6|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RUSER             |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_RRESP             |   in|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_BVALID            |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_BREADY            |  out|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_BRESP             |   in|    2|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_BID               |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|m_axi_gmem_in_BUSER             |   in|    1|       m_axi|                                                        gmem_in|       pointer|
+|noisy_input_q610                |   in|   32|     ap_none|                                               noisy_input_q610|        scalar|
+|fb_output_q610                  |   in|   32|     ap_none|                                                 fb_output_q610|        scalar|
+|sequence_stream_din             |  out|   16|     ap_fifo|                                                sequence_stream|       pointer|
+|sequence_stream_num_data_valid  |   in|    8|     ap_fifo|                                                sequence_stream|       pointer|
+|sequence_stream_fifo_cap        |   in|    8|     ap_fifo|                                                sequence_stream|       pointer|
+|sequence_stream_full_n          |   in|    1|     ap_fifo|                                                sequence_stream|       pointer|
+|sequence_stream_write           |  out|    1|     ap_fifo|                                                sequence_stream|       pointer|
++--------------------------------+-----+-----+------------+---------------------------------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%subband_index = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 8 'alloca' 'subband_index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%frame_index = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 9 'alloca' 'frame_index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 10 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %sequence_stream, void @empty_199, i32 0, i32 0, void @empty_25, i32 0, i32 0, void @empty_25, void @empty_25, void @empty_25, i32 0, i32 0, i32 0, i32 0, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_in, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 618240, void @empty_175, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%fb_output_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %fb_output_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1792]   --->   Operation 13 'read' 'fb_output_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%noisy_input_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %noisy_input_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1792]   --->   Operation 14 'read' 'noisy_input_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.58ns)   --->   "%store_ln0 = store i15 0, i15 %indvar_flatten"   --->   Operation 15 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 16 [1/1] (1.58ns)   --->   "%store_ln1798 = store i12 0, i12 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 16 'store' 'store_ln1798' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln1800 = store i4 0, i4 %subband_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 17 'store' 'store_ln1800' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln1798 = br void %VITIS_LOOP_1802_3" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 18 'br' 'br_ln1798' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 6.08>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i15 %indvar_flatten" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 19 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.94ns)   --->   "%icmp_ln1798 = icmp_eq  i15 %indvar_flatten_load, i15 19320" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 20 'icmp' 'icmp_ln1798' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 21 [1/1] (1.94ns)   --->   "%add_ln1798_1 = add i15 %indvar_flatten_load, i15 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 21 'add' 'add_ln1798_1' <Predicate = true> <Delay = 1.94> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%br_ln1798 = br i1 %icmp_ln1798, void %for.inc25, void %for.end27" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 22 'br' 'br_ln1798' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%subband_index_load = load i4 %subband_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 23 'load' 'subband_index_load' <Predicate = (!icmp_ln1798)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%frame_index_load = load i12 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 24 'load' 'frame_index_load' <Predicate = (!icmp_ln1798)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.54ns)   --->   "%add_ln1798 = add i12 %frame_index_load, i12 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 25 'add' 'add_ln1798' <Predicate = (!icmp_ln1798)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.73ns)   --->   "%icmp_ln1800 = icmp_eq  i4 %subband_index_load, i4 8" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 26 'icmp' 'icmp_ln1800' <Predicate = (!icmp_ln1798)> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (1.02ns)   --->   "%select_ln1798 = select i1 %icmp_ln1800, i4 0, i4 %subband_index_load" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 27 'select' 'select_ln1798' <Predicate = (!icmp_ln1798)> <Delay = 1.02> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.69ns)   --->   "%select_ln1798_1 = select i1 %icmp_ln1800, i12 %add_ln1798, i12 %frame_index_load" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 28 'select' 'select_ln1798_1' <Predicate = (!icmp_ln1798)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln1801 = trunc i4 %select_ln1798" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 29 'trunc' 'trunc_ln1801' <Predicate = (!icmp_ln1798)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 30 'wait' 'empty' <Predicate = (!icmp_ln1798)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.73ns)   --->   "%add_ln1800 = add i4 %select_ln1798, i4 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 31 'add' 'add_ln1800' <Predicate = (!icmp_ln1798)> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (1.58ns)   --->   "%store_ln1798 = store i15 %add_ln1798_1, i15 %indvar_flatten" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 32 'store' 'store_ln1798' <Predicate = (!icmp_ln1798)> <Delay = 1.58>
+ST_2 : Operation 33 [1/1] (1.58ns)   --->   "%store_ln1798 = store i12 %select_ln1798_1, i12 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1798]   --->   Operation 33 'store' 'store_ln1798' <Predicate = (!icmp_ln1798)> <Delay = 1.58>
+ST_2 : Operation 34 [1/1] (1.58ns)   --->   "%store_ln1800 = store i4 %add_ln1800, i4 %subband_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 34 'store' 'store_ln1800' <Predicate = (!icmp_ln1798)> <Delay = 1.58>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%ret_ln1817 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1817]   --->   Operation 35 'ret' 'ret_ln1817' <Predicate = (icmp_ln1798)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.69>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i3.i2, i3 %trunc_ln1801, i2 0" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 36 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [2/2] (5.69ns)   --->   "%call_ln1801 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO.1, i5 %shl_ln, i12 %select_ln1798_1, i32 %noisy_input_q610_read, i16 %gmem_in, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 37 'call' 'call_ln1801' <Predicate = true> <Delay = 5.69> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 38 [1/2] (0.00ns)   --->   "%call_ln1801 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO.1, i5 %shl_ln, i12 %select_ln1798_1, i32 %noisy_input_q610_read, i16 %gmem_in, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 38 'call' 'call_ln1801' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "%empty_1049 = wait i32 @_ssdm_op_Wait"   --->   Operation 39 'wait' 'empty_1049' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 2.70>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%empty_1050 = wait i32 @_ssdm_op_Wait"   --->   Operation 40 'wait' 'empty_1050' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [2/2] (2.70ns)   --->   "%call_ln1801 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO, i5 %shl_ln, i12 %select_ln1798_1, i32 %fb_output_q610_read, i16 %gmem_in, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 41 'call' 'call_ln1801' <Predicate = true> <Delay = 2.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 42 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_1798_1_VITIS_LOOP_1800_2_str"   --->   Operation 42 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 43 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 19320, i64 19320, i64 19320"   --->   Operation 43 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 44 [1/2] (0.00ns)   --->   "%call_ln1801 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO, i5 %shl_ln, i12 %select_ln1798_1, i32 %fb_output_q610_read, i16 %gmem_in, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1801]   --->   Operation 44 'call' 'call_ln1801' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 45 [1/1] (0.00ns)   --->   "%br_ln1800 = br void %VITIS_LOOP_1802_3" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1800]   --->   Operation 45 'br' 'br_ln1800' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ gmem_in]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ noisy_input_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ fb_output_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ sequence_stream]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+subband_index         (alloca           ) [ 01111111]
+frame_index           (alloca           ) [ 01111111]
+indvar_flatten        (alloca           ) [ 01111111]
+specinterface_ln0     (specinterface    ) [ 00000000]
+specinterface_ln0     (specinterface    ) [ 00000000]
+fb_output_q610_read   (read             ) [ 00111111]
+noisy_input_q610_read (read             ) [ 00111111]
+store_ln0             (store            ) [ 00000000]
+store_ln1798          (store            ) [ 00000000]
+store_ln1800          (store            ) [ 00000000]
+br_ln1798             (br               ) [ 00000000]
+indvar_flatten_load   (load             ) [ 00000000]
+icmp_ln1798           (icmp             ) [ 00111111]
+add_ln1798_1          (add              ) [ 00000000]
+br_ln1798             (br               ) [ 00000000]
+subband_index_load    (load             ) [ 00000000]
+frame_index_load      (load             ) [ 00000000]
+add_ln1798            (add              ) [ 00000000]
+icmp_ln1800           (icmp             ) [ 00000000]
+select_ln1798         (select           ) [ 00000000]
+select_ln1798_1       (select           ) [ 00011111]
+trunc_ln1801          (trunc            ) [ 00010000]
+empty                 (wait             ) [ 00000000]
+add_ln1800            (add              ) [ 00000000]
+store_ln1798          (store            ) [ 00000000]
+store_ln1798          (store            ) [ 00000000]
+store_ln1800          (store            ) [ 00000000]
+ret_ln1817            (ret              ) [ 00000000]
+shl_ln                (bitconcatenate   ) [ 00001111]
+call_ln1801           (call             ) [ 00000000]
+empty_1049            (wait             ) [ 00000000]
+empty_1050            (wait             ) [ 00000000]
+specloopname_ln0      (specloopname     ) [ 00000000]
+speclooptripcount_ln0 (speclooptripcount) [ 00000000]
+call_ln1801           (call             ) [ 00000000]
+br_ln1800             (br               ) [ 00000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="gmem_in">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem_in"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="noisy_input_q610">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="noisy_input_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="fb_output_q610">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fb_output_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="sequence_stream">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="sequence_stream"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_199"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_25"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_173"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_175"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_176"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Wait"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i5.i3.i2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO.1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="VITIS_LOOP_1798_1_VITIS_LOOP_1800_2_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1004" name="subband_index_fu_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="1" slack="0"/>
+<pin id="68" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="subband_index/1 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="frame_index_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="1" slack="0"/>
+<pin id="72" dir="1" index="1" bw="12" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="frame_index/1 "/>
+</bind>
+</comp>
+
+<comp id="74" class="1004" name="indvar_flatten_fu_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="1" slack="0"/>
+<pin id="76" dir="1" index="1" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="indvar_flatten/1 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="fb_output_q610_read_read_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="32" slack="0"/>
+<pin id="80" dir="0" index="1" bw="32" slack="0"/>
+<pin id="81" dir="1" index="2" bw="32" slack="5"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="fb_output_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="noisy_input_q610_read_read_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="32" slack="0"/>
+<pin id="86" dir="0" index="1" bw="32" slack="0"/>
+<pin id="87" dir="1" index="2" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="noisy_input_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="0" slack="0"/>
+<pin id="92" dir="0" index="1" bw="5" slack="0"/>
+<pin id="93" dir="0" index="2" bw="12" slack="1"/>
+<pin id="94" dir="0" index="3" bw="32" slack="2"/>
+<pin id="95" dir="0" index="4" bw="16" slack="0"/>
+<pin id="96" dir="0" index="5" bw="16" slack="0"/>
+<pin id="97" dir="1" index="6" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln1801/3 "/>
+</bind>
+</comp>
+
+<comp id="101" class="1004" name="grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_fu_101">
+<pin_list>
+<pin id="102" dir="0" index="0" bw="0" slack="0"/>
+<pin id="103" dir="0" index="1" bw="5" slack="3"/>
+<pin id="104" dir="0" index="2" bw="12" slack="4"/>
+<pin id="105" dir="0" index="3" bw="32" slack="5"/>
+<pin id="106" dir="0" index="4" bw="16" slack="0"/>
+<pin id="107" dir="0" index="5" bw="16" slack="0"/>
+<pin id="108" dir="1" index="6" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln1801/6 "/>
+</bind>
+</comp>
+
+<comp id="112" class="1004" name="store_ln0_store_fu_112">
+<pin_list>
+<pin id="113" dir="0" index="0" bw="1" slack="0"/>
+<pin id="114" dir="0" index="1" bw="15" slack="0"/>
+<pin id="115" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="117" class="1004" name="store_ln1798_store_fu_117">
+<pin_list>
+<pin id="118" dir="0" index="0" bw="1" slack="0"/>
+<pin id="119" dir="0" index="1" bw="12" slack="0"/>
+<pin id="120" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln1798/1 "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="store_ln1800_store_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="1" slack="0"/>
+<pin id="124" dir="0" index="1" bw="4" slack="0"/>
+<pin id="125" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln1800/1 "/>
+</bind>
+</comp>
+
+<comp id="127" class="1004" name="indvar_flatten_load_load_fu_127">
+<pin_list>
+<pin id="128" dir="0" index="0" bw="15" slack="1"/>
+<pin id="129" dir="1" index="1" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="indvar_flatten_load/2 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="icmp_ln1798_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="15" slack="0"/>
+<pin id="132" dir="0" index="1" bw="15" slack="0"/>
+<pin id="133" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln1798/2 "/>
+</bind>
+</comp>
+
+<comp id="136" class="1004" name="add_ln1798_1_fu_136">
+<pin_list>
+<pin id="137" dir="0" index="0" bw="15" slack="0"/>
+<pin id="138" dir="0" index="1" bw="1" slack="0"/>
+<pin id="139" dir="1" index="2" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln1798_1/2 "/>
+</bind>
+</comp>
+
+<comp id="142" class="1004" name="subband_index_load_load_fu_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="4" slack="1"/>
+<pin id="144" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="subband_index_load/2 "/>
+</bind>
+</comp>
+
+<comp id="145" class="1004" name="frame_index_load_load_fu_145">
+<pin_list>
+<pin id="146" dir="0" index="0" bw="12" slack="1"/>
+<pin id="147" dir="1" index="1" bw="12" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="frame_index_load/2 "/>
+</bind>
+</comp>
+
+<comp id="148" class="1004" name="add_ln1798_fu_148">
+<pin_list>
+<pin id="149" dir="0" index="0" bw="12" slack="0"/>
+<pin id="150" dir="0" index="1" bw="1" slack="0"/>
+<pin id="151" dir="1" index="2" bw="12" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln1798/2 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="icmp_ln1800_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="4" slack="0"/>
+<pin id="156" dir="0" index="1" bw="4" slack="0"/>
+<pin id="157" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln1800/2 "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="select_ln1798_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="1" slack="0"/>
+<pin id="162" dir="0" index="1" bw="4" slack="0"/>
+<pin id="163" dir="0" index="2" bw="4" slack="0"/>
+<pin id="164" dir="1" index="3" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln1798/2 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="select_ln1798_1_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="1" slack="0"/>
+<pin id="170" dir="0" index="1" bw="12" slack="0"/>
+<pin id="171" dir="0" index="2" bw="12" slack="0"/>
+<pin id="172" dir="1" index="3" bw="12" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln1798_1/2 "/>
+</bind>
+</comp>
+
+<comp id="176" class="1004" name="trunc_ln1801_fu_176">
+<pin_list>
+<pin id="177" dir="0" index="0" bw="4" slack="0"/>
+<pin id="178" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln1801/2 "/>
+</bind>
+</comp>
+
+<comp id="180" class="1004" name="add_ln1800_fu_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="4" slack="0"/>
+<pin id="182" dir="0" index="1" bw="1" slack="0"/>
+<pin id="183" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln1800/2 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="store_ln1798_store_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="15" slack="0"/>
+<pin id="188" dir="0" index="1" bw="15" slack="1"/>
+<pin id="189" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln1798/2 "/>
+</bind>
+</comp>
+
+<comp id="191" class="1004" name="store_ln1798_store_fu_191">
+<pin_list>
+<pin id="192" dir="0" index="0" bw="12" slack="0"/>
+<pin id="193" dir="0" index="1" bw="12" slack="1"/>
+<pin id="194" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln1798/2 "/>
+</bind>
+</comp>
+
+<comp id="196" class="1004" name="store_ln1800_store_fu_196">
+<pin_list>
+<pin id="197" dir="0" index="0" bw="4" slack="0"/>
+<pin id="198" dir="0" index="1" bw="4" slack="1"/>
+<pin id="199" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="store_ln1800/2 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="shl_ln_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="5" slack="0"/>
+<pin id="203" dir="0" index="1" bw="3" slack="1"/>
+<pin id="204" dir="0" index="2" bw="1" slack="0"/>
+<pin id="205" dir="1" index="3" bw="5" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="shl_ln/3 "/>
+</bind>
+</comp>
+
+<comp id="209" class="1005" name="subband_index_reg_209">
+<pin_list>
+<pin id="210" dir="0" index="0" bw="4" slack="0"/>
+<pin id="211" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opset="subband_index "/>
+</bind>
+</comp>
+
+<comp id="216" class="1005" name="frame_index_reg_216">
+<pin_list>
+<pin id="217" dir="0" index="0" bw="12" slack="0"/>
+<pin id="218" dir="1" index="1" bw="12" slack="0"/>
+</pin_list>
+<bind>
+<opset="frame_index "/>
+</bind>
+</comp>
+
+<comp id="223" class="1005" name="indvar_flatten_reg_223">
+<pin_list>
+<pin id="224" dir="0" index="0" bw="15" slack="0"/>
+<pin id="225" dir="1" index="1" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opset="indvar_flatten "/>
+</bind>
+</comp>
+
+<comp id="230" class="1005" name="fb_output_q610_read_reg_230">
+<pin_list>
+<pin id="231" dir="0" index="0" bw="32" slack="5"/>
+<pin id="232" dir="1" index="1" bw="32" slack="5"/>
+</pin_list>
+<bind>
+<opset="fb_output_q610_read "/>
+</bind>
+</comp>
+
+<comp id="235" class="1005" name="noisy_input_q610_read_reg_235">
+<pin_list>
+<pin id="236" dir="0" index="0" bw="32" slack="2"/>
+<pin id="237" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="noisy_input_q610_read "/>
+</bind>
+</comp>
+
+<comp id="243" class="1005" name="select_ln1798_1_reg_243">
+<pin_list>
+<pin id="244" dir="0" index="0" bw="12" slack="1"/>
+<pin id="245" dir="1" index="1" bw="12" slack="1"/>
+</pin_list>
+<bind>
+<opset="select_ln1798_1 "/>
+</bind>
+</comp>
+
+<comp id="249" class="1005" name="trunc_ln1801_reg_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="3" slack="1"/>
+<pin id="251" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="trunc_ln1801 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1005" name="shl_ln_reg_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="5" slack="1"/>
+<pin id="256" dir="1" index="1" bw="5" slack="1"/>
+</pin_list>
+<bind>
+<opset="shl_ln "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="69"><net_src comp="8" pin="0"/><net_sink comp="66" pin=0"/></net>
+
+<net id="73"><net_src comp="8" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="77"><net_src comp="8" pin="0"/><net_sink comp="74" pin=0"/></net>
+
+<net id="82"><net_src comp="30" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="83"><net_src comp="4" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="88"><net_src comp="30" pin="0"/><net_sink comp="84" pin=0"/></net>
+
+<net id="89"><net_src comp="2" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="98"><net_src comp="54" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="99"><net_src comp="0" pin="0"/><net_sink comp="90" pin=4"/></net>
+
+<net id="100"><net_src comp="6" pin="0"/><net_sink comp="90" pin=5"/></net>
+
+<net id="109"><net_src comp="56" pin="0"/><net_sink comp="101" pin=0"/></net>
+
+<net id="110"><net_src comp="0" pin="0"/><net_sink comp="101" pin=4"/></net>
+
+<net id="111"><net_src comp="6" pin="0"/><net_sink comp="101" pin=5"/></net>
+
+<net id="116"><net_src comp="32" pin="0"/><net_sink comp="112" pin=0"/></net>
+
+<net id="121"><net_src comp="34" pin="0"/><net_sink comp="117" pin=0"/></net>
+
+<net id="126"><net_src comp="36" pin="0"/><net_sink comp="122" pin=0"/></net>
+
+<net id="134"><net_src comp="127" pin="1"/><net_sink comp="130" pin=0"/></net>
+
+<net id="135"><net_src comp="38" pin="0"/><net_sink comp="130" pin=1"/></net>
+
+<net id="140"><net_src comp="127" pin="1"/><net_sink comp="136" pin=0"/></net>
+
+<net id="141"><net_src comp="40" pin="0"/><net_sink comp="136" pin=1"/></net>
+
+<net id="152"><net_src comp="145" pin="1"/><net_sink comp="148" pin=0"/></net>
+
+<net id="153"><net_src comp="42" pin="0"/><net_sink comp="148" pin=1"/></net>
+
+<net id="158"><net_src comp="142" pin="1"/><net_sink comp="154" pin=0"/></net>
+
+<net id="159"><net_src comp="44" pin="0"/><net_sink comp="154" pin=1"/></net>
+
+<net id="165"><net_src comp="154" pin="2"/><net_sink comp="160" pin=0"/></net>
+
+<net id="166"><net_src comp="36" pin="0"/><net_sink comp="160" pin=1"/></net>
+
+<net id="167"><net_src comp="142" pin="1"/><net_sink comp="160" pin=2"/></net>
+
+<net id="173"><net_src comp="154" pin="2"/><net_sink comp="168" pin=0"/></net>
+
+<net id="174"><net_src comp="148" pin="2"/><net_sink comp="168" pin=1"/></net>
+
+<net id="175"><net_src comp="145" pin="1"/><net_sink comp="168" pin=2"/></net>
+
+<net id="179"><net_src comp="160" pin="3"/><net_sink comp="176" pin=0"/></net>
+
+<net id="184"><net_src comp="160" pin="3"/><net_sink comp="180" pin=0"/></net>
+
+<net id="185"><net_src comp="48" pin="0"/><net_sink comp="180" pin=1"/></net>
+
+<net id="190"><net_src comp="136" pin="2"/><net_sink comp="186" pin=0"/></net>
+
+<net id="195"><net_src comp="168" pin="3"/><net_sink comp="191" pin=0"/></net>
+
+<net id="200"><net_src comp="180" pin="2"/><net_sink comp="196" pin=0"/></net>
+
+<net id="206"><net_src comp="50" pin="0"/><net_sink comp="201" pin=0"/></net>
+
+<net id="207"><net_src comp="52" pin="0"/><net_sink comp="201" pin=2"/></net>
+
+<net id="208"><net_src comp="201" pin="3"/><net_sink comp="90" pin=1"/></net>
+
+<net id="212"><net_src comp="66" pin="1"/><net_sink comp="209" pin=0"/></net>
+
+<net id="213"><net_src comp="209" pin="1"/><net_sink comp="122" pin=1"/></net>
+
+<net id="214"><net_src comp="209" pin="1"/><net_sink comp="142" pin=0"/></net>
+
+<net id="215"><net_src comp="209" pin="1"/><net_sink comp="196" pin=1"/></net>
+
+<net id="219"><net_src comp="70" pin="1"/><net_sink comp="216" pin=0"/></net>
+
+<net id="220"><net_src comp="216" pin="1"/><net_sink comp="117" pin=1"/></net>
+
+<net id="221"><net_src comp="216" pin="1"/><net_sink comp="145" pin=0"/></net>
+
+<net id="222"><net_src comp="216" pin="1"/><net_sink comp="191" pin=1"/></net>
+
+<net id="226"><net_src comp="74" pin="1"/><net_sink comp="223" pin=0"/></net>
+
+<net id="227"><net_src comp="223" pin="1"/><net_sink comp="112" pin=1"/></net>
+
+<net id="228"><net_src comp="223" pin="1"/><net_sink comp="127" pin=0"/></net>
+
+<net id="229"><net_src comp="223" pin="1"/><net_sink comp="186" pin=1"/></net>
+
+<net id="233"><net_src comp="78" pin="2"/><net_sink comp="230" pin=0"/></net>
+
+<net id="234"><net_src comp="230" pin="1"/><net_sink comp="101" pin=3"/></net>
+
+<net id="238"><net_src comp="84" pin="2"/><net_sink comp="235" pin=0"/></net>
+
+<net id="239"><net_src comp="235" pin="1"/><net_sink comp="90" pin=3"/></net>
+
+<net id="246"><net_src comp="168" pin="3"/><net_sink comp="243" pin=0"/></net>
+
+<net id="247"><net_src comp="243" pin="1"/><net_sink comp="90" pin=2"/></net>
+
+<net id="248"><net_src comp="243" pin="1"/><net_sink comp="101" pin=2"/></net>
+
+<net id="252"><net_src comp="176" pin="1"/><net_sink comp="249" pin=0"/></net>
+
+<net id="253"><net_src comp="249" pin="1"/><net_sink comp="201" pin=1"/></net>
+
+<net id="257"><net_src comp="201" pin="3"/><net_sink comp="254" pin=0"/></net>
+
+<net id="258"><net_src comp="254" pin="1"/><net_sink comp="90" pin=1"/></net>
+
+<net id="259"><net_src comp="254" pin="1"/><net_sink comp="101" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: gmem_in | {}
+	Port: sequence_stream | {3 4 6 7 }
+ - Input state : 
+	Port: (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610 : gmem_in | {3 4 6 7 }
+	Port: (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610 : noisy_input_q610 | {1 }
+	Port: (anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610 : fb_output_q610 | {1 }
+  - Chain level:
+	State 1
+		store_ln0 : 1
+		store_ln1798 : 1
+		store_ln1800 : 1
+	State 2
+		icmp_ln1798 : 1
+		add_ln1798_1 : 1
+		br_ln1798 : 2
+		add_ln1798 : 1
+		icmp_ln1800 : 1
+		select_ln1798 : 2
+		select_ln1798_1 : 2
+		trunc_ln1801 : 3
+		add_ln1800 : 3
+		store_ln1798 : 2
+		store_ln1798 : 3
+		store_ln1800 : 4
+	State 3
+		call_ln1801 : 1
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+| Operation|                                        Functional Unit                                        |   DSP   |  Delay  |    FF   |   LUT   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   call   | grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90 |    1    |  3.176  |   107   |   134   |
+|          |  grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_fu_101 |    1    |  1.588  |    85   |    70   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|          |                                      add_ln1798_1_fu_136                                      |    0    |    0    |    0    |    20   |
+|    add   |                                       add_ln1798_fu_148                                       |    0    |    0    |    0    |    12   |
+|          |                                       add_ln1800_fu_180                                       |    0    |    0    |    0    |    13   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   icmp   |                                       icmp_ln1798_fu_130                                      |    0    |    0    |    0    |    20   |
+|          |                                       icmp_ln1800_fu_154                                      |    0    |    0    |    0    |    13   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|  select  |                                      select_ln1798_fu_160                                     |    0    |    0    |    0    |    4    |
+|          |                                     select_ln1798_1_fu_168                                    |    0    |    0    |    0    |    12   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   read   |                                 fb_output_q610_read_read_fu_78                                |    0    |    0    |    0    |    0    |
+|          |                                noisy_input_q610_read_read_fu_84                               |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   trunc  |                                      trunc_ln1801_fu_176                                      |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|bitconcatenate|                                         shl_ln_fu_201                                         |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                                                                               |    2    |  4.764  |   192   |   298   |
+|----------|-----------------------------------------------------------------------------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+| fb_output_q610_read_reg_230 |   32   |
+|     frame_index_reg_216     |   12   |
+|    indvar_flatten_reg_223   |   15   |
+|noisy_input_q610_read_reg_235|   32   |
+|   select_ln1798_1_reg_243   |   12   |
+|        shl_ln_reg_254       |    5   |
+|    subband_index_reg_209    |    4   |
+|     trunc_ln1801_reg_249    |    3   |
++-----------------------------+--------+
+|            Total            |   115  |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|-----------------------------------------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                                              Comp                                             |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|-----------------------------------------------------------------------------------------------|------|------|------|--------||---------||---------|
+| grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_Pipeline_VITIS_LOO_1_fu_90 |  p1  |   2  |   5  |   10   ||    9    |
+|-----------------------------------------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                                             Total                                             |      |      |      |   10   ||  1.588  ||    9    |
+|-----------------------------------------------------------------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           |   DSP  |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    2   |    4   |   192  |   298  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    1   |    -   |    9   |
+|  Register |    -   |    -   |   115  |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    2   |    6   |   307  |   307  |
++-----------+--------+--------+--------+--------+

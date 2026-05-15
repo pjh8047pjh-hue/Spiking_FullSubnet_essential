@@ -1,0 +1,602 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25'
+================================================================
+* Date:           Wed May 13 19:58:45 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.573 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       11|       11|  0.110 us|  0.110 us|   11|   11|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_1833_2  |        9|        9|         4|          1|          1|     7|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|   32|       -|      -|    -|
+|Expression       |        -|    -|       0|     45|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|   1184|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    324|    -|
+|Register         |        -|    -|    1329|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|   32|    1329|   1553|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   14|       1|      2|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------+-----------------------+---------+----+---+----+-----+
+    |           Instance          |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +-----------------------------+-----------------------+---------+----+---+----+-----+
+    |sparsemux_15_8_11_1_1_U1145  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1146  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1147  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1148  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1149  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1150  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1151  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1152  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1153  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1154  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1155  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1156  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1157  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1158  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1159  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1160  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1161  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1162  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1163  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1164  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1165  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1166  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1167  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1168  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1169  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1170  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1171  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1172  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1173  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1174  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1175  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    |sparsemux_15_8_11_1_1_U1176  |sparsemux_15_8_11_1_1  |        0|   0|  0|  37|    0|
+    +-----------------------------+-----------------------+---------+----+---+----+-----+
+    |Total                        |                       |        0|   0|  0|1184|    0|
+    +-----------------------------+-----------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    +--------------------------------------+--------------------------------+--------------+
+    |               Instance               |             Module             |  Expression  |
+    +--------------------------------------+--------------------------------+--------------+
+    |mac_muladd_16s_11ns_30s_30_3_1_U1177  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1178  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1179  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1180  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1181  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1182  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1183  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1184  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1185  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1186  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1187  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1188  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1189  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1190  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1191  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1192  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1193  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1194  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1195  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1196  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1197  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1198  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1199  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1200  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1201  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1202  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1203  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1204  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1205  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1206  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1207  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    |mac_muladd_16s_11ns_30s_30_3_1_U1208  |mac_muladd_16s_11ns_30s_30_3_1  |  i0 * i1 + i2|
+    +--------------------------------------+--------------------------------+--------------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |add_ln1833_fu_3848_p2     |         +|   0|  0|  15|           8|           6|
+    |add_ln1839_71_fu_2721_p2  |         +|   0|  0|  13|          10|          10|
+    |icmp_ln1833_fu_2665_p2    |      icmp|   0|  0|  15|           8|           7|
+    |ap_enable_pp0             |       xor|   0|  0|   2|           1|           2|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |Total                     |          |   0|  0|  45|          27|          25|
+    +--------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_done_int                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1      |   9|          2|    1|          2|
+    |ap_sig_allocacmp_base_index  |   9|          2|    8|         16|
+    |empty_686_fu_782             |   9|          2|   30|         60|
+    |empty_687_fu_786             |   9|          2|   30|         60|
+    |empty_688_fu_790             |   9|          2|   30|         60|
+    |empty_689_fu_794             |   9|          2|   30|         60|
+    |empty_690_fu_798             |   9|          2|   30|         60|
+    |empty_691_fu_802             |   9|          2|   30|         60|
+    |empty_692_fu_806             |   9|          2|   30|         60|
+    |empty_693_fu_810             |   9|          2|   30|         60|
+    |empty_694_fu_814             |   9|          2|   30|         60|
+    |empty_695_fu_818             |   9|          2|   30|         60|
+    |empty_696_fu_822             |   9|          2|   30|         60|
+    |empty_697_fu_826             |   9|          2|   30|         60|
+    |empty_698_fu_830             |   9|          2|   30|         60|
+    |empty_699_fu_834             |   9|          2|   30|         60|
+    |empty_700_fu_838             |   9|          2|   30|         60|
+    |empty_701_fu_842             |   9|          2|   30|         60|
+    |empty_702_fu_846             |   9|          2|   30|         60|
+    |empty_703_fu_850             |   9|          2|   30|         60|
+    |empty_704_fu_854             |   9|          2|   30|         60|
+    |empty_705_fu_858             |   9|          2|   30|         60|
+    |empty_706_fu_862             |   9|          2|   30|         60|
+    |empty_707_fu_866             |   9|          2|   30|         60|
+    |empty_708_fu_870             |   9|          2|   30|         60|
+    |empty_709_fu_874             |   9|          2|   30|         60|
+    |empty_710_fu_878             |   9|          2|   30|         60|
+    |empty_711_fu_882             |   9|          2|   30|         60|
+    |empty_712_fu_886             |   9|          2|   30|         60|
+    |empty_713_fu_890             |   9|          2|   30|         60|
+    |empty_714_fu_894             |   9|          2|   30|         60|
+    |empty_715_fu_898             |   9|          2|   30|         60|
+    |empty_716_fu_902             |   9|          2|   30|         60|
+    |empty_fu_778                 |   9|          2|   30|         60|
+    |index_fu_906                 |   9|          2|    8|         16|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        | 324|         72|  978|       1956|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------+----+----+-----+-----------+
+    |                Name                | FF | LUT| Bits| Const Bits|
+    +------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                           |   1|   0|    1|          0|
+    |ap_done_reg                         |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3             |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg    |   1|   0|    1|          0|
+    |empty_686_fu_782                    |  30|   0|   30|          0|
+    |empty_687_fu_786                    |  30|   0|   30|          0|
+    |empty_688_fu_790                    |  30|   0|   30|          0|
+    |empty_689_fu_794                    |  30|   0|   30|          0|
+    |empty_690_fu_798                    |  30|   0|   30|          0|
+    |empty_691_fu_802                    |  30|   0|   30|          0|
+    |empty_692_fu_806                    |  30|   0|   30|          0|
+    |empty_693_fu_810                    |  30|   0|   30|          0|
+    |empty_694_fu_814                    |  30|   0|   30|          0|
+    |empty_695_fu_818                    |  30|   0|   30|          0|
+    |empty_696_fu_822                    |  30|   0|   30|          0|
+    |empty_697_fu_826                    |  30|   0|   30|          0|
+    |empty_698_fu_830                    |  30|   0|   30|          0|
+    |empty_699_fu_834                    |  30|   0|   30|          0|
+    |empty_700_fu_838                    |  30|   0|   30|          0|
+    |empty_701_fu_842                    |  30|   0|   30|          0|
+    |empty_702_fu_846                    |  30|   0|   30|          0|
+    |empty_703_fu_850                    |  30|   0|   30|          0|
+    |empty_704_fu_854                    |  30|   0|   30|          0|
+    |empty_705_fu_858                    |  30|   0|   30|          0|
+    |empty_706_fu_862                    |  30|   0|   30|          0|
+    |empty_707_fu_866                    |  30|   0|   30|          0|
+    |empty_708_fu_870                    |  30|   0|   30|          0|
+    |empty_709_fu_874                    |  30|   0|   30|          0|
+    |empty_710_fu_878                    |  30|   0|   30|          0|
+    |empty_711_fu_882                    |  30|   0|   30|          0|
+    |empty_712_fu_886                    |  30|   0|   30|          0|
+    |empty_713_fu_890                    |  30|   0|   30|          0|
+    |empty_714_fu_894                    |  30|   0|   30|          0|
+    |empty_715_fu_898                    |  30|   0|   30|          0|
+    |empty_716_fu_902                    |  30|   0|   30|          0|
+    |empty_fu_778                        |  30|   0|   30|          0|
+    |icmp_ln1833_reg_5300                |   1|   0|    1|          0|
+    |icmp_ln1833_reg_5300_pp0_iter1_reg  |   1|   0|    1|          0|
+    |index_fu_906                        |   8|   0|    8|          0|
+    |lhs_109_reg_5329                    |  11|   0|   11|          0|
+    |lhs_110_reg_5334                    |  11|   0|   11|          0|
+    |lhs_111_reg_5339                    |  11|   0|   11|          0|
+    |lhs_112_reg_5344                    |  11|   0|   11|          0|
+    |lhs_113_reg_5349                    |  11|   0|   11|          0|
+    |lhs_114_reg_5354                    |  11|   0|   11|          0|
+    |lhs_115_reg_5359                    |  11|   0|   11|          0|
+    |lhs_116_reg_5364                    |  11|   0|   11|          0|
+    |lhs_117_reg_5369                    |  11|   0|   11|          0|
+    |lhs_118_reg_5374                    |  11|   0|   11|          0|
+    |lhs_119_reg_5379                    |  11|   0|   11|          0|
+    |lhs_120_reg_5384                    |  11|   0|   11|          0|
+    |lhs_121_reg_5389                    |  11|   0|   11|          0|
+    |lhs_122_reg_5394                    |  11|   0|   11|          0|
+    |lhs_123_reg_5399                    |  11|   0|   11|          0|
+    |lhs_124_reg_5404                    |  11|   0|   11|          0|
+    |lhs_125_reg_5409                    |  11|   0|   11|          0|
+    |lhs_126_reg_5414                    |  11|   0|   11|          0|
+    |lhs_127_reg_5419                    |  11|   0|   11|          0|
+    |lhs_128_reg_5424                    |  11|   0|   11|          0|
+    |lhs_129_reg_5429                    |  11|   0|   11|          0|
+    |lhs_130_reg_5434                    |  11|   0|   11|          0|
+    |lhs_131_reg_5439                    |  11|   0|   11|          0|
+    |lhs_132_reg_5444                    |  11|   0|   11|          0|
+    |lhs_133_reg_5449                    |  11|   0|   11|          0|
+    |lhs_134_reg_5454                    |  11|   0|   11|          0|
+    |lhs_135_reg_5459                    |  11|   0|   11|          0|
+    |lhs_136_reg_5464                    |  11|   0|   11|          0|
+    |lhs_7_reg_5304                      |  11|   0|   11|          0|
+    |lhs_8_reg_5314                      |  11|   0|   11|          0|
+    |lhs_9_reg_5319                      |  11|   0|   11|          0|
+    |lhs_reg_5324                        |  11|   0|   11|          0|
+    +------------------------------------+----+----+-----+-----------+
+    |Total                               |1329|   0| 1329|          0|
+    +------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+|                                         RTL Ports                                        | Dir | Bits|  Protocol  |                                  Source Object                                  |    C Type    |
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                    |   in|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|ap_rst                                                                                    |   in|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|ap_start                                                                                  |   in|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|ap_done                                                                                   |  out|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|ap_idle                                                                                   |  out|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|ap_ready                                                                                  |  out|    1|  ap_ctrl_hs|         (anonymous namespace)RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_25|  return value|
+|prev_hx_q610_0_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_0_val|        scalar|
+|prev_hx_q610_32_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_32_val|        scalar|
+|prev_hx_q610_64_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_64_val|        scalar|
+|prev_hx_q610_96_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_96_val|        scalar|
+|prev_hx_q610_128_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_128_val|        scalar|
+|prev_hx_q610_160_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_160_val|        scalar|
+|prev_hx_q610_192_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_192_val|        scalar|
+|sub_ln1839                                                                                |   in|   10|     ap_none|                                                                       sub_ln1839|        scalar|
+|prev_hx_q610_1_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_1_val|        scalar|
+|prev_hx_q610_33_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_33_val|        scalar|
+|prev_hx_q610_65_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_65_val|        scalar|
+|prev_hx_q610_97_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_97_val|        scalar|
+|prev_hx_q610_129_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_129_val|        scalar|
+|prev_hx_q610_161_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_161_val|        scalar|
+|prev_hx_q610_193_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_193_val|        scalar|
+|prev_hx_q610_2_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_2_val|        scalar|
+|prev_hx_q610_34_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_34_val|        scalar|
+|prev_hx_q610_66_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_66_val|        scalar|
+|prev_hx_q610_98_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_98_val|        scalar|
+|prev_hx_q610_130_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_130_val|        scalar|
+|prev_hx_q610_162_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_162_val|        scalar|
+|prev_hx_q610_194_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_194_val|        scalar|
+|prev_hx_q610_3_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_3_val|        scalar|
+|prev_hx_q610_35_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_35_val|        scalar|
+|prev_hx_q610_67_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_67_val|        scalar|
+|prev_hx_q610_99_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_99_val|        scalar|
+|prev_hx_q610_131_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_131_val|        scalar|
+|prev_hx_q610_163_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_163_val|        scalar|
+|prev_hx_q610_195_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_195_val|        scalar|
+|prev_hx_q610_4_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_4_val|        scalar|
+|prev_hx_q610_36_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_36_val|        scalar|
+|prev_hx_q610_68_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_68_val|        scalar|
+|prev_hx_q610_100_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_100_val|        scalar|
+|prev_hx_q610_132_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_132_val|        scalar|
+|prev_hx_q610_164_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_164_val|        scalar|
+|prev_hx_q610_196_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_196_val|        scalar|
+|prev_hx_q610_5_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_5_val|        scalar|
+|prev_hx_q610_37_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_37_val|        scalar|
+|prev_hx_q610_69_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_69_val|        scalar|
+|prev_hx_q610_101_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_101_val|        scalar|
+|prev_hx_q610_133_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_133_val|        scalar|
+|prev_hx_q610_165_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_165_val|        scalar|
+|prev_hx_q610_197_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_197_val|        scalar|
+|prev_hx_q610_6_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_6_val|        scalar|
+|prev_hx_q610_38_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_38_val|        scalar|
+|prev_hx_q610_70_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_70_val|        scalar|
+|prev_hx_q610_102_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_102_val|        scalar|
+|prev_hx_q610_134_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_134_val|        scalar|
+|prev_hx_q610_166_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_166_val|        scalar|
+|prev_hx_q610_198_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_198_val|        scalar|
+|prev_hx_q610_7_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_7_val|        scalar|
+|prev_hx_q610_39_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_39_val|        scalar|
+|prev_hx_q610_71_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_71_val|        scalar|
+|prev_hx_q610_103_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_103_val|        scalar|
+|prev_hx_q610_135_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_135_val|        scalar|
+|prev_hx_q610_167_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_167_val|        scalar|
+|prev_hx_q610_199_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_199_val|        scalar|
+|prev_hx_q610_8_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_8_val|        scalar|
+|prev_hx_q610_40_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_40_val|        scalar|
+|prev_hx_q610_72_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_72_val|        scalar|
+|prev_hx_q610_104_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_104_val|        scalar|
+|prev_hx_q610_136_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_136_val|        scalar|
+|prev_hx_q610_168_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_168_val|        scalar|
+|prev_hx_q610_200_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_200_val|        scalar|
+|prev_hx_q610_9_val                                                                        |   in|   11|     ap_none|                                                               prev_hx_q610_9_val|        scalar|
+|prev_hx_q610_41_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_41_val|        scalar|
+|prev_hx_q610_73_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_73_val|        scalar|
+|prev_hx_q610_105_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_105_val|        scalar|
+|prev_hx_q610_137_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_137_val|        scalar|
+|prev_hx_q610_169_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_169_val|        scalar|
+|prev_hx_q610_201_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_201_val|        scalar|
+|prev_hx_q610_10_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_10_val|        scalar|
+|prev_hx_q610_42_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_42_val|        scalar|
+|prev_hx_q610_74_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_74_val|        scalar|
+|prev_hx_q610_106_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_106_val|        scalar|
+|prev_hx_q610_138_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_138_val|        scalar|
+|prev_hx_q610_170_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_170_val|        scalar|
+|prev_hx_q610_202_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_202_val|        scalar|
+|prev_hx_q610_11_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_11_val|        scalar|
+|prev_hx_q610_43_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_43_val|        scalar|
+|prev_hx_q610_75_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_75_val|        scalar|
+|prev_hx_q610_107_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_107_val|        scalar|
+|prev_hx_q610_139_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_139_val|        scalar|
+|prev_hx_q610_171_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_171_val|        scalar|
+|prev_hx_q610_203_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_203_val|        scalar|
+|prev_hx_q610_12_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_12_val|        scalar|
+|prev_hx_q610_44_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_44_val|        scalar|
+|prev_hx_q610_76_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_76_val|        scalar|
+|prev_hx_q610_108_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_108_val|        scalar|
+|prev_hx_q610_140_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_140_val|        scalar|
+|prev_hx_q610_172_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_172_val|        scalar|
+|prev_hx_q610_204_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_204_val|        scalar|
+|prev_hx_q610_13_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_13_val|        scalar|
+|prev_hx_q610_45_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_45_val|        scalar|
+|prev_hx_q610_77_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_77_val|        scalar|
+|prev_hx_q610_109_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_109_val|        scalar|
+|prev_hx_q610_141_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_141_val|        scalar|
+|prev_hx_q610_173_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_173_val|        scalar|
+|prev_hx_q610_205_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_205_val|        scalar|
+|prev_hx_q610_14_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_14_val|        scalar|
+|prev_hx_q610_46_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_46_val|        scalar|
+|prev_hx_q610_78_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_78_val|        scalar|
+|prev_hx_q610_110_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_110_val|        scalar|
+|prev_hx_q610_142_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_142_val|        scalar|
+|prev_hx_q610_174_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_174_val|        scalar|
+|prev_hx_q610_206_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_206_val|        scalar|
+|prev_hx_q610_15_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_15_val|        scalar|
+|prev_hx_q610_47_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_47_val|        scalar|
+|prev_hx_q610_79_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_79_val|        scalar|
+|prev_hx_q610_111_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_111_val|        scalar|
+|prev_hx_q610_143_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_143_val|        scalar|
+|prev_hx_q610_175_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_175_val|        scalar|
+|prev_hx_q610_207_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_207_val|        scalar|
+|prev_hx_q610_16_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_16_val|        scalar|
+|prev_hx_q610_48_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_48_val|        scalar|
+|prev_hx_q610_80_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_80_val|        scalar|
+|prev_hx_q610_112_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_112_val|        scalar|
+|prev_hx_q610_144_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_144_val|        scalar|
+|prev_hx_q610_176_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_176_val|        scalar|
+|prev_hx_q610_208_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_208_val|        scalar|
+|prev_hx_q610_17_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_17_val|        scalar|
+|prev_hx_q610_49_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_49_val|        scalar|
+|prev_hx_q610_81_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_81_val|        scalar|
+|prev_hx_q610_113_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_113_val|        scalar|
+|prev_hx_q610_145_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_145_val|        scalar|
+|prev_hx_q610_177_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_177_val|        scalar|
+|prev_hx_q610_209_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_209_val|        scalar|
+|prev_hx_q610_18_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_18_val|        scalar|
+|prev_hx_q610_50_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_50_val|        scalar|
+|prev_hx_q610_82_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_82_val|        scalar|
+|prev_hx_q610_114_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_114_val|        scalar|
+|prev_hx_q610_146_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_146_val|        scalar|
+|prev_hx_q610_178_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_178_val|        scalar|
+|prev_hx_q610_210_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_210_val|        scalar|
+|prev_hx_q610_19_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_19_val|        scalar|
+|prev_hx_q610_51_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_51_val|        scalar|
+|prev_hx_q610_83_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_83_val|        scalar|
+|prev_hx_q610_115_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_115_val|        scalar|
+|prev_hx_q610_147_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_147_val|        scalar|
+|prev_hx_q610_179_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_179_val|        scalar|
+|prev_hx_q610_211_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_211_val|        scalar|
+|prev_hx_q610_20_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_20_val|        scalar|
+|prev_hx_q610_52_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_52_val|        scalar|
+|prev_hx_q610_84_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_84_val|        scalar|
+|prev_hx_q610_116_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_116_val|        scalar|
+|prev_hx_q610_148_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_148_val|        scalar|
+|prev_hx_q610_180_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_180_val|        scalar|
+|prev_hx_q610_212_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_212_val|        scalar|
+|prev_hx_q610_21_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_21_val|        scalar|
+|prev_hx_q610_53_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_53_val|        scalar|
+|prev_hx_q610_85_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_85_val|        scalar|
+|prev_hx_q610_117_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_117_val|        scalar|
+|prev_hx_q610_149_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_149_val|        scalar|
+|prev_hx_q610_181_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_181_val|        scalar|
+|prev_hx_q610_213_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_213_val|        scalar|
+|prev_hx_q610_22_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_22_val|        scalar|
+|prev_hx_q610_54_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_54_val|        scalar|
+|prev_hx_q610_86_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_86_val|        scalar|
+|prev_hx_q610_118_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_118_val|        scalar|
+|prev_hx_q610_150_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_150_val|        scalar|
+|prev_hx_q610_182_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_182_val|        scalar|
+|prev_hx_q610_214_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_214_val|        scalar|
+|prev_hx_q610_23_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_23_val|        scalar|
+|prev_hx_q610_55_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_55_val|        scalar|
+|prev_hx_q610_87_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_87_val|        scalar|
+|prev_hx_q610_119_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_119_val|        scalar|
+|prev_hx_q610_151_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_151_val|        scalar|
+|prev_hx_q610_183_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_183_val|        scalar|
+|prev_hx_q610_215_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_215_val|        scalar|
+|prev_hx_q610_24_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_24_val|        scalar|
+|prev_hx_q610_56_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_56_val|        scalar|
+|prev_hx_q610_88_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_88_val|        scalar|
+|prev_hx_q610_120_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_120_val|        scalar|
+|prev_hx_q610_152_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_152_val|        scalar|
+|prev_hx_q610_184_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_184_val|        scalar|
+|prev_hx_q610_216_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_216_val|        scalar|
+|prev_hx_q610_25_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_25_val|        scalar|
+|prev_hx_q610_57_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_57_val|        scalar|
+|prev_hx_q610_89_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_89_val|        scalar|
+|prev_hx_q610_121_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_121_val|        scalar|
+|prev_hx_q610_153_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_153_val|        scalar|
+|prev_hx_q610_185_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_185_val|        scalar|
+|prev_hx_q610_217_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_217_val|        scalar|
+|prev_hx_q610_26_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_26_val|        scalar|
+|prev_hx_q610_58_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_58_val|        scalar|
+|prev_hx_q610_90_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_90_val|        scalar|
+|prev_hx_q610_122_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_122_val|        scalar|
+|prev_hx_q610_154_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_154_val|        scalar|
+|prev_hx_q610_186_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_186_val|        scalar|
+|prev_hx_q610_218_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_218_val|        scalar|
+|prev_hx_q610_27_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_27_val|        scalar|
+|prev_hx_q610_59_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_59_val|        scalar|
+|prev_hx_q610_91_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_91_val|        scalar|
+|prev_hx_q610_123_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_123_val|        scalar|
+|prev_hx_q610_155_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_155_val|        scalar|
+|prev_hx_q610_187_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_187_val|        scalar|
+|prev_hx_q610_219_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_219_val|        scalar|
+|prev_hx_q610_28_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_28_val|        scalar|
+|prev_hx_q610_60_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_60_val|        scalar|
+|prev_hx_q610_92_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_92_val|        scalar|
+|prev_hx_q610_124_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_124_val|        scalar|
+|prev_hx_q610_156_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_156_val|        scalar|
+|prev_hx_q610_188_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_188_val|        scalar|
+|prev_hx_q610_220_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_220_val|        scalar|
+|prev_hx_q610_29_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_29_val|        scalar|
+|prev_hx_q610_61_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_61_val|        scalar|
+|prev_hx_q610_93_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_93_val|        scalar|
+|prev_hx_q610_125_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_125_val|        scalar|
+|prev_hx_q610_157_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_157_val|        scalar|
+|prev_hx_q610_189_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_189_val|        scalar|
+|prev_hx_q610_221_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_221_val|        scalar|
+|prev_hx_q610_30_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_30_val|        scalar|
+|prev_hx_q610_62_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_62_val|        scalar|
+|prev_hx_q610_94_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_94_val|        scalar|
+|prev_hx_q610_126_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_126_val|        scalar|
+|prev_hx_q610_158_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_158_val|        scalar|
+|prev_hx_q610_190_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_190_val|        scalar|
+|prev_hx_q610_222_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_222_val|        scalar|
+|prev_hx_q610_31_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_31_val|        scalar|
+|prev_hx_q610_63_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_63_val|        scalar|
+|prev_hx_q610_95_val                                                                       |   in|   11|     ap_none|                                                              prev_hx_q610_95_val|        scalar|
+|prev_hx_q610_127_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_127_val|        scalar|
+|prev_hx_q610_159_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_159_val|        scalar|
+|prev_hx_q610_191_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_191_val|        scalar|
+|prev_hx_q610_223_val                                                                      |   in|   11|     ap_none|                                                             prev_hx_q610_223_val|        scalar|
+|p_out                                                                                     |  out|   30|      ap_vld|                                                                            p_out|       pointer|
+|p_out_ap_vld                                                                              |  out|    1|      ap_vld|                                                                            p_out|       pointer|
+|p_out1                                                                                    |  out|   30|      ap_vld|                                                                           p_out1|       pointer|
+|p_out1_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out1|       pointer|
+|p_out2                                                                                    |  out|   30|      ap_vld|                                                                           p_out2|       pointer|
+|p_out2_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out2|       pointer|
+|p_out3                                                                                    |  out|   30|      ap_vld|                                                                           p_out3|       pointer|
+|p_out3_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out3|       pointer|
+|p_out4                                                                                    |  out|   30|      ap_vld|                                                                           p_out4|       pointer|
+|p_out4_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out4|       pointer|
+|p_out5                                                                                    |  out|   30|      ap_vld|                                                                           p_out5|       pointer|
+|p_out5_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out5|       pointer|
+|p_out6                                                                                    |  out|   30|      ap_vld|                                                                           p_out6|       pointer|
+|p_out6_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out6|       pointer|
+|p_out7                                                                                    |  out|   30|      ap_vld|                                                                           p_out7|       pointer|
+|p_out7_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out7|       pointer|
+|p_out8                                                                                    |  out|   30|      ap_vld|                                                                           p_out8|       pointer|
+|p_out8_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out8|       pointer|
+|p_out9                                                                                    |  out|   30|      ap_vld|                                                                           p_out9|       pointer|
+|p_out9_ap_vld                                                                             |  out|    1|      ap_vld|                                                                           p_out9|       pointer|
+|p_out10                                                                                   |  out|   30|      ap_vld|                                                                          p_out10|       pointer|
+|p_out10_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out10|       pointer|
+|p_out11                                                                                   |  out|   30|      ap_vld|                                                                          p_out11|       pointer|
+|p_out11_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out11|       pointer|
+|p_out12                                                                                   |  out|   30|      ap_vld|                                                                          p_out12|       pointer|
+|p_out12_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out12|       pointer|
+|p_out13                                                                                   |  out|   30|      ap_vld|                                                                          p_out13|       pointer|
+|p_out13_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out13|       pointer|
+|p_out14                                                                                   |  out|   30|      ap_vld|                                                                          p_out14|       pointer|
+|p_out14_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out14|       pointer|
+|p_out15                                                                                   |  out|   30|      ap_vld|                                                                          p_out15|       pointer|
+|p_out15_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out15|       pointer|
+|p_out16                                                                                   |  out|   30|      ap_vld|                                                                          p_out16|       pointer|
+|p_out16_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out16|       pointer|
+|p_out17                                                                                   |  out|   30|      ap_vld|                                                                          p_out17|       pointer|
+|p_out17_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out17|       pointer|
+|p_out18                                                                                   |  out|   30|      ap_vld|                                                                          p_out18|       pointer|
+|p_out18_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out18|       pointer|
+|p_out19                                                                                   |  out|   30|      ap_vld|                                                                          p_out19|       pointer|
+|p_out19_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out19|       pointer|
+|p_out20                                                                                   |  out|   30|      ap_vld|                                                                          p_out20|       pointer|
+|p_out20_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out20|       pointer|
+|p_out21                                                                                   |  out|   30|      ap_vld|                                                                          p_out21|       pointer|
+|p_out21_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out21|       pointer|
+|p_out22                                                                                   |  out|   30|      ap_vld|                                                                          p_out22|       pointer|
+|p_out22_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out22|       pointer|
+|p_out23                                                                                   |  out|   30|      ap_vld|                                                                          p_out23|       pointer|
+|p_out23_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out23|       pointer|
+|p_out24                                                                                   |  out|   30|      ap_vld|                                                                          p_out24|       pointer|
+|p_out24_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out24|       pointer|
+|p_out25                                                                                   |  out|   30|      ap_vld|                                                                          p_out25|       pointer|
+|p_out25_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out25|       pointer|
+|p_out26                                                                                   |  out|   30|      ap_vld|                                                                          p_out26|       pointer|
+|p_out26_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out26|       pointer|
+|p_out27                                                                                   |  out|   30|      ap_vld|                                                                          p_out27|       pointer|
+|p_out27_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out27|       pointer|
+|p_out28                                                                                   |  out|   30|      ap_vld|                                                                          p_out28|       pointer|
+|p_out28_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out28|       pointer|
+|p_out29                                                                                   |  out|   30|      ap_vld|                                                                          p_out29|       pointer|
+|p_out29_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out29|       pointer|
+|p_out30                                                                                   |  out|   30|      ap_vld|                                                                          p_out30|       pointer|
+|p_out30_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out30|       pointer|
+|p_out31                                                                                   |  out|   30|      ap_vld|                                                                          p_out31|       pointer|
+|p_out31_ap_vld                                                                            |  out|    1|      ap_vld|                                                                          p_out31|       pointer|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14_address0  |  out|   10|   ap_stable|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14_ce0       |  out|    1|   ap_stable|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14_q0        |   in|  512|   ap_stable|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14|         array|
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+

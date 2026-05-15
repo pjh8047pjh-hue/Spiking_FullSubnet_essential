@@ -1,0 +1,414 @@
+<stg><name>(anonymous namespace)RunRealtimeBandQ610</name>
+
+
+<trans_list>
+
+<trans id="30" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="31" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="32" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="33" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="34" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="49" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+entry:1 %num_frames_read = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %num_frames
+
+]]></Node>
+<StgValue><ssdm name="num_frames_read"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="50" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+entry:2 %weights_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weights_q610
+
+]]></Node>
+<StgValue><ssdm name="weights_q610_read"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="52" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:4 %p_read710 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read7
+
+]]></Node>
+<StgValue><ssdm name="p_read710"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="53" bw="7" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+entry:5 %p_read69 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read6
+
+]]></Node>
+<StgValue><ssdm name="p_read69"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="54" bw="4" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+entry:6 %p_read258 = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %p_read25
+
+]]></Node>
+<StgValue><ssdm name="p_read258"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="56" bw="7" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+entry:8 %p_read26 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read2
+
+]]></Node>
+<StgValue><ssdm name="p_read26"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="57" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:9 %p_read15 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read1
+
+]]></Node>
+<StgValue><ssdm name="p_read15"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="58" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+entry:10 %p_read_231 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read
+
+]]></Node>
+<StgValue><ssdm name="p_read_231"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="59" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+entry:11 %icmp_ln2407 = icmp_eq  i2 %p_read_231, i2 1
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln2407"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="60" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+entry:12 %icmp_ln2407_1 = icmp_eq  i2 %p_read_231, i2 0
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln2407_1"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="61" bw="19" op_0_bw="1" op_1_bw="19" op_2_bw="19">
+<![CDATA[
+entry:13 %select_ln2407 = select i1 %icmp_ln2407_1, i19 0, i19 211504
+
+]]></Node>
+<StgValue><ssdm name="select_ln2407"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>LogicGate</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="62" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+entry:14 %or_ln2407 = or i1 %icmp_ln2407_1, i1 %icmp_ln2407
+
+]]></Node>
+<StgValue><ssdm name="or_ln2407"/></StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="63" bw="19" op_0_bw="1" op_1_bw="19" op_2_bw="19">
+<![CDATA[
+entry:15 %weight_offset = select i1 %or_ln2407, i19 %select_ln2407, i19 457200
+
+]]></Node>
+<StgValue><ssdm name="weight_offset"/></StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="32" op_0_bw="32" op_1_bw="2" op_2_bw="8" op_3_bw="7" op_4_bw="4" op_5_bw="7" op_6_bw="8" op_7_bw="256" op_8_bw="32" op_9_bw="19" op_10_bw="3" op_11_bw="512" op_12_bw="512" op_13_bw="512" op_14_bw="512" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="14" op_24_bw="11" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16">
+<![CDATA[
+entry:16 %weight_offset_1 = call i32 @(anonymous namespace)RunRealtimeGSULayersSharedBandQ610, i2 %p_read_231, i8 %p_read15, i7 %p_read26, i4 %p_read258, i7 %p_read69, i8 %p_read710, i256 %weights, i32 %weights_q610_read, i19 %weight_offset, i3 %num_frames_read, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2, i16 %noisy_chunk, i16 %fb_chunk, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la
+
+]]></Node>
+<StgValue><ssdm name="weight_offset_1"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="21" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="64" bw="32" op_0_bw="32" op_1_bw="2" op_2_bw="8" op_3_bw="7" op_4_bw="4" op_5_bw="7" op_6_bw="8" op_7_bw="256" op_8_bw="32" op_9_bw="19" op_10_bw="3" op_11_bw="512" op_12_bw="512" op_13_bw="512" op_14_bw="512" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="14" op_24_bw="11" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16">
+<![CDATA[
+entry:16 %weight_offset_1 = call i32 @(anonymous namespace)RunRealtimeGSULayersSharedBandQ610, i2 %p_read_231, i8 %p_read15, i7 %p_read26, i4 %p_read258, i7 %p_read69, i8 %p_read710, i256 %weights, i32 %weights_q610_read, i19 %weight_offset, i3 %num_frames_read, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2, i16 %noisy_chunk, i16 %fb_chunk, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la
+
+]]></Node>
+<StgValue><ssdm name="weight_offset_1"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="22" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="51" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:3 %p_read_230 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read38
+
+]]></Node>
+<StgValue><ssdm name="p_read_230"/></StgValue>
+</operation>
+
+<operation id="23" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="65" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="512" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="0" op_15_bw="0">
+<![CDATA[
+entry:17 %call_ln3103 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610, i256 %weights, i32 %weights_q610_read, i32 %weight_offset_1, i8 %p_read_230, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln3103"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="24" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="65" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="32" op_3_bw="32" op_4_bw="8" op_5_bw="512" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="0" op_15_bw="0">
+<![CDATA[
+entry:17 %call_ln3103 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610, i256 %weights, i32 %weights_q610_read, i32 %weight_offset_1, i8 %p_read_230, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1
+
+]]></Node>
+<StgValue><ssdm name="call_ln3103"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="25" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="55" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+entry:7 %p_read147 = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %p_read14
+
+]]></Node>
+<StgValue><ssdm name="p_read147"/></StgValue>
+</operation>
+
+<operation id="26" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="7" op_3_bw="3" op_4_bw="4" op_5_bw="8" op_6_bw="3" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="512" op_18_bw="16" op_19_bw="0" op_20_bw="0" op_21_bw="0">
+<![CDATA[
+entry:18 %call_ln3104 = call void @(anonymous namespace)RunRealtimeProjectionBandQ610, i2 %p_read_231, i7 %p_read26, i3 %p_read147, i4 %p_read258, i8 %p_read_230, i3 %num_frames_read, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %output_chunk
+
+]]></Node>
+<StgValue><ssdm name="call_ln3104"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="27" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="48" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<![CDATA[
+entry:0 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_135, i32 0, i32 0, void @empty_136, i32 0, i32 43031, void @empty_137, void @empty_138, void @empty_136, i32 1, i32 1, i32 16, i32 16, void @empty_136, void @empty_136, i32 4294967295, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="28" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="66" bw="0" op_0_bw="0" op_1_bw="2" op_2_bw="7" op_3_bw="3" op_4_bw="4" op_5_bw="8" op_6_bw="3" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="512" op_18_bw="16" op_19_bw="0" op_20_bw="0" op_21_bw="0">
+<![CDATA[
+entry:18 %call_ln3104 = call void @(anonymous namespace)RunRealtimeProjectionBandQ610, i2 %p_read_231, i7 %p_read26, i3 %p_read147, i4 %p_read258, i8 %p_read_230, i3 %num_frames_read, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %output_chunk
+
+]]></Node>
+<StgValue><ssdm name="call_ln3104"/></StgValue>
+</operation>
+
+<operation id="29" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="67" bw="0">
+<![CDATA[
+entry:19 %ret_ln3105 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln3105"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

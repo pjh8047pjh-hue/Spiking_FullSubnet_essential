@@ -1,0 +1,182 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../src/subband_realtime_hls_coverage_tb.cpp in debug mode
+   Compiling ../../../../src/subband_ref_q610_opt_stage4_latency_stepL2.cpp in debug mode
+   Generating csim.exe
+coverage progress seed=0 profile=small_random status=ok
+coverage progress seed=0 profile=full_input_zero_recurrent status=ok
+coverage progress seed=0 profile=sparse_identity_bn status=ok
+coverage progress seed=0 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=0 profile=edge_projection_bias status=ok
+coverage progress seed=1 profile=small_random status=ok
+coverage progress seed=1 profile=full_input_zero_recurrent status=ok
+coverage progress seed=1 profile=sparse_identity_bn status=ok
+coverage progress seed=1 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=1 profile=edge_projection_bias status=ok
+coverage progress seed=2 profile=small_random status=ok
+coverage progress seed=2 profile=full_input_zero_recurrent status=ok
+coverage progress seed=2 profile=sparse_identity_bn status=ok
+coverage progress seed=2 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=2 profile=edge_projection_bias status=ok
+coverage progress seed=3 profile=small_random status=ok
+coverage progress seed=3 profile=full_input_zero_recurrent status=ok
+coverage progress seed=3 profile=sparse_identity_bn status=ok
+coverage progress seed=3 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=3 profile=edge_projection_bias status=ok
+coverage progress seed=4 profile=small_random status=ok
+coverage progress seed=4 profile=full_input_zero_recurrent status=ok
+coverage progress seed=4 profile=sparse_identity_bn status=ok
+coverage progress seed=4 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=4 profile=edge_projection_bias status=ok
+coverage progress seed=5 profile=small_random status=ok
+coverage progress seed=5 profile=full_input_zero_recurrent status=ok
+coverage progress seed=5 profile=sparse_identity_bn status=ok
+coverage progress seed=5 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=5 profile=edge_projection_bias status=ok
+coverage progress seed=6 profile=small_random status=ok
+coverage progress seed=6 profile=full_input_zero_recurrent status=ok
+coverage progress seed=6 profile=sparse_identity_bn status=ok
+coverage progress seed=6 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=6 profile=edge_projection_bias status=ok
+coverage progress seed=7 profile=small_random status=ok
+coverage progress seed=7 profile=full_input_zero_recurrent status=ok
+coverage progress seed=7 profile=sparse_identity_bn status=ok
+coverage progress seed=7 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=7 profile=edge_projection_bias status=ok
+coverage progress seed=8 profile=small_random status=ok
+coverage progress seed=8 profile=full_input_zero_recurrent status=ok
+coverage progress seed=8 profile=sparse_identity_bn status=ok
+coverage progress seed=8 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=8 profile=edge_projection_bias status=ok
+coverage progress seed=9 profile=small_random status=ok
+coverage progress seed=9 profile=full_input_zero_recurrent status=ok
+coverage progress seed=9 profile=sparse_identity_bn status=ok
+coverage progress seed=9 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=9 profile=edge_projection_bias status=ok
+coverage progress seed=10 profile=small_random status=ok
+coverage progress seed=10 profile=full_input_zero_recurrent status=ok
+coverage progress seed=10 profile=sparse_identity_bn status=ok
+coverage progress seed=10 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=10 profile=edge_projection_bias status=ok
+coverage progress seed=11 profile=small_random status=ok
+coverage progress seed=11 profile=full_input_zero_recurrent status=ok
+coverage progress seed=11 profile=sparse_identity_bn status=ok
+coverage progress seed=11 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=11 profile=edge_projection_bias status=ok
+coverage progress seed=12 profile=small_random status=ok
+coverage progress seed=12 profile=full_input_zero_recurrent status=ok
+coverage progress seed=12 profile=sparse_identity_bn status=ok
+coverage progress seed=12 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=12 profile=edge_projection_bias status=ok
+coverage progress seed=13 profile=small_random status=ok
+coverage progress seed=13 profile=full_input_zero_recurrent status=ok
+coverage progress seed=13 profile=sparse_identity_bn status=ok
+coverage progress seed=13 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=13 profile=edge_projection_bias status=ok
+coverage progress seed=14 profile=small_random status=ok
+coverage progress seed=14 profile=full_input_zero_recurrent status=ok
+coverage progress seed=14 profile=sparse_identity_bn status=ok
+coverage progress seed=14 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=14 profile=edge_projection_bias status=ok
+coverage progress seed=15 profile=small_random status=ok
+coverage progress seed=15 profile=full_input_zero_recurrent status=ok
+coverage progress seed=15 profile=sparse_identity_bn status=ok
+coverage progress seed=15 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=15 profile=edge_projection_bias status=ok
+coverage progress seed=16 profile=small_random status=ok
+coverage progress seed=16 profile=full_input_zero_recurrent status=ok
+coverage progress seed=16 profile=sparse_identity_bn status=ok
+coverage progress seed=16 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=16 profile=edge_projection_bias status=ok
+coverage progress seed=17 profile=small_random status=ok
+coverage progress seed=17 profile=full_input_zero_recurrent status=ok
+coverage progress seed=17 profile=sparse_identity_bn status=ok
+coverage progress seed=17 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=17 profile=edge_projection_bias status=ok
+coverage progress seed=18 profile=small_random status=ok
+coverage progress seed=18 profile=full_input_zero_recurrent status=ok
+coverage progress seed=18 profile=sparse_identity_bn status=ok
+coverage progress seed=18 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=18 profile=edge_projection_bias status=ok
+coverage progress seed=19 profile=small_random status=ok
+coverage progress seed=19 profile=full_input_zero_recurrent status=ok
+coverage progress seed=19 profile=sparse_identity_bn status=ok
+coverage progress seed=19 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=19 profile=edge_projection_bias status=ok
+coverage progress seed=20 profile=small_random status=ok
+coverage progress seed=20 profile=full_input_zero_recurrent status=ok
+coverage progress seed=20 profile=sparse_identity_bn status=ok
+coverage progress seed=20 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=20 profile=edge_projection_bias status=ok
+coverage progress seed=21 profile=small_random status=ok
+coverage progress seed=21 profile=full_input_zero_recurrent status=ok
+coverage progress seed=21 profile=sparse_identity_bn status=ok
+coverage progress seed=21 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=21 profile=edge_projection_bias status=ok
+coverage progress seed=22 profile=small_random status=ok
+coverage progress seed=22 profile=full_input_zero_recurrent status=ok
+coverage progress seed=22 profile=sparse_identity_bn status=ok
+coverage progress seed=22 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=22 profile=edge_projection_bias status=ok
+coverage progress seed=23 profile=small_random status=ok
+coverage progress seed=23 profile=full_input_zero_recurrent status=ok
+coverage progress seed=23 profile=sparse_identity_bn status=ok
+coverage progress seed=23 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=23 profile=edge_projection_bias status=ok
+coverage progress seed=24 profile=small_random status=ok
+coverage progress seed=24 profile=full_input_zero_recurrent status=ok
+coverage progress seed=24 profile=sparse_identity_bn status=ok
+coverage progress seed=24 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=24 profile=edge_projection_bias status=ok
+coverage progress seed=25 profile=small_random status=ok
+coverage progress seed=25 profile=full_input_zero_recurrent status=ok
+coverage progress seed=25 profile=sparse_identity_bn status=ok
+coverage progress seed=25 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=25 profile=edge_projection_bias status=ok
+coverage progress seed=26 profile=small_random status=ok
+coverage progress seed=26 profile=full_input_zero_recurrent status=ok
+coverage progress seed=26 profile=sparse_identity_bn status=ok
+coverage progress seed=26 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=26 profile=edge_projection_bias status=ok
+coverage progress seed=27 profile=small_random status=ok
+coverage progress seed=27 profile=full_input_zero_recurrent status=ok
+coverage progress seed=27 profile=sparse_identity_bn status=ok
+coverage progress seed=27 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=27 profile=edge_projection_bias status=ok
+coverage progress seed=28 profile=small_random status=ok
+coverage progress seed=28 profile=full_input_zero_recurrent status=ok
+coverage progress seed=28 profile=sparse_identity_bn status=ok
+coverage progress seed=28 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=28 profile=edge_projection_bias status=ok
+coverage progress seed=29 profile=small_random status=ok
+coverage progress seed=29 profile=full_input_zero_recurrent status=ok
+coverage progress seed=29 profile=sparse_identity_bn status=ok
+coverage progress seed=29 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=29 profile=edge_projection_bias status=ok
+coverage progress seed=30 profile=small_random status=ok
+coverage progress seed=30 profile=full_input_zero_recurrent status=ok
+coverage progress seed=30 profile=sparse_identity_bn status=ok
+coverage progress seed=30 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=30 profile=edge_projection_bias status=ok
+coverage progress seed=31 profile=small_random status=ok
+coverage progress seed=31 profile=full_input_zero_recurrent status=ok
+coverage progress seed=31 profile=sparse_identity_bn status=ok
+coverage progress seed=31 profile=alternating_nontrivial_bn status=ok
+coverage progress seed=31 profile=edge_projection_bias status=ok
+COVERAGE SUMMARY
+seeds=32
+profiles=5
+chunk_patterns=5
+primary_scenarios=800
+reset_replay_scenarios=160
+total_scenarios=960
+df_coef_elements_compared=4423680
+df_coef_mismatches=0
+tlast_mismatches=0
+size_mismatches=0
+extra_output_errors=0
+result=PASS
+Realtime df_coef high-coverage golden comparison passed.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 4608
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

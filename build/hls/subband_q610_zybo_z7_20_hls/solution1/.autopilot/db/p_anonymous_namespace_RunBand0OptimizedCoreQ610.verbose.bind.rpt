@@ -1,0 +1,1009 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunBand0OptimizedCoreQ610'
+================================================================
+* Date:           Wed May 13 19:58:40 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.733 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline|
+    |    min   |    max   |    min    |    max    |    min   |    max   |   Type  |
+    +----------+----------+-----------+-----------+----------+----------+---------+
+    |  57109945|  57109945|  0.571 sec|  0.571 sec|  57109945|  57109945|       no|
+    +----------+----------+-----------+-----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------------------------+-----------------------------------------------------+----------+----------+-----------+-----------+----------+----------+----------+
+        |                                                                |                                                     |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline |
+        |                            Instance                            |                        Module                       |    min   |    max   |    min    |    max    |    min   |    max   |   Type   |
+        +----------------------------------------------------------------+-----------------------------------------------------+----------+----------+-----------+-----------+----------+----------+----------+
+        |grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122  |p_anonymous_namespace_RunBand0OptimizedDataflowQ610  |  57109944|  57109944|  0.571 sec|  0.571 sec|  57109922|  57109922|  dataflow|
+        +----------------------------------------------------------------+-----------------------------------------------------+----------+----------+-----------+-----------+----------+----------+----------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%df_coef_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %df_coef_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2201]   --->   Operation 3 'read' 'df_coef_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%fb_output_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %fb_output_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2201]   --->   Operation 4 'read' 'fb_output_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%noisy_input_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %noisy_input_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2201]   --->   Operation 5 'read' 'noisy_input_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [2/2] (0.00ns)   --->   "%call_ln2201 = call void @(anonymous namespace)RunBand0OptimizedDataflowQ610, i16 %gmem_in, i32 %noisy_input_q610_read, i32 %fb_output_q610_read, i16 %gmem_out, i32 %df_coef_q610_read, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7, i16 %proj_bias_local, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2201]   --->   Operation 6 'call' 'call_ln2201' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13"   --->   Operation 7 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3"   --->   Operation 8 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1"   --->   Operation 9 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14"   --->   Operation 10 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4"   --->   Operation 11 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2"   --->   Operation 12 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11"   --->   Operation 13 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12"   --->   Operation 14 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i"   --->   Operation 15 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_out, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 772800, void @empty_178, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_in, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 618240, void @empty_175, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/2] (0.00ns)   --->   "%call_ln2201 = call void @(anonymous namespace)RunBand0OptimizedDataflowQ610, i16 %gmem_in, i32 %noisy_input_q610_read, i32 %fb_output_q610_read, i16 %gmem_out, i32 %df_coef_q610_read, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7, i16 %proj_bias_local, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2201]   --->   Operation 18 'call' 'call_ln2201' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln2221 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2221]   --->   Operation 19 'ret' 'ret_ln2221' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ gmem_in]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ noisy_input_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ fb_output_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ gmem_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ df_coef_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1111]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ proj_bias_local]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+df_coef_q610_read          (read                  ) [ 001]
+fb_output_q610_read        (read                  ) [ 001]
+noisy_input_q610_read      (read                  ) [ 001]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specbramwithbyteenable_ln0 (specbramwithbyteenable) [ 000]
+specinterface_ln0          (specinterface         ) [ 000]
+specinterface_ln0          (specinterface         ) [ 000]
+call_ln2201                (call                  ) [ 000]
+ret_ln2221                 (ret                   ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="gmem_in">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem_in"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="noisy_input_q610">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="noisy_input_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="fb_output_q610">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fb_output_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="gmem_out">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem_out"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="df_coef_q610">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="df_coef_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610"/><MemPortTyVec>1 1 1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="proj_bias_local">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="proj_bias_local"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)RunBand0OptimizedDataflowQ610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBRAMWithByteEnable"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_173"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_25"/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_178"/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_176"/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_175"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1004" name="df_coef_q610_read_read_fu_104">
+<pin_list>
+<pin id="105" dir="0" index="0" bw="32" slack="0"/>
+<pin id="106" dir="0" index="1" bw="32" slack="0"/>
+<pin id="107" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="df_coef_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="110" class="1004" name="fb_output_q610_read_read_fu_110">
+<pin_list>
+<pin id="111" dir="0" index="0" bw="32" slack="0"/>
+<pin id="112" dir="0" index="1" bw="32" slack="0"/>
+<pin id="113" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="fb_output_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="noisy_input_q610_read_read_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="32" slack="0"/>
+<pin id="118" dir="0" index="1" bw="32" slack="0"/>
+<pin id="119" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="noisy_input_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="0" slack="0"/>
+<pin id="124" dir="0" index="1" bw="16" slack="0"/>
+<pin id="125" dir="0" index="2" bw="32" slack="0"/>
+<pin id="126" dir="0" index="3" bw="32" slack="0"/>
+<pin id="127" dir="0" index="4" bw="16" slack="0"/>
+<pin id="128" dir="0" index="5" bw="32" slack="0"/>
+<pin id="129" dir="0" index="6" bw="11" slack="0"/>
+<pin id="130" dir="0" index="7" bw="11" slack="0"/>
+<pin id="131" dir="0" index="8" bw="16" slack="0"/>
+<pin id="132" dir="0" index="9" bw="16" slack="0"/>
+<pin id="133" dir="0" index="10" bw="64" slack="0"/>
+<pin id="134" dir="0" index="11" bw="512" slack="0"/>
+<pin id="135" dir="0" index="12" bw="64" slack="0"/>
+<pin id="136" dir="0" index="13" bw="512" slack="0"/>
+<pin id="137" dir="0" index="14" bw="14" slack="0"/>
+<pin id="138" dir="0" index="15" bw="11" slack="0"/>
+<pin id="139" dir="0" index="16" bw="16" slack="0"/>
+<pin id="140" dir="0" index="17" bw="16" slack="0"/>
+<pin id="141" dir="0" index="18" bw="16" slack="0"/>
+<pin id="142" dir="0" index="19" bw="16" slack="0"/>
+<pin id="143" dir="0" index="20" bw="16" slack="0"/>
+<pin id="144" dir="0" index="21" bw="16" slack="0"/>
+<pin id="145" dir="0" index="22" bw="11" slack="0"/>
+<pin id="146" dir="0" index="23" bw="11" slack="0"/>
+<pin id="147" dir="0" index="24" bw="16" slack="0"/>
+<pin id="148" dir="0" index="25" bw="16" slack="0"/>
+<pin id="149" dir="0" index="26" bw="512" slack="0"/>
+<pin id="150" dir="0" index="27" bw="512" slack="0"/>
+<pin id="151" dir="0" index="28" bw="512" slack="0"/>
+<pin id="152" dir="0" index="29" bw="512" slack="0"/>
+<pin id="153" dir="0" index="30" bw="16" slack="0"/>
+<pin id="154" dir="0" index="31" bw="16" slack="0"/>
+<pin id="155" dir="0" index="32" bw="16" slack="0"/>
+<pin id="156" dir="0" index="33" bw="16" slack="0"/>
+<pin id="157" dir="0" index="34" bw="16" slack="0"/>
+<pin id="158" dir="0" index="35" bw="16" slack="0"/>
+<pin id="159" dir="0" index="36" bw="16" slack="0"/>
+<pin id="160" dir="0" index="37" bw="64" slack="0"/>
+<pin id="161" dir="1" index="38" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln2201/1 "/>
+</bind>
+</comp>
+
+<comp id="200" class="1005" name="df_coef_q610_read_reg_200">
+<pin_list>
+<pin id="201" dir="0" index="0" bw="32" slack="1"/>
+<pin id="202" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="df_coef_q610_read "/>
+</bind>
+</comp>
+
+<comp id="205" class="1005" name="fb_output_q610_read_reg_205">
+<pin_list>
+<pin id="206" dir="0" index="0" bw="32" slack="1"/>
+<pin id="207" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="fb_output_q610_read "/>
+</bind>
+</comp>
+
+<comp id="210" class="1005" name="noisy_input_q610_read_reg_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="32" slack="1"/>
+<pin id="212" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="noisy_input_q610_read "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="108"><net_src comp="74" pin="0"/><net_sink comp="104" pin=0"/></net>
+
+<net id="109"><net_src comp="8" pin="0"/><net_sink comp="104" pin=1"/></net>
+
+<net id="114"><net_src comp="74" pin="0"/><net_sink comp="110" pin=0"/></net>
+
+<net id="115"><net_src comp="4" pin="0"/><net_sink comp="110" pin=1"/></net>
+
+<net id="120"><net_src comp="74" pin="0"/><net_sink comp="116" pin=0"/></net>
+
+<net id="121"><net_src comp="2" pin="0"/><net_sink comp="116" pin=1"/></net>
+
+<net id="162"><net_src comp="76" pin="0"/><net_sink comp="122" pin=0"/></net>
+
+<net id="163"><net_src comp="0" pin="0"/><net_sink comp="122" pin=1"/></net>
+
+<net id="164"><net_src comp="116" pin="2"/><net_sink comp="122" pin=2"/></net>
+
+<net id="165"><net_src comp="110" pin="2"/><net_sink comp="122" pin=3"/></net>
+
+<net id="166"><net_src comp="6" pin="0"/><net_sink comp="122" pin=4"/></net>
+
+<net id="167"><net_src comp="104" pin="2"/><net_sink comp="122" pin=5"/></net>
+
+<net id="168"><net_src comp="10" pin="0"/><net_sink comp="122" pin=6"/></net>
+
+<net id="169"><net_src comp="12" pin="0"/><net_sink comp="122" pin=7"/></net>
+
+<net id="170"><net_src comp="14" pin="0"/><net_sink comp="122" pin=8"/></net>
+
+<net id="171"><net_src comp="16" pin="0"/><net_sink comp="122" pin=9"/></net>
+
+<net id="172"><net_src comp="18" pin="0"/><net_sink comp="122" pin=10"/></net>
+
+<net id="173"><net_src comp="20" pin="0"/><net_sink comp="122" pin=11"/></net>
+
+<net id="174"><net_src comp="22" pin="0"/><net_sink comp="122" pin=12"/></net>
+
+<net id="175"><net_src comp="24" pin="0"/><net_sink comp="122" pin=13"/></net>
+
+<net id="176"><net_src comp="26" pin="0"/><net_sink comp="122" pin=14"/></net>
+
+<net id="177"><net_src comp="28" pin="0"/><net_sink comp="122" pin=15"/></net>
+
+<net id="178"><net_src comp="30" pin="0"/><net_sink comp="122" pin=16"/></net>
+
+<net id="179"><net_src comp="32" pin="0"/><net_sink comp="122" pin=17"/></net>
+
+<net id="180"><net_src comp="34" pin="0"/><net_sink comp="122" pin=18"/></net>
+
+<net id="181"><net_src comp="36" pin="0"/><net_sink comp="122" pin=19"/></net>
+
+<net id="182"><net_src comp="38" pin="0"/><net_sink comp="122" pin=20"/></net>
+
+<net id="183"><net_src comp="40" pin="0"/><net_sink comp="122" pin=21"/></net>
+
+<net id="184"><net_src comp="42" pin="0"/><net_sink comp="122" pin=22"/></net>
+
+<net id="185"><net_src comp="44" pin="0"/><net_sink comp="122" pin=23"/></net>
+
+<net id="186"><net_src comp="46" pin="0"/><net_sink comp="122" pin=24"/></net>
+
+<net id="187"><net_src comp="48" pin="0"/><net_sink comp="122" pin=25"/></net>
+
+<net id="188"><net_src comp="50" pin="0"/><net_sink comp="122" pin=26"/></net>
+
+<net id="189"><net_src comp="52" pin="0"/><net_sink comp="122" pin=27"/></net>
+
+<net id="190"><net_src comp="54" pin="0"/><net_sink comp="122" pin=28"/></net>
+
+<net id="191"><net_src comp="56" pin="0"/><net_sink comp="122" pin=29"/></net>
+
+<net id="192"><net_src comp="58" pin="0"/><net_sink comp="122" pin=30"/></net>
+
+<net id="193"><net_src comp="60" pin="0"/><net_sink comp="122" pin=31"/></net>
+
+<net id="194"><net_src comp="62" pin="0"/><net_sink comp="122" pin=32"/></net>
+
+<net id="195"><net_src comp="64" pin="0"/><net_sink comp="122" pin=33"/></net>
+
+<net id="196"><net_src comp="66" pin="0"/><net_sink comp="122" pin=34"/></net>
+
+<net id="197"><net_src comp="68" pin="0"/><net_sink comp="122" pin=35"/></net>
+
+<net id="198"><net_src comp="70" pin="0"/><net_sink comp="122" pin=36"/></net>
+
+<net id="199"><net_src comp="72" pin="0"/><net_sink comp="122" pin=37"/></net>
+
+<net id="203"><net_src comp="104" pin="2"/><net_sink comp="200" pin=0"/></net>
+
+<net id="204"><net_src comp="200" pin="1"/><net_sink comp="122" pin=5"/></net>
+
+<net id="208"><net_src comp="110" pin="2"/><net_sink comp="205" pin=0"/></net>
+
+<net id="209"><net_src comp="205" pin="1"/><net_sink comp="122" pin=3"/></net>
+
+<net id="213"><net_src comp="116" pin="2"/><net_sink comp="210" pin=0"/></net>
+
+<net id="214"><net_src comp="210" pin="1"/><net_sink comp="122" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: gmem_out | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3 | {1 2 }
+	Port: p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2 | {1 2 }
+ - Input state : 
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : gmem_in | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : noisy_input_q610 | {1 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : fb_output_q610 | {1 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : df_coef_q610 | {1 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7 | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : proj_bias_local | {1 2 }
+	Port: (anonymous namespace)RunBand0OptimizedCoreQ610 : SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i | {1 2 }
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+| Operation|                         Functional Unit                        |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |   URAM  |
+|----------|----------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   call   | grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122 |    4    |   219   | 1259.28 |  92295  |  37775  |    0    |
+|----------|----------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|          |                  df_coef_q610_read_read_fu_104                 |    0    |    0    |    0    |    0    |    0    |    0    |
+|   read   |                 fb_output_q610_read_read_fu_110                |    0    |    0    |    0    |    0    |    0    |    0    |
+|          |                noisy_input_q610_read_read_fu_116               |    0    |    0    |    0    |    0    |    0    |    0    |
+|----------|----------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+|   Total  |                                                                |    4    |   219   | 1259.28 |  92295  |  37775  |    0    |
+|----------|----------------------------------------------------------------|---------|---------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+|  df_coef_q610_read_reg_200  |   32   |
+| fb_output_q610_read_reg_205 |   32   |
+|noisy_input_q610_read_reg_210|   32   |
++-----------------------------+--------+
+|            Total            |   96   |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|----------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                              Comp                              |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------------------------------------------------------------|------|------|------|--------||---------||---------|
+| grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122 |  p2  |   2  |  32  |   64   ||    9    |
+| grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122 |  p3  |   2  |  32  |   64   ||    9    |
+| grp_p_anonymous_namespace_RunBand0OptimizedDataflowQ610_fu_122 |  p5  |   2  |  32  |   64   ||    9    |
+|----------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                              Total                             |      |      |      |   192  ||  4.764  ||    27   |
+|----------------------------------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    4   |   219  |  1259  |  92295 |  37775 |    0   |
+|   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    4   |    -   |   27   |    -   |
+|  Register |    -   |    -   |    -   |   96   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    4   |   219  |  1264  |  92391 |  37802 |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

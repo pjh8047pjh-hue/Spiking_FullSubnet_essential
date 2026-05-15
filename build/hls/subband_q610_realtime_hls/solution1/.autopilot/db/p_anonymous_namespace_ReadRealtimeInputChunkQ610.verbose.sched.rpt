@@ -1,0 +1,181 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_ReadRealtimeInputChunkQ610'
+================================================================
+* Date:           Thu May 14 12:26:58 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.665 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    | min |  max |   Type  |
+    +---------+---------+-----------+-----------+-----+------+---------+
+    |        9|     2085|  90.000 ns|  20.850 us|    9|  2085|       no|
+    +---------+---------+-----------+-----------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_2450_1  |        8|     2084|   2 ~ 521|          -|          -|     4|        no|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 6 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%frame_index = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 7 'alloca' 'frame_index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i16 %fb_fft_stream_V_data_V, i2 %fb_fft_stream_V_keep_V, i2 %fb_fft_stream_V_strb_V, i1 0, i1 %fb_fft_stream_V_last_V, i1 0, i1 0, void @empty_149"   --->   Operation 8 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i16 %noisy_fft_stream_V_data_V, i2 %noisy_fft_stream_V_keep_V, i2 %noisy_fft_stream_V_strb_V, i1 0, i1 %noisy_fft_stream_V_last_V, i1 0, i1 0, void @empty_150"   --->   Operation 9 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i16 %fb_chunk, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 10 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i16 %noisy_chunk, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 11 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %fb_fft_stream_V_last_V, i2 %fb_fft_stream_V_strb_V, i2 %fb_fft_stream_V_keep_V, i16 %fb_fft_stream_V_data_V, void @empty_139, i32 0, i32 0, void @empty_140, i32 0, i32 0, void @empty_136, void @empty_136, void @empty_136, i32 0, i32 0, i32 0, i32 0, void @empty_136, void @empty_136, i32 4294967295, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %noisy_fft_stream_V_last_V, i2 %noisy_fft_stream_V_strb_V, i2 %noisy_fft_stream_V_keep_V, i16 %noisy_fft_stream_V_data_V, void @empty_139, i32 0, i32 0, void @empty_140, i32 0, i32 0, void @empty_136, void @empty_136, void @empty_136, i32 0, i32 0, i32 0, i32 0, void @empty_136, void @empty_136, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%num_frames_read = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %num_frames" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 14 'read' 'num_frames_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.58ns)   --->   "%store_ln2450 = store i3 0, i3 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 15 'store' 'store_ln2450' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln2450 = br void %for.body" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 16 'br' 'br_ln2450' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 6.88>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%frame_index_2 = load i3 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 17 'load' 'frame_index_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.65ns)   --->   "%icmp_ln2450 = icmp_eq  i3 %frame_index_2, i3 4" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 18 'icmp' 'icmp_ln2450' <Predicate = true> <Delay = 1.65> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 19 [1/1] (1.65ns)   --->   "%add_ln2450 = add i3 %frame_index_2, i3 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 19 'add' 'add_ln2450' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln2450 = br i1 %icmp_ln2450, void %for.body.split, void %for.end25" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 20 'br' 'br_ln2450' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%speclooptripcount_ln2450 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 21 'speclooptripcount' 'speclooptripcount_ln2450' <Predicate = (!icmp_ln2450)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%specloopname_ln2450 = specloopname void @_ssdm_op_SpecLoopName, void @empty_154" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 22 'specloopname' 'specloopname_ln2450' <Predicate = (!icmp_ln2450)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (1.65ns)   --->   "%icmp_ln2452 = icmp_ult  i3 %frame_index_2, i3 %num_frames_read" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2452]   --->   Operation 23 'icmp' 'icmp_ln2452' <Predicate = (!icmp_ln2450)> <Delay = 1.65> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln2452 = br i1 %icmp_ln2452, void %for.inc23, void %for.inc.preheader" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2452]   --->   Operation 24 'br' 'br_ln2452' <Predicate = (!icmp_ln2450)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%trunc_ln2459 = trunc i3 %frame_index_2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 25 'trunc' 'trunc_ln2459' <Predicate = (!icmp_ln2450 & icmp_ln2452)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 26 'wait' 'empty' <Predicate = (!icmp_ln2450 & icmp_ln2452)> <Delay = 0.00>
+ST_2 : Operation 27 [2/2] (4.25ns)   --->   "%call_ln2459 = call void @(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2453_2, i16 %noisy_fft_stream_V_data_V, i2 %noisy_fft_stream_V_keep_V, i2 %noisy_fft_stream_V_strb_V, i1 %noisy_fft_stream_V_last_V, i2 %trunc_ln2459, i16 %noisy_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 27 'call' 'call_ln2459' <Predicate = (!icmp_ln2450 & icmp_ln2452)> <Delay = 4.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%ret_ln2463 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2463]   --->   Operation 28 'ret' 'ret_ln2463' <Predicate = (icmp_ln2450)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 29 [1/2] (0.00ns)   --->   "%call_ln2459 = call void @(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2453_2, i16 %noisy_fft_stream_V_data_V, i2 %noisy_fft_stream_V_keep_V, i2 %noisy_fft_stream_V_strb_V, i1 %noisy_fft_stream_V_last_V, i2 %trunc_ln2459, i16 %noisy_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 29 'call' 'call_ln2459' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%empty_642 = wait i32 @_ssdm_op_Wait"   --->   Operation 30 'wait' 'empty_642' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 4.25>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%empty_643 = wait i32 @_ssdm_op_Wait"   --->   Operation 31 'wait' 'empty_643' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 32 [2/2] (4.25ns)   --->   "%call_ln2459 = call void @(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2457_3, i16 %fb_fft_stream_V_data_V, i2 %fb_fft_stream_V_keep_V, i2 %fb_fft_stream_V_strb_V, i1 %fb_fft_stream_V_last_V, i2 %trunc_ln2459, i16 %fb_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 32 'call' 'call_ln2459' <Predicate = true> <Delay = 4.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.58>
+ST_6 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln2459 = call void @(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2457_3, i16 %fb_fft_stream_V_data_V, i2 %fb_fft_stream_V_keep_V, i2 %fb_fft_stream_V_strb_V, i1 %fb_fft_stream_V_last_V, i2 %trunc_ln2459, i16 %fb_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459]   --->   Operation 33 'call' 'call_ln2459' <Predicate = (icmp_ln2452)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc23"   --->   Operation 34 'br' 'br_ln0' <Predicate = (icmp_ln2452)> <Delay = 0.00>
+ST_6 : Operation 35 [1/1] (1.58ns)   --->   "%store_ln2450 = store i3 %add_ln2450, i3 %frame_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 35 'store' 'store_ln2450' <Predicate = true> <Delay = 1.58>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln2450 = br void %for.body" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450]   --->   Operation 36 'br' 'br_ln2450' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 3 bit ('frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450) [12]  (0.000 ns)
+	'store' operation 0 bit ('store_ln2450', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450) of constant 0 on local variable 'frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450 [20]  (1.588 ns)
+
+ <State 2>: 6.882ns
+The critical path consists of the following:
+	'load' operation 3 bit ('frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459) on local variable 'frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450 [23]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln2450', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450) [24]  (1.650 ns)
+	'call' operation 0 bit ('call_ln2459', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459) to '(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2453_2' [35]  (4.254 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 4.254ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln2459', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2459) to '(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2457_3' [38]  (4.254 ns)
+
+ <State 6>: 1.588ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln2450', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450) of variable 'add_ln2450', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450 on local variable 'frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2450 [41]  (1.588 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

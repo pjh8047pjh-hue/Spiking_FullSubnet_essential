@@ -1,0 +1,651 @@
+<stg><name>(anonymous namespace)LoadRealtimeGSULayerWeightsQ610</name>
+
+
+<trans_list>
+
+<trans id="30" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="31" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="32" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="33" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="34" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="35" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="36" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="37" from="8" to="9">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="38" from="9" to="10">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="19" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+entry:5 %weight_offset_read403 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weight_offset_read
+
+]]></Node>
+<StgValue><ssdm name="weight_offset_read403"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="20" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+entry:6 %weights_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weights_q610
+
+]]></Node>
+<StgValue><ssdm name="weights_q610_read"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="512" op_5_bw="512">
+<![CDATA[
+entry:7 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="14" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="21" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="512" op_5_bw="512">
+<![CDATA[
+entry:7 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="15" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="512" op_5_bw="512" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:8 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="16" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="22" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="512" op_5_bw="512" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:8 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="17" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:9 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="18" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:9 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="19" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:10 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="20" st_id="8" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="24" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:10 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="21" st_id="9" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:11 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+</state>
+
+<state id="10" st_id="10">
+
+<operation id="22" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:0 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="23" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="15" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:1 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="24" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="16" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:2 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="25" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="17" bw="0" op_0_bw="0" op_1_bw="512" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:3 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="26" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="18" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32">
+<![CDATA[
+entry:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_135, i32 0, i32 0, void @empty_136, i32 0, i32 43031, void @empty_137, void @empty_138, void @empty_136, i32 1, i32 1, i32 16, i32 16, void @empty_136, void @empty_136, i32 4294967295, i32 0
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln0"/></StgValue>
+</operation>
+
+<operation id="27" st_id="10" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="25" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="256" op_4_bw="16" op_5_bw="16" op_6_bw="0" op_7_bw="0">
+<![CDATA[
+entry:11 %call_ln2512 = call void @(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14, i32 %weight_offset_read403, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2
+
+]]></Node>
+<StgValue><ssdm name="call_ln2512"/></StgValue>
+</operation>
+
+<operation id="28" st_id="10" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="26" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+entry:12 %add_ln2588 = add i32 %weight_offset_read403, i32 101248
+
+]]></Node>
+<StgValue><ssdm name="add_ln2588"/></StgValue>
+</operation>
+
+<operation id="29" st_id="10" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="27" bw="0" op_0_bw="32">
+<![CDATA[
+entry:13 %ret_ln2589 = ret i32 %add_ln2588
+
+]]></Node>
+<StgValue><ssdm name="ret_ln2589"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="39" name="weights" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="weights"/></StgValue>
+</port>
+<port id="40" name="weights_q610" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="weights_q610"/></StgValue>
+</port>
+<port id="41" name="weight_offset_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="weight_offset_read"/></StgValue>
+</port>
+<port id="42" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="43" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="44" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="45" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2" dir="1" iftype="1">
+<core>RAM_2P_BRAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="46" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="47" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="48" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="49" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="50" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="51" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2"/><MemPortTyVec>0 0 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="53" from="_ssdm_op_Read.ap_auto.i32" to="weight_offset_read403" fromId="52" toId="11">
+</dataflow>
+<dataflow id="54" from="weight_offset_read" to="weight_offset_read403" fromId="41" toId="11">
+</dataflow>
+<dataflow id="55" from="_ssdm_op_Read.ap_auto.i32" to="weights_q610_read" fromId="52" toId="12">
+</dataflow>
+<dataflow id="56" from="weights_q610" to="weights_q610_read" fromId="40" toId="12">
+</dataflow>
+<dataflow id="58" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_" to="call_ln2512" fromId="57" toId="13">
+</dataflow>
+<dataflow id="59" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="13">
+</dataflow>
+<dataflow id="60" from="weights_q610_read" to="call_ln2512" fromId="12" toId="13">
+</dataflow>
+<dataflow id="61" from="weights" to="call_ln2512" fromId="39" toId="13">
+</dataflow>
+<dataflow id="62" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1" to="call_ln2512" fromId="42" toId="13">
+</dataflow>
+<dataflow id="63" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we" to="call_ln2512" fromId="43" toId="13">
+</dataflow>
+<dataflow id="64" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_" to="call_ln2512" fromId="57" toId="14">
+</dataflow>
+<dataflow id="65" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="14">
+</dataflow>
+<dataflow id="66" from="weights_q610_read" to="call_ln2512" fromId="12" toId="14">
+</dataflow>
+<dataflow id="67" from="weights" to="call_ln2512" fromId="39" toId="14">
+</dataflow>
+<dataflow id="68" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1" to="call_ln2512" fromId="42" toId="14">
+</dataflow>
+<dataflow id="69" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we" to="call_ln2512" fromId="43" toId="14">
+</dataflow>
+<dataflow id="71" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_" to="call_ln2512" fromId="70" toId="15">
+</dataflow>
+<dataflow id="72" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="15">
+</dataflow>
+<dataflow id="73" from="weights_q610_read" to="call_ln2512" fromId="12" toId="15">
+</dataflow>
+<dataflow id="74" from="weights" to="call_ln2512" fromId="39" toId="15">
+</dataflow>
+<dataflow id="75" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3" to="call_ln2512" fromId="44" toId="15">
+</dataflow>
+<dataflow id="76" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2" to="call_ln2512" fromId="45" toId="15">
+</dataflow>
+<dataflow id="77" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_" to="call_ln2512" fromId="70" toId="16">
+</dataflow>
+<dataflow id="78" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="16">
+</dataflow>
+<dataflow id="79" from="weights_q610_read" to="call_ln2512" fromId="12" toId="16">
+</dataflow>
+<dataflow id="80" from="weights" to="call_ln2512" fromId="39" toId="16">
+</dataflow>
+<dataflow id="81" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3" to="call_ln2512" fromId="44" toId="16">
+</dataflow>
+<dataflow id="82" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2" to="call_ln2512" fromId="45" toId="16">
+</dataflow>
+<dataflow id="84" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_" to="call_ln2512" fromId="83" toId="17">
+</dataflow>
+<dataflow id="85" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="17">
+</dataflow>
+<dataflow id="86" from="weights_q610_read" to="call_ln2512" fromId="12" toId="17">
+</dataflow>
+<dataflow id="87" from="weights" to="call_ln2512" fromId="39" toId="17">
+</dataflow>
+<dataflow id="88" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1" to="call_ln2512" fromId="46" toId="17">
+</dataflow>
+<dataflow id="89" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi" to="call_ln2512" fromId="47" toId="17">
+</dataflow>
+<dataflow id="90" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_" to="call_ln2512" fromId="83" toId="18">
+</dataflow>
+<dataflow id="91" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="18">
+</dataflow>
+<dataflow id="92" from="weights_q610_read" to="call_ln2512" fromId="12" toId="18">
+</dataflow>
+<dataflow id="93" from="weights" to="call_ln2512" fromId="39" toId="18">
+</dataflow>
+<dataflow id="94" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1" to="call_ln2512" fromId="46" toId="18">
+</dataflow>
+<dataflow id="95" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi" to="call_ln2512" fromId="47" toId="18">
+</dataflow>
+<dataflow id="97" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12" to="call_ln2512" fromId="96" toId="19">
+</dataflow>
+<dataflow id="98" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="19">
+</dataflow>
+<dataflow id="99" from="weights_q610_read" to="call_ln2512" fromId="12" toId="19">
+</dataflow>
+<dataflow id="100" from="weights" to="call_ln2512" fromId="39" toId="19">
+</dataflow>
+<dataflow id="101" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1" to="call_ln2512" fromId="48" toId="19">
+</dataflow>
+<dataflow id="102" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn" to="call_ln2512" fromId="49" toId="19">
+</dataflow>
+<dataflow id="103" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12" to="call_ln2512" fromId="96" toId="20">
+</dataflow>
+<dataflow id="104" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="20">
+</dataflow>
+<dataflow id="105" from="weights_q610_read" to="call_ln2512" fromId="12" toId="20">
+</dataflow>
+<dataflow id="106" from="weights" to="call_ln2512" fromId="39" toId="20">
+</dataflow>
+<dataflow id="107" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1" to="call_ln2512" fromId="48" toId="20">
+</dataflow>
+<dataflow id="108" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn" to="call_ln2512" fromId="49" toId="20">
+</dataflow>
+<dataflow id="110" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14" to="call_ln2512" fromId="109" toId="21">
+</dataflow>
+<dataflow id="111" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="21">
+</dataflow>
+<dataflow id="112" from="weights_q610_read" to="call_ln2512" fromId="12" toId="21">
+</dataflow>
+<dataflow id="113" from="weights" to="call_ln2512" fromId="39" toId="21">
+</dataflow>
+<dataflow id="114" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3" to="call_ln2512" fromId="50" toId="21">
+</dataflow>
+<dataflow id="115" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2" to="call_ln2512" fromId="51" toId="21">
+</dataflow>
+<dataflow id="117" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="116" toId="22">
+</dataflow>
+<dataflow id="118" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3" to="specmemcore_ln0" fromId="44" toId="22">
+</dataflow>
+<dataflow id="120" from="StgValue_119" to="specmemcore_ln0" fromId="119" toId="22">
+</dataflow>
+<dataflow id="122" from="StgValue_121" to="specmemcore_ln0" fromId="121" toId="22">
+</dataflow>
+<dataflow id="124" from="StgValue_123" to="specmemcore_ln0" fromId="123" toId="22">
+</dataflow>
+<dataflow id="125" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="116" toId="23">
+</dataflow>
+<dataflow id="126" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2" to="specmemcore_ln0" fromId="45" toId="23">
+</dataflow>
+<dataflow id="127" from="StgValue_119" to="specmemcore_ln0" fromId="119" toId="23">
+</dataflow>
+<dataflow id="128" from="StgValue_121" to="specmemcore_ln0" fromId="121" toId="23">
+</dataflow>
+<dataflow id="129" from="StgValue_123" to="specmemcore_ln0" fromId="123" toId="23">
+</dataflow>
+<dataflow id="130" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="116" toId="24">
+</dataflow>
+<dataflow id="131" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1" to="specmemcore_ln0" fromId="42" toId="24">
+</dataflow>
+<dataflow id="132" from="StgValue_119" to="specmemcore_ln0" fromId="119" toId="24">
+</dataflow>
+<dataflow id="133" from="StgValue_121" to="specmemcore_ln0" fromId="121" toId="24">
+</dataflow>
+<dataflow id="134" from="StgValue_123" to="specmemcore_ln0" fromId="123" toId="24">
+</dataflow>
+<dataflow id="135" from="_ssdm_op_SpecMemCore" to="specmemcore_ln0" fromId="116" toId="25">
+</dataflow>
+<dataflow id="136" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we" to="specmemcore_ln0" fromId="43" toId="25">
+</dataflow>
+<dataflow id="137" from="StgValue_119" to="specmemcore_ln0" fromId="119" toId="25">
+</dataflow>
+<dataflow id="138" from="StgValue_121" to="specmemcore_ln0" fromId="121" toId="25">
+</dataflow>
+<dataflow id="139" from="StgValue_123" to="specmemcore_ln0" fromId="123" toId="25">
+</dataflow>
+<dataflow id="141" from="_ssdm_op_SpecInterface" to="specinterface_ln0" fromId="140" toId="26">
+</dataflow>
+<dataflow id="142" from="weights" to="specinterface_ln0" fromId="39" toId="26">
+</dataflow>
+<dataflow id="144" from="empty_135" to="specinterface_ln0" fromId="143" toId="26">
+</dataflow>
+<dataflow id="146" from="StgValue_145" to="specinterface_ln0" fromId="145" toId="26">
+</dataflow>
+<dataflow id="147" from="StgValue_145" to="specinterface_ln0" fromId="145" toId="26">
+</dataflow>
+<dataflow id="149" from="empty_136" to="specinterface_ln0" fromId="148" toId="26">
+</dataflow>
+<dataflow id="150" from="StgValue_145" to="specinterface_ln0" fromId="145" toId="26">
+</dataflow>
+<dataflow id="152" from="StgValue_151" to="specinterface_ln0" fromId="151" toId="26">
+</dataflow>
+<dataflow id="154" from="empty_137" to="specinterface_ln0" fromId="153" toId="26">
+</dataflow>
+<dataflow id="156" from="empty_138" to="specinterface_ln0" fromId="155" toId="26">
+</dataflow>
+<dataflow id="157" from="empty_136" to="specinterface_ln0" fromId="148" toId="26">
+</dataflow>
+<dataflow id="159" from="StgValue_158" to="specinterface_ln0" fromId="158" toId="26">
+</dataflow>
+<dataflow id="160" from="StgValue_158" to="specinterface_ln0" fromId="158" toId="26">
+</dataflow>
+<dataflow id="162" from="StgValue_161" to="specinterface_ln0" fromId="161" toId="26">
+</dataflow>
+<dataflow id="163" from="StgValue_161" to="specinterface_ln0" fromId="161" toId="26">
+</dataflow>
+<dataflow id="164" from="empty_136" to="specinterface_ln0" fromId="148" toId="26">
+</dataflow>
+<dataflow id="165" from="empty_136" to="specinterface_ln0" fromId="148" toId="26">
+</dataflow>
+<dataflow id="167" from="StgValue_166" to="specinterface_ln0" fromId="166" toId="26">
+</dataflow>
+<dataflow id="168" from="StgValue_145" to="specinterface_ln0" fromId="145" toId="26">
+</dataflow>
+<dataflow id="169" from="(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14" to="call_ln2512" fromId="109" toId="27">
+</dataflow>
+<dataflow id="170" from="weight_offset_read403" to="call_ln2512" fromId="11" toId="27">
+</dataflow>
+<dataflow id="171" from="weights_q610_read" to="call_ln2512" fromId="12" toId="27">
+</dataflow>
+<dataflow id="172" from="weights" to="call_ln2512" fromId="39" toId="27">
+</dataflow>
+<dataflow id="173" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3" to="call_ln2512" fromId="50" toId="27">
+</dataflow>
+<dataflow id="174" from="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2" to="call_ln2512" fromId="51" toId="27">
+</dataflow>
+<dataflow id="175" from="weight_offset_read403" to="add_ln2588" fromId="11" toId="28">
+</dataflow>
+<dataflow id="177" from="StgValue_176" to="add_ln2588" fromId="176" toId="28">
+</dataflow>
+<dataflow id="178" from="add_ln2588" to="ret_ln2589" fromId="28" toId="29">
+</dataflow>
+</dataflows>
+
+
+</stg>

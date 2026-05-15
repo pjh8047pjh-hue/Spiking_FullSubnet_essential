@@ -1,0 +1,1731 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunRealtimeBandQ610'
+================================================================
+* Date:           Thu May 14 12:27:19 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.739 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |   max  |   Type  |
+    +---------+---------+----------+----------+-------+--------+---------+
+    |    15901|   293469|  0.159 ms|  2.935 ms|  15901|  293469|       no|
+    +---------+---------+----------+----------+-------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------------------------------+----------------------------------------------------------+---------+---------+-----------+-----------+-------+--------+---------+
+        |                                                                     |                                                          |  Latency (cycles) |   Latency (absolute)  |    Interval    | Pipeline|
+        |                               Instance                              |                          Module                          |   min   |   max   |    min    |    max    |  min  |   max  |   Type  |
+        +---------------------------------------------------------------------+----------------------------------------------------------+---------+---------+-----------+-----------+-------+--------+---------+
+        |grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202  |p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610  |    13159|   166631|   0.132 ms|   1.666 ms|  13159|  166631|       no|
+        |grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277   |p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610   |     2728|     2728|  27.280 us|  27.280 us|   2728|    2728|       no|
+        |grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305       |p_anonymous_namespace_RunRealtimeProjectionBandQ610       |        9|   124105|  90.000 ns|   1.241 ms|      9|  124105|       no|
+        +---------------------------------------------------------------------+----------------------------------------------------------+---------+---------+-----------+-----------+-------+--------+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.13>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%num_frames_read = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %num_frames" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 7 'read' 'num_frames_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%weights_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weights_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 8 'read' 'weights_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read710 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 9 'read' 'p_read710' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read69 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read6" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 10 'read' 'p_read69' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_read258 = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %p_read25" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 11 'read' 'p_read258' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read26 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 12 'read' 'p_read26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read15 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 13 'read' 'p_read15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_read_231 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 14 'read' 'p_read_231' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.56ns)   --->   "%icmp_ln2407 = icmp_eq  i2 %p_read_231, i2 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2407->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 15 'icmp' 'icmp_ln2407' <Predicate = true> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (1.56ns)   --->   "%icmp_ln2407_1 = icmp_eq  i2 %p_read_231, i2 0" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2407->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 16 'icmp' 'icmp_ln2407_1' <Predicate = true> <Delay = 1.56> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node weight_offset)   --->   "%select_ln2407 = select i1 %icmp_ln2407_1, i19 0, i19 211504" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2407->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 17 'select' 'select_ln2407' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns) (grouped into LUT with out node weight_offset)   --->   "%or_ln2407 = or i1 %icmp_ln2407_1, i1 %icmp_ln2407" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2407->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 18 'or' 'or_ln2407' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.97ns) (out node of the LUT)   --->   "%weight_offset = select i1 %or_ln2407, i19 %select_ln2407, i19 457200" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2407->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 19 'select' 'weight_offset' <Predicate = true> <Delay = 0.97> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 20 [2/2] (1.58ns)   --->   "%weight_offset_1 = call i32 @(anonymous namespace)RunRealtimeGSULayersSharedBandQ610, i2 %p_read_231, i8 %p_read15, i7 %p_read26, i4 %p_read258, i7 %p_read69, i8 %p_read710, i256 %weights, i32 %weights_q610_read, i19 %weight_offset, i3 %num_frames_read, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2, i16 %noisy_chunk, i16 %fb_chunk, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3099]   --->   Operation 20 'call' 'weight_offset_1' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 21 [1/2] (0.00ns)   --->   "%weight_offset_1 = call i32 @(anonymous namespace)RunRealtimeGSULayersSharedBandQ610, i2 %p_read_231, i8 %p_read15, i7 %p_read26, i4 %p_read258, i7 %p_read69, i8 %p_read710, i256 %weights, i32 %weights_q610_read, i19 %weight_offset, i3 %num_frames_read, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2, i16 %noisy_chunk, i16 %fb_chunk, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3099]   --->   Operation 21 'call' 'weight_offset_1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 3.50>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%p_read_230 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read38" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 22 'read' 'p_read_230' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [2/2] (3.50ns)   --->   "%call_ln3103 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610, i256 %weights, i32 %weights_q610_read, i32 %weight_offset_1, i8 %p_read_230, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3103]   --->   Operation 23 'call' 'call_ln3103' <Predicate = true> <Delay = 3.50> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 24 [1/2] (0.00ns)   --->   "%call_ln3103 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610, i256 %weights, i32 %weights_q610_read, i32 %weight_offset_1, i8 %p_read_230, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3103]   --->   Operation 24 'call' 'call_ln3103' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 2.54>
+ST_5 : Operation 25 [1/1] (0.00ns)   --->   "%p_read147 = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %p_read14" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2405->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3098]   --->   Operation 25 'read' 'p_read147' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 26 [2/2] (2.54ns)   --->   "%call_ln3104 = call void @(anonymous namespace)RunRealtimeProjectionBandQ610, i2 %p_read_231, i7 %p_read26, i3 %p_read147, i4 %p_read258, i8 %p_read_230, i3 %num_frames_read, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %output_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3104]   --->   Operation 26 'call' 'call_ln3104' <Predicate = true> <Delay = 2.54> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_135, i32 0, i32 0, void @empty_136, i32 0, i32 43031, void @empty_137, void @empty_138, void @empty_136, i32 1, i32 1, i32 16, i32 16, void @empty_136, void @empty_136, i32 4294967295, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 28 [1/2] (0.00ns)   --->   "%call_ln3104 = call void @(anonymous namespace)RunRealtimeProjectionBandQ610, i2 %p_read_231, i7 %p_read26, i3 %p_read147, i4 %p_read258, i8 %p_read_230, i3 %num_frames_read, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i16 %output_chunk" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3104]   --->   Operation 28 'call' 'call_ln3104' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 29 [1/1] (0.00ns)   --->   "%ret_ln3105 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3105]   --->   Operation 29 'ret' 'ret_ln3105' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ p_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read1]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read2]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read14]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read25]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read6]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read7]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_read38]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ weights]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ weights_q610]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ num_frames]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ noisy_chunk]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ fb_chunk]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1111]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=1; MemPort=[20]; IO mode=ap_memory:ce=0
+Port [ output_chunk]:  wired=1; compound=1; hidden=0; nouse=0; global=1; static=1; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[30]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+num_frames_read   (read         ) [ 0011111]
+weights_q610_read (read         ) [ 0011100]
+p_read710         (read         ) [ 0010000]
+p_read69          (read         ) [ 0010000]
+p_read258         (read         ) [ 0011111]
+p_read26          (read         ) [ 0011111]
+p_read15          (read         ) [ 0010000]
+p_read_231        (read         ) [ 0011111]
+icmp_ln2407       (icmp         ) [ 0000000]
+icmp_ln2407_1     (icmp         ) [ 0000000]
+select_ln2407     (select       ) [ 0000000]
+or_ln2407         (or           ) [ 0000000]
+weight_offset     (select       ) [ 0010000]
+weight_offset_1   (call         ) [ 0001100]
+p_read_230        (read         ) [ 0000111]
+call_ln3103       (call         ) [ 0000000]
+p_read147         (read         ) [ 0000001]
+specinterface_ln0 (specinterface) [ 0000000]
+call_ln3104       (call         ) [ 0000000]
+ret_ln3105        (ret          ) [ 0000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="p_read">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="p_read1">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="p_read2">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="p_read14">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read14"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="p_read25">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read25"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="p_read6">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="p_read7">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="p_read38">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read38"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="weights">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="weights_q610">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="weights_q610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="num_frames">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="num_frames"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="noisy_chunk">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="noisy_chunk"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="fb_chunk">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="fb_chunk"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610"/><MemPortTyVec>1 1 1 1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1000" name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1"/><MemPortTyVec>2 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1000" name="output_chunk">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="output_chunk"/><MemPortTyVec>3 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1001" name="const_108">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1001" name="const_110">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1001" name="const_112">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1001" name="const_114">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1001" name="const_116">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)RunRealtimeGSULayersSharedBandQ610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1001" name="const_118">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)LoadRealtimeProjectionWeightsQ610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1001" name="const_120">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="(anonymous namespace)RunRealtimeProjectionBandQ610"/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1001" name="const_122">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1001" name="const_124">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_135"/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1001" name="const_126">
+<pin_list>
+<pin id="127" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="128" class="1001" name="const_128">
+<pin_list>
+<pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_136"/></StgValue>
+</bind>
+</comp>
+
+<comp id="130" class="1001" name="const_130">
+<pin_list>
+<pin id="131" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="132" class="1001" name="const_132">
+<pin_list>
+<pin id="133" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_137"/></StgValue>
+</bind>
+</comp>
+
+<comp id="134" class="1001" name="const_134">
+<pin_list>
+<pin id="135" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_138"/></StgValue>
+</bind>
+</comp>
+
+<comp id="136" class="1001" name="const_136">
+<pin_list>
+<pin id="137" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="138" class="1001" name="const_138">
+<pin_list>
+<pin id="139" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="140" class="1001" name="const_140">
+<pin_list>
+<pin id="141" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="142" class="1004" name="num_frames_read_read_fu_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="3" slack="0"/>
+<pin id="144" dir="0" index="1" bw="3" slack="0"/>
+<pin id="145" dir="1" index="2" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="num_frames_read/1 "/>
+</bind>
+</comp>
+
+<comp id="148" class="1004" name="weights_q610_read_read_fu_148">
+<pin_list>
+<pin id="149" dir="0" index="0" bw="32" slack="0"/>
+<pin id="150" dir="0" index="1" bw="32" slack="0"/>
+<pin id="151" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="weights_q610_read/1 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="p_read710_read_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="8" slack="0"/>
+<pin id="156" dir="0" index="1" bw="8" slack="0"/>
+<pin id="157" dir="1" index="2" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read710/1 "/>
+</bind>
+</comp>
+
+<comp id="160" class="1004" name="p_read69_read_fu_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="7" slack="0"/>
+<pin id="162" dir="0" index="1" bw="7" slack="0"/>
+<pin id="163" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read69/1 "/>
+</bind>
+</comp>
+
+<comp id="166" class="1004" name="p_read258_read_fu_166">
+<pin_list>
+<pin id="167" dir="0" index="0" bw="4" slack="0"/>
+<pin id="168" dir="0" index="1" bw="4" slack="0"/>
+<pin id="169" dir="1" index="2" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read258/1 "/>
+</bind>
+</comp>
+
+<comp id="172" class="1004" name="p_read26_read_fu_172">
+<pin_list>
+<pin id="173" dir="0" index="0" bw="7" slack="0"/>
+<pin id="174" dir="0" index="1" bw="7" slack="0"/>
+<pin id="175" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read26/1 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="p_read15_read_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="8" slack="0"/>
+<pin id="180" dir="0" index="1" bw="8" slack="0"/>
+<pin id="181" dir="1" index="2" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read15/1 "/>
+</bind>
+</comp>
+
+<comp id="184" class="1004" name="p_read_231_read_fu_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="2" slack="0"/>
+<pin id="186" dir="0" index="1" bw="2" slack="0"/>
+<pin id="187" dir="1" index="2" bw="2" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read_231/1 "/>
+</bind>
+</comp>
+
+<comp id="190" class="1004" name="p_read_230_read_fu_190">
+<pin_list>
+<pin id="191" dir="0" index="0" bw="8" slack="0"/>
+<pin id="192" dir="0" index="1" bw="8" slack="0"/>
+<pin id="193" dir="1" index="2" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read_230/3 "/>
+</bind>
+</comp>
+
+<comp id="196" class="1004" name="p_read147_read_fu_196">
+<pin_list>
+<pin id="197" dir="0" index="0" bw="3" slack="0"/>
+<pin id="198" dir="0" index="1" bw="3" slack="0"/>
+<pin id="199" dir="1" index="2" bw="3" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read147/5 "/>
+</bind>
+</comp>
+
+<comp id="202" class="1004" name="grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202">
+<pin_list>
+<pin id="203" dir="0" index="0" bw="32" slack="0"/>
+<pin id="204" dir="0" index="1" bw="2" slack="0"/>
+<pin id="205" dir="0" index="2" bw="8" slack="0"/>
+<pin id="206" dir="0" index="3" bw="7" slack="0"/>
+<pin id="207" dir="0" index="4" bw="4" slack="0"/>
+<pin id="208" dir="0" index="5" bw="7" slack="0"/>
+<pin id="209" dir="0" index="6" bw="8" slack="0"/>
+<pin id="210" dir="0" index="7" bw="256" slack="0"/>
+<pin id="211" dir="0" index="8" bw="32" slack="0"/>
+<pin id="212" dir="0" index="9" bw="19" slack="0"/>
+<pin id="213" dir="0" index="10" bw="3" slack="0"/>
+<pin id="214" dir="0" index="11" bw="512" slack="0"/>
+<pin id="215" dir="0" index="12" bw="512" slack="0"/>
+<pin id="216" dir="0" index="13" bw="512" slack="0"/>
+<pin id="217" dir="0" index="14" bw="512" slack="0"/>
+<pin id="218" dir="0" index="15" bw="16" slack="0"/>
+<pin id="219" dir="0" index="16" bw="16" slack="0"/>
+<pin id="220" dir="0" index="17" bw="16" slack="0"/>
+<pin id="221" dir="0" index="18" bw="16" slack="0"/>
+<pin id="222" dir="0" index="19" bw="16" slack="0"/>
+<pin id="223" dir="0" index="20" bw="16" slack="0"/>
+<pin id="224" dir="0" index="21" bw="16" slack="0"/>
+<pin id="225" dir="0" index="22" bw="16" slack="0"/>
+<pin id="226" dir="0" index="23" bw="14" slack="0"/>
+<pin id="227" dir="0" index="24" bw="11" slack="0"/>
+<pin id="228" dir="0" index="25" bw="16" slack="0"/>
+<pin id="229" dir="0" index="26" bw="16" slack="0"/>
+<pin id="230" dir="0" index="27" bw="16" slack="0"/>
+<pin id="231" dir="0" index="28" bw="16" slack="0"/>
+<pin id="232" dir="0" index="29" bw="16" slack="0"/>
+<pin id="233" dir="0" index="30" bw="16" slack="0"/>
+<pin id="234" dir="0" index="31" bw="16" slack="0"/>
+<pin id="235" dir="0" index="32" bw="16" slack="0"/>
+<pin id="236" dir="0" index="33" bw="16" slack="0"/>
+<pin id="237" dir="0" index="34" bw="16" slack="0"/>
+<pin id="238" dir="0" index="35" bw="16" slack="0"/>
+<pin id="239" dir="0" index="36" bw="16" slack="0"/>
+<pin id="240" dir="1" index="37" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="weight_offset_1/1 "/>
+</bind>
+</comp>
+
+<comp id="277" class="1004" name="grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277">
+<pin_list>
+<pin id="278" dir="0" index="0" bw="0" slack="0"/>
+<pin id="279" dir="0" index="1" bw="256" slack="0"/>
+<pin id="280" dir="0" index="2" bw="32" slack="2"/>
+<pin id="281" dir="0" index="3" bw="32" slack="1"/>
+<pin id="282" dir="0" index="4" bw="8" slack="0"/>
+<pin id="283" dir="0" index="5" bw="512" slack="0"/>
+<pin id="284" dir="0" index="6" bw="16" slack="0"/>
+<pin id="285" dir="0" index="7" bw="16" slack="0"/>
+<pin id="286" dir="0" index="8" bw="16" slack="0"/>
+<pin id="287" dir="0" index="9" bw="16" slack="0"/>
+<pin id="288" dir="0" index="10" bw="16" slack="0"/>
+<pin id="289" dir="0" index="11" bw="16" slack="0"/>
+<pin id="290" dir="0" index="12" bw="16" slack="0"/>
+<pin id="291" dir="0" index="13" bw="16" slack="0"/>
+<pin id="292" dir="1" index="14" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln3103/3 "/>
+</bind>
+</comp>
+
+<comp id="305" class="1004" name="grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305">
+<pin_list>
+<pin id="306" dir="0" index="0" bw="0" slack="0"/>
+<pin id="307" dir="0" index="1" bw="2" slack="4"/>
+<pin id="308" dir="0" index="2" bw="7" slack="4"/>
+<pin id="309" dir="0" index="3" bw="3" slack="0"/>
+<pin id="310" dir="0" index="4" bw="4" slack="4"/>
+<pin id="311" dir="0" index="5" bw="8" slack="2"/>
+<pin id="312" dir="0" index="6" bw="3" slack="4"/>
+<pin id="313" dir="0" index="7" bw="16" slack="0"/>
+<pin id="314" dir="0" index="8" bw="16" slack="0"/>
+<pin id="315" dir="0" index="9" bw="16" slack="0"/>
+<pin id="316" dir="0" index="10" bw="16" slack="0"/>
+<pin id="317" dir="0" index="11" bw="16" slack="0"/>
+<pin id="318" dir="0" index="12" bw="16" slack="0"/>
+<pin id="319" dir="0" index="13" bw="16" slack="0"/>
+<pin id="320" dir="0" index="14" bw="16" slack="0"/>
+<pin id="321" dir="0" index="15" bw="16" slack="0"/>
+<pin id="322" dir="0" index="16" bw="16" slack="0"/>
+<pin id="323" dir="0" index="17" bw="512" slack="0"/>
+<pin id="324" dir="0" index="18" bw="16" slack="0"/>
+<pin id="325" dir="1" index="19" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln3104/5 "/>
+</bind>
+</comp>
+
+<comp id="340" class="1004" name="icmp_ln2407_fu_340">
+<pin_list>
+<pin id="341" dir="0" index="0" bw="2" slack="0"/>
+<pin id="342" dir="0" index="1" bw="1" slack="0"/>
+<pin id="343" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln2407/1 "/>
+</bind>
+</comp>
+
+<comp id="346" class="1004" name="icmp_ln2407_1_fu_346">
+<pin_list>
+<pin id="347" dir="0" index="0" bw="2" slack="0"/>
+<pin id="348" dir="0" index="1" bw="1" slack="0"/>
+<pin id="349" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln2407_1/1 "/>
+</bind>
+</comp>
+
+<comp id="352" class="1004" name="select_ln2407_fu_352">
+<pin_list>
+<pin id="353" dir="0" index="0" bw="1" slack="0"/>
+<pin id="354" dir="0" index="1" bw="1" slack="0"/>
+<pin id="355" dir="0" index="2" bw="19" slack="0"/>
+<pin id="356" dir="1" index="3" bw="19" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="select_ln2407/1 "/>
+</bind>
+</comp>
+
+<comp id="360" class="1004" name="or_ln2407_fu_360">
+<pin_list>
+<pin id="361" dir="0" index="0" bw="1" slack="0"/>
+<pin id="362" dir="0" index="1" bw="1" slack="0"/>
+<pin id="363" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="or_ln2407/1 "/>
+</bind>
+</comp>
+
+<comp id="366" class="1004" name="weight_offset_fu_366">
+<pin_list>
+<pin id="367" dir="0" index="0" bw="1" slack="0"/>
+<pin id="368" dir="0" index="1" bw="19" slack="0"/>
+<pin id="369" dir="0" index="2" bw="18" slack="0"/>
+<pin id="370" dir="1" index="3" bw="19" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="weight_offset/1 "/>
+</bind>
+</comp>
+
+<comp id="375" class="1005" name="num_frames_read_reg_375">
+<pin_list>
+<pin id="376" dir="0" index="0" bw="3" slack="1"/>
+<pin id="377" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="num_frames_read "/>
+</bind>
+</comp>
+
+<comp id="381" class="1005" name="weights_q610_read_reg_381">
+<pin_list>
+<pin id="382" dir="0" index="0" bw="32" slack="1"/>
+<pin id="383" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="weights_q610_read "/>
+</bind>
+</comp>
+
+<comp id="387" class="1005" name="p_read710_reg_387">
+<pin_list>
+<pin id="388" dir="0" index="0" bw="8" slack="1"/>
+<pin id="389" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read710 "/>
+</bind>
+</comp>
+
+<comp id="392" class="1005" name="p_read69_reg_392">
+<pin_list>
+<pin id="393" dir="0" index="0" bw="7" slack="1"/>
+<pin id="394" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read69 "/>
+</bind>
+</comp>
+
+<comp id="397" class="1005" name="p_read258_reg_397">
+<pin_list>
+<pin id="398" dir="0" index="0" bw="4" slack="1"/>
+<pin id="399" dir="1" index="1" bw="4" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read258 "/>
+</bind>
+</comp>
+
+<comp id="403" class="1005" name="p_read26_reg_403">
+<pin_list>
+<pin id="404" dir="0" index="0" bw="7" slack="1"/>
+<pin id="405" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read26 "/>
+</bind>
+</comp>
+
+<comp id="409" class="1005" name="p_read15_reg_409">
+<pin_list>
+<pin id="410" dir="0" index="0" bw="8" slack="1"/>
+<pin id="411" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read15 "/>
+</bind>
+</comp>
+
+<comp id="414" class="1005" name="p_read_231_reg_414">
+<pin_list>
+<pin id="415" dir="0" index="0" bw="2" slack="1"/>
+<pin id="416" dir="1" index="1" bw="2" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read_231 "/>
+</bind>
+</comp>
+
+<comp id="420" class="1005" name="weight_offset_reg_420">
+<pin_list>
+<pin id="421" dir="0" index="0" bw="19" slack="1"/>
+<pin id="422" dir="1" index="1" bw="19" slack="1"/>
+</pin_list>
+<bind>
+<opset="weight_offset "/>
+</bind>
+</comp>
+
+<comp id="425" class="1005" name="weight_offset_1_reg_425">
+<pin_list>
+<pin id="426" dir="0" index="0" bw="32" slack="1"/>
+<pin id="427" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="weight_offset_1 "/>
+</bind>
+</comp>
+
+<comp id="430" class="1005" name="p_read_230_reg_430">
+<pin_list>
+<pin id="431" dir="0" index="0" bw="8" slack="1"/>
+<pin id="432" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read_230 "/>
+</bind>
+</comp>
+
+<comp id="436" class="1005" name="p_read147_reg_436">
+<pin_list>
+<pin id="437" dir="0" index="0" bw="3" slack="1"/>
+<pin id="438" dir="1" index="1" bw="3" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_read147 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="146"><net_src comp="94" pin="0"/><net_sink comp="142" pin=0"/></net>
+
+<net id="147"><net_src comp="20" pin="0"/><net_sink comp="142" pin=1"/></net>
+
+<net id="152"><net_src comp="96" pin="0"/><net_sink comp="148" pin=0"/></net>
+
+<net id="153"><net_src comp="18" pin="0"/><net_sink comp="148" pin=1"/></net>
+
+<net id="158"><net_src comp="98" pin="0"/><net_sink comp="154" pin=0"/></net>
+
+<net id="159"><net_src comp="12" pin="0"/><net_sink comp="154" pin=1"/></net>
+
+<net id="164"><net_src comp="100" pin="0"/><net_sink comp="160" pin=0"/></net>
+
+<net id="165"><net_src comp="10" pin="0"/><net_sink comp="160" pin=1"/></net>
+
+<net id="170"><net_src comp="102" pin="0"/><net_sink comp="166" pin=0"/></net>
+
+<net id="171"><net_src comp="8" pin="0"/><net_sink comp="166" pin=1"/></net>
+
+<net id="176"><net_src comp="100" pin="0"/><net_sink comp="172" pin=0"/></net>
+
+<net id="177"><net_src comp="4" pin="0"/><net_sink comp="172" pin=1"/></net>
+
+<net id="182"><net_src comp="98" pin="0"/><net_sink comp="178" pin=0"/></net>
+
+<net id="183"><net_src comp="2" pin="0"/><net_sink comp="178" pin=1"/></net>
+
+<net id="188"><net_src comp="104" pin="0"/><net_sink comp="184" pin=0"/></net>
+
+<net id="189"><net_src comp="0" pin="0"/><net_sink comp="184" pin=1"/></net>
+
+<net id="194"><net_src comp="98" pin="0"/><net_sink comp="190" pin=0"/></net>
+
+<net id="195"><net_src comp="14" pin="0"/><net_sink comp="190" pin=1"/></net>
+
+<net id="200"><net_src comp="94" pin="0"/><net_sink comp="196" pin=0"/></net>
+
+<net id="201"><net_src comp="6" pin="0"/><net_sink comp="196" pin=1"/></net>
+
+<net id="241"><net_src comp="116" pin="0"/><net_sink comp="202" pin=0"/></net>
+
+<net id="242"><net_src comp="184" pin="2"/><net_sink comp="202" pin=1"/></net>
+
+<net id="243"><net_src comp="178" pin="2"/><net_sink comp="202" pin=2"/></net>
+
+<net id="244"><net_src comp="172" pin="2"/><net_sink comp="202" pin=3"/></net>
+
+<net id="245"><net_src comp="166" pin="2"/><net_sink comp="202" pin=4"/></net>
+
+<net id="246"><net_src comp="160" pin="2"/><net_sink comp="202" pin=5"/></net>
+
+<net id="247"><net_src comp="154" pin="2"/><net_sink comp="202" pin=6"/></net>
+
+<net id="248"><net_src comp="16" pin="0"/><net_sink comp="202" pin=7"/></net>
+
+<net id="249"><net_src comp="148" pin="2"/><net_sink comp="202" pin=8"/></net>
+
+<net id="250"><net_src comp="142" pin="2"/><net_sink comp="202" pin=10"/></net>
+
+<net id="251"><net_src comp="22" pin="0"/><net_sink comp="202" pin=11"/></net>
+
+<net id="252"><net_src comp="24" pin="0"/><net_sink comp="202" pin=12"/></net>
+
+<net id="253"><net_src comp="26" pin="0"/><net_sink comp="202" pin=13"/></net>
+
+<net id="254"><net_src comp="28" pin="0"/><net_sink comp="202" pin=14"/></net>
+
+<net id="255"><net_src comp="30" pin="0"/><net_sink comp="202" pin=15"/></net>
+
+<net id="256"><net_src comp="32" pin="0"/><net_sink comp="202" pin=16"/></net>
+
+<net id="257"><net_src comp="34" pin="0"/><net_sink comp="202" pin=17"/></net>
+
+<net id="258"><net_src comp="36" pin="0"/><net_sink comp="202" pin=18"/></net>
+
+<net id="259"><net_src comp="38" pin="0"/><net_sink comp="202" pin=19"/></net>
+
+<net id="260"><net_src comp="40" pin="0"/><net_sink comp="202" pin=20"/></net>
+
+<net id="261"><net_src comp="42" pin="0"/><net_sink comp="202" pin=21"/></net>
+
+<net id="262"><net_src comp="44" pin="0"/><net_sink comp="202" pin=22"/></net>
+
+<net id="263"><net_src comp="46" pin="0"/><net_sink comp="202" pin=23"/></net>
+
+<net id="264"><net_src comp="48" pin="0"/><net_sink comp="202" pin=24"/></net>
+
+<net id="265"><net_src comp="50" pin="0"/><net_sink comp="202" pin=25"/></net>
+
+<net id="266"><net_src comp="52" pin="0"/><net_sink comp="202" pin=26"/></net>
+
+<net id="267"><net_src comp="54" pin="0"/><net_sink comp="202" pin=27"/></net>
+
+<net id="268"><net_src comp="56" pin="0"/><net_sink comp="202" pin=28"/></net>
+
+<net id="269"><net_src comp="58" pin="0"/><net_sink comp="202" pin=29"/></net>
+
+<net id="270"><net_src comp="60" pin="0"/><net_sink comp="202" pin=30"/></net>
+
+<net id="271"><net_src comp="62" pin="0"/><net_sink comp="202" pin=31"/></net>
+
+<net id="272"><net_src comp="64" pin="0"/><net_sink comp="202" pin=32"/></net>
+
+<net id="273"><net_src comp="66" pin="0"/><net_sink comp="202" pin=33"/></net>
+
+<net id="274"><net_src comp="68" pin="0"/><net_sink comp="202" pin=34"/></net>
+
+<net id="275"><net_src comp="70" pin="0"/><net_sink comp="202" pin=35"/></net>
+
+<net id="276"><net_src comp="72" pin="0"/><net_sink comp="202" pin=36"/></net>
+
+<net id="293"><net_src comp="118" pin="0"/><net_sink comp="277" pin=0"/></net>
+
+<net id="294"><net_src comp="16" pin="0"/><net_sink comp="277" pin=1"/></net>
+
+<net id="295"><net_src comp="190" pin="2"/><net_sink comp="277" pin=4"/></net>
+
+<net id="296"><net_src comp="74" pin="0"/><net_sink comp="277" pin=5"/></net>
+
+<net id="297"><net_src comp="76" pin="0"/><net_sink comp="277" pin=6"/></net>
+
+<net id="298"><net_src comp="78" pin="0"/><net_sink comp="277" pin=7"/></net>
+
+<net id="299"><net_src comp="80" pin="0"/><net_sink comp="277" pin=8"/></net>
+
+<net id="300"><net_src comp="82" pin="0"/><net_sink comp="277" pin=9"/></net>
+
+<net id="301"><net_src comp="84" pin="0"/><net_sink comp="277" pin=10"/></net>
+
+<net id="302"><net_src comp="86" pin="0"/><net_sink comp="277" pin=11"/></net>
+
+<net id="303"><net_src comp="88" pin="0"/><net_sink comp="277" pin=12"/></net>
+
+<net id="304"><net_src comp="90" pin="0"/><net_sink comp="277" pin=13"/></net>
+
+<net id="326"><net_src comp="120" pin="0"/><net_sink comp="305" pin=0"/></net>
+
+<net id="327"><net_src comp="196" pin="2"/><net_sink comp="305" pin=3"/></net>
+
+<net id="328"><net_src comp="70" pin="0"/><net_sink comp="305" pin=7"/></net>
+
+<net id="329"><net_src comp="72" pin="0"/><net_sink comp="305" pin=8"/></net>
+
+<net id="330"><net_src comp="76" pin="0"/><net_sink comp="305" pin=9"/></net>
+
+<net id="331"><net_src comp="78" pin="0"/><net_sink comp="305" pin=10"/></net>
+
+<net id="332"><net_src comp="80" pin="0"/><net_sink comp="305" pin=11"/></net>
+
+<net id="333"><net_src comp="82" pin="0"/><net_sink comp="305" pin=12"/></net>
+
+<net id="334"><net_src comp="84" pin="0"/><net_sink comp="305" pin=13"/></net>
+
+<net id="335"><net_src comp="86" pin="0"/><net_sink comp="305" pin=14"/></net>
+
+<net id="336"><net_src comp="88" pin="0"/><net_sink comp="305" pin=15"/></net>
+
+<net id="337"><net_src comp="90" pin="0"/><net_sink comp="305" pin=16"/></net>
+
+<net id="338"><net_src comp="74" pin="0"/><net_sink comp="305" pin=17"/></net>
+
+<net id="339"><net_src comp="92" pin="0"/><net_sink comp="305" pin=18"/></net>
+
+<net id="344"><net_src comp="184" pin="2"/><net_sink comp="340" pin=0"/></net>
+
+<net id="345"><net_src comp="106" pin="0"/><net_sink comp="340" pin=1"/></net>
+
+<net id="350"><net_src comp="184" pin="2"/><net_sink comp="346" pin=0"/></net>
+
+<net id="351"><net_src comp="108" pin="0"/><net_sink comp="346" pin=1"/></net>
+
+<net id="357"><net_src comp="346" pin="2"/><net_sink comp="352" pin=0"/></net>
+
+<net id="358"><net_src comp="110" pin="0"/><net_sink comp="352" pin=1"/></net>
+
+<net id="359"><net_src comp="112" pin="0"/><net_sink comp="352" pin=2"/></net>
+
+<net id="364"><net_src comp="346" pin="2"/><net_sink comp="360" pin=0"/></net>
+
+<net id="365"><net_src comp="340" pin="2"/><net_sink comp="360" pin=1"/></net>
+
+<net id="371"><net_src comp="360" pin="2"/><net_sink comp="366" pin=0"/></net>
+
+<net id="372"><net_src comp="352" pin="3"/><net_sink comp="366" pin=1"/></net>
+
+<net id="373"><net_src comp="114" pin="0"/><net_sink comp="366" pin=2"/></net>
+
+<net id="374"><net_src comp="366" pin="3"/><net_sink comp="202" pin=9"/></net>
+
+<net id="378"><net_src comp="142" pin="2"/><net_sink comp="375" pin=0"/></net>
+
+<net id="379"><net_src comp="375" pin="1"/><net_sink comp="202" pin=10"/></net>
+
+<net id="380"><net_src comp="375" pin="1"/><net_sink comp="305" pin=6"/></net>
+
+<net id="384"><net_src comp="148" pin="2"/><net_sink comp="381" pin=0"/></net>
+
+<net id="385"><net_src comp="381" pin="1"/><net_sink comp="202" pin=8"/></net>
+
+<net id="386"><net_src comp="381" pin="1"/><net_sink comp="277" pin=2"/></net>
+
+<net id="390"><net_src comp="154" pin="2"/><net_sink comp="387" pin=0"/></net>
+
+<net id="391"><net_src comp="387" pin="1"/><net_sink comp="202" pin=6"/></net>
+
+<net id="395"><net_src comp="160" pin="2"/><net_sink comp="392" pin=0"/></net>
+
+<net id="396"><net_src comp="392" pin="1"/><net_sink comp="202" pin=5"/></net>
+
+<net id="400"><net_src comp="166" pin="2"/><net_sink comp="397" pin=0"/></net>
+
+<net id="401"><net_src comp="397" pin="1"/><net_sink comp="202" pin=4"/></net>
+
+<net id="402"><net_src comp="397" pin="1"/><net_sink comp="305" pin=4"/></net>
+
+<net id="406"><net_src comp="172" pin="2"/><net_sink comp="403" pin=0"/></net>
+
+<net id="407"><net_src comp="403" pin="1"/><net_sink comp="202" pin=3"/></net>
+
+<net id="408"><net_src comp="403" pin="1"/><net_sink comp="305" pin=2"/></net>
+
+<net id="412"><net_src comp="178" pin="2"/><net_sink comp="409" pin=0"/></net>
+
+<net id="413"><net_src comp="409" pin="1"/><net_sink comp="202" pin=2"/></net>
+
+<net id="417"><net_src comp="184" pin="2"/><net_sink comp="414" pin=0"/></net>
+
+<net id="418"><net_src comp="414" pin="1"/><net_sink comp="202" pin=1"/></net>
+
+<net id="419"><net_src comp="414" pin="1"/><net_sink comp="305" pin=1"/></net>
+
+<net id="423"><net_src comp="366" pin="3"/><net_sink comp="420" pin=0"/></net>
+
+<net id="424"><net_src comp="420" pin="1"/><net_sink comp="202" pin=9"/></net>
+
+<net id="428"><net_src comp="202" pin="37"/><net_sink comp="425" pin=0"/></net>
+
+<net id="429"><net_src comp="425" pin="1"/><net_sink comp="277" pin=3"/></net>
+
+<net id="433"><net_src comp="190" pin="2"/><net_sink comp="430" pin=0"/></net>
+
+<net id="434"><net_src comp="430" pin="1"/><net_sink comp="277" pin=4"/></net>
+
+<net id="435"><net_src comp="430" pin="1"/><net_sink comp="305" pin=5"/></net>
+
+<net id="439"><net_src comp="196" pin="2"/><net_sink comp="436" pin=0"/></net>
+
+<net id="440"><net_src comp="436" pin="1"/><net_sink comp="305" pin=3"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1 | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la | {1 2 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2 | {3 4 }
+	Port: RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1 | {3 4 }
+	Port: output_chunk | {5 6 }
+ - Input state : 
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read1 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read2 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read14 | {5 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read25 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read6 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read7 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : p_read38 | {3 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : weights | {1 2 3 4 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : weights_q610 | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : num_frames | {1 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : noisy_chunk | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : fb_chunk | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4 | {1 2 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2 | {5 6 }
+	Port: (anonymous namespace)RunRealtimeBandQ610 : RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1 | {5 6 }
+  - Chain level:
+	State 1
+		select_ln2407 : 1
+		or_ln2407 : 1
+		weight_offset : 1
+		weight_offset_1 : 2
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+| Operation|                           Functional Unit                           |   DSP   |  Delay  |    FF   |   LUT   |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|          | grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |   135   | 2069.82 |  71757  |  31772  |
+|   call   |  grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277 |    0    |  9.528  |   2845  |   1315  |
+|          |    grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305   |    33   | 128.747 |  16527  |   4231  |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|  select  |                         select_ln2407_fu_352                        |    0    |    0    |    0    |    19   |
+|          |                         weight_offset_fu_366                        |    0    |    0    |    0    |    19   |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|   icmp   |                          icmp_ln2407_fu_340                         |    0    |    0    |    0    |    10   |
+|          |                         icmp_ln2407_1_fu_346                        |    0    |    0    |    0    |    10   |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|    or    |                           or_ln2407_fu_360                          |    0    |    0    |    0    |    2    |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|          |                     num_frames_read_read_fu_142                     |    0    |    0    |    0    |    0    |
+|          |                    weights_q610_read_read_fu_148                    |    0    |    0    |    0    |    0    |
+|          |                        p_read710_read_fu_154                        |    0    |    0    |    0    |    0    |
+|          |                         p_read69_read_fu_160                        |    0    |    0    |    0    |    0    |
+|   read   |                        p_read258_read_fu_166                        |    0    |    0    |    0    |    0    |
+|          |                         p_read26_read_fu_172                        |    0    |    0    |    0    |    0    |
+|          |                         p_read15_read_fu_178                        |    0    |    0    |    0    |    0    |
+|          |                        p_read_231_read_fu_184                       |    0    |    0    |    0    |    0    |
+|          |                        p_read_230_read_fu_190                       |    0    |    0    |    0    |    0    |
+|          |                        p_read147_read_fu_196                        |    0    |    0    |    0    |    0    |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                                                     |   168   | 2208.09 |  91129  |  37378  |
+|----------|---------------------------------------------------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-------------------------+--------+
+|                         |   FF   |
++-------------------------+--------+
+| num_frames_read_reg_375 |    3   |
+|    p_read147_reg_436    |    3   |
+|     p_read15_reg_409    |    8   |
+|    p_read258_reg_397    |    4   |
+|     p_read26_reg_403    |    7   |
+|     p_read69_reg_392    |    7   |
+|    p_read710_reg_387    |    8   |
+|    p_read_230_reg_430   |    8   |
+|    p_read_231_reg_414   |    2   |
+| weight_offset_1_reg_425 |   32   |
+|  weight_offset_reg_420  |   19   |
+|weights_q610_read_reg_381|   32   |
++-------------------------+--------+
+|          Total          |   133  |
++-------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|---------------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                                 Comp                                |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|---------------------------------------------------------------------|------|------|------|--------||---------||---------|
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p1  |   2  |   2  |    4   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p2  |   2  |   8  |   16   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p3  |   2  |   7  |   14   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p4  |   2  |   4  |    8   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p5  |   2  |   7  |   14   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p6  |   2  |   8  |   16   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p8  |   2  |  32  |   64   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p9  |   2  |  19  |   38   ||    9    |
+| grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202 |  p10 |   2  |   3  |    6   ||    9    |
+|  grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277 |  p4  |   2  |   8  |   16   ||    9    |
+|    grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305   |  p3  |   2  |   3  |    6   ||    9    |
+|---------------------------------------------------------------------|------|------|------|--------||---------||---------|
+|                                Total                                |      |      |      |   202  ||  17.468 ||    99   |
+|---------------------------------------------------------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           |   DSP  |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |   168  |  2208  |  91129 |  37378 |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |   17   |    -   |   99   |
+|  Register |    -   |    -   |   133  |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |   168  |  2225  |  91262 |  37477 |
++-----------+--------+--------+--------+--------+

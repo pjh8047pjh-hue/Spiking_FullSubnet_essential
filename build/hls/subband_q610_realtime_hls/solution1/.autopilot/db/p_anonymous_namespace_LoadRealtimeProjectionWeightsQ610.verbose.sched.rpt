@@ -1,0 +1,142 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610'
+================================================================
+* Date:           Thu May 14 12:27:15 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.481 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     2728|     2728|  27.280 us|  27.280 us|  2728|  2728|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.50>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%proj_size_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %proj_size" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 5 'read' 'proj_size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%weight_offset_read_3 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weight_offset_read" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 6 'read' 'weight_offset_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%weights_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %weights_q610" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 7 'read' 'weights_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [2/2] (3.50ns)   --->   "%call_ln2598 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2599_, i8 %proj_size_read, i32 %weight_offset_read_3, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 8 'call' 'call_ln2598' <Predicate = true> <Delay = 3.50> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 2.07>
+ST_2 : Operation 9 [1/2] (0.00ns)   --->   "%call_ln2598 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2599_, i8 %proj_size_read, i32 %weight_offset_read_3, i32 %weights_q610_read, i256 %weights, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 9 'call' 'call_ln2598' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i8.i8, i8 %proj_size_read, i8 0" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2621]   --->   Operation 10 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%shl_ln2621_1 = bitconcatenate i13 @_ssdm_op_BitConcatenate.i13.i8.i5, i8 %proj_size_read, i5 0" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2621]   --->   Operation 11 'bitconcatenate' 'shl_ln2621_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln2621 = zext i13 %shl_ln2621_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2621]   --->   Operation 12 'zext' 'zext_ln2621' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (2.07ns)   --->   "%sub_ln2621 = sub i16 %shl_ln, i16 %zext_ln2621" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2621]   --->   Operation 13 'sub' 'sub_ln2621' <Predicate = true> <Delay = 2.07> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.07> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.89>
+ST_3 : Operation 14 [2/2] (6.89ns)   --->   "%call_ln2598 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_, i8 %proj_size_read, i32 %weight_offset_read_3, i16 %sub_ln2621, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 14 'call' 'call_ln2598' <Predicate = true> <Delay = 6.89> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i512 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 15 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %weights, void @empty_135, i32 0, i32 0, void @empty_136, i32 0, i32 43031, void @empty_137, void @empty_138, void @empty_136, i32 1, i32 1, i32 16, i32 16, void @empty_136, void @empty_136, i32 4294967295, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/2] (0.00ns)   --->   "%call_ln2598 = call void @(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_, i8 %proj_size_read, i32 %weight_offset_read_3, i16 %sub_ln2621, i32 %weights_q610_read, i256 %weights, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2, i16 %RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598]   --->   Operation 17 'call' 'call_ln2598' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 18 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 3.503ns
+The critical path consists of the following:
+	wire read operation ('proj_size_read', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598) on port 'proj_size' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598) [16]  (0.000 ns)
+	'call' operation 0 bit ('call_ln2598', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598) to '(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2599_' [19]  (3.503 ns)
+
+ <State 2>: 2.077ns
+The critical path consists of the following:
+	'sub' operation 16 bit ('sub_ln2621', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2621) [23]  (2.077 ns)
+
+ <State 3>: 6.893ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln2598', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2598) to '(anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_' [24]  (6.893 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -26,6 +26,9 @@ const q_data_t kSigmoidPwlValuesQ610[kSigmoidPwlSegmentCount + 1] = {
 static_assert(kBand0ProjSize == (2 * kBand0CtrFreq * kBand0DfOrder), "Band0 projection layout must match DF layout.");
 static_assert(kBand1ProjSize == (2 * kBand1CtrFreq * kBand1DfOrder), "Band1 projection layout must match DF layout.");
 static_assert(kBand2ProjSize == (2 * kBand2CtrFreq * kBand2DfOrder), "Band2 projection layout must match DF layout.");
+static_assert((static_cast<long long>(2 * kSbHiddenSize) * 32767LL * 32767LL +
+               32767LL * (1LL << kQFrac)) < (1LL << 47),
+              "Q6.10 MAC accumulation must fit in accum_q_t.");
 
 void AssertBandSpecBounds(const BandSpec& spec) {
   assert(spec.band_index >= 0 && spec.band_index < kNumBands);
@@ -1585,6 +1588,637 @@ void RunBand0DirectQ610(
     }
   }
 }
+
+constexpr int kZyboZ720DspBudget = 220;
+constexpr int kLayer0HiddenPar = 2;
+constexpr int kLayer0InputPar = 4;
+constexpr int kLayer0RecurrentPar = 32;
+constexpr int kLayer1HiddenPar = 2;
+constexpr int kLayer1InputPar = 32;
+constexpr int kLayer1RecurrentPar = 32;
+constexpr int kProjectionDotPar = 4;
+constexpr int kBand0InputGeneratorDsp = 2;
+constexpr int kProjectionExtraDsp = 1;
+constexpr int kGateUpdateDsp =
+    (2 * kLayer0HiddenPar) + (2 * kLayer1HiddenPar);
+constexpr int kBnScaleDsp = kLayer0HiddenPar + kLayer1HiddenPar;
+constexpr int kBand0InputMinSourceFreq = -((kBand0NoisyFreqSize - kBand0CtrFreq) / 2);
+constexpr int kBand0InputMaxSourceFreq =
+    ((kBand0NumSubbands - 1) * kBand0CtrFreq) + kBand0NoisyFreqSize -
+    ((kBand0NoisyFreqSize - kBand0CtrFreq) / 2) - 1;
+
+static_assert(kLayer0HiddenPar * (kLayer0InputPar + kLayer0RecurrentPar) +
+                  kLayer1HiddenPar * (kLayer1InputPar + kLayer1RecurrentPar) + kProjectionDotPar +
+                  kProjectionExtraDsp + kGateUpdateDsp + kBnScaleDsp +
+                  kBand0InputGeneratorDsp <=
+              kZyboZ720DspBudget,
+              "Configured Band0 parallel MAC lanes must fit the Zybo Z7-20 DSP budget.");
+static_assert(kSbHiddenSize % kLayer0HiddenPar == 0, "Layer0 hidden parallelism must divide hidden size.");
+static_assert(kSbHiddenSize % kLayer1HiddenPar == 0, "Layer1 hidden parallelism must divide hidden size.");
+static_assert(kBand0InputMinSourceFreq < 0, "Band0 input generator expects only lower-edge reflection.");
+static_assert(kBand0InputMaxSourceFreq < kNumFreqs, "Band0 input generator must not exceed the FFT range.");
+
+inline accum_q_t MulForMacDspQ610(q_data_t lhs, q_data_t rhs) {
+  #pragma HLS inline
+  accum_q_t product_q20;
+  #pragma HLS bind_op variable=product_q20 op=mul impl=dsp latency=2
+  product_q20 = static_cast<accum_q_t>(lhs) * static_cast<accum_q_t>(rhs);
+  return product_q20;
+}
+
+inline q_data_t MulQ610Fabric(q_data_t lhs, q_data_t rhs) {
+  #pragma HLS inline
+  accum_q_t product_q20;
+  #pragma HLS bind_op variable=product_q20 op=mul impl=fabric
+  product_q20 = static_cast<accum_q_t>(lhs) * static_cast<accum_q_t>(rhs);
+  return SaturateInt16(RoundShiftRight(product_q20, kQFrac));
+}
+
+inline q_data_t MulQ610Dsp(q_data_t lhs, q_data_t rhs) {
+  #pragma HLS inline
+  accum_q_t product_q20;
+  #pragma HLS bind_op variable=product_q20 op=mul impl=dsp latency=2
+  product_q20 = static_cast<accum_q_t>(lhs) * static_cast<accum_q_t>(rhs);
+  return SaturateInt16(RoundShiftRight(product_q20, kQFrac));
+}
+
+template <bool UseDsp>
+inline q_data_t MulGateUpdateQ610(q_data_t lhs, q_data_t rhs);
+
+template <>
+inline q_data_t MulGateUpdateQ610<true>(q_data_t lhs, q_data_t rhs) {
+  #pragma HLS inline
+  return MulQ610Dsp(lhs, rhs);
+}
+
+template <>
+inline q_data_t MulGateUpdateQ610<false>(q_data_t lhs, q_data_t rhs) {
+  #pragma HLS inline
+  return MulQ610Fabric(lhs, rhs);
+}
+
+q_data_t SigmoidPwlQ610Fabric(q_data_t input_value_q610) {
+  #pragma HLS inline
+  if (input_value_q610 >= kSigmoidPwlKnotsQ610[kSigmoidPwlSegmentCount]) {
+    return kQOne;
+  }
+  if (input_value_q610 <= -kSigmoidPwlKnotsQ610[kSigmoidPwlSegmentCount]) {
+    return kQZero;
+  }
+
+  const bool is_negative = input_value_q610 < 0;
+  q_data_t abs_input_q610 = input_value_q610;
+  if (is_negative) {
+    abs_input_q610 = static_cast<q_data_t>(-static_cast<accum_q_t>(input_value_q610));
+  }
+
+  const int32_t abs_input_int = static_cast<int32_t>(abs_input_q610);
+  int segment_index;
+  if (abs_input_int <= 256) {
+    segment_index = 0;
+  } else if (abs_input_int <= 2048) {
+    segment_index = (abs_input_int - 1) >> 8;
+  } else if (abs_input_int <= 4096) {
+    segment_index = 8 + ((abs_input_int - 2049) >> 9);
+  } else {
+    segment_index = 12 + ((abs_input_int - 4097) >> 10);
+  }
+
+  const q_data_t x0_q610 = kSigmoidPwlKnotsQ610[segment_index];
+  const q_data_t y0_q610 = kSigmoidPwlValuesQ610[segment_index];
+  const q_data_t y1_q610 = kSigmoidPwlValuesQ610[segment_index + 1];
+  const int shift_bits = segment_index < 8 ? 8 : (segment_index < 12 ? 9 : 10);
+  const int32_t delta_y_q610 = static_cast<int32_t>(y1_q610) - static_cast<int32_t>(y0_q610);
+  const int32_t offset_x_q610 = abs_input_int - static_cast<int32_t>(x0_q610);
+  int32_t interp_product_q610;
+  #pragma HLS bind_op variable=interp_product_q610 op=mul impl=fabric
+  interp_product_q610 = offset_x_q610 * delta_y_q610;
+  const int32_t interpolated_q610 =
+      static_cast<int32_t>(y0_q610) + ((interp_product_q610 + (1 << (shift_bits - 1))) >> shift_bits);
+  const q_data_t positive_value_q610 = SaturateInt16(interpolated_q610);
+  return is_negative ? SubQ610(kQOne, positive_value_q610) : positive_value_q610;
+}
+
+template <int Rows, int Cols>
+void LoadMatrixQ610(const q_data_t* input, q_data_t (&output)[Rows][Cols]) {
+  #pragma HLS inline off
+  for (int row = 0; row < Rows; ++row) {
+    for (int col = 0; col < Cols; ++col) {
+      #pragma HLS pipeline II=1
+      output[row][col] = input[static_cast<std::size_t>(row) * Cols + col];
+    }
+  }
+}
+
+template <int N>
+void LoadVectorQ610(const q_data_t* input, q_data_t (&output)[N]) {
+  #pragma HLS inline off
+  for (int index = 0; index < N; ++index) {
+    #pragma HLS pipeline II=1
+    output[index] = input[index];
+  }
+}
+
+void LoadBand0Weights2DQ610(
+    const q_data_t* layer0_weight_ih_q610,
+    const q_data_t* layer0_weight_hh_q610,
+    const q_data_t* layer0_bias_ih_q610,
+    const q_data_t* layer0_bn_mul_q610,
+    const q_data_t* layer0_bn_add_q610,
+    const q_data_t* layer1_weight_ih_q610,
+    const q_data_t* layer1_weight_hh_q610,
+    const q_data_t* layer1_bias_ih_q610,
+    const q_data_t* layer1_bn_mul_q610,
+    const q_data_t* layer1_bn_add_q610,
+    const q_data_t* proj_weight_q610,
+    const q_data_t* proj_bias_q610,
+    q_data_t (&layer0_weight_ih_local)[kSbHiddenSize][kBand0PackedInputSize],
+    q_data_t (&layer0_weight_hh_local)[kSbHiddenSize][kSbHiddenSize],
+    q_data_t (&layer0_bias_ih_local)[2][kSbHiddenSize],
+    q_data_t (&layer0_bn_mul_local)[kSbHiddenSize],
+    q_data_t (&layer0_bn_add_local)[kSbHiddenSize],
+    q_data_t (&layer1_weight_ih_local)[kSbHiddenSize][kSbHiddenSize],
+    q_data_t (&layer1_weight_hh_local)[kSbHiddenSize][kSbHiddenSize],
+    q_data_t (&layer1_bias_ih_local)[2][kSbHiddenSize],
+    q_data_t (&layer1_bn_mul_local)[kSbHiddenSize],
+    q_data_t (&layer1_bn_add_local)[kSbHiddenSize],
+    q_data_t (&proj_weight_local)[kBand0ProjSize][kSbHiddenSize],
+    q_data_t (&proj_bias_local)[kBand0ProjSize]) {
+  #pragma HLS inline off
+  LoadMatrixQ610<kSbHiddenSize, kBand0PackedInputSize>(layer0_weight_ih_q610, layer0_weight_ih_local);
+  LoadMatrixQ610<kSbHiddenSize, kSbHiddenSize>(layer0_weight_hh_q610, layer0_weight_hh_local);
+  LoadMatrixQ610<2, kSbHiddenSize>(layer0_bias_ih_q610, layer0_bias_ih_local);
+  LoadVectorQ610<kSbHiddenSize>(layer0_bn_mul_q610, layer0_bn_mul_local);
+  LoadVectorQ610<kSbHiddenSize>(layer0_bn_add_q610, layer0_bn_add_local);
+  LoadMatrixQ610<kSbHiddenSize, kSbHiddenSize>(layer1_weight_ih_q610, layer1_weight_ih_local);
+  LoadMatrixQ610<kSbHiddenSize, kSbHiddenSize>(layer1_weight_hh_q610, layer1_weight_hh_local);
+  LoadMatrixQ610<2, kSbHiddenSize>(layer1_bias_ih_q610, layer1_bias_ih_local);
+  LoadVectorQ610<kSbHiddenSize>(layer1_bn_mul_q610, layer1_bn_mul_local);
+  LoadVectorQ610<kSbHiddenSize>(layer1_bn_add_q610, layer1_bn_add_local);
+  LoadMatrixQ610<kBand0ProjSize, kSbHiddenSize>(proj_weight_q610, proj_weight_local);
+  LoadVectorQ610<kBand0ProjSize>(proj_bias_q610, proj_bias_local);
+}
+
+template <int N>
+void ReadFixedVectorFromStreamQ610(hls::stream<q_data_t>& input_stream, q_data_t (&buffer)[N]) {
+  #pragma HLS inline
+  for (int index = 0; index < N; ++index) {
+    #pragma HLS pipeline II=1
+    buffer[index] = input_stream.read();
+  }
+}
+
+template <int N>
+void WriteFixedVectorToStreamQ610(const q_data_t (&buffer)[N], hls::stream<q_data_t>& output_stream) {
+  #pragma HLS inline
+  for (int index = 0; index < N; ++index) {
+    #pragma HLS pipeline II=1
+    output_stream.write(buffer[index]);
+  }
+}
+
+template <int N>
+void ClearStateVectorQ610(q_data_t (&state_q610)[kBand0NumSubbands][N]) {
+  #pragma HLS inline off
+  for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+    for (int hidden_index = 0; hidden_index < N; ++hidden_index) {
+      #pragma HLS pipeline II=1
+      state_q610[subband_index][hidden_index] = 0;
+    }
+  }
+}
+
+void GenerateBand0SequenceStreamOptimizedQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    hls::stream<q_data_t>& sequence_stream) {
+  #pragma HLS inline off
+  constexpr int kBand0NbrFreq = (kBand0NoisyFreqSize - kBand0CtrFreq) / 2;
+
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      const int center_start = subband_index * kBand0CtrFreq;
+      for (int noisy_freq_index = 0; noisy_freq_index < kBand0NoisyFreqSize; ++noisy_freq_index) {
+        #pragma HLS pipeline II=1
+        int source_freq = center_start + noisy_freq_index - kBand0NbrFreq;
+        if (source_freq < 0) {
+          source_freq = -source_freq;
+        }
+        sequence_stream.write(noisy_input_q610[InputIndex(0, source_freq, frame_index, kFixedNumFrames)]);
+      }
+      for (int fb_freq_index = 0; fb_freq_index < kBand0FbFreqSize; ++fb_freq_index) {
+        #pragma HLS pipeline II=1
+        const int source_freq = center_start + fb_freq_index;
+        sequence_stream.write(fb_output_q610[InputIndex(0, source_freq, frame_index, kFixedNumFrames)]);
+      }
+    }
+  }
+}
+
+template <int Terms, int Par, int WeightCols>
+accum_q_t DotProductDspQ610(
+    const q_data_t input[Terms],
+    const q_data_t weights[kSbHiddenSize][WeightCols],
+    int hidden_index) {
+  #pragma HLS inline
+  accum_q_t lane_sums[Par];
+  #pragma HLS array_partition variable=lane_sums complete dim=1
+
+  for (int lane = 0; lane < Par; ++lane) {
+    #pragma HLS unroll
+    lane_sums[lane] = 0;
+  }
+
+  for (int base_index = 0; base_index < Terms; base_index += Par) {
+    #pragma HLS pipeline II=1
+    for (int lane = 0; lane < Par; ++lane) {
+      #pragma HLS unroll
+      const int index = base_index + lane;
+      if (index < Terms) {
+        lane_sums[lane] += MulForMacDspQ610(input[index], weights[hidden_index][index]);
+      }
+    }
+  }
+
+  accum_q_t total_q20 = 0;
+  for (int lane = 0; lane < Par; ++lane) {
+    #pragma HLS unroll
+    total_q20 += lane_sums[lane];
+  }
+  return total_q20;
+}
+
+template <int InputSize, int HiddenPar, int InputPar, int RecurrentPar>
+void RunGSUMacPhaseBand0Q610(
+    const q_data_t input_ptr[InputSize],
+    const q_data_t weight_ih[kSbHiddenSize][InputSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t prev_hx_q610[kSbHiddenSize],
+    hls::stream<ap_int<48 * HiddenPar> >& common_sum_stream) {
+  #pragma HLS inline off
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += HiddenPar) {
+    ap_int<48 * HiddenPar> common_packet = 0;
+    for (int hidden_lane = 0; hidden_lane < HiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      const accum_q_t input_sum_q20 =
+          DotProductDspQ610<InputSize, InputPar, InputSize>(input_ptr, weight_ih, hidden_index);
+      const accum_q_t recurrent_sum_q20 =
+          DotProductDspQ610<kSbHiddenSize, RecurrentPar, kSbHiddenSize>(prev_hx_q610, weight_hh, hidden_index);
+      const accum_q_t common_q20 = input_sum_q20 + recurrent_sum_q20;
+      common_packet.range((48 * (hidden_lane + 1)) - 1, 48 * hidden_lane) = common_q20;
+    }
+    common_sum_stream.write(common_packet);
+  }
+}
+
+template <int HiddenPar, bool UseDspGateUpdate>
+void RunGSUGatePhaseBand0Q610(
+    hls::stream<ap_int<48 * HiddenPar> >& common_sum_stream,
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    const q_data_t prev_cx_q610[kSbHiddenSize],
+    q_data_t hx_state_q610[kSbHiddenSize],
+    q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t output_hy_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += HiddenPar) {
+    ap_int<48 * HiddenPar> common_packet = common_sum_stream.read();
+    for (int hidden_lane = 0; hidden_lane < HiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      const accum_q_t common_q20 =
+          common_packet.range((48 * (hidden_lane + 1)) - 1, 48 * hidden_lane);
+      const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+      const accum_q_t forget_q20 = common_q20 + (static_cast<accum_q_t>(bias_ih[0][hidden_index]) * q_scale_q20);
+      const accum_q_t cell_q20 = common_q20 + (static_cast<accum_q_t>(bias_ih[1][hidden_index]) * q_scale_q20);
+
+      const q_data_t forget_preact_q610 = SaturateInt16(RoundShiftRight(forget_q20, kQFrac));
+      const q_data_t cell_preact_q610 = SaturateInt16(RoundShiftRight(cell_q20, kQFrac));
+
+      const q_data_t forget_gate_q610 = SigmoidPwlQ610Fabric(forget_preact_q610);
+      const q_data_t one_minus_forget_q610 = SubQ610(kQOne, forget_gate_q610);
+      const q_data_t retained_q610 =
+          MulGateUpdateQ610<UseDspGateUpdate>(forget_gate_q610, prev_cx_q610[hidden_index]);
+      const q_data_t injected_q610 =
+          MulGateUpdateQ610<UseDspGateUpdate>(one_minus_forget_q610, cell_preact_q610);
+
+      q_data_t cy_q610 = AddQ610(retained_q610, injected_q610);
+      const q_data_t scaled_q610 = MulQ610Dsp(cy_q610, bn_mul[hidden_index]);
+      cy_q610 = AddQ610(scaled_q610, bn_add[hidden_index]);
+      const q_data_t hy_q610 = StepActivationQ610(cy_q610);
+
+      cx_state_q610[hidden_index] = cy_q610;
+      hx_state_q610[hidden_index] = hy_q610;
+      output_hy_q610[hidden_index] = hy_q610;
+    }
+  }
+}
+
+template <int HiddenPar>
+void SnapshotGSUStateQ610(
+    const q_data_t hx_state_q610[kSbHiddenSize],
+    const q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t prev_hx_q610[kSbHiddenSize],
+    q_data_t prev_cx_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += HiddenPar) {
+    #pragma HLS pipeline II=1
+    for (int hidden_lane = 0; hidden_lane < HiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      prev_hx_q610[hidden_index] = hx_state_q610[hidden_index];
+      prev_cx_q610[hidden_index] = cx_state_q610[hidden_index];
+    }
+  }
+}
+
+template <int InputSize, int HiddenPar, int InputPar, int RecurrentPar, bool UseDspGateUpdate>
+void RunGSUCellBand0ParallelQ610(
+    const q_data_t input_ptr[InputSize],
+    const q_data_t weight_ih[kSbHiddenSize][InputSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t hx_state_q610[kSbHiddenSize],
+    q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t output_hy_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  q_data_t prev_hx_q610[kSbHiddenSize];
+  q_data_t prev_cx_q610[kSbHiddenSize];
+  hls::stream<ap_int<48 * HiddenPar> > common_sum_stream;
+  #pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+  #pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+  #pragma HLS stream variable=common_sum_stream depth=2
+
+  SnapshotGSUStateQ610<HiddenPar>(hx_state_q610, cx_state_q610, prev_hx_q610, prev_cx_q610);
+  RunGSUMacPhaseBand0Q610<InputSize, HiddenPar, InputPar, RecurrentPar>(
+      input_ptr, weight_ih, weight_hh, prev_hx_q610, common_sum_stream);
+  RunGSUGatePhaseBand0Q610<HiddenPar, UseDspGateUpdate>(
+      common_sum_stream, bias_ih, bn_mul, bn_add, prev_cx_q610, hx_state_q610, cx_state_q610, output_hy_q610);
+}
+
+void RunGSULayer0StreamParallelQ610(
+    hls::stream<q_data_t>& sequence_input_stream,
+    const q_data_t (&weight_ih)[kSbHiddenSize][kBand0PackedInputSize],
+    const q_data_t (&weight_hh)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&bias_ih)[2][kSbHiddenSize],
+    const q_data_t (&bn_mul)[kSbHiddenSize],
+    const q_data_t (&bn_add)[kSbHiddenSize],
+    q_data_t (&hx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t (&cx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    hls::stream<q_data_t>& sequence_output_stream) {
+  #pragma HLS inline off
+  q_data_t input_buffer[kBand0PackedInputSize];
+  q_data_t output_buffer[kSbHiddenSize];
+  #pragma HLS array_partition variable=input_buffer complete dim=1
+  #pragma HLS array_partition variable=output_buffer cyclic factor=kLayer0HiddenPar dim=1
+
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      ReadFixedVectorFromStreamQ610(sequence_input_stream, input_buffer);
+      RunGSUCellBand0ParallelQ610<kBand0PackedInputSize, kLayer0HiddenPar, kLayer0InputPar, kLayer0RecurrentPar, true>(
+          input_buffer,
+          weight_ih,
+          weight_hh,
+          bias_ih,
+          bn_mul,
+          bn_add,
+          hx_state_q610[subband_index],
+          cx_state_q610[subband_index],
+          output_buffer);
+      WriteFixedVectorToStreamQ610(output_buffer, sequence_output_stream);
+    }
+  }
+}
+
+void RunGSULayer1StreamParallelQ610(
+    hls::stream<q_data_t>& sequence_input_stream,
+    const q_data_t (&weight_ih)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&weight_hh)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&bias_ih)[2][kSbHiddenSize],
+    const q_data_t (&bn_mul)[kSbHiddenSize],
+    const q_data_t (&bn_add)[kSbHiddenSize],
+    q_data_t (&hx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t (&cx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    hls::stream<q_data_t>& sequence_output_stream) {
+  #pragma HLS inline off
+  q_data_t input_buffer[kSbHiddenSize];
+  q_data_t output_buffer[kSbHiddenSize];
+  #pragma HLS array_partition variable=input_buffer complete dim=1
+  #pragma HLS array_partition variable=output_buffer cyclic factor=kLayer1HiddenPar dim=1
+
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      ReadFixedVectorFromStreamQ610(sequence_input_stream, input_buffer);
+      RunGSUCellBand0ParallelQ610<kSbHiddenSize, kLayer1HiddenPar, kLayer1InputPar, kLayer1RecurrentPar, true>(
+          input_buffer,
+          weight_ih,
+          weight_hh,
+          bias_ih,
+          bn_mul,
+          bn_add,
+          hx_state_q610[subband_index],
+          cx_state_q610[subband_index],
+          output_buffer);
+      WriteFixedVectorToStreamQ610(output_buffer, sequence_output_stream);
+    }
+  }
+}
+
+accum_q_t ProjectionDotProductDspQ610(
+    const q_data_t input[kSbHiddenSize],
+    const q_data_t weights[kBand0ProjSize][kSbHiddenSize],
+    int proj_index) {
+  #pragma HLS inline
+  accum_q_t lane_sums[kProjectionDotPar];
+  #pragma HLS array_partition variable=lane_sums complete dim=1
+
+  for (int lane = 0; lane < kProjectionDotPar; ++lane) {
+    #pragma HLS unroll
+    lane_sums[lane] = 0;
+  }
+
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kProjectionDotPar) {
+    #pragma HLS pipeline II=1
+    for (int lane = 0; lane < kProjectionDotPar; ++lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + lane;
+      lane_sums[lane] += MulForMacDspQ610(input[hidden_index], weights[proj_index][hidden_index]);
+    }
+  }
+
+  accum_q_t total_q20 = 0;
+  for (int lane = 0; lane < kProjectionDotPar; ++lane) {
+    #pragma HLS unroll
+    total_q20 += lane_sums[lane];
+  }
+  return total_q20;
+}
+
+void RunProjectionStoreBand0StreamParallelQ610(
+    hls::stream<q_data_t>& sequence_input_stream,
+    const q_data_t (&proj_weight_q610)[kBand0ProjSize][kSbHiddenSize],
+    const q_data_t (&proj_bias_q610)[kBand0ProjSize],
+    q_data_t* df_coef_q610) {
+  #pragma HLS inline off
+  q_data_t input_buffer[kSbHiddenSize];
+  #pragma HLS array_partition variable=input_buffer complete dim=1
+
+  for (int frame_index = 0; frame_index < kFixedNumFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      ReadFixedVectorFromStreamQ610(sequence_input_stream, input_buffer);
+      for (int proj_index = 0; proj_index < kBand0ProjSize; ++proj_index) {
+        const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+        const accum_q_t sum_q20 = (static_cast<accum_q_t>(proj_bias_q610[proj_index]) * q_scale_q20) +
+                                  ProjectionDotProductDspQ610(input_buffer, proj_weight_q610, proj_index);
+        const q_data_t value_q610 = SaturateInt16(RoundShiftRight(sum_q20, kQFrac));
+        const int complex_index = proj_index / (kBand0CtrFreq * kBand0DfOrder);
+        const int feature_remainder = proj_index % (kBand0CtrFreq * kBand0DfOrder);
+        const int ctr_index = feature_remainder / kBand0DfOrder;
+        const int df_index = feature_remainder % kBand0DfOrder;
+        const int merged_freq_index = subband_index * kBand0CtrFreq + ctr_index;
+        df_coef_q610[DfCoefIndex(
+            0,
+            df_index,
+            merged_freq_index,
+            frame_index,
+            complex_index,
+            kBand0DfOrder,
+            kBand0TotalFreqs,
+            kFixedNumFrames)] = value_q610;
+      }
+    }
+  }
+}
+
+void RunBand0OptimizedDataflowQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    const q_data_t (&layer0_weight_ih_q610)[kSbHiddenSize][kBand0PackedInputSize],
+    const q_data_t (&layer0_weight_hh_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer0_bias_ih_q610)[2][kSbHiddenSize],
+    const q_data_t (&layer0_bn_mul_q610)[kSbHiddenSize],
+    const q_data_t (&layer0_bn_add_q610)[kSbHiddenSize],
+    const q_data_t (&layer1_weight_ih_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer1_weight_hh_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer1_bias_ih_q610)[2][kSbHiddenSize],
+    const q_data_t (&layer1_bn_mul_q610)[kSbHiddenSize],
+    const q_data_t (&layer1_bn_add_q610)[kSbHiddenSize],
+    const q_data_t (&proj_weight_q610)[kBand0ProjSize][kSbHiddenSize],
+    const q_data_t (&proj_bias_q610)[kBand0ProjSize],
+    q_data_t (&layer0_hx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t (&layer0_cx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t (&layer1_hx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t (&layer1_cx_state_q610)[kBand0NumSubbands][kSbHiddenSize],
+    q_data_t* df_coef_q610) {
+  #pragma HLS inline off
+  #pragma HLS stable variable=layer0_weight_ih_q610
+  #pragma HLS stable variable=layer0_weight_hh_q610
+  #pragma HLS stable variable=layer0_bias_ih_q610
+  #pragma HLS stable variable=layer0_bn_mul_q610
+  #pragma HLS stable variable=layer0_bn_add_q610
+  #pragma HLS stable variable=layer1_weight_ih_q610
+  #pragma HLS stable variable=layer1_weight_hh_q610
+  #pragma HLS stable variable=layer1_bias_ih_q610
+  #pragma HLS stable variable=layer1_bn_mul_q610
+  #pragma HLS stable variable=layer1_bn_add_q610
+  #pragma HLS stable variable=proj_weight_q610
+  #pragma HLS stable variable=proj_bias_q610
+  hls::stream<q_data_t> sequence_stream;
+  hls::stream<q_data_t> layer0_output_stream;
+  hls::stream<q_data_t> layer1_output_stream;
+  #pragma HLS stream variable=sequence_stream depth=128
+  #pragma HLS stream variable=layer0_output_stream depth=512
+  #pragma HLS stream variable=layer1_output_stream depth=512
+
+  #pragma HLS dataflow
+  GenerateBand0SequenceStreamOptimizedQ610(noisy_input_q610, fb_output_q610, sequence_stream);
+  RunGSULayer0StreamParallelQ610(
+      sequence_stream,
+      layer0_weight_ih_q610,
+      layer0_weight_hh_q610,
+      layer0_bias_ih_q610,
+      layer0_bn_mul_q610,
+      layer0_bn_add_q610,
+      layer0_hx_state_q610,
+      layer0_cx_state_q610,
+      layer0_output_stream);
+  RunGSULayer1StreamParallelQ610(
+      layer0_output_stream,
+      layer1_weight_ih_q610,
+      layer1_weight_hh_q610,
+      layer1_bias_ih_q610,
+      layer1_bn_mul_q610,
+      layer1_bn_add_q610,
+      layer1_hx_state_q610,
+      layer1_cx_state_q610,
+      layer1_output_stream);
+  RunProjectionStoreBand0StreamParallelQ610(
+      layer1_output_stream,
+      proj_weight_q610,
+      proj_bias_q610,
+      df_coef_q610);
+}
+
+void RunBand0OptimizedCoreQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    const q_data_t (&layer0_weight_ih_q610)[kSbHiddenSize][kBand0PackedInputSize],
+    const q_data_t (&layer0_weight_hh_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer0_bias_ih_q610)[2][kSbHiddenSize],
+    const q_data_t (&layer0_bn_mul_q610)[kSbHiddenSize],
+    const q_data_t (&layer0_bn_add_q610)[kSbHiddenSize],
+    const q_data_t (&layer1_weight_ih_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer1_weight_hh_q610)[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t (&layer1_bias_ih_q610)[2][kSbHiddenSize],
+    const q_data_t (&layer1_bn_mul_q610)[kSbHiddenSize],
+    const q_data_t (&layer1_bn_add_q610)[kSbHiddenSize],
+    const q_data_t (&proj_weight_q610)[kBand0ProjSize][kSbHiddenSize],
+    const q_data_t (&proj_bias_q610)[kBand0ProjSize],
+    q_data_t* df_coef_q610) {
+  #pragma HLS inline off
+  static q_data_t layer0_hx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer0_cx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer1_hx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer1_cx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  #pragma HLS array_partition variable=layer0_hx_state_q610 cyclic factor=kLayer0HiddenPar dim=2
+  #pragma HLS array_partition variable=layer0_cx_state_q610 cyclic factor=kLayer0HiddenPar dim=2
+  #pragma HLS array_partition variable=layer1_hx_state_q610 cyclic factor=kLayer1HiddenPar dim=2
+  #pragma HLS array_partition variable=layer1_cx_state_q610 cyclic factor=kLayer1HiddenPar dim=2
+
+  ClearStateVectorQ610(layer0_hx_state_q610);
+  ClearStateVectorQ610(layer0_cx_state_q610);
+  ClearStateVectorQ610(layer1_hx_state_q610);
+  ClearStateVectorQ610(layer1_cx_state_q610);
+
+  RunBand0OptimizedDataflowQ610(
+      noisy_input_q610,
+      fb_output_q610,
+      layer0_weight_ih_q610,
+      layer0_weight_hh_q610,
+      layer0_bias_ih_q610,
+      layer0_bn_mul_q610,
+      layer0_bn_add_q610,
+      layer1_weight_ih_q610,
+      layer1_weight_hh_q610,
+      layer1_bias_ih_q610,
+      layer1_bn_mul_q610,
+      layer1_bn_add_q610,
+      proj_weight_q610,
+      proj_bias_q610,
+      layer0_hx_state_q610,
+      layer0_cx_state_q610,
+      layer1_hx_state_q610,
+      layer1_cx_state_q610,
+      df_coef_q610);
+}
 }
 
 }  // namespace
@@ -1607,45 +2241,73 @@ void SubbandBand0TopQ610(
     const q_data_t proj_weight_q610[kBand0ProjSize * kSbHiddenSize],
     const q_data_t proj_bias_q610[kBand0ProjSize],
     q_data_t df_coef_q610[kBand0DfCoefElementCount]) {
-  #pragma HLS INTERFACE m_axi port=noisy_input_q610 bundle=gmem0 depth=kBand0InputElementCount
-  #pragma HLS INTERFACE m_axi port=fb_output_q610 bundle=gmem1 depth=kBand0InputElementCount
-  #pragma HLS INTERFACE m_axi port=layer0_weight_ih_q610 bundle=weights0 depth=(kSbHiddenSize * kBand0PackedInputSize)
-  #pragma HLS INTERFACE m_axi port=layer0_weight_hh_q610 bundle=weights0 depth=(kSbHiddenSize * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=layer0_bias_ih_q610 bundle=weights0 depth=(2 * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=layer0_bn_mul_q610 bundle=weights0 depth=kSbHiddenSize
-  #pragma HLS INTERFACE m_axi port=layer0_bn_add_q610 bundle=weights0 depth=kSbHiddenSize
-  #pragma HLS INTERFACE m_axi port=layer1_weight_ih_q610 bundle=weights1 depth=(kSbHiddenSize * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=layer1_weight_hh_q610 bundle=weights1 depth=(kSbHiddenSize * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=layer1_bias_ih_q610 bundle=weights1 depth=(2 * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=layer1_bn_mul_q610 bundle=weights1 depth=kSbHiddenSize
-  #pragma HLS INTERFACE m_axi port=layer1_bn_add_q610 bundle=weights1 depth=kSbHiddenSize
-  #pragma HLS INTERFACE m_axi port=proj_weight_q610 bundle=weights2 depth=(kBand0ProjSize * kSbHiddenSize)
-  #pragma HLS INTERFACE m_axi port=proj_bias_q610 bundle=weights2 depth=kBand0ProjSize
-  #pragma HLS INTERFACE m_axi port=df_coef_q610 bundle=gmem2 depth=kBand0DfCoefElementCount
+  #pragma HLS INTERFACE m_axi port=noisy_input_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount
+  #pragma HLS INTERFACE m_axi port=fb_output_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount
+  #pragma HLS INTERFACE m_axi port=layer0_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kBand0PackedInputSize)
+  #pragma HLS INTERFACE m_axi port=layer0_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=layer0_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=layer0_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize
+  #pragma HLS INTERFACE m_axi port=layer0_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize
+  #pragma HLS INTERFACE m_axi port=layer1_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=layer1_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=layer1_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=layer1_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize
+  #pragma HLS INTERFACE m_axi port=layer1_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize
+  #pragma HLS INTERFACE m_axi port=proj_weight_q610 offset=slave bundle=weights depth=(kBand0ProjSize * kSbHiddenSize)
+  #pragma HLS INTERFACE m_axi port=proj_bias_q610 offset=slave bundle=weights depth=kBand0ProjSize
+  #pragma HLS INTERFACE m_axi port=df_coef_q610 offset=slave bundle=gmem_out depth=kBand0DfCoefElementCount
+  #pragma HLS INTERFACE s_axilite port=noisy_input_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=fb_output_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer0_weight_ih_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer0_weight_hh_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer0_bias_ih_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer0_bn_mul_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer0_bn_add_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer1_weight_ih_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer1_weight_hh_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer1_bias_ih_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer1_bn_mul_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=layer1_bn_add_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=proj_weight_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=proj_bias_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=df_coef_q610 bundle=control
   #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-  static q_data_t noisy_subbands_q610[1];
-  static q_data_t fb_subbands_q610[1];
-  static q_data_t sb_input_q610[1];
-  static q_data_t packed_input_q610[1];
-  static q_data_t sequence_input_q610[1];
-  static q_data_t layer0_hx_state_q610[kBand0StateElementCount];
-  static q_data_t layer0_cx_state_q610[kBand0StateElementCount];
-  static q_data_t layer0_output_q610[1];
-  static q_data_t layer1_hx_state_q610[kBand0StateElementCount];
-  static q_data_t layer1_cx_state_q610[kBand0StateElementCount];
-  static q_data_t layer1_output_q610[1];
+  static q_data_t layer0_weight_ih_local[kSbHiddenSize][kBand0PackedInputSize];
+  static q_data_t layer0_weight_hh_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer0_bias_ih_local[2][kSbHiddenSize];
+  static q_data_t layer0_bn_mul_local[kSbHiddenSize];
+  static q_data_t layer0_bn_add_local[kSbHiddenSize];
+  static q_data_t layer1_weight_ih_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer1_weight_hh_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer1_bias_ih_local[2][kSbHiddenSize];
+  static q_data_t layer1_bn_mul_local[kSbHiddenSize];
+  static q_data_t layer1_bn_add_local[kSbHiddenSize];
+  static q_data_t proj_weight_local[kBand0ProjSize][kSbHiddenSize];
+  static q_data_t proj_bias_local[kBand0ProjSize];
 
-#ifndef __SYNTHESIS__
-  std::cout << "[TOP-CSIM] direct fallback start" << std::endl;
-  for (int i = 0; i < kBand0DfCoefElementCount; ++i) {
-    df_coef_q610[i] = 0;
-  }
-  const int csim_debug_num_frames = 8;
-  RunBand0DirectQ610(
-      noisy_input_q610,
-      fb_output_q610,
-      csim_debug_num_frames,
+  #pragma HLS bind_storage variable=layer0_weight_ih_local type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer0_weight_hh_local type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer1_weight_ih_local type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer1_weight_hh_local type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=proj_weight_local type=ram_2p impl=bram
+  #pragma HLS array_partition variable=layer0_weight_ih_local cyclic factor=kLayer0HiddenPar dim=1
+  #pragma HLS array_reshape variable=layer0_weight_ih_local cyclic factor=kLayer0InputPar dim=2
+  #pragma HLS array_partition variable=layer0_weight_hh_local cyclic factor=kLayer0HiddenPar dim=1
+  #pragma HLS array_reshape variable=layer0_weight_hh_local cyclic factor=kLayer0RecurrentPar dim=2
+  #pragma HLS array_partition variable=layer0_bias_ih_local cyclic factor=kLayer0HiddenPar dim=2
+  #pragma HLS array_partition variable=layer0_bn_mul_local cyclic factor=kLayer0HiddenPar dim=1
+  #pragma HLS array_partition variable=layer0_bn_add_local cyclic factor=kLayer0HiddenPar dim=1
+  #pragma HLS array_partition variable=layer1_weight_ih_local cyclic factor=kLayer1HiddenPar dim=1
+  #pragma HLS array_reshape variable=layer1_weight_ih_local cyclic factor=kLayer1InputPar dim=2
+  #pragma HLS array_partition variable=layer1_weight_hh_local cyclic factor=kLayer1HiddenPar dim=1
+  #pragma HLS array_reshape variable=layer1_weight_hh_local cyclic factor=kLayer1RecurrentPar dim=2
+  #pragma HLS array_partition variable=layer1_bias_ih_local cyclic factor=kLayer1HiddenPar dim=2
+  #pragma HLS array_partition variable=layer1_bn_mul_local cyclic factor=kLayer1HiddenPar dim=1
+  #pragma HLS array_partition variable=layer1_bn_add_local cyclic factor=kLayer1HiddenPar dim=1
+  #pragma HLS array_reshape variable=proj_weight_local cyclic factor=kProjectionDotPar dim=2
+
+  LoadBand0Weights2DQ610(
       layer0_weight_ih_q610,
       layer0_weight_hh_q610,
       layer0_bias_ih_q610,
@@ -1658,49 +2320,1041 @@ void SubbandBand0TopQ610(
       layer1_bn_add_q610,
       proj_weight_q610,
       proj_bias_q610,
-      noisy_subbands_q610,
-      fb_subbands_q610,
-      sb_input_q610,
-      packed_input_q610,
-      sequence_input_q610,
-      layer0_hx_state_q610,
-      layer0_cx_state_q610,
-      layer0_output_q610,
-      layer1_hx_state_q610,
-      layer1_cx_state_q610,
-      layer1_output_q610,
-      df_coef_q610);
-  std::cout << "[TOP-CSIM] direct fallback done" << std::endl;
-#else
-  RunBand0DirectQ610(
+      layer0_weight_ih_local,
+      layer0_weight_hh_local,
+      layer0_bias_ih_local,
+      layer0_bn_mul_local,
+      layer0_bn_add_local,
+      layer1_weight_ih_local,
+      layer1_weight_hh_local,
+      layer1_bias_ih_local,
+      layer1_bn_mul_local,
+      layer1_bn_add_local,
+      proj_weight_local,
+      proj_bias_local);
+
+  RunBand0OptimizedCoreQ610(
       noisy_input_q610,
       fb_output_q610,
-      kFixedNumFrames,
-      layer0_weight_ih_q610,
-      layer0_weight_hh_q610,
-      layer0_bias_ih_q610,
-      layer0_bn_mul_q610,
-      layer0_bn_add_q610,
-      layer1_weight_ih_q610,
-      layer1_weight_hh_q610,
-      layer1_bias_ih_q610,
-      layer1_bn_mul_q610,
-      layer1_bn_add_q610,
-      proj_weight_q610,
-      proj_bias_q610,
-      noisy_subbands_q610,
-      fb_subbands_q610,
-      sb_input_q610,
-      packed_input_q610,
-      sequence_input_q610,
-      layer0_hx_state_q610,
-      layer0_cx_state_q610,
-      layer0_output_q610,
-      layer1_hx_state_q610,
-      layer1_cx_state_q610,
-      layer1_output_q610,
+      layer0_weight_ih_local,
+      layer0_weight_hh_local,
+      layer0_bias_ih_local,
+      layer0_bn_mul_local,
+      layer0_bn_add_local,
+      layer1_weight_ih_local,
+      layer1_weight_hh_local,
+      layer1_bias_ih_local,
+      layer1_bn_mul_local,
+      layer1_bn_add_local,
+      proj_weight_local,
+      proj_bias_local,
       df_coef_q610);
-#endif
 }
 
+namespace {
+
+constexpr int kRealtimeHiddenPar = 2;
+constexpr int kRealtimeDotPar = 32;
+constexpr int kRealtimeProjectionDotPar = 32;
+constexpr int kRealtimeEstimatedDsp =
+    (kRealtimeHiddenPar * kRealtimeDotPar * 2) + (3 * kRealtimeHiddenPar) + kRealtimeProjectionDotPar;
+static_assert(kRealtimeEstimatedDsp <= kZyboZ720DspBudget,
+              "Realtime time-shared engine must fit the Zybo Z7-20 DSP budget.");
+
+q_data_t ExtractPackedRealtimeWeightQ610(const packed_weight_word_t& word, int lane) {
+  #pragma HLS inline
+  q_data_t value;
+  value.range(15, 0) = word.range((lane * 16) + 15, lane * 16);
+  return value;
+}
+
+int RealtimeWeightWordIndex(int element_offset) {
+  #pragma HLS inline
+  return element_offset / kRealtimeWeightWordLanes;
+}
+
+axis_q610_t MakeAxisQ610(q_data_t value, bool last) {
+  #pragma HLS inline
+  axis_q610_t word;
+  word.data.range(15, 0) = value.range(15, 0);
+  word.keep = 3;
+  word.strb = 3;
+  word.last = last ? 1 : 0;
+  return word;
+}
+
+q_data_t AxisToQ610(const axis_q610_t& word) {
+  #pragma HLS inline
+  q_data_t value;
+  value.range(15, 0) = word.data.range(15, 0);
+  return value;
+}
+
+int ClampRealtimeFrameCount(int num_frames) {
+  #pragma HLS inline
+  int frames = num_frames;
+  if (frames < 0) {
+    frames = 0;
+  }
+  if (frames > kRealtimeChunkFrames) {
+    frames = kRealtimeChunkFrames;
+  }
+  return frames;
+}
+
+int RealtimeBandWeightOffset(int band_index) {
+  #pragma HLS inline
+  if (band_index == 0) {
+    return kBand0RealtimeWeightOffset;
+  }
+  if (band_index == 1) {
+    return kBand1RealtimeWeightOffset;
+  }
+  return kBand2RealtimeWeightOffset;
+}
+
+int RealtimeBandOutputOffset(int band_index) {
+  #pragma HLS inline
+  if (band_index == 0) {
+    return kBand0RealtimeDfCoefOffset;
+  }
+  if (band_index == 1) {
+    return kBand1RealtimeDfCoefOffset;
+  }
+  return kBand2RealtimeDfCoefOffset;
+}
+
+int RealtimeBandTotalFreqs(const BandSpec& spec) {
+  #pragma HLS inline
+  return spec.num_subbands * spec.ctr_freq;
+}
+
+int ReflectFrequencyIndexRealtimeQ610(int freq_index) {
+  #pragma HLS inline
+  if (freq_index < 0) {
+    return -freq_index;
+  }
+  if (freq_index >= kNumFreqs) {
+    return (2 * kNumFreqs) - freq_index - 2;
+  }
+  return freq_index;
+}
+
+void ReadRealtimeInputChunkQ610(
+    hls::stream<axis_q610_t>& noisy_fft_stream,
+    hls::stream<axis_q610_t>& fb_fft_stream,
+    int num_frames,
+    q_data_t noisy_chunk[kRealtimeChunkFrames][kNumFreqs],
+    q_data_t fb_chunk[kRealtimeChunkFrames][kNumFreqs]) {
+  #pragma HLS inline off
+  for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+    if (frame_index < num_frames) {
+      for (int freq_index = 0; freq_index < kNumFreqs; ++freq_index) {
+        #pragma HLS pipeline II=1
+        noisy_chunk[frame_index][freq_index] = AxisToQ610(noisy_fft_stream.read());
+      }
+      for (int freq_index = 0; freq_index < kNumFreqs; ++freq_index) {
+        #pragma HLS pipeline II=1
+        fb_chunk[frame_index][freq_index] = AxisToQ610(fb_fft_stream.read());
+      }
+    }
+  }
+}
+
+void EmitRealtimeOutputChunkQ610(
+    const q_data_t output_chunk[kRealtimeChunkFrames][kRealtimeDfCoefPerFrame],
+    int num_frames,
+    hls::stream<axis_q610_t>& df_coef_stream) {
+  #pragma HLS inline off
+  for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+    if (frame_index < num_frames) {
+      for (int output_index = 0; output_index < kRealtimeDfCoefPerFrame; ++output_index) {
+        #pragma HLS pipeline II=1
+        const bool is_last =
+            (frame_index == (num_frames - 1)) && (output_index == (kRealtimeDfCoefPerFrame - 1));
+        df_coef_stream.write(MakeAxisQ610(output_chunk[frame_index][output_index], is_last));
+      }
+    }
+  }
+}
+
+void ClearRealtimeStatesQ610(
+    q_data_t layer0_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize]) {
+  #pragma HLS inline off
+  for (int band_index = 0; band_index < kNumBands; ++band_index) {
+    for (int subband_index = 0; subband_index < kMaxNumSubbands; ++subband_index) {
+      for (int hidden_index = 0; hidden_index < kSbHiddenSize; ++hidden_index) {
+        #pragma HLS pipeline II=1
+        layer0_hx_state[band_index][subband_index][hidden_index] = 0;
+        layer0_cx_state[band_index][subband_index][hidden_index] = 0;
+        layer1_hx_state[band_index][subband_index][hidden_index] = 0;
+        layer1_cx_state[band_index][subband_index][hidden_index] = 0;
+      }
+    }
+  }
+}
+
+void LoadRealtimeGSULayerWeightsQ610(
+    const packed_weight_word_t* weights_q610,
+    int& weight_offset,
+    int,
+    q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    q_data_t bias_ih[2][kSbHiddenSize],
+    q_data_t bn_mul[kSbHiddenSize],
+    q_data_t bn_add[kSbHiddenSize]) {
+  #pragma HLS inline off
+  const int weight_ih_offset = weight_offset;
+  for (int row = 0; row < kSbHiddenSize; ++row) {
+    for (int col_base = 0; col_base < kSbHiddenSize; col_base += kRealtimeDotPar) {
+      #pragma HLS pipeline II=1
+      const packed_weight_word_t word_lo =
+          weights_q610[RealtimeWeightWordIndex(weight_ih_offset + (row * kSbHiddenSize) + col_base)];
+      const packed_weight_word_t word_hi =
+          weights_q610[RealtimeWeightWordIndex(weight_ih_offset + (row * kSbHiddenSize) + col_base +
+                                               kRealtimeWeightWordLanes)];
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        weight_ih[row][col_base + lane] = ExtractPackedRealtimeWeightQ610(word_lo, lane);
+      }
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        weight_ih[row][col_base + kRealtimeWeightWordLanes + lane] = ExtractPackedRealtimeWeightQ610(word_hi, lane);
+      }
+    }
+  }
+  weight_offset += kSbHiddenSize * kSbHiddenSize;
+
+  const int weight_hh_offset = weight_offset;
+  for (int row = 0; row < kSbHiddenSize; ++row) {
+    for (int col_base = 0; col_base < kSbHiddenSize; col_base += kRealtimeDotPar) {
+      #pragma HLS pipeline II=1
+      const packed_weight_word_t word_lo =
+          weights_q610[RealtimeWeightWordIndex(weight_hh_offset + (row * kSbHiddenSize) + col_base)];
+      const packed_weight_word_t word_hi =
+          weights_q610[RealtimeWeightWordIndex(weight_hh_offset + (row * kSbHiddenSize) + col_base +
+                                               kRealtimeWeightWordLanes)];
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        weight_hh[row][col_base + lane] = ExtractPackedRealtimeWeightQ610(word_lo, lane);
+      }
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        weight_hh[row][col_base + kRealtimeWeightWordLanes + lane] = ExtractPackedRealtimeWeightQ610(word_hi, lane);
+      }
+    }
+  }
+  weight_offset += kSbHiddenSize * kSbHiddenSize;
+
+  const int bias_offset = weight_offset;
+  for (int gate_index = 0; gate_index < 2; ++gate_index) {
+    for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeWeightWordLanes) {
+      #pragma HLS pipeline II=1
+      const packed_weight_word_t word =
+          weights_q610[RealtimeWeightWordIndex(bias_offset + (gate_index * kSbHiddenSize) + hidden_base)];
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        bias_ih[gate_index][hidden_base + lane] = ExtractPackedRealtimeWeightQ610(word, lane);
+      }
+    }
+  }
+  weight_offset += 2 * kSbHiddenSize;
+
+  const int bn_mul_offset = weight_offset;
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeWeightWordLanes) {
+    #pragma HLS pipeline II=1
+    const packed_weight_word_t word = weights_q610[RealtimeWeightWordIndex(bn_mul_offset + hidden_base)];
+    for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+      #pragma HLS unroll
+      bn_mul[hidden_base + lane] = ExtractPackedRealtimeWeightQ610(word, lane);
+    }
+  }
+  weight_offset += kSbHiddenSize;
+
+  const int bn_add_offset = weight_offset;
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeWeightWordLanes) {
+    #pragma HLS pipeline II=1
+    const packed_weight_word_t word = weights_q610[RealtimeWeightWordIndex(bn_add_offset + hidden_base)];
+    for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+      #pragma HLS unroll
+      bn_add[hidden_base + lane] = ExtractPackedRealtimeWeightQ610(word, lane);
+    }
+  }
+  weight_offset += kSbHiddenSize;
+}
+
+void LoadRealtimeProjectionWeightsQ610(
+    const packed_weight_word_t* weights_q610,
+    int& weight_offset,
+    int proj_size,
+    q_data_t proj_weight[kMaxProjSize][kSbHiddenSize],
+    q_data_t proj_bias[kMaxProjSize]) {
+  #pragma HLS inline off
+  const int proj_weight_offset = weight_offset;
+  for (int proj_index = 0; proj_index < kMaxProjSize; ++proj_index) {
+    for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeProjectionDotPar) {
+      #pragma HLS pipeline II=1
+      packed_weight_word_t word_lo = 0;
+      packed_weight_word_t word_hi = 0;
+      if (proj_index < proj_size) {
+        word_lo =
+            weights_q610[RealtimeWeightWordIndex(proj_weight_offset + (proj_index * kSbHiddenSize) + hidden_base)];
+        word_hi = weights_q610[RealtimeWeightWordIndex(proj_weight_offset + (proj_index * kSbHiddenSize) +
+                                                       hidden_base + kRealtimeWeightWordLanes)];
+      }
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        proj_weight[proj_index][hidden_base + lane] = ExtractPackedRealtimeWeightQ610(word_lo, lane);
+      }
+      for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+        #pragma HLS unroll
+        proj_weight[proj_index][hidden_base + kRealtimeWeightWordLanes + lane] =
+            ExtractPackedRealtimeWeightQ610(word_hi, lane);
+      }
+    }
+  }
+  weight_offset += proj_size * kSbHiddenSize;
+
+  const int proj_bias_offset = weight_offset;
+  for (int proj_base = 0; proj_base < kMaxProjSize; proj_base += kRealtimeWeightWordLanes) {
+    #pragma HLS pipeline II=1
+    packed_weight_word_t word = 0;
+    if (proj_base < proj_size) {
+      word = weights_q610[RealtimeWeightWordIndex(proj_bias_offset + proj_base)];
+    }
+    for (int lane = 0; lane < kRealtimeWeightWordLanes; ++lane) {
+      #pragma HLS unroll
+      const int proj_index = proj_base + lane;
+      q_data_t value = 0;
+      if (proj_index < proj_size) {
+        value = ExtractPackedRealtimeWeightQ610(word, lane);
+      }
+      proj_bias[proj_index] = value;
+    }
+  }
+  weight_offset += RoundUpRealtimeWeightElements(proj_size);
+}
+
+void BuildRealtimeBandInputQ610(
+    const BandSpec& spec,
+    const q_data_t noisy_frame[kNumFreqs],
+    const q_data_t fb_frame[kNumFreqs],
+    int subband_index,
+    q_data_t input_buffer[kSbHiddenSize]) {
+  #pragma HLS inline off
+  const int center_start = spec.lower_cutoff_freq + (subband_index * spec.ctr_freq);
+  for (int input_index = 0; input_index < kSbHiddenSize; ++input_index) {
+    #pragma HLS pipeline II=1
+    q_data_t value = 0;
+    if (input_index < spec.noisy_freq_size) {
+      const int source_freq = ReflectFrequencyIndexRealtimeQ610(center_start + input_index - spec.nbr_freq);
+      value = noisy_frame[source_freq];
+    } else if (input_index < spec.packed_input_size) {
+      const int fb_index = input_index - spec.noisy_freq_size;
+      const int source_freq = ReflectFrequencyIndexRealtimeQ610(center_start + fb_index);
+      value = fb_frame[source_freq];
+    }
+    input_buffer[input_index] = value;
+  }
+}
+
+accum_q_t DotProductRealtimeDspQ610(
+    const q_data_t input[kSbHiddenSize],
+    int terms,
+    const q_data_t weights[kSbHiddenSize][kSbHiddenSize],
+    int hidden_index) {
+  #pragma HLS inline
+  accum_q_t lane_sums[kRealtimeDotPar];
+  #pragma HLS array_partition variable=lane_sums complete dim=1
+
+  for (int lane = 0; lane < kRealtimeDotPar; ++lane) {
+    #pragma HLS unroll
+    lane_sums[lane] = 0;
+  }
+
+  for (int base_index = 0; base_index < kSbHiddenSize; base_index += kRealtimeDotPar) {
+    #pragma HLS pipeline II=1
+    for (int lane = 0; lane < kRealtimeDotPar; ++lane) {
+      #pragma HLS unroll
+      const int index = base_index + lane;
+      if (index < terms) {
+        lane_sums[lane] += MulForMacDspQ610(input[index], weights[hidden_index][index]);
+      }
+    }
+  }
+
+  accum_q_t total_q20 = 0;
+  for (int lane = 0; lane < kRealtimeDotPar; ++lane) {
+    #pragma HLS unroll
+    total_q20 += lane_sums[lane];
+  }
+  return total_q20;
+}
+
+template <int Terms, int Par>
+accum_q_t DotProductRealtimeFixedDspQ610(
+    const q_data_t input[kSbHiddenSize],
+    const q_data_t weights[kSbHiddenSize][kSbHiddenSize],
+    int hidden_index) {
+  #pragma HLS inline
+  accum_q_t lane_sums[Par];
+  #pragma HLS array_partition variable=lane_sums complete dim=1
+
+  for (int lane = 0; lane < Par; ++lane) {
+    #pragma HLS unroll
+    lane_sums[lane] = 0;
+  }
+
+  for (int base_index = 0; base_index < Terms; base_index += Par) {
+    #pragma HLS pipeline II=1
+    for (int lane = 0; lane < Par; ++lane) {
+      #pragma HLS unroll
+      const int index = base_index + lane;
+      if (index < Terms) {
+        lane_sums[lane] += MulForMacDspQ610(input[index], weights[hidden_index][index]);
+      }
+    }
+  }
+
+  accum_q_t total_q20 = 0;
+  for (int lane = 0; lane < Par; ++lane) {
+    #pragma HLS unroll
+    total_q20 += lane_sums[lane];
+  }
+  return total_q20;
+}
+
+template <int InputSize, int HiddenPar, int InputPar, int RecurrentPar>
+void RunRealtimeGSUMacPhaseFixedQ610(
+    const q_data_t input_ptr[kSbHiddenSize],
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t prev_hx_q610[kSbHiddenSize],
+    hls::stream<ap_int<48 * HiddenPar> >& common_sum_stream) {
+  #pragma HLS inline off
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += HiddenPar) {
+    ap_int<48 * HiddenPar> common_packet = 0;
+    for (int hidden_lane = 0; hidden_lane < HiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      const accum_q_t input_sum_q20 =
+          DotProductRealtimeFixedDspQ610<InputSize, InputPar>(input_ptr, weight_ih, hidden_index);
+      const accum_q_t recurrent_sum_q20 =
+          DotProductRealtimeFixedDspQ610<kSbHiddenSize, RecurrentPar>(prev_hx_q610, weight_hh, hidden_index);
+      const accum_q_t common_q20 = input_sum_q20 + recurrent_sum_q20;
+      common_packet.range((48 * (hidden_lane + 1)) - 1, 48 * hidden_lane) = common_q20;
+    }
+    common_sum_stream.write(common_packet);
+  }
+}
+
+template <int InputSize, int HiddenPar, int InputPar, int RecurrentPar, bool UseDspGateUpdate>
+void RunRealtimeGSUCellFixedQ610(
+    const q_data_t input_ptr[kSbHiddenSize],
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t hx_state_q610[kSbHiddenSize],
+    q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t output_hy_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  q_data_t prev_hx_q610[kSbHiddenSize];
+  q_data_t prev_cx_q610[kSbHiddenSize];
+  hls::stream<ap_int<48 * HiddenPar> > common_sum_stream;
+  #pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+  #pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+  #pragma HLS stream variable=common_sum_stream depth=2
+
+  SnapshotGSUStateQ610<HiddenPar>(hx_state_q610, cx_state_q610, prev_hx_q610, prev_cx_q610);
+  RunRealtimeGSUMacPhaseFixedQ610<InputSize, HiddenPar, InputPar, RecurrentPar>(
+      input_ptr, weight_ih, weight_hh, prev_hx_q610, common_sum_stream);
+  RunGSUGatePhaseBand0Q610<HiddenPar, UseDspGateUpdate>(
+      common_sum_stream, bias_ih, bn_mul, bn_add, prev_cx_q610, hx_state_q610, cx_state_q610, output_hy_q610);
+}
+
+void RunRealtimeGSUCellSharedQ610(
+    const q_data_t input_ptr[kSbHiddenSize],
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t hx_state_q610[kSbHiddenSize],
+    q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t output_hy_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  RunRealtimeGSUCellFixedQ610<kSbHiddenSize, kRealtimeHiddenPar, kRealtimeDotPar, kRealtimeDotPar, true>(
+      input_ptr, weight_ih, weight_hh, bias_ih, bn_mul, bn_add, hx_state_q610, cx_state_q610, output_hy_q610);
+}
+
+void CopyRealtimeHiddenVectorQ610(
+    const q_data_t source[kSbHiddenSize],
+    q_data_t destination[kSbHiddenSize]) {
+  #pragma HLS inline
+  for (int hidden_index = 0; hidden_index < kSbHiddenSize; ++hidden_index) {
+    #pragma HLS pipeline II=1
+    destination[hidden_index] = source[hidden_index];
+  }
+}
+
+void RunRealtimeGSUCellQ610(
+    const q_data_t input_buffer[kSbHiddenSize],
+    int input_size,
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t hx_state_q610[kSbHiddenSize],
+    q_data_t cx_state_q610[kSbHiddenSize],
+    q_data_t output_hy_q610[kSbHiddenSize]) {
+  #pragma HLS inline off
+  q_data_t prev_hx_q610[kSbHiddenSize];
+  q_data_t prev_cx_q610[kSbHiddenSize];
+  #pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+  #pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeHiddenPar) {
+    #pragma HLS pipeline II=1
+    for (int hidden_lane = 0; hidden_lane < kRealtimeHiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      prev_hx_q610[hidden_index] = hx_state_q610[hidden_index];
+      prev_cx_q610[hidden_index] = cx_state_q610[hidden_index];
+    }
+  }
+
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeHiddenPar) {
+    for (int hidden_lane = 0; hidden_lane < kRealtimeHiddenPar; ++hidden_lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + hidden_lane;
+      const accum_q_t input_sum_q20 =
+          DotProductRealtimeDspQ610(input_buffer, input_size, weight_ih, hidden_index);
+      const accum_q_t recurrent_sum_q20 =
+          DotProductRealtimeDspQ610(prev_hx_q610, kSbHiddenSize, weight_hh, hidden_index);
+      const accum_q_t common_q20 = input_sum_q20 + recurrent_sum_q20;
+      const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+      const accum_q_t forget_q20 = common_q20 + (static_cast<accum_q_t>(bias_ih[0][hidden_index]) * q_scale_q20);
+      const accum_q_t cell_q20 = common_q20 + (static_cast<accum_q_t>(bias_ih[1][hidden_index]) * q_scale_q20);
+
+      const q_data_t forget_preact_q610 = SaturateInt16(RoundShiftRight(forget_q20, kQFrac));
+      const q_data_t cell_preact_q610 = SaturateInt16(RoundShiftRight(cell_q20, kQFrac));
+      const q_data_t forget_gate_q610 = SigmoidPwlQ610Fabric(forget_preact_q610);
+      const q_data_t one_minus_forget_q610 = SubQ610(kQOne, forget_gate_q610);
+      const q_data_t retained_q610 = MulGateUpdateQ610<true>(forget_gate_q610, prev_cx_q610[hidden_index]);
+      const q_data_t injected_q610 = MulGateUpdateQ610<true>(one_minus_forget_q610, cell_preact_q610);
+
+      q_data_t cy_q610 = AddQ610(retained_q610, injected_q610);
+      const q_data_t scaled_q610 = MulQ610Dsp(cy_q610, bn_mul[hidden_index]);
+      cy_q610 = AddQ610(scaled_q610, bn_add[hidden_index]);
+      const q_data_t hy_q610 = StepActivationQ610(cy_q610);
+
+      cx_state_q610[hidden_index] = cy_q610;
+      hx_state_q610[hidden_index] = hy_q610;
+      output_hy_q610[hidden_index] = hy_q610;
+    }
+  }
+}
+
+void RunRealtimeGSULayersSharedBandQ610(
+    const BandSpec& spec,
+    const packed_weight_word_t* weights_q610,
+    int& weight_offset,
+    int num_frames,
+    const q_data_t noisy_chunk[kRealtimeChunkFrames][kNumFreqs],
+    const q_data_t fb_chunk[kRealtimeChunkFrames][kNumFreqs],
+    q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    q_data_t bias_ih[2][kSbHiddenSize],
+    q_data_t bn_mul[kSbHiddenSize],
+    q_data_t bn_add[kSbHiddenSize],
+    q_data_t layer0_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize]) {
+  #pragma HLS inline off
+  #pragma HLS allocation function instances=RunRealtimeGSUCellSharedQ610 limit=1
+  q_data_t cell_input[kSbHiddenSize];
+  #pragma HLS array_partition variable=cell_input complete dim=1
+
+  for (int layer_index = 0; layer_index < kSbNumLayers; ++layer_index) {
+    const int layer_input_size = (layer_index == 0) ? spec.packed_input_size : kSbHiddenSize;
+    LoadRealtimeGSULayerWeightsQ610(weights_q610, weight_offset, layer_input_size, weight_ih, weight_hh, bias_ih,
+                                    bn_mul, bn_add);
+
+    for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+      #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+      if (frame_index < num_frames) {
+        for (int subband_index = 0; subband_index < kMaxNumSubbands; ++subband_index) {
+          if (subband_index < spec.num_subbands) {
+            if (layer_index == 0) {
+              BuildRealtimeBandInputQ610(
+                  spec, noisy_chunk[frame_index], fb_chunk[frame_index], subband_index, cell_input);
+            } else {
+              CopyRealtimeHiddenVectorQ610(layer0_output[frame_index][subband_index], cell_input);
+            }
+
+            if (layer_index == 0) {
+              RunRealtimeGSUCellSharedQ610(
+                  cell_input, weight_ih, weight_hh, bias_ih, bn_mul, bn_add,
+                  layer0_hx_state[spec.band_index][subband_index],
+                  layer0_cx_state[spec.band_index][subband_index],
+                  layer0_output[frame_index][subband_index]);
+            } else {
+              RunRealtimeGSUCellSharedQ610(
+                  cell_input, weight_ih, weight_hh, bias_ih, bn_mul, bn_add,
+                  layer1_hx_state[spec.band_index][subband_index],
+                  layer1_cx_state[spec.band_index][subband_index],
+                  layer1_output[frame_index][subband_index]);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+void RunRealtimeLayer0BandQ610(
+    const BandSpec& spec,
+    int num_frames,
+    const q_data_t noisy_chunk[kRealtimeChunkFrames][kNumFreqs],
+    const q_data_t fb_chunk[kRealtimeChunkFrames][kNumFreqs],
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t layer0_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize]) {
+  #pragma HLS inline off
+  q_data_t input_buffer[kSbHiddenSize];
+  #pragma HLS array_partition variable=input_buffer complete dim=1
+
+  for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+    if (frame_index < num_frames) {
+      for (int subband_index = 0; subband_index < kMaxNumSubbands; ++subband_index) {
+        if (subband_index < spec.num_subbands) {
+          BuildRealtimeBandInputQ610(spec, noisy_chunk[frame_index], fb_chunk[frame_index], subband_index, input_buffer);
+          RunRealtimeGSUCellFixedQ610<kMaxPackedInputSize, kRealtimeHiddenPar, kRealtimeDotPar, kRealtimeDotPar, true>(
+              input_buffer,
+              weight_ih,
+              weight_hh,
+              bias_ih,
+              bn_mul,
+              bn_add,
+              layer0_hx_state[spec.band_index][subband_index],
+              layer0_cx_state[spec.band_index][subband_index],
+              layer0_output[frame_index][subband_index]);
+        }
+      }
+    }
+  }
+}
+
+void RunRealtimeLayer1BandQ610(
+    const BandSpec& spec,
+    int num_frames,
+    const q_data_t layer0_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize],
+    const q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    const q_data_t bias_ih[2][kSbHiddenSize],
+    const q_data_t bn_mul[kSbHiddenSize],
+    const q_data_t bn_add[kSbHiddenSize],
+    q_data_t layer1_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize]) {
+  #pragma HLS inline off
+  for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+    if (frame_index < num_frames) {
+      for (int subband_index = 0; subband_index < kMaxNumSubbands; ++subband_index) {
+        if (subband_index < spec.num_subbands) {
+          RunRealtimeGSUCellFixedQ610<kSbHiddenSize, kRealtimeHiddenPar, kRealtimeDotPar, kRealtimeDotPar, true>(
+              layer0_output[frame_index][subband_index],
+              weight_ih,
+              weight_hh,
+              bias_ih,
+              bn_mul,
+              bn_add,
+              layer1_hx_state[spec.band_index][subband_index],
+              layer1_cx_state[spec.band_index][subband_index],
+              layer1_output[frame_index][subband_index]);
+        }
+      }
+    }
+  }
+}
+
+accum_q_t ProjectionDotProductRealtimeDspQ610(
+    const q_data_t input[kSbHiddenSize],
+    const q_data_t weights[kMaxProjSize][kSbHiddenSize],
+    int proj_index) {
+  #pragma HLS inline
+  accum_q_t lane_sums[kRealtimeProjectionDotPar];
+  #pragma HLS array_partition variable=lane_sums complete dim=1
+
+  for (int lane = 0; lane < kRealtimeProjectionDotPar; ++lane) {
+    #pragma HLS unroll
+    lane_sums[lane] = 0;
+  }
+
+  for (int hidden_base = 0; hidden_base < kSbHiddenSize; hidden_base += kRealtimeProjectionDotPar) {
+    #pragma HLS pipeline II=1
+    for (int lane = 0; lane < kRealtimeProjectionDotPar; ++lane) {
+      #pragma HLS unroll
+      const int hidden_index = hidden_base + lane;
+      lane_sums[lane] += MulForMacDspQ610(input[hidden_index], weights[proj_index][hidden_index]);
+    }
+  }
+
+  accum_q_t total_q20 = 0;
+  for (int lane = 0; lane < kRealtimeProjectionDotPar; ++lane) {
+    #pragma HLS unroll
+    total_q20 += lane_sums[lane];
+  }
+  return total_q20;
+}
+
+void RunRealtimeProjectionBandQ610(
+    const BandSpec& spec,
+    int num_frames,
+    const q_data_t layer1_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize],
+    const q_data_t proj_weight[kMaxProjSize][kSbHiddenSize],
+    const q_data_t proj_bias[kMaxProjSize],
+    q_data_t output_chunk[kRealtimeChunkFrames][kRealtimeDfCoefPerFrame]) {
+  #pragma HLS inline off
+  q_data_t projection_input[kSbHiddenSize];
+  #pragma HLS array_partition variable=projection_input complete dim=1
+  const int band_output_offset = RealtimeBandOutputOffset(spec.band_index);
+  const int band_total_freqs = RealtimeBandTotalFreqs(spec);
+  for (int frame_index = 0; frame_index < kRealtimeChunkFrames; ++frame_index) {
+    #pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+    if (frame_index < num_frames) {
+      for (int subband_index = 0; subband_index < kMaxNumSubbands; ++subband_index) {
+        if (subband_index < spec.num_subbands) {
+          CopyRealtimeHiddenVectorQ610(layer1_output[frame_index][subband_index], projection_input);
+          int complex_index = 0;
+          int ctr_index = 0;
+          int df_index = 0;
+          for (int proj_index = 0; proj_index < kMaxProjSize; ++proj_index) {
+            if (proj_index < spec.proj_size) {
+              const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+              const accum_q_t sum_q20 = (static_cast<accum_q_t>(proj_bias[proj_index]) * q_scale_q20) +
+                                        ProjectionDotProductRealtimeDspQ610(projection_input, proj_weight, proj_index);
+              const q_data_t value_q610 = SaturateInt16(RoundShiftRight(sum_q20, kQFrac));
+              const int merged_freq_index = (subband_index * spec.ctr_freq) + ctr_index;
+              const int output_index = band_output_offset + ((df_index * band_total_freqs + merged_freq_index) * 2) +
+                                       complex_index;
+              output_chunk[frame_index][output_index] = value_q610;
+            }
+            ++df_index;
+            if (df_index == spec.df_order) {
+              df_index = 0;
+              ++ctr_index;
+              if (ctr_index == spec.ctr_freq) {
+                ctr_index = 0;
+                ++complex_index;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+void RunRealtimeBandQ610(
+    const BandSpec& spec,
+    const packed_weight_word_t* weights_q610,
+    int num_frames,
+    const q_data_t noisy_chunk[kRealtimeChunkFrames][kNumFreqs],
+    const q_data_t fb_chunk[kRealtimeChunkFrames][kNumFreqs],
+    q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize],
+    q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize],
+    q_data_t bias_ih[2][kSbHiddenSize],
+    q_data_t bn_mul[kSbHiddenSize],
+    q_data_t bn_add[kSbHiddenSize],
+    q_data_t proj_weight[kMaxProjSize][kSbHiddenSize],
+    q_data_t proj_bias[kMaxProjSize],
+    q_data_t layer0_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer0_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t layer1_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize],
+    q_data_t output_chunk[kRealtimeChunkFrames][kRealtimeDfCoefPerFrame]) {
+  #pragma HLS inline off
+  int weight_offset = RealtimeBandWeightOffset(spec.band_index);
+  RunRealtimeGSULayersSharedBandQ610(
+      spec, weights_q610, weight_offset, num_frames, noisy_chunk, fb_chunk, weight_ih, weight_hh, bias_ih, bn_mul,
+      bn_add, layer0_hx_state, layer0_cx_state, layer1_hx_state, layer1_cx_state, layer0_output, layer1_output);
+
+  LoadRealtimeProjectionWeightsQ610(weights_q610, weight_offset, spec.proj_size, proj_weight, proj_bias);
+  RunRealtimeProjectionBandQ610(spec, num_frames, layer1_output, proj_weight, proj_bias, output_chunk);
+}
+
+}  // namespace
+
+void RunSubbandRealtimeTopCoreQ610(
+    hls::stream<axis_q610_t>& noisy_fft_stream,
+    hls::stream<axis_q610_t>& fb_fft_stream,
+    const packed_weight_word_t weights_q610[kRealtimeWeightsWordCount],
+    int num_frames,
+    bool reset_state,
+    hls::stream<axis_q610_t>& df_coef_stream) {
+  #pragma HLS inline
+  #pragma HLS allocation function instances=RunRealtimeGSUCellSharedQ610 limit=1
+
+  static q_data_t noisy_chunk[kRealtimeChunkFrames][kNumFreqs];
+  static q_data_t fb_chunk[kRealtimeChunkFrames][kNumFreqs];
+  static q_data_t output_chunk[kRealtimeChunkFrames][kRealtimeDfCoefPerFrame];
+  static q_data_t weight_ih[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t weight_hh[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t bias_ih[2][kSbHiddenSize];
+  static q_data_t bn_mul[kSbHiddenSize];
+  static q_data_t bn_add[kSbHiddenSize];
+  static q_data_t proj_weight[kMaxProjSize][kSbHiddenSize];
+  static q_data_t proj_bias[kMaxProjSize];
+  static q_data_t layer0_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize];
+  static q_data_t layer0_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize];
+  static q_data_t layer1_hx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize];
+  static q_data_t layer1_cx_state[kNumBands][kMaxNumSubbands][kSbHiddenSize];
+  static q_data_t layer0_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize];
+  static q_data_t layer1_output[kRealtimeChunkFrames][kMaxNumSubbands][kSbHiddenSize];
+
+  #pragma HLS bind_storage variable=noisy_chunk type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=fb_chunk type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=output_chunk type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=weight_ih type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=weight_hh type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=proj_weight type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer0_hx_state type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer0_cx_state type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer1_hx_state type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer1_cx_state type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer0_output type=ram_2p impl=bram
+  #pragma HLS bind_storage variable=layer1_output type=ram_2p impl=bram
+  #pragma HLS array_partition variable=weight_ih cyclic factor=kRealtimeHiddenPar dim=1
+  #pragma HLS array_reshape variable=weight_ih cyclic factor=kRealtimeDotPar dim=2
+  #pragma HLS array_partition variable=weight_hh cyclic factor=kRealtimeHiddenPar dim=1
+  #pragma HLS array_reshape variable=weight_hh cyclic factor=kRealtimeDotPar dim=2
+  #pragma HLS array_partition variable=bias_ih cyclic factor=kRealtimeHiddenPar dim=2
+  #pragma HLS array_partition variable=bn_mul cyclic factor=kRealtimeHiddenPar dim=1
+  #pragma HLS array_partition variable=bn_add cyclic factor=kRealtimeHiddenPar dim=1
+  #pragma HLS array_reshape variable=proj_weight cyclic factor=kRealtimeProjectionDotPar dim=2
+  #pragma HLS array_partition variable=layer0_hx_state cyclic factor=kRealtimeHiddenPar dim=3
+  #pragma HLS array_partition variable=layer0_cx_state cyclic factor=kRealtimeHiddenPar dim=3
+  #pragma HLS array_partition variable=layer1_hx_state cyclic factor=kRealtimeHiddenPar dim=3
+  #pragma HLS array_partition variable=layer1_cx_state cyclic factor=kRealtimeHiddenPar dim=3
+  #pragma HLS array_partition variable=layer0_output cyclic factor=kRealtimeHiddenPar dim=3
+  #pragma HLS array_partition variable=layer1_output cyclic factor=kRealtimeHiddenPar dim=3
+
+  const int frames = ClampRealtimeFrameCount(num_frames);
+  ReadRealtimeInputChunkQ610(noisy_fft_stream, fb_fft_stream, frames, noisy_chunk, fb_chunk);
+
+  if (reset_state) {
+    ClearRealtimeStatesQ610(layer0_hx_state, layer0_cx_state, layer1_hx_state, layer1_cx_state);
+  }
+
+  RunRealtimeBandQ610(
+      GetBandSpec(0), weights_q610, frames, noisy_chunk, fb_chunk, weight_ih, weight_hh, bias_ih, bn_mul, bn_add,
+      proj_weight, proj_bias, layer0_hx_state, layer0_cx_state, layer1_hx_state, layer1_cx_state, layer0_output,
+      layer1_output, output_chunk);
+  RunRealtimeBandQ610(
+      GetBandSpec(1), weights_q610, frames, noisy_chunk, fb_chunk, weight_ih, weight_hh, bias_ih, bn_mul, bn_add,
+      proj_weight, proj_bias, layer0_hx_state, layer0_cx_state, layer1_hx_state, layer1_cx_state, layer0_output,
+      layer1_output, output_chunk);
+  RunRealtimeBandQ610(
+      GetBandSpec(2), weights_q610, frames, noisy_chunk, fb_chunk, weight_ih, weight_hh, bias_ih, bn_mul, bn_add,
+      proj_weight, proj_bias, layer0_hx_state, layer0_cx_state, layer1_hx_state, layer1_cx_state, layer0_output,
+      layer1_output, output_chunk);
+
+  EmitRealtimeOutputChunkQ610(output_chunk, frames, df_coef_stream);
+}
+
+void SubbandRealtimeTopQ610(
+    hls::stream<axis_q610_t>& noisy_fft_stream,
+    hls::stream<axis_q610_t>& fb_fft_stream,
+    const packed_weight_word_t weights_q610[kRealtimeWeightsWordCount],
+    int num_frames,
+    bool reset_state,
+    hls::stream<axis_q610_t>& df_coef_stream) {
+  #pragma HLS INTERFACE axis port=noisy_fft_stream
+  #pragma HLS INTERFACE axis port=fb_fft_stream
+  #pragma HLS INTERFACE axis port=df_coef_stream
+  #pragma HLS INTERFACE m_axi port=weights_q610 offset=slave bundle=weights depth=kRealtimeWeightsWordCount
+  #pragma HLS INTERFACE s_axilite port=weights_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=num_frames bundle=control
+  #pragma HLS INTERFACE s_axilite port=reset_state bundle=control
+  #pragma HLS INTERFACE s_axilite port=return bundle=control
+
+  RunSubbandRealtimeTopCoreQ610(
+      noisy_fft_stream, fb_fft_stream, weights_q610, num_frames, reset_state, df_coef_stream);
+}
+
+#ifndef __SYNTHESIS__
+void RunBand0OptimizedSmokeQ610(
+    const q_data_t* noisy_input_q610,
+    const q_data_t* fb_output_q610,
+    int num_frames,
+    const q_data_t* layer0_weight_ih_q610,
+    const q_data_t* layer0_weight_hh_q610,
+    const q_data_t* layer0_bias_ih_q610,
+    const q_data_t* layer0_bn_mul_q610,
+    const q_data_t* layer0_bn_add_q610,
+    const q_data_t* layer1_weight_ih_q610,
+    const q_data_t* layer1_weight_hh_q610,
+    const q_data_t* layer1_bias_ih_q610,
+    const q_data_t* layer1_bn_mul_q610,
+    const q_data_t* layer1_bn_add_q610,
+    const q_data_t* proj_weight_q610,
+    const q_data_t* proj_bias_q610,
+    q_data_t* df_coef_q610) {
+  static q_data_t layer0_weight_ih_local[kSbHiddenSize][kBand0PackedInputSize];
+  static q_data_t layer0_weight_hh_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer0_bias_ih_local[2][kSbHiddenSize];
+  static q_data_t layer0_bn_mul_local[kSbHiddenSize];
+  static q_data_t layer0_bn_add_local[kSbHiddenSize];
+  static q_data_t layer1_weight_ih_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer1_weight_hh_local[kSbHiddenSize][kSbHiddenSize];
+  static q_data_t layer1_bias_ih_local[2][kSbHiddenSize];
+  static q_data_t layer1_bn_mul_local[kSbHiddenSize];
+  static q_data_t layer1_bn_add_local[kSbHiddenSize];
+  static q_data_t proj_weight_local[kBand0ProjSize][kSbHiddenSize];
+  static q_data_t proj_bias_local[kBand0ProjSize];
+  static q_data_t layer0_hx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer0_cx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer1_hx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+  static q_data_t layer1_cx_state_q610[kBand0NumSubbands][kSbHiddenSize];
+
+  LoadBand0Weights2DQ610(
+      layer0_weight_ih_q610,
+      layer0_weight_hh_q610,
+      layer0_bias_ih_q610,
+      layer0_bn_mul_q610,
+      layer0_bn_add_q610,
+      layer1_weight_ih_q610,
+      layer1_weight_hh_q610,
+      layer1_bias_ih_q610,
+      layer1_bn_mul_q610,
+      layer1_bn_add_q610,
+      proj_weight_q610,
+      proj_bias_q610,
+      layer0_weight_ih_local,
+      layer0_weight_hh_local,
+      layer0_bias_ih_local,
+      layer0_bn_mul_local,
+      layer0_bn_add_local,
+      layer1_weight_ih_local,
+      layer1_weight_hh_local,
+      layer1_bias_ih_local,
+      layer1_bn_mul_local,
+      layer1_bn_add_local,
+      proj_weight_local,
+      proj_bias_local);
+
+  ClearStateVectorQ610(layer0_hx_state_q610);
+  ClearStateVectorQ610(layer0_cx_state_q610);
+  ClearStateVectorQ610(layer1_hx_state_q610);
+  ClearStateVectorQ610(layer1_cx_state_q610);
+
+  q_data_t input_buffer[kBand0PackedInputSize];
+  q_data_t layer0_buffer[kSbHiddenSize];
+  q_data_t layer1_buffer[kSbHiddenSize];
+  constexpr int kBand0NbrFreq = (kBand0NoisyFreqSize - kBand0CtrFreq) / 2;
+
+  for (int frame_index = 0; frame_index < num_frames; ++frame_index) {
+    for (int subband_index = 0; subband_index < kBand0NumSubbands; ++subband_index) {
+      for (int noisy_freq_index = 0; noisy_freq_index < kBand0NoisyFreqSize; ++noisy_freq_index) {
+        int source_freq = subband_index * kBand0CtrFreq + noisy_freq_index - kBand0NbrFreq;
+        if (source_freq < 0) {
+          source_freq = -source_freq;
+        }
+        input_buffer[noisy_freq_index] = noisy_input_q610[InputIndex(0, source_freq, frame_index, num_frames)];
+      }
+
+      for (int fb_freq_index = 0; fb_freq_index < kBand0FbFreqSize; ++fb_freq_index) {
+        const int source_freq = subband_index * kBand0CtrFreq + fb_freq_index;
+        input_buffer[kBand0NoisyFreqSize + fb_freq_index] =
+            fb_output_q610[InputIndex(0, source_freq, frame_index, num_frames)];
+      }
+
+      RunGSUCellBand0ParallelQ610<kBand0PackedInputSize, kLayer0HiddenPar, kLayer0InputPar, kLayer0RecurrentPar, true>(
+          input_buffer,
+          layer0_weight_ih_local,
+          layer0_weight_hh_local,
+          layer0_bias_ih_local,
+          layer0_bn_mul_local,
+          layer0_bn_add_local,
+          layer0_hx_state_q610[subband_index],
+          layer0_cx_state_q610[subband_index],
+          layer0_buffer);
+
+      RunGSUCellBand0ParallelQ610<kSbHiddenSize, kLayer1HiddenPar, kLayer1InputPar, kLayer1RecurrentPar, true>(
+          layer0_buffer,
+          layer1_weight_ih_local,
+          layer1_weight_hh_local,
+          layer1_bias_ih_local,
+          layer1_bn_mul_local,
+          layer1_bn_add_local,
+          layer1_hx_state_q610[subband_index],
+          layer1_cx_state_q610[subband_index],
+          layer1_buffer);
+
+      for (int proj_index = 0; proj_index < kBand0ProjSize; ++proj_index) {
+        const accum_q_t q_scale_q20 = static_cast<accum_q_t>(1) << kQFrac;
+        const accum_q_t sum_q20 = (static_cast<accum_q_t>(proj_bias_local[proj_index]) * q_scale_q20) +
+                                  ProjectionDotProductDspQ610(layer1_buffer, proj_weight_local, proj_index);
+        const q_data_t value_q610 = SaturateInt16(RoundShiftRight(sum_q20, kQFrac));
+        const int complex_index = proj_index / (kBand0CtrFreq * kBand0DfOrder);
+        const int feature_remainder = proj_index % (kBand0CtrFreq * kBand0DfOrder);
+        const int ctr_index = feature_remainder / kBand0DfOrder;
+        const int df_index = feature_remainder % kBand0DfOrder;
+        const int merged_freq_index = subband_index * kBand0CtrFreq + ctr_index;
+        df_coef_q610[DfCoefIndex(
+            0,
+            df_index,
+            merged_freq_index,
+            frame_index,
+            complex_index,
+            kBand0DfOrder,
+            kBand0TotalFreqs,
+            num_frames)] = value_q610;
+      }
+    }
+  }
+}
+#endif
+
 }  // namespace subband_q610
+
+void SubbandRealtimeTopQ610Ip(
+    hls::stream<subband_q610::axis_q610_t>& noisy_fft_stream,
+    hls::stream<subband_q610::axis_q610_t>& fb_fft_stream,
+    const subband_q610::packed_weight_word_t weights_q610[subband_q610::kRealtimeWeightsWordCount],
+    int num_frames,
+    bool reset_state,
+    hls::stream<subband_q610::axis_q610_t>& df_coef_stream) {
+  #pragma HLS INTERFACE axis port=noisy_fft_stream
+  #pragma HLS INTERFACE axis port=fb_fft_stream
+  #pragma HLS INTERFACE axis port=df_coef_stream
+  #pragma HLS INTERFACE m_axi port=weights_q610 offset=slave bundle=weights depth=subband_q610::kRealtimeWeightsWordCount
+  #pragma HLS INTERFACE s_axilite port=weights_q610 bundle=control
+  #pragma HLS INTERFACE s_axilite port=num_frames bundle=control
+  #pragma HLS INTERFACE s_axilite port=reset_state bundle=control
+  #pragma HLS INTERFACE s_axilite port=return bundle=control
+
+  subband_q610::RunSubbandRealtimeTopCoreQ610(
+      noisy_fft_stream, fb_fft_stream, weights_q610, num_frames, reset_state, df_coef_stream);
+}

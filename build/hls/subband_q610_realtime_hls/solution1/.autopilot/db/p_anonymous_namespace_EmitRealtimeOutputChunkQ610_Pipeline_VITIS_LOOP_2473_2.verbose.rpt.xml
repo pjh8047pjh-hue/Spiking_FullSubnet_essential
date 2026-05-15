@@ -1,0 +1,136 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2'" level="0">
+<item name = "Date">Thu May 14 12:27:37 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">subband_q610_realtime_hls</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.521 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1154, 1154, 11.540 us, 11.540 us, 1154, 1154, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_2473_2">1152, 1152, 2, 1, 1, 1152, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 58, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 45, -</column>
+<column name="Register">-, -, 15, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln2473_fu_130_p2">+, 0, 0, 12, 11, 1</column>
+<column name="add_ln2477_fu_152_p2">+, 0, 0, 14, 13, 13</column>
+<column name="ap_block_pp0_stage0_01001">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_pp0_stage0_11001">and, 0, 0, 2, 1, 1</column>
+<column name="is_last_fu_142_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln2473_fu_124_p2">icmp, 0, 0, 12, 11, 11</column>
+<column name="icmp_ln2476_fu_136_p2">icmp, 0, 0, 12, 11, 11</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_output_index_1">9, 2, 11, 22</column>
+<column name="df_coef_stream_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="output_index_fu_68">9, 2, 11, 22</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="is_last_reg_178">1, 0, 1, 0</column>
+<column name="output_index_fu_68">11, 0, 11, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2, return value</column>
+<column name="df_coef_stream_TREADY">in, 1, axis, df_coef_stream_V_data_V, pointer</column>
+<column name="df_coef_stream_TDATA">out, 16, axis, df_coef_stream_V_data_V, pointer</column>
+<column name="cmp6">in, 1, ap_none, cmp6, scalar</column>
+<column name="or_ln2477">in, 13, ap_none, or_ln2477, scalar</column>
+<column name="df_coef_stream_TVALID">out, 1, axis, df_coef_stream_V_last_V, pointer</column>
+<column name="df_coef_stream_TLAST">out, 1, axis, df_coef_stream_V_last_V, pointer</column>
+<column name="df_coef_stream_TKEEP">out, 2, axis, df_coef_stream_V_keep_V, pointer</column>
+<column name="df_coef_stream_TSTRB">out, 2, axis, df_coef_stream_V_strb_V, pointer</column>
+<column name="output_chunk_address0">out, 13, ap_memory, output_chunk, array</column>
+<column name="output_chunk_ce0">out, 1, ap_memory, output_chunk, array</column>
+<column name="output_chunk_q0">in, 16, ap_memory, output_chunk, array</column>
+</table>
+</item>
+</section>
+</profile>

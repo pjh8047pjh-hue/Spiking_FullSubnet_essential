@@ -1,0 +1,2511 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1839, Column: 28 }
+Function:        _ZN12subband_q61012_GLOBAL__N_117DotProductDspQ610ILi38ELi4ELi38EEE6ap_intILi48EEPKS2_ILi16EEPAT1__S5_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1621, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<38, 4, 38>(ap_int<16> const*, ap_int<16> const (*) [38], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1839, Column: 28 }
+Function:        _ZN12subband_q61012_GLOBAL__N_117DotProductDspQ610ILi224ELi32ELi224EEE6ap_intILi48EEPKS2_ILi16EEPAT1__S5_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1621, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<224, 32, 224>(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1868, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<224, 32, 224>(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>(ap_int<16> const*, ap_int<16> const (*) [38], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1858, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1866, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<38, 4, 38>(ap_int<16> const*, ap_int<16> const (*) [38], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>(ap_int<16> const*, ap_int<16> const (*) [38], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1858, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1651, Column: 9 }
+Function:        _ZN12subband_q61012_GLOBAL__N_117MulGateUpdateQ610ILb1EEE6ap_intILi16EES3_S3_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1637, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1649, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1909, Column: 36 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1637, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1906, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1649, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1904, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1649, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1901, Column: 41 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::SigmoidPwlQ610Fabric(ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1660, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1983, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610<38>(hls::stream<ap_int<16>, 0>&, ap_int<16> (&) [38])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1763, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [224][38], ap_int<16> const (&) [224][224], ap_int<16> const (&) [2][224], ap_int<16> const (&) [224], ap_int<16> const (&) [224], ap_int<16> (&) [8][224], ap_int<16> (&) [8][224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1973, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1994, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610<224>(ap_int<16> const (&) [224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1772, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [224][38], ap_int<16> const (&) [224][224], ap_int<16> const (&) [2][224], ap_int<16> const (&) [224], ap_int<16> const (&) [224], ap_int<16> (&) [8][224], ap_int<16> (&) [8][224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1973, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1868, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<224, 32, 224>(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>(ap_int<16> const*, ap_int<16> const (*) [224], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1858, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1866, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'ap_int<48> subband_q610::(anonymous namespace)::DotProductDspQ610<224, 32, 224>(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1823, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>(ap_int<16> const*, ap_int<16> const (*) [224], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1858, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2018, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610<224>(hls::stream<ap_int<16>, 0>&, ap_int<16> (&) [224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1763, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [224][224], ap_int<16> const (&) [224][224], ap_int<16> const (&) [2][224], ap_int<16> const (&) [224], ap_int<16> const (&) [224], ap_int<16> (&) [8][224], ap_int<16> (&) [8][224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2008, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2029, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610<224>(ap_int<16> const (&) [224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1772, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [224][224], ap_int<16> const (&) [224][224], ap_int<16> const (&) [2][224], ap_int<16> const (&) [224], ap_int<16> const (&) [224], ap_int<16> (&) [8][224], ap_int<16> (&) [8][224], hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2008, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2052, Column: 26 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127ProjectionDotProductDspQ610EPK6ap_intILi16EEPA224_S3_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1621, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2037, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2076, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610<224>(hls::stream<ap_int<16>, 0>&, ap_int<16> (&) [224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1763, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2080, Column: 35 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int<16> const*, ap_int<16> const (*) [224], int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2037, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2049, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_2049_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1835, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1835, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1835, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1835, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1929, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_120SnapshotGSUStateQ610ILi2EEEvPK6ap_intILi16EES5_PS3_S6_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_1929_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_2042_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2042:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_2049_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2049:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_2057_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2057:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1862_2
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi224ELi2ELi32ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<224, 2, 32, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1885, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1889_2
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1889:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1862_2
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1845_4
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1835_3
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1858, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1828_1
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610<38, 2, 4, 32>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1925, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_120SnapshotGSUStateQ610ILi2EEEvPK6ap_intILi16EES5_PS3_S6_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_1929_2
+  - String:          ''' ('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1929:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'subband_q610::(anonymous namespace)::SnapshotGSUStateQ610<2>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1794, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_140GenerateBand0SequenceStreamOptimizedQ610EPK6ap_intILi16EES4_RN3hls6streamIS2_Li0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::InputIndex(int, int, int, int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 107, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::GenerateBand0SequenceStreamOptimizedQ610(ap_int<16> const*, ap_int<16> const*, hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1794, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 185, Column: 0 }
+Function:        _ZN12subband_q6107SubQ610E6ap_intILi16EES1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::SaturateInt16(ap_int<48>) (.26)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 152, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::SubQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 185, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 181, Column: 0 }
+Function:        _ZN12subband_q6107AddQ610E6ap_intILi16EES1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::SaturateInt16(ap_int<48>) (.26)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 152, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::AddQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 181, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1885, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::SubQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 185, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1885, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::AddQ610(ap_int<16>, ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 181, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1885, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::StepActivationQ610(ap_int<16>)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 189, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1885, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::RoundShiftRight(ap_int<48>, int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 164, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::SaturateInt16(ap_int<48>) (.26)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 152, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2068, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'subband_q610::(anonymous namespace)::DfCoefIndex(int, int, int, int, int, int, int, int)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 144, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2190, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_cx_state_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2189, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_hx_state_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2188, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_cx_state_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2187, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_hx_state_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2285, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi224ELi2ELi32ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_add_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2284, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi224ELi2ELi32ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_mul_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2283, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi224ELi2ELi32ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer1_bias_ih_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2282, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_122LoadBand0Weights2DQ610EPK6ap_intILi16EES4_S4_S4_S4_S4_S4_S4_S4_S4_S4_S4_RA224_A38_S2_RA224_A224_S2_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S2_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_hh_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2281, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_122LoadBand0Weights2DQ610EPK6ap_intILi16EES4_S4_S4_S4_S4_S4_S4_S4_S4_S4_S4_RA224_A38_S2_RA224_A224_S2_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S2_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_ih_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2280, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi38ELi2ELi4ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_add_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2279, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi38ELi2ELi4ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_mul_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2278, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi38ELi2ELi4ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer0_bias_ih_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2277, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_122LoadBand0Weights2DQ610EPK6ap_intILi16EES4_S4_S4_S4_S4_S4_S4_S4_S4_S4_S4_RA224_A38_S2_RA224_A224_S2_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S2_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_hh_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2276, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_123RunGSUMacPhaseBand0Q610ILi38ELi2ELi4ELi32EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S5_RN3hls6streamIS2_IXmlLi48ET0_EELi0EEE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_ih_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1950, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi38ELi2ELi4ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          prev_hx_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1951, Column: 12 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi38ELi2ELi4ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          prev_cx_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1975, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          input_buffer
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1976, Column: 12 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A38_KS4_RA224_A224_S7_RA2_SB_RSB_SG_RA8_A224_S4_SJ_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          output_buffer
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1950, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi224ELi2ELi32ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          prev_hx_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1951, Column: 12 }
+Function:        _ZN12subband_q61012_GLOBAL__N_127RunGSUCellBand0ParallelQ610ILi224ELi2ELi32ELi32ELb1EEEvPK6ap_intILi16EEPAT__S4_PA224_S4_S9_S5_S5_PS3_SA_SA_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          prev_cx_q610
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2010, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          input_buffer
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2011, Column: 12 }
+Function:        _ZN12subband_q61012_GLOBAL__N_130RunGSULayer1StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA224_A224_KS4_SA_RA2_S8_RS8_SD_RA8_A224_S4_SG_S6_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          output_buffer
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2070, Column: 11 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          input_buffer
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_hh_local_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_hh_local_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_ih_local_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_ih_local_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_hh_local_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_hh_local_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '32'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_ih_local_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+Function:        _ZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_ih_local_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-reshape
+Name:            ArrayXform
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2286, Column: 0 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi40ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Applying '
+  - String:          array_reshape
+  - String:          ' to '''
+  - UOName:          _ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E17proj_weight_local
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' reshaping'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1808, Column: 25 }
+Function:        _ZN12subband_q61012_GLOBAL__N_140GenerateBand0SequenceStreamOptimizedQ610EPK6ap_intILi16EES4_RN3hls6streamIS2_Li0EEE
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1808, Column: 25 }
+  - OrigDirection:   read
+  - OrigID:          for.body8.load.17
+  - ArrayName:       noisy_input_q610
+  - String:          ' '
+  - BundleName:      gmem_in
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1802_3
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1802:26'
+  - String:          ' '
+  - Function:        'subband_q610::(anonymous namespace)::GenerateBand0SequenceStreamOptimizedQ610(ap_int<16> const*, ap_int<16> const*, hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1794, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1813, Column: 25 }
+Function:        _ZN12subband_q61012_GLOBAL__N_140GenerateBand0SequenceStreamOptimizedQ610EPK6ap_intILi16EES4_RN3hls6streamIS2_Li0EEE
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1813, Column: 25 }
+  - OrigDirection:   read
+  - OrigID:          for.inc19.load.7
+  - ArrayName:       fb_output_q610
+  - String:          ' '
+  - BundleName:      gmem_in
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1810_4
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1810:26'
+  - String:          ' '
+  - Function:        'subband_q610::(anonymous namespace)::GenerateBand0SequenceStreamOptimizedQ610(ap_int<16> const*, ap_int<16> const*, hls::stream<ap_int<16>, 0>&)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1794, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 2095, Column: 31 }
+Function:        _ZN12subband_q61012_GLOBAL__N_141RunProjectionStoreBand0StreamParallelQ610ERN3hls6streamI6ap_intILi16EELi0EEERA40_A224_KS4_RA40_S7_PS4_
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2095, Column: 31 }
+  - OrigDirection:   write
+  - OrigID:          _ZN12subband_q61015RoundShiftRightE6ap_intILi48EEi.exit.store.31
+  - ArrayName:       df_coef_q610
+  - String:          ' '
+  - BundleName:      gmem_out
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_2077_3
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2077:26'
+  - String:          ' '
+  - Function:        'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream<ap_int<16>, 0>&, ap_int<16> const (&) [40][224], ap_int<16> const (&) [40], ap_int<16>*)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 2068, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi38EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '8512'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input4seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 38>(ap_int<16> const*, ap_int<16> (&) [224][38])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1708, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.11
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi40ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '8960'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input3seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<40, 224>(ap_int<16> const*, ap_int<16> (&) [40][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1708, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.10
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi40EEEvPK6ap_intILi16EERAT__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '40'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input2seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<40>(ap_int<16> const*, ap_int<16> (&) [40])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1718, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi2ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '448'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<2, 224>(ap_int<16> const*, ap_int<16> (&) [2][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1708, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.12
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi224EEEvPK6ap_intILi16EERAT__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '224'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<224>(ap_int<16> const*, ap_int<16> (&) [224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1718, Column: 16 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.10
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '50176'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 224>(ap_int<16> const*, ap_int<16> (&) [224][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1708, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.11
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi38EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1705, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input4seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1706_2
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1706:24'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 38>(ap_int<16> const*, ap_int<16> (&) [224][38])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi40ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1705, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input3seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1706_2
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1706:24'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<40, 224>(ap_int<16> const*, ap_int<16> (&) [40][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi40EEEvPK6ap_intILi16EERAT__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1716, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input2seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<40>(ap_int<16> const*, ap_int<16> (&) [40])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi2ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1705, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1706_2
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1706:24'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<2, 224>(ap_int<16> const*, ap_int<16> (&) [2][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi224EEEvPK6ap_intILi16EERAT__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1716, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<224>(ap_int<16> const*, ap_int<16> (&) [224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i16
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1705, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          input1seq
+  - ArrayName:       input
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1706_2
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1706:24'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 224>(ap_int<16> const*, ap_int<16> (&) [224][224])'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1676, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_.429.430
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.end24.i
+  - String:          ''' living in '''
+  - LoopName:        VITIS_LOOP_1887_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1887:21'
+  - String:          ') .'
+...
+--- !Failure
+Pass:            reflow-occurrence-analysis
+Name:            CouldNotAnalyzeBBInfo
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1676, Column: 7 }
+Function:        _ZN12subband_q61012_GLOBAL__N_124RunGSUGatePhaseBand0Q610ILi2ELb1EEEvRN3hls6streamI6ap_intIXmlLi48ET_EELi0EEEPA224_KS4_ILi16EEPS9_SC_SC_PS8_SD_SD_.429.430
+Args:            
+  - String:          'Could not analyze occurrence information for '''
+  - BBName:          if.end24.i.1
+  - String:          ''' living in '''
+  - LoopName:        VITIS_LOOP_1887_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1887:21'
+  - String:          ') .'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_1887_1
+  - String:          '> at '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1887:21'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi38EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8512'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 38>(ap_int<16> const*, ap_int<16> (&) [224][38]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi38EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8512'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '50176'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<224, 224>(ap_int<16> const*, ap_int<16> (&) [224][224]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi224ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '50176'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi2ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '448'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<2, 224>(ap_int<16> const*, ap_int<16> (&) [2][224]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi2ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '448'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi224EEEvPK6ap_intILi16EERAT__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '224'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<224>(ap_int<16> const*, ap_int<16> (&) [224]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi224EEEvPK6ap_intILi16EERAT__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '224'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi40ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8960'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadMatrixQ610<40, 224>(ap_int<16> const*, ap_int<16> (&) [40][224]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1703, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1705, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadMatrixQ610ILi40ELi224EEEvPK6ap_intILi16EERAT__AT0__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '8960'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1705_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1705:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi40EEEvPK6ap_intILi16EERAT__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '40'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      weights
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          ' '
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ' '
+  - Function:        'void subband_q610::(anonymous namespace)::LoadVectorQ610<40>(ap_int<16> const*, ap_int<16> (&) [40]) (.1)'
+    DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                       Line: 1714, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp', 
+                   Line: 1716, Column: 21 }
+Function:        _ZN12subband_q61012_GLOBAL__N_114LoadVectorQ610ILi40EEEvPK6ap_intILi16EERAT__S3_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '40'
+  - String:          ' and bit width '
+  - Width:           '16'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_1716_1
+  - String:          '''('
+  - LoopLoc:         'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1716:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      weights
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

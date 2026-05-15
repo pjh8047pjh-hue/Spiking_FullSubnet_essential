@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1'
+================================================================
+* Date:           Wed May 13 19:58:55 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.091 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      227|      227|  2.270 us|  2.270 us|  227|  227|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_1774_1  |      225|      225|         3|          1|          1|   224|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     45|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     45|    -|
+|Register         |        -|    -|      25|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      25|     90|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln1774_fu_91_p2        |         +|   0|  0|  15|           8|           1|
+    |ap_block_pp0_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln1774_fu_85_p2       |      icmp|   0|  0|  15|           8|           7|
+    |select_ln1776_fu_122_p3    |    select|   0|  0|  11|           1|          11|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  45|          19|          22|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |ap_done_int                 |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1     |   9|          2|    1|          2|
+    |ap_sig_allocacmp_index      |   9|          2|    8|         16|
+    |index_7_fu_40               |   9|          2|    8|         16|
+    |layer1_output_stream_blk_n  |   9|          2|    1|          2|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  45|         10|   19|         38|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |index_7_fu_40                     |   8|   0|    8|          0|
+    |select_ln1776_reg_159             |  11|   0|   11|          0|
+    |trunc_ln1774_reg_144              |   1|   0|    1|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             |  25|   0|   25|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+|              RTL Ports              | Dir | Bits|  Protocol  |                                  Source Object                                 |    C Type    |
++-------------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+|ap_clk                               |   in|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|ap_rst                               |   in|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|ap_start                             |   in|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|ap_done                              |  out|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|ap_idle                              |  out|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|ap_ready                             |  out|    1|  ap_ctrl_hs|  (anonymous namespace)RunGSULayer1StreamParallelQ610_Pipeline_VITIS_LOOP_1774_1|  return value|
+|layer1_output_stream_din             |  out|   16|     ap_fifo|                                                            layer1_output_stream|       pointer|
+|layer1_output_stream_num_data_valid  |   in|   10|     ap_fifo|                                                            layer1_output_stream|       pointer|
+|layer1_output_stream_fifo_cap        |   in|   10|     ap_fifo|                                                            layer1_output_stream|       pointer|
+|layer1_output_stream_full_n          |   in|    1|     ap_fifo|                                                            layer1_output_stream|       pointer|
+|layer1_output_stream_write           |  out|    1|     ap_fifo|                                                            layer1_output_stream|       pointer|
+|output_buffer_address0               |  out|    7|   ap_memory|                                                                   output_buffer|         array|
+|output_buffer_ce0                    |  out|    1|   ap_memory|                                                                   output_buffer|         array|
+|output_buffer_q0                     |   in|   11|   ap_memory|                                                                   output_buffer|         array|
+|output_buffer_2_address0             |  out|    7|   ap_memory|                                                                 output_buffer_2|         array|
+|output_buffer_2_ce0                  |  out|    1|   ap_memory|                                                                 output_buffer_2|         array|
+|output_buffer_2_q0                   |   in|   11|   ap_memory|                                                                 output_buffer_2|         array|
++-------------------------------------+-----+-----+------------+--------------------------------------------------------------------------------+--------------+
+

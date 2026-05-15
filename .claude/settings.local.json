@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\User\\\\Documents\\\\Speech Enhancement\\\\Spiking_FullSubnet_opt_hls\\\\\" -Recurse -Directory | Select-Object -ExpandProperty FullName | head -30)"
+    ]
+  }
+}

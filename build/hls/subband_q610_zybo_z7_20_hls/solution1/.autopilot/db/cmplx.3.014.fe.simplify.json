@@ -1,0 +1,273 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "10 19",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2228,
+    "instructions": 116,
+    "name": "SubbandBand0TopQ610",
+    "total_instructions": 11531
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "18 15 21 5",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2101,
+    "instructions": 36,
+    "name": "RunBand0OptimizedDataflowQ610",
+    "total_instructions": 11042
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "2 7 12 17 17 7 7 12 17 17 20 11",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1722,
+    "instructions": 13,
+    "name": "LoadBand0Weights2DQ610",
+    "total_instructions": 355
+  },
+  "11": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1714,
+    "instructions": 12,
+    "name": "LoadVectorQ610<40>",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 12
+  },
+  "12": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1703,
+    "instructions": 33,
+    "name": "LoadMatrixQ610<2, 224>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 33
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "6 14 4",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1939,
+    "instructions": 903,
+    "loads": {
+      "L": 448
+    },
+    "name": "RunGSUCellBand0ParallelQ610<38, 2, 4, 32, true>",
+    "total_instructions": 3774
+  },
+  "14": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1853,
+    "instructions": 1077,
+    "loads": {
+      "G": 4
+    },
+    "name": "RunGSUMacPhaseBand0Q610<38, 2, 4, 32>",
+    "total_instructions": 1077
+  },
+  "15": {
+    "basicblocks": 47,
+    "calls": "13",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1964,
+    "instructions": 234,
+    "loads": {
+      "L": 2
+    },
+    "name": "RunGSULayer0StreamParallelQ610",
+    "total_instructions": 4008
+  },
+  "16": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 164,
+    "instructions": 18,
+    "name": "RoundShiftRight",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 18
+  },
+  "17": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1714,
+    "instructions": 24,
+    "name": "LoadVectorQ610<224>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 24
+  },
+  "18": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1791,
+    "instructions": 41,
+    "loads": {
+      "L": 2
+    },
+    "name": "GenerateBand0SequenceStreamOptimizedQ610",
+    "total_instructions": 41
+  },
+  "19": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2170,
+    "instructions": 18,
+    "name": "RunBand0OptimizedCoreQ610",
+    "total_instructions": 11060
+  },
+  "2": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1703,
+    "instructions": 36,
+    "loads": {
+      "G": 2
+    },
+    "name": "LoadMatrixQ610<224, 38>",
+    "stores": {
+      "G": 2
+    },
+    "total_instructions": 36
+  },
+  "20": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1703,
+    "instructions": 24,
+    "loads": {
+      "G": 1
+    },
+    "name": "LoadMatrixQ610<40, 224>",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 24
+  },
+  "21": {
+    "basicblocks": 233,
+    "calls": "9",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1999,
+    "instructions": 1164,
+    "loads": {
+      "L": 2
+    },
+    "name": "RunGSULayer1StreamParallelQ610",
+    "total_instructions": 5702
+  },
+  "3": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1853,
+    "instructions": 1841,
+    "loads": {
+      "G": 4
+    },
+    "name": "RunGSUMacPhaseBand0Q610<224, 2, 32, 32>",
+    "total_instructions": 1841
+  },
+  "4": {
+    "basicblocks": 27,
+    "calls": "16 8 16 8 8 16 8 16 8 16 8 16 8 16 8 8 16 8 16 8 16 8",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1877,
+    "instructions": 443,
+    "loads": {
+      "G": 6,
+      "L": 30
+    },
+    "name": "RunGSUGatePhaseBand0Q610<2, true>",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 767
+  },
+  "5": {
+    "basicblocks": 238,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 2064,
+    "instructions": 1255,
+    "loads": {
+      "G": 2
+    },
+    "name": "RunProjectionStoreBand0StreamParallelQ610",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 1255
+  },
+  "6": {
+    "basicblocks": 116,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1921,
+    "instructions": 1027,
+    "loads": {
+      "L": 4
+    },
+    "name": "SnapshotGSUStateQ610<2>",
+    "stores": {
+      "L": 448
+    },
+    "total_instructions": 1027
+  },
+  "7": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1703,
+    "instructions": 36,
+    "loads": {
+      "L": 2
+    },
+    "name": "LoadMatrixQ610<224, 224>",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 36
+  },
+  "8": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 152,
+    "instructions": 12,
+    "name": "SaturateInt16",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 12
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "6 3 4",
+    "file": "subband_ref_q610_opt_stage4_latency_stepL2.cpp",
+    "fileloc": 1939,
+    "instructions": 903,
+    "loads": {
+      "L": 448
+    },
+    "name": "RunGSUCellBand0ParallelQ610<224, 2, 32, 32, true>",
+    "total_instructions": 4538
+  }
+}

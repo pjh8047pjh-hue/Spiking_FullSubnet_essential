@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2'
+================================================================
+* Date:           Thu May 14 12:27:37 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.521 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1154|     1154|  11.540 us|  11.540 us|  1154|  1154|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_2473_2  |     1152|     1152|         2|          1|          1|  1152|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     58|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     45|    -|
+|Register         |        -|    -|      15|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      15|    103|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln2473_fu_130_p2       |         +|   0|  0|  12|          11|           1|
+    |add_ln2477_fu_152_p2       |         +|   0|  0|  14|          13|          13|
+    |ap_block_pp0_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
+    |is_last_fu_142_p2          |       and|   0|  0|   2|           1|           1|
+    |icmp_ln2473_fu_124_p2      |      icmp|   0|  0|  12|          11|          11|
+    |icmp_ln2476_fu_136_p2      |      icmp|   0|  0|  12|          11|          11|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  58|          50|          41|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                      |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1          |   9|          2|    1|          2|
+    |ap_sig_allocacmp_output_index_1  |   9|          2|   11|         22|
+    |df_coef_stream_TDATA_blk_n       |   9|          2|    1|          2|
+    |output_index_fu_68               |   9|          2|   11|         22|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            |  45|         10|   25|         50|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |is_last_reg_178          |   1|   0|    1|          0|
+    |output_index_fu_68       |  11|   0|   11|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  15|   0|   15|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |                                Source Object                                |    C Type    |
++-----------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  (anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2|  return value|
+|df_coef_stream_TREADY  |   in|    1|        axis|                                                      df_coef_stream_V_data_V|       pointer|
+|df_coef_stream_TDATA   |  out|   16|        axis|                                                      df_coef_stream_V_data_V|       pointer|
+|cmp6                   |   in|    1|     ap_none|                                                                         cmp6|        scalar|
+|or_ln2477              |   in|   13|     ap_none|                                                                    or_ln2477|        scalar|
+|df_coef_stream_TVALID  |  out|    1|        axis|                                                      df_coef_stream_V_last_V|       pointer|
+|df_coef_stream_TLAST   |  out|    1|        axis|                                                      df_coef_stream_V_last_V|       pointer|
+|df_coef_stream_TKEEP   |  out|    2|        axis|                                                      df_coef_stream_V_keep_V|       pointer|
+|df_coef_stream_TSTRB   |  out|    2|        axis|                                                      df_coef_stream_V_strb_V|       pointer|
+|output_chunk_address0  |  out|   13|   ap_memory|                                                                 output_chunk|         array|
+|output_chunk_ce0       |  out|    1|   ap_memory|                                                                 output_chunk|         array|
+|output_chunk_q0        |   in|   16|   ap_memory|                                                                 output_chunk|         array|
++-----------------------+-----+-----+------------+-----------------------------------------------------------------------------+--------------+
+

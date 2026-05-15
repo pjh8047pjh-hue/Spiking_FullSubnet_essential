@@ -1,0 +1,198 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_LoadMatrixQ610_224_38_s'
+================================================================
+* Date:           Wed May 13 19:58:41 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     8524|     8524|  85.240 us|  85.240 us|  8524|  8524|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |                                                                                               |                                                                                     |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+        |                                            Instance                                           |                                        Module                                       |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |grp_p_anonymous_namespace_LoadMatrixQ610_Pipeline_VITIS_LOOP_1705_1_VITIS_LOOP_1706_2_1_fu_61  |p_anonymous_namespace_LoadMatrixQ610_Pipeline_VITIS_LOOP_1705_1_VITIS_LOOP_1706_2_1  |     8515|     8515|  85.150 us|  85.150 us|  8515|  8515|       no|
+        +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+---------+-----------+-----------+------+------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|      69|    414|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    200|    -|
+|Register         |        -|    -|      42|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     111|    614|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |                                            Instance                                           |                                        Module                                       | BRAM_18K| DSP| FF | LUT | URAM|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |grp_p_anonymous_namespace_LoadMatrixQ610_Pipeline_VITIS_LOOP_1705_1_VITIS_LOOP_1706_2_1_fu_61  |p_anonymous_namespace_LoadMatrixQ610_Pipeline_VITIS_LOOP_1705_1_VITIS_LOOP_1706_2_1  |        0|   0|  69|  414|    0|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+    |Total                                                                                          |                                                                                     |        0|   0|  69|  414|    0|
+    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+---------+----+----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  59|         11|    1|         11|
+    |m_axi_weights_ARADDR    |  14|          3|   32|         96|
+    |m_axi_weights_ARBURST   |   9|          2|    2|          4|
+    |m_axi_weights_ARCACHE   |   9|          2|    4|          8|
+    |m_axi_weights_ARID      |   9|          2|    1|          2|
+    |m_axi_weights_ARLEN     |  14|          3|   32|         96|
+    |m_axi_weights_ARLOCK    |   9|          2|    2|          4|
+    |m_axi_weights_ARPROT    |   9|          2|    3|          6|
+    |m_axi_weights_ARQOS     |   9|          2|    4|          8|
+    |m_axi_weights_ARREGION  |   9|          2|    4|          8|
+    |m_axi_weights_ARSIZE    |   9|          2|    3|          6|
+    |m_axi_weights_ARUSER    |   9|          2|    1|          2|
+    |m_axi_weights_ARVALID   |  14|          3|    1|          3|
+    |m_axi_weights_RREADY    |   9|          2|    1|          2|
+    |weights_blk_n_AR        |   9|          2|    1|          2|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   | 200|         42|   92|        258|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                                    Name                                                    | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                                                   |  10|   0|   10|          0|
+    |grp_p_anonymous_namespace_LoadMatrixQ610_Pipeline_VITIS_LOOP_1705_1_VITIS_LOOP_1706_2_1_fu_61_ap_start_reg  |   1|   0|    1|          0|
+    |trunc_ln_reg_93                                                                                             |  31|   0|   31|          0|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                                                       |  42|   0|   42|          0|
+    +------------------------------------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+|                                         RTL Ports                                        | Dir | Bits|  Protocol  |                                  Source Object                                  |    C Type    |
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                    |   in|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|ap_rst                                                                                    |   in|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|ap_start                                                                                  |   in|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|ap_done                                                                                   |  out|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|ap_idle                                                                                   |  out|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|ap_ready                                                                                  |  out|    1|  ap_ctrl_hs|                                     (anonymous namespace)LoadMatrixQ610<224, 38>|  return value|
+|m_axi_weights_AWVALID                                                                     |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWREADY                                                                     |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWADDR                                                                      |  out|   32|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWID                                                                        |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWLEN                                                                       |  out|   32|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWSIZE                                                                      |  out|    3|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWBURST                                                                     |  out|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWLOCK                                                                      |  out|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWCACHE                                                                     |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWPROT                                                                      |  out|    3|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWQOS                                                                       |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWREGION                                                                    |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_AWUSER                                                                      |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WVALID                                                                      |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WREADY                                                                      |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WDATA                                                                       |  out|   16|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WSTRB                                                                       |  out|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WLAST                                                                       |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WID                                                                         |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_WUSER                                                                       |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARVALID                                                                     |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARREADY                                                                     |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARADDR                                                                      |  out|   32|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARID                                                                        |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARLEN                                                                       |  out|   32|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARSIZE                                                                      |  out|    3|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARBURST                                                                     |  out|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARLOCK                                                                      |  out|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARCACHE                                                                     |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARPROT                                                                      |  out|    3|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARQOS                                                                       |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARREGION                                                                    |  out|    4|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_ARUSER                                                                      |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RVALID                                                                      |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RREADY                                                                      |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RDATA                                                                       |   in|   16|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RLAST                                                                       |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RID                                                                         |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RFIFONUM                                                                    |   in|    6|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RUSER                                                                       |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_RRESP                                                                       |   in|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_BVALID                                                                      |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_BREADY                                                                      |  out|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_BRESP                                                                       |   in|    2|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_BID                                                                         |   in|    1|       m_axi|                                                                          weights|       pointer|
+|m_axi_weights_BUSER                                                                       |   in|    1|       m_axi|                                                                          weights|       pointer|
+|input_r                                                                                   |   in|   32|     ap_none|                                                                          input_r|        scalar|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12_address1  |  out|   11|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12_ce1       |  out|    1|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12_we1       |  out|    8|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12_d1        |  out|   64|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11_address1  |  out|   11|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11_ce1       |  out|    1|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11_we1       |  out|    8|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11|         array|
+|SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11_d1        |  out|   64|   ap_memory|  SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11|         array|
++------------------------------------------------------------------------------------------+-----+-----+------------+---------------------------------------------------------------------------------+--------------+
+

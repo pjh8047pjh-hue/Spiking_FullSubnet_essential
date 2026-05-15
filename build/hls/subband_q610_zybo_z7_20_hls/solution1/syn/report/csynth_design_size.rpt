@@ -1,0 +1,154 @@
+================================================================
+== Design Size Report
+================================================================
+
+* Total Instructions per Compilation Phase
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             | 20,283       | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  |  9,584       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |  7,744       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  6,822       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  6,056       | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         | 14,826       | user array partition pragmas are applied                                               |
+|               | (2) simplification          | 11,703       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  | 11,703       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           | 12,786       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         | 13,781       | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     | 11,531       | loop and instruction simplification                                                    |
+|               | (2) parallelization         | 11,531       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         | 11,531       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          | 11,531       | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                | 11,547       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           | 11,646       | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+
+* Instructions per Function for each Compilation Phase
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------------+------------------+------------------+
+| Function                                | Location                                            | Compile/Link    | Unroll/Inline   | Array/Struct     | Performance      | HW Transforms    |
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------------+------------------+------------------+
+| + SubbandBand0TopQ610                   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:2228 | 20,283          | 6,056           | 13,781           | 11,531           | 11,646           |
+|  + LoadBand0Weights2DQ610               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1722 |   303           |  182            |   355            |   355            |   423            |
+|     LoadMatrixQ610<224, 38>             | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703 |    30           |   17            |    36            |    36            |    42            |
+|     LoadMatrixQ610<224, 224>            | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703 |    90 (3 calls) |   51 (3 calls)  |   108 (3 calls)  |   108 (3 calls)  |   126 (3 calls)  |
+|     LoadMatrixQ610<2, 224>              | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703 |    60 (2 calls) |   34 (2 calls)  |    66 (2 calls)  |    66 (2 calls)  |    78 (2 calls)  |
+|     LoadVectorQ610<224>                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1714 |    64 (4 calls) |   40 (4 calls)  |    96 (4 calls)  |    96 (4 calls)  |   116 (4 calls)  |
+|     LoadMatrixQ610<40, 224>             | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703 |    30           |   17            |    24            |    24            |    30            |
+|     LoadVectorQ610<40>                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1714 |    16           |   10            |    12            |    12            |    17            |
+|  + RunBand0OptimizedCoreQ610            | subband_ref_q610_opt_stage4_latency_stepL2.cpp:2170 | 19,926          | 5,820           | 13,310           | 11,060           | 11,133           |
+|     ClearStateVectorQ610<224>           | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1781 |   192 (4 calls) |                 |                  |                  |                  |
+|   + RunBand0OptimizedDataflowQ61...     | subband_ref_q610_opt_stage4_latency_stepL2.cpp:2101 | 19,724          | 5,814           | 13,292           | 11,042           | 11,114           |
+|    + GenerateBand0SequenceStreamO...    | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1791 |    72           |   40            |    41            |    41            |    66            |
+|       InputIndex                        | subband_ref_q610_opt_stage4_latency_stepL2.cpp:107  |    12 (2 calls) |                 |                  |                  |                  |
+|    + RunGSULayer0StreamParallelQ6...    | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1964 | 8,987           | 2,279           | 4,507            | 4,008            | 4,018            |
+|       ReadFixedVectorFromStreamQ61...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763 |    26           |                 |                  |                  |                  |
+|     + RunGSUCellBand0ParallelQ610<...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1939 | 8,897           | 2,243           | 4,196            | 3,774            | 3,765            |
+|        SnapshotGSUStateQ610<2>          | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1921 |    32           |   23            | 1,027            | 1,027            | 1,032            |
+|      + RunGSUMacPhaseBand0Q610<38, ...  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1853 |   982           | 1,391           | 1,673            | 1,077            | 1,099            |
+|       + DotProductDspQ610<38, 4, 38>... | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820 |   365           |                 |                  |                  |                  |
+|          MulForMacDspQ610               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621 |   227           |                 |                  |                  |                  |
+|       + DotProductDspQ610<224, 32, 2... | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820 |   365           |                 |                  |                  |                  |
+|          MulForMacDspQ610               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621 |   227           |                 |                  |                  |                  |
+|      + RunGSUGatePhaseBand0Q610<2, ...  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1877 | 7,855           |  816            | 1,041            |   767            |   729            |
+|         RoundShiftRight                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  | 1,338 (2 calls) |  190 (10 calls) |   190 (10 calls) |   180 (10 calls) |   180 (10 calls) |
+|       + SaturateInt16                   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |  156 (12 calls) |   156 (12 calls) |   144 (12 calls) |   144 (12 calls) |
+|          max                            | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|          min                            | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + SigmoidPwlQ610Fabric            | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1660 | 1,046           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|        + SubQ610                        | subband_ref_q610_opt_stage4_latency_stepL2.cpp:185  |   374           |                 |                  |                  |                  |
+|         + SaturateInt16                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|            max                          | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|            min                          | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|       + SubQ610                         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:185  |   374           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|       + MulGateUpdateQ610<true>         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1649 | 2,124 (2 calls) |                 |                  |                  |                  |
+|        + MulQ610Dsp                     | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637 | 2,108 (2 calls) |                 |                  |                  |                  |
+|           RoundShiftRight               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  | 1,338 (2 calls) |                 |                  |                  |                  |
+|         + SaturateInt16                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |                 |                  |                  |                  |
+|            max                          | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|            min                          | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + AddQ610                         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:181  |   748 (2 calls) |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + MulQ610Dsp                      | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637 | 1,054           |                 |                  |                  |                  |
+|          RoundShiftRight                | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  |   669           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|         StepActivationQ610              | subband_ref_q610_opt_stage4_latency_stepL2.cpp:189  |    35           |                 |                  |                  |                  |
+|       WriteFixedVectorToStreamQ610...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1772 |    17           |                 |                  |                  |                  |
+|    + RunGSULayer1StreamParallelQ6...    | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1999 | 8,987           | 3,299           | 7,001            | 5,702            | 5,712            |
+|       ReadFixedVectorFromStreamQ61...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763 |    26           |                 |                  |                  |                  |
+|     + RunGSUCellBand0ParallelQ610<...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1939 | 8,897           | 3,263           | 5,388            | 4,538            | 4,529            |
+|        SnapshotGSUStateQ610<2>          | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1921 |    32           |   23            | 1,027            | 1,027            | 1,032            |
+|      + RunGSUMacPhaseBand0Q610<224,...  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1853 |   982           | 2,411           | 2,865            | 1,841            | 1,863            |
+|       + DotProductDspQ610<224, 32, 2... | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820 |   730 (2 calls) |                 |                  |                  |                  |
+|          MulForMacDspQ610               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621 |   454 (2 calls) |                 |                  |                  |                  |
+|      + RunGSUGatePhaseBand0Q610<2, ...  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1877 | 7,855           |  816            | 1,041            |   767            |   729            |
+|         RoundShiftRight                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  | 1,338 (2 calls) |  190 (10 calls) |   190 (10 calls) |   180 (10 calls) |   180 (10 calls) |
+|       + SaturateInt16                   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |  156 (12 calls) |   156 (12 calls) |   144 (12 calls) |   144 (12 calls) |
+|          max                            | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|          min                            | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + SigmoidPwlQ610Fabric            | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1660 | 1,046           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|        + SubQ610                        | subband_ref_q610_opt_stage4_latency_stepL2.cpp:185  |   374           |                 |                  |                  |                  |
+|         + SaturateInt16                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|            max                          | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|            min                          | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|       + SubQ610                         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:185  |   374           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|       + MulGateUpdateQ610<true>         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1649 | 2,124 (2 calls) |                 |                  |                  |                  |
+|        + MulQ610Dsp                     | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637 | 2,108 (2 calls) |                 |                  |                  |                  |
+|           RoundShiftRight               | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  | 1,338 (2 calls) |                 |                  |                  |                  |
+|         + SaturateInt16                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |                 |                  |                  |                  |
+|            max                          | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|            min                          | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + AddQ610                         | subband_ref_q610_opt_stage4_latency_stepL2.cpp:181  |   748 (2 calls) |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   308 (2 calls) |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     4 (4 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     4 (4 calls) |                 |                  |                  |                  |
+|       + MulQ610Dsp                      | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637 | 1,054           |                 |                  |                  |                  |
+|          RoundShiftRight                | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  |   669           |                 |                  |                  |                  |
+|        + SaturateInt16                  | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|           max                           | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|           min                           | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|         StepActivationQ610              | subband_ref_q610_opt_stage4_latency_stepL2.cpp:189  |    35           |                 |                  |                  |                  |
+|       WriteFixedVectorToStreamQ610...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1772 |    17           |                 |                  |                  |                  |
+|    + RunProjectionStoreBand0Strea...    | subband_ref_q610_opt_stage4_latency_stepL2.cpp:2064 | 1,623           |  156            | 1,707            | 1,255            | 1,277            |
+|       ReadFixedVectorFromStreamQ61...   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763 |    26           |                 |                  |                  |                  |
+|     + ProjectionDotProductDspQ610       | subband_ref_q610_opt_stage4_latency_stepL2.cpp:2034 |   362           |                 |                  |                  |                  |
+|        MulForMacDspQ610                 | subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621 |   227           |                 |                  |                  |                  |
+|       RoundShiftRight                   | subband_ref_q610_opt_stage4_latency_stepL2.cpp:164  |   669           |                 |                  |                  |                  |
+|     + SaturateInt16                     | subband_ref_q610_opt_stage4_latency_stepL2.cpp:152  |   154           |                 |                  |                  |                  |
+|        max                              | limits:862                                          |     2 (2 calls) |                 |                  |                  |                  |
+|        min                              | limits:859                                          |     2 (2 calls) |                 |                  |                  |                  |
+|       DfCoefIndex                       | subband_ref_q610_opt_stage4_latency_stepL2.cpp:136  |    10           |                 |                  |                  |                  |
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------------+------------------+------------------+
+
+* Design Size Message Settings
++---------------------------------------------+--------+------------------------------------------------------------------+
+| Message Setting                             | Value  | Description                                                      |
++---------------------------------------------+--------+------------------------------------------------------------------+
+| config_compile -design_size_maximum_warning | 100000 | Show a warning when total design instructions exceeds this value |
++---------------------------------------------+--------+------------------------------------------------------------------+
+
+

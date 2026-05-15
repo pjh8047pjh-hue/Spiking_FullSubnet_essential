@@ -1,0 +1,282 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunGSUMacPhaseBand0Q610_Pipeline_VITIS_LOOP_1833_2'
+================================================================
+* Date:           Wed May 13 19:58:24 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.481 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       14|       14|  0.140 us|  0.140 us|   14|   14|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_1833_2  |       12|       12|         4|          1|          1|    10|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 1 2 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.48>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%empty = alloca i32 1"   --->   Operation 7 'alloca' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%empty_779 = alloca i32 1"   --->   Operation 8 'alloca' 'empty_779' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%empty_780 = alloca i32 1"   --->   Operation 9 'alloca' 'empty_780' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%empty_781 = alloca i32 1"   --->   Operation 10 'alloca' 'empty_781' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%index = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 11 'alloca' 'index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12"   --->   Operation 12 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i64 666, i64 22, i64 18446744073709551615"   --->   Operation 13 'specmemcore' 'specmemcore_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%input_ptr_35_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_35_val"   --->   Operation 14 'read' 'input_ptr_35_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%input_ptr_31_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_31_val"   --->   Operation 15 'read' 'input_ptr_31_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%input_ptr_27_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_27_val"   --->   Operation 16 'read' 'input_ptr_27_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%input_ptr_23_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_23_val"   --->   Operation 17 'read' 'input_ptr_23_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%input_ptr_19_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_19_val"   --->   Operation 18 'read' 'input_ptr_19_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%input_ptr_15_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_15_val"   --->   Operation 19 'read' 'input_ptr_15_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%input_ptr_11_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_11_val"   --->   Operation 20 'read' 'input_ptr_11_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%input_ptr_7_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_7_val"   --->   Operation 21 'read' 'input_ptr_7_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%input_ptr_3_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_3_val"   --->   Operation 22 'read' 'input_ptr_3_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%input_ptr_34_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_34_val"   --->   Operation 23 'read' 'input_ptr_34_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%input_ptr_30_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_30_val"   --->   Operation 24 'read' 'input_ptr_30_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%input_ptr_26_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_26_val"   --->   Operation 25 'read' 'input_ptr_26_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%input_ptr_22_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_22_val"   --->   Operation 26 'read' 'input_ptr_22_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%input_ptr_18_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_18_val"   --->   Operation 27 'read' 'input_ptr_18_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%input_ptr_14_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_14_val"   --->   Operation 28 'read' 'input_ptr_14_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%input_ptr_10_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_10_val"   --->   Operation 29 'read' 'input_ptr_10_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%input_ptr_6_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_6_val"   --->   Operation 30 'read' 'input_ptr_6_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%input_ptr_2_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_2_val"   --->   Operation 31 'read' 'input_ptr_2_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%input_ptr_37_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_37_val"   --->   Operation 32 'read' 'input_ptr_37_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%input_ptr_33_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_33_val"   --->   Operation 33 'read' 'input_ptr_33_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%input_ptr_29_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_29_val"   --->   Operation 34 'read' 'input_ptr_29_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%input_ptr_25_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_25_val"   --->   Operation 35 'read' 'input_ptr_25_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%input_ptr_21_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_21_val"   --->   Operation 36 'read' 'input_ptr_21_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%input_ptr_17_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_17_val"   --->   Operation 37 'read' 'input_ptr_17_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%input_ptr_13_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_13_val"   --->   Operation 38 'read' 'input_ptr_13_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%input_ptr_9_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_9_val"   --->   Operation 39 'read' 'input_ptr_9_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%input_ptr_5_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_5_val"   --->   Operation 40 'read' 'input_ptr_5_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%input_ptr_1_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_1_val"   --->   Operation 41 'read' 'input_ptr_1_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%add_ln1839_3_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %add_ln1839_3"   --->   Operation 42 'read' 'add_ln1839_3_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%input_ptr_36_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_36_val"   --->   Operation 43 'read' 'input_ptr_36_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%input_ptr_32_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_32_val"   --->   Operation 44 'read' 'input_ptr_32_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%input_ptr_28_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_28_val"   --->   Operation 45 'read' 'input_ptr_28_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%input_ptr_24_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_24_val"   --->   Operation 46 'read' 'input_ptr_24_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%input_ptr_20_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_20_val"   --->   Operation 47 'read' 'input_ptr_20_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%input_ptr_16_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_16_val"   --->   Operation 48 'read' 'input_ptr_16_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%input_ptr_12_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_12_val"   --->   Operation 49 'read' 'input_ptr_12_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%input_ptr_8_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_8_val"   --->   Operation 50 'read' 'input_ptr_8_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%input_ptr_4_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_4_val"   --->   Operation 51 'read' 'input_ptr_4_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%input_ptr_0_val_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %input_ptr_0_val"   --->   Operation 52 'read' 'input_ptr_0_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (1.58ns)   --->   "%store_ln1837 = store i6 0, i6 %index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 53 'store' 'store_ln1837' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 54 [1/1] (1.58ns)   --->   "%store_ln0 = store i48 0, i48 %empty_781"   --->   Operation 54 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 55 [1/1] (1.58ns)   --->   "%store_ln0 = store i48 0, i48 %empty_780"   --->   Operation 55 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 56 [1/1] (1.58ns)   --->   "%store_ln0 = store i35 0, i35 %empty_779"   --->   Operation 56 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 57 [1/1] (1.58ns)   --->   "%store_ln0 = store i35 0, i35 %empty"   --->   Operation 57 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body4.i52"   --->   Operation 58 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%base_index = load i6 %index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 59 'load' 'base_index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (1.82ns)   --->   "%icmp_ln1833 = icmp_ult  i6 %base_index, i6 38" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 60 'icmp' 'icmp_ln1833' <Predicate = true> <Delay = 1.82> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%br_ln1833 = br i1 %icmp_ln1833, void %for.body4.i.preheader.exitStub, void %fpga_resource_hint.for.body4.i52.75" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 61 'br' 'br_ln1833' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%lshr_ln1 = partselect i4 @_ssdm_op_PartSelect.i4.i6.i32.i32, i6 %base_index, i32 2, i32 5" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 62 'partselect' 'lshr_ln1' <Predicate = (icmp_ln1833)> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln1838)   --->   "%or_ln1833 = or i6 %base_index, i6 2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 63 'or' 'or_ln1833' <Predicate = (icmp_ln1833)> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (2.54ns)   --->   "%lhs = sparsemux i16 @_ssdm_op_SparseMux.ap_auto.10i16.i16.i6, i6 0, i16 %input_ptr_0_val_read, i6 4, i16 %input_ptr_4_val_read, i6 8, i16 %input_ptr_8_val_read, i6 12, i16 %input_ptr_12_val_read, i6 16, i16 %input_ptr_16_val_read, i6 20, i16 %input_ptr_20_val_read, i6 24, i16 %input_ptr_24_val_read, i6 28, i16 %input_ptr_28_val_read, i6 32, i16 %input_ptr_32_val_read, i6 36, i16 %input_ptr_36_val_read, i16 0, i6 %base_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 64 'sparsemux' 'lhs' <Predicate = (icmp_ln1833)> <Delay = 2.54> <CoreInst = "SparseMux">   --->   Core 135 'SparseMux' <Latency = 0> <II = 1> <Delay = 2.54> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln1839 = zext i4 %lshr_ln1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 65 'zext' 'zext_ln1839' <Predicate = (icmp_ln1833)> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (1.63ns)   --->   "%add_ln1839_35 = add i11 %add_ln1839_3_read, i11 %zext_ln1839" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 66 'add' 'add_ln1839_35' <Predicate = (icmp_ln1833)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln1839_8 = zext i11 %add_ln1839_35" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 67 'zext' 'zext_ln1839_8' <Predicate = (icmp_ln1833)> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_37 = getelementptr i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i32 0, i32 %zext_ln1839_8" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 68 'getelementptr' 'SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_37' <Predicate = (icmp_ln1833)> <Delay = 0.00>
+ST_1 : Operation 69 [2/2] (3.25ns)   --->   "%SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38 = load i11 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_37" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 69 'load' 'SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38' <Predicate = (icmp_ln1833)> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 91 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 1120> <RAM>
+ST_1 : Operation 70 [1/1] (2.54ns)   --->   "%lhs_4 = sparsemux i16 @_ssdm_op_SparseMux.ap_auto.10i16.i16.i6, i6 0, i16 %input_ptr_1_val_read, i6 4, i16 %input_ptr_5_val_read, i6 8, i16 %input_ptr_9_val_read, i6 12, i16 %input_ptr_13_val_read, i6 16, i16 %input_ptr_17_val_read, i6 20, i16 %input_ptr_21_val_read, i6 24, i16 %input_ptr_25_val_read, i6 28, i16 %input_ptr_29_val_read, i6 32, i16 %input_ptr_33_val_read, i6 36, i16 %input_ptr_37_val_read, i16 0, i6 %base_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 70 'sparsemux' 'lhs_4' <Predicate = (icmp_ln1833)> <Delay = 2.54> <CoreInst = "SparseMux">   --->   Core 135 'SparseMux' <Latency = 0> <II = 1> <Delay = 2.54> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 71 [1/1] (1.82ns) (out node of the LUT)   --->   "%icmp_ln1838 = icmp_ult  i6 %or_ln1833, i6 38" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 71 'icmp' 'icmp_ln1838' <Predicate = (icmp_ln1833)> <Delay = 1.82> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 72 [1/1] (2.42ns)   --->   "%lhs_5 = sparsemux i16 @_ssdm_op_SparseMux.ap_auto.9i16.i16.i6, i6 0, i16 %input_ptr_2_val_read, i6 4, i16 %input_ptr_6_val_read, i6 8, i16 %input_ptr_10_val_read, i6 12, i16 %input_ptr_14_val_read, i6 16, i16 %input_ptr_18_val_read, i6 20, i16 %input_ptr_22_val_read, i6 24, i16 %input_ptr_26_val_read, i6 28, i16 %input_ptr_30_val_read, i6 32, i16 %input_ptr_34_val_read, i16 0, i6 %base_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 72 'sparsemux' 'lhs_5' <Predicate = (icmp_ln1833)> <Delay = 2.42> <CoreInst = "SparseMux">   --->   Core 135 'SparseMux' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 73 [1/1] (2.42ns)   --->   "%lhs_6 = sparsemux i16 @_ssdm_op_SparseMux.ap_auto.9i16.i16.i6, i6 0, i16 %input_ptr_3_val_read, i6 4, i16 %input_ptr_7_val_read, i6 8, i16 %input_ptr_11_val_read, i6 12, i16 %input_ptr_15_val_read, i6 16, i16 %input_ptr_19_val_read, i6 20, i16 %input_ptr_23_val_read, i6 24, i16 %input_ptr_27_val_read, i6 28, i16 %input_ptr_31_val_read, i6 32, i16 %input_ptr_35_val_read, i16 0, i6 %base_index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 73 'sparsemux' 'lhs_6' <Predicate = (icmp_ln1833)> <Delay = 2.42> <CoreInst = "SparseMux">   --->   Core 135 'SparseMux' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 74 [1/1] (1.82ns)   --->   "%add_ln1833 = add i6 %base_index, i6 4" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 74 'add' 'add_ln1833' <Predicate = (icmp_ln1833)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (1.58ns)   --->   "%store_ln1837 = store i6 %add_ln1833, i6 %index" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 75 'store' 'store_ln1837' <Predicate = (icmp_ln1833)> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 4.30>
+ST_2 : Operation 76 [1/2] (3.25ns)   --->   "%SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38 = load i11 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_37" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 76 'load' 'SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM_2P_BRAM">   --->   Core 91 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 1120> <RAM>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%rhs = trunc i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 77 'trunc' 'rhs' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%sext_ln1625 = sext i16 %lhs" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 78 'sext' 'sext_ln1625' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%sext_ln1625_8 = sext i16 %rhs" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 79 'sext' 'sext_ln1625_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [3/3] (1.05ns) (grouped into DSP with root node total_q20)   --->   "%product_q20 = mul i32 %sext_ln1625_8, i32 %sext_ln1625" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 80 'mul' 'product_q20' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%rhs_193 = partselect i16 @_ssdm_op_PartSelect.i16.i64.i32.i32, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38, i32 16, i32 31" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 81 'partselect' 'rhs_193' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%sext_ln1625_9 = sext i16 %lhs_4" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 82 'sext' 'sext_ln1625_9' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%sext_ln1625_10 = sext i16 %rhs_193" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 83 'sext' 'sext_ln1625_10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [3/3] (1.05ns) (grouped into DSP with root node add_ln1839)   --->   "%product_q20_202 = mul i32 %sext_ln1625_10, i32 %sext_ln1625_9" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 84 'mul' 'product_q20_202' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%rhs_194 = partselect i16 @_ssdm_op_PartSelect.i16.i64.i32.i32, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38, i32 32, i32 47" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 85 'partselect' 'rhs_194' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%sext_ln1625_11 = sext i16 %lhs_5" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 86 'sext' 'sext_ln1625_11' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%sext_ln1625_12 = sext i16 %rhs_194" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 87 'sext' 'sext_ln1625_12' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 88 [3/3] (1.05ns) (grouped into DSP with root node add_ln1839_1)   --->   "%product_q20_203 = mul i32 %sext_ln1625_12, i32 %sext_ln1625_11" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 88 'mul' 'product_q20_203' <Predicate = (icmp_ln1838)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%rhs_195 = partselect i16 @_ssdm_op_PartSelect.i16.i64.i32.i32, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38, i32 48, i32 63" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 89 'partselect' 'rhs_195' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%sext_ln1625_14 = sext i16 %lhs_6" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 90 'sext' 'sext_ln1625_14' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%sext_ln1625_15 = sext i16 %rhs_195" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 91 'sext' 'sext_ln1625_15' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_2 : Operation 92 [3/3] (1.05ns) (grouped into DSP with root node add_ln1839_2)   --->   "%product_q20_204 = mul i32 %sext_ln1625_15, i32 %sext_ln1625_14" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 92 'mul' 'product_q20_204' <Predicate = (icmp_ln1838)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 3 <SV = 2> <Delay = 1.05>
+ST_3 : Operation 93 [2/3] (1.05ns) (grouped into DSP with root node total_q20)   --->   "%product_q20 = mul i32 %sext_ln1625_8, i32 %sext_ln1625" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 93 'mul' 'product_q20' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 94 [2/3] (1.05ns) (grouped into DSP with root node add_ln1839)   --->   "%product_q20_202 = mul i32 %sext_ln1625_10, i32 %sext_ln1625_9" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 94 'mul' 'product_q20_202' <Predicate = true> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 95 [2/3] (1.05ns) (grouped into DSP with root node add_ln1839_1)   --->   "%product_q20_203 = mul i32 %sext_ln1625_12, i32 %sext_ln1625_11" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 95 'mul' 'product_q20_203' <Predicate = (icmp_ln1838)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 96 [2/3] (1.05ns) (grouped into DSP with root node add_ln1839_2)   --->   "%product_q20_204 = mul i32 %sext_ln1625_15, i32 %sext_ln1625_14" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 96 'mul' 'product_q20_204' <Predicate = (icmp_ln1838)> <Delay = 1.05> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "%p_load49 = load i35 %empty"   --->   Operation 135 'load' 'p_load49' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.00ns)   --->   "%p_load47 = load i35 %empty_779"   --->   Operation 136 'load' 'p_load47' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 137 [1/1] (0.00ns)   --->   "%p_load45 = load i48 %empty_780"   --->   Operation 137 'load' 'p_load45' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%p_load43 = load i48 %empty_781"   --->   Operation 138 'load' 'p_load43' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 139 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i48P0A, i48 %p_out, i48 %p_load43"   --->   Operation 139 'write' 'write_ln0' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i48P0A, i48 %p_out1, i48 %p_load45"   --->   Operation 140 'write' 'write_ln0' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 141 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i35P0A, i35 %p_out2, i35 %p_load47"   --->   Operation 141 'write' 'write_ln0' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i35P0A, i35 %p_out3, i35 %p_load49"   --->   Operation 142 'write' 'write_ln0' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+ST_3 : Operation 143 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 143 'ret' 'ret_ln0' <Predicate = (!icmp_ln1833)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.57>
+ST_4 : Operation 97 [1/1] (0.00ns)   --->   "%p_load48 = load i35 %empty" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 97 'load' 'p_load48' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%p_load46 = load i35 %empty_779" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 98 'load' 'p_load46' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%p_load44 = load i48 %empty_780" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 99 'load' 'p_load44' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%p_load = load i48 %empty_781" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 100 'load' 'p_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%specpipeline_ln1834 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_25" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1834->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 101 'specpipeline' 'specpipeline_ln1834' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%speclooptripcount_ln1833 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 102 'speclooptripcount' 'speclooptripcount_ln1833' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 103 [1/1] (0.00ns)   --->   "%specloopname_ln1833 = specloopname void @_ssdm_op_SpecLoopName, void @empty_204" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 103 'specloopname' 'specloopname_ln1833' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%rbegin4 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_37" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 104 'specregionbegin' 'rbegin4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 105 [1/3] (0.00ns) (grouped into DSP with root node total_q20)   --->   "%product_q20 = mul i32 %sext_ln1625_8, i32 %sext_ln1625" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 105 'mul' 'product_q20' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 106 [1/1] (0.00ns)   --->   "%specfucore_ln1624 = specfucore void @_ssdm_op_SpecFUCore, i32 %product_q20, i64 12, i64 3, i64 2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 106 'specfucore' 'specfucore_ln1624' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 107 [1/1] (0.00ns) (grouped into DSP with root node total_q20)   --->   "%sext_ln1623 = sext i32 %product_q20" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 107 'sext' 'sext_ln1623' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 108 [1/1] (0.00ns)   --->   "%rend493 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_37, i32 %rbegin4" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 108 'specregionend' 'rend493' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 109 [1/1] (3.02ns) (root node of the DSP)   --->   "%total_q20 = add i35 %sext_ln1623, i35 %p_load48" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 109 'add' 'total_q20' <Predicate = true> <Delay = 3.02> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 110 [1/1] (0.00ns)   --->   "%rbegin5 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_36" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 110 'specregionbegin' 'rbegin5' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 111 [1/3] (0.00ns) (grouped into DSP with root node add_ln1839)   --->   "%product_q20_202 = mul i32 %sext_ln1625_10, i32 %sext_ln1625_9" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 111 'mul' 'product_q20_202' <Predicate = true> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 112 [1/1] (0.00ns)   --->   "%specfucore_ln1624 = specfucore void @_ssdm_op_SpecFUCore, i32 %product_q20_202, i64 12, i64 3, i64 2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 112 'specfucore' 'specfucore_ln1624' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 113 [1/1] (0.00ns) (grouped into DSP with root node add_ln1839)   --->   "%sext_ln1623_4 = sext i32 %product_q20_202" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 113 'sext' 'sext_ln1623_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 114 [1/1] (0.00ns)   --->   "%rend491 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_36, i32 %rbegin5" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 114 'specregionend' 'rend491' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 115 [1/1] (3.02ns) (root node of the DSP)   --->   "%add_ln1839 = add i35 %sext_ln1623_4, i35 %p_load46" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 115 'add' 'add_ln1839' <Predicate = true> <Delay = 3.02> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 116 [1/1] (0.00ns)   --->   "%rbegin6 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_174" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 116 'specregionbegin' 'rbegin6' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 117 [1/3] (0.00ns) (grouped into DSP with root node add_ln1839_1)   --->   "%product_q20_203 = mul i32 %sext_ln1625_12, i32 %sext_ln1625_11" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 117 'mul' 'product_q20_203' <Predicate = (icmp_ln1838)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 118 [1/1] (0.00ns)   --->   "%specfucore_ln1624 = specfucore void @_ssdm_op_SpecFUCore, i32 %product_q20_203, i64 12, i64 3, i64 2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 118 'specfucore' 'specfucore_ln1624' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 119 [1/1] (0.00ns) (grouped into DSP with root node add_ln1839_1)   --->   "%sext_ln1625_13 = sext i32 %product_q20_203" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 119 'sext' 'sext_ln1625_13' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_4 : Operation 120 [1/1] (0.00ns)   --->   "%rend499 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_174, i32 %rbegin6" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 120 'specregionend' 'rend499' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 121 [1/1] (3.02ns) (root node of the DSP)   --->   "%add_ln1839_1 = add i48 %p_load44, i48 %sext_ln1625_13" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 121 'add' 'add_ln1839_1' <Predicate = (icmp_ln1838)> <Delay = 3.02> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 122 [1/1] (0.96ns)   --->   "%select_ln1838 = select i1 %icmp_ln1838, i48 %add_ln1839_1, i48 %p_load44" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 122 'select' 'select_ln1838' <Predicate = true> <Delay = 0.96> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 123 [1/1] (0.00ns)   --->   "%rbegin7 = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_186" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1623->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 123 'specregionbegin' 'rbegin7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 124 [1/3] (0.00ns) (grouped into DSP with root node add_ln1839_2)   --->   "%product_q20_204 = mul i32 %sext_ln1625_15, i32 %sext_ln1625_14" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 124 'mul' 'product_q20_204' <Predicate = (icmp_ln1838)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 125 [1/1] (0.00ns)   --->   "%specfucore_ln1624 = specfucore void @_ssdm_op_SpecFUCore, i32 %product_q20_204, i64 12, i64 3, i64 2" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 125 'specfucore' 'specfucore_ln1624' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 126 [1/1] (0.00ns) (grouped into DSP with root node add_ln1839_2)   --->   "%sext_ln1625_16 = sext i32 %product_q20_204" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 126 'sext' 'sext_ln1625_16' <Predicate = (icmp_ln1838)> <Delay = 0.00>
+ST_4 : Operation 127 [1/1] (0.00ns)   --->   "%rend501 = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_186, i32 %rbegin7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 127 'specregionend' 'rend501' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 128 [1/1] (3.02ns) (root node of the DSP)   --->   "%add_ln1839_2 = add i48 %p_load, i48 %sext_ln1625_16" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 128 'add' 'add_ln1839_2' <Predicate = (icmp_ln1838)> <Delay = 3.02> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 2> <II = 1> <Delay = 3.88> <IPBlock> <Opcode : '' 'add' 'sub' 'mul' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 129 [1/1] (0.96ns)   --->   "%select_ln1838_1 = select i1 %icmp_ln1838, i48 %add_ln1839_2, i48 %p_load" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 129 'select' 'select_ln1838_1' <Predicate = true> <Delay = 0.96> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 130 [1/1] (1.58ns)   --->   "%store_ln1838 = store i48 %select_ln1838_1, i48 %empty_781" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 130 'store' 'store_ln1838' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 131 [1/1] (1.58ns)   --->   "%store_ln1838 = store i48 %select_ln1838, i48 %empty_780" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 131 'store' 'store_ln1838' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 132 [1/1] (1.58ns)   --->   "%store_ln1839 = store i35 %add_ln1839, i35 %empty_779" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 132 'store' 'store_ln1839' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 133 [1/1] (1.58ns)   --->   "%store_ln1839 = store i35 %total_q20, i35 %empty" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 133 'store' 'store_ln1839' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 134 [1/1] (0.00ns)   --->   "%br_ln1833 = br void %for.body4.i52" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866]   --->   Operation 134 'br' 'br_ln1833' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 6.481ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln1837', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) of constant 0 on local variable 'index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866 [91]  (1.588 ns)
+	'load' operation 6 bit ('base_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1833->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) on local variable 'index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1837->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866 [98]  (0.000 ns)
+	'add' operation 11 bit ('add_ln1839_35', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [113]  (1.639 ns)
+	'getelementptr' operation 11 bit ('SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_37', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [115]  (0.000 ns)
+	'load' operation 64 bit ('SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) on array 'SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12' [116]  (3.254 ns)
+
+ <State 2>: 4.304ns
+The critical path consists of the following:
+	'load' operation 64 bit ('SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_38', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) on array 'SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12' [116]  (3.254 ns)
+	'mul' operation 32 bit of DSP[125] ('product_q20', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [121]  (1.050 ns)
+
+ <State 3>: 1.050ns
+The critical path consists of the following:
+	'mul' operation 32 bit of DSP[125] ('product_q20', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1625->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [121]  (1.050 ns)
+
+ <State 4>: 5.573ns
+The critical path consists of the following:
+	'load' operation 48 bit ('p_load', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) on local variable 'empty_781' [105]  (0.000 ns)
+	'add' operation 48 bit of DSP[157] ('add_ln1839_2', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [157]  (3.020 ns)
+	'select' operation 48 bit ('select_ln1838_1', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) [158]  (0.965 ns)
+	'store' operation 0 bit ('store_ln1838', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866) of variable 'select_ln1838_1', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866 on local variable 'empty_781' [161]  (1.588 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

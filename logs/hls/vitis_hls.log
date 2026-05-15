@@ -1,0 +1,128 @@
+ECHO is off.
+ECHO is off.
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'User' on host 'desktop-pmq3qcf' (Windows NT_amd64 version 6.2) on Wed May 13 19:45:00 +0900 2026
+INFO: [HLS 200-10] In directory 'C:/Users/User//Speech Enhancement/Spiking_FullSubnet_opt_hls'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Running -eval TCL: help config_interface
+SYNTAX 
+  config_interface [OPTIONS]
+
+DESCRIPTION
+  The config_interface command specifies the default interface options used to implement the RTL ports of each function.
+
+OPTIONS
+  -clock_enable [=true|*false*]
+    Add a clock-enable port (ap_ce) to the design. The clock enable prevents all clock operations when it is active low:
+    disables all sequential operations
+  -default_slave_interface <none|*s_axilite*>
+    Default slave interface
+  -m_axi_addr64 [=false|*true*]
+    Enable 64-bit addressing for all m_axi interfaces
+  -m_axi_alignment_byte_size <uint:*1*> 
+    Specify size to align to for all m_axi interfaces
+  -m_axi_auto_id_channel [=true|*false*]
+    Enable automatic assignment of channel IDs for m_axi interfaces
+  -m_axi_auto_max_ports [=true|*false*]
+    Enable automatic creation of m_axi interfaces
+  -m_axi_buffer_impl <auto|lutram|uram|*bram*>
+    Select implmentation for all m_axi internal buffers
+      auto : Automatic selection
+      lutram : Distributed RAM
+      bram : Block RAM (default)
+      uram : Ultra RAM
+  -m_axi_cache_impl <lutram|bram|uram|*auto*>
+    Select implmentation for m_axi internal caches
+      auto : Automatic selection (default)
+      lutram : Distributed RAM
+      bram : Block RAM
+      uram : Ultra RAM
+  -m_axi_conservative_mode [=false|*true*]
+    Configure all m_axi adaptors to work in conservative mode, waiting for all data to be written before a burst is started
+  -m_axi_flush_mode [=true|*false*]
+    Configure all m_axi adaptors to be flushable, writing or reading garbage data if a burst is interrupted due to pipeline
+    blocking (missing data inputs when not in conservative mode or missing output space)
+  -m_axi_latency <uint:*0*> 
+    Specify the default latency value for all m_axi interfaces
+  -m_axi_max_bitwidth <uint:*1024*> 
+    Specify the maximum data size in bits for all m_axi interfaces
+  -m_axi_max_read_burst_length <uint:*16*> 
+    Specify the default max_read_burst_length value for all m_axi interfaces
+  -m_axi_max_widen_bitwidth <uint:*0*> 
+    Specify the maximum data widening size in bits for all m_axi interfaces
+  -m_axi_max_write_burst_length <uint:*16*> 
+    Specify the default max_write_burst_length value for all m_axi interfaces
+  -m_axi_min_bitwidth <uint:*8*> 
+    Specify the minimum data size in bits for all m_axi interfaces
+  -m_axi_num_read_outstanding <uint:*16*> 
+    Specify the default num_read_outstanding value for all m_axi interfaces
+  -m_axi_num_write_outstanding <uint:*16*> 
+    Specify the default num_write_outstanding value for all m_axi interfaces
+  -m_axi_offset <off|direct|*slave*>
+    Specify the default offset for all m_axi interfaces
+      off : No offset port generated
+      direct : Generate a scalar input offset port
+      slave : Generate an offset port and automatically map it to AXILite slave (default)
+  -m_axi_register_io <all|*off*>
+    Enable registers for all inputs/outputs inside m_axi adapter
+      off : None of the m_axi inputs or outputs are registered (default)
+      all : All m_axi inputs and outputs are registered.
+  -register_io <scalar_in|scalar_out|scalar_all|*off*>
+    Enable registers for all scalar inputs/outputs on the top function (arrays are always registered)
+      off : None of the input or outputs are registered (default)
+      scalar_in : All inputs are registered.
+      scalar_out : All outputs are registered.
+      scalar_all : All input and outputs are registered.
+  -s_axilite_auto_restart_counter <1|*0*>
+    Enables the creation of a counter that can control the number of times to restart the design.
+      0 : No restart counter (default)
+      1 : Enable restart counter
+  -s_axilite_data64 [=true|*false*]
+    Enable 64 bit data width for s_axilite interface
+  -s_axilite_interrupt_mode <cor|*tow*>
+    Select s_axilite interrupt mode
+      cor : clearing s_axilite interrupt register when read
+      tow : toggling s_axilite interrupt register when write (default)
+  -s_axilite_mailbox <both|in|out|*none*>
+    Enables the creation of a mailboxes for non-stream non-stable s_axilite arguments
+      both : Enable mailbox for input and output arguments
+      in : Enable mailbox for only input arguments
+      out : Enable mailbox for only output arguments
+      none : No mailbox created (default)
+  -s_axilite_status_regs <ecc|*off*>
+    Enables exposure of ECC error bits in the SAXILite register file via two clear-on-read counters per BRAM or URAM with
+    ECC enabled
+      off : No status registers generated (default)
+      ecc : Enable counters for ECC errors for BRAMs and URAMs
+  -s_axilite_sw_reset [=true|*false*]
+    Enable SW reset in s_axilite adapter
+
+SEE ALSO
+  INI: syn.interface.*
+  docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1399-vitis-hls&resourceid=vyw1583260160301.html
+
+INFO: [HLS 200-10] Bringing up Vitis HLS GUI ... 
+couldn't read directory "C:/Users/User//vitis_hls/2023.2/workspace*": no such file or directory
+    while executing
+"glob -nocomplain -directory $versionFolder -tails $workspacePrefix*"
+    (procedure "::AP::getNextUsableWorkspaceNumberByWorkpath" line 5)
+    invoked from within
+"::AP::getNextUsableWorkspaceNumberByWorkpath $workpath "
+    (procedure "::AP::do_run_autoclipse" line 67)
+    invoked from within
+"::AP::do_run_autoclipse $nosplash $test $testClassName $workpath $showguiout"
+    (procedure "ap_internal_vitis_hls_bin" line 337)
+    invoked from within
+"ap_internal_vitis_hls_bin "
+ERROR: [HLS 200-70] There is an error calling 'vitis_hls'; try '-help'.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.493 seconds; peak allocated memory: 8.246 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Wed May 13 19:45:00 2026...

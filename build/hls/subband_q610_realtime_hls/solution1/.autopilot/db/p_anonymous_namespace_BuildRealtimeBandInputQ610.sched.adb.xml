@@ -1,0 +1,369 @@
+<stg><name>(anonymous namespace)BuildRealtimeBandInputQ610</name>
+
+
+<trans_list>
+
+<trans id="27" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="28" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="29" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="30" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="31" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="233" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+entry:0 %subband_index_read = read i3 @_ssdm_op_Read.ap_auto.i3, i3 %subband_index
+
+]]></Node>
+<StgValue><ssdm name="subband_index_read"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="237" bw="7" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+entry:4 %p_read122 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read1
+
+]]></Node>
+<StgValue><ssdm name="p_read122"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="241" bw="10" op_0_bw="3">
+<![CDATA[
+entry:8 %subband_index_cast = zext i3 %subband_index_read
+
+]]></Node>
+<StgValue><ssdm name="subband_index_cast"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="242" bw="10" op_0_bw="7">
+<![CDATA[
+entry:9 %p_read1_cast = zext i7 %p_read122
+
+]]></Node>
+<StgValue><ssdm name="p_read1_cast"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="3" lat="3">
+<core>DSP48</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="245" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:12 %mul_ln2650 = mul i10 %p_read1_cast, i10 %subband_index_cast
+
+]]></Node>
+<StgValue><ssdm name="mul_ln2650"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="12" st_id="2" stage="2" lat="3">
+<core>DSP48</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="245" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:12 %mul_ln2650 = mul i10 %p_read1_cast, i10 %subband_index_cast
+
+]]></Node>
+<StgValue><ssdm name="mul_ln2650"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="13" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="238" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:5 %p_read21 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read
+
+]]></Node>
+<StgValue><ssdm name="p_read21"/></StgValue>
+</operation>
+
+<operation id="14" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="240" bw="10" op_0_bw="8">
+<![CDATA[
+entry:7 %p_read_cast = zext i8 %p_read21
+
+]]></Node>
+<StgValue><ssdm name="p_read_cast"/></StgValue>
+</operation>
+
+<operation id="15" st_id="3" stage="1" lat="3">
+<core>DSP48</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="245" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:12 %mul_ln2650 = mul i10 %p_read1_cast, i10 %subband_index_cast
+
+]]></Node>
+<StgValue><ssdm name="mul_ln2650"/></StgValue>
+</operation>
+
+<operation id="16" st_id="3" stage="2" lat="2">
+<core>DSP48</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="246" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:13 %center_start = add i10 %mul_ln2650, i10 %p_read_cast
+
+]]></Node>
+<StgValue><ssdm name="center_start"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="17" st_id="4" stage="1" lat="2">
+<core>DSP48</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="246" bw="10" op_0_bw="10" op_1_bw="10">
+<![CDATA[
+entry:13 %center_start = add i10 %mul_ln2650, i10 %p_read_cast
+
+]]></Node>
+<StgValue><ssdm name="center_start"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="18" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="234" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+entry:1 %noisy_frame_offset_read = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %noisy_frame_offset
+
+]]></Node>
+<StgValue><ssdm name="noisy_frame_offset_read"/></StgValue>
+</operation>
+
+<operation id="19" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="235" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+entry:2 %p_read424 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read4
+
+]]></Node>
+<StgValue><ssdm name="p_read424"/></StgValue>
+</operation>
+
+<operation id="20" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="236" bw="7" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+entry:3 %p_read323 = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %p_read3
+
+]]></Node>
+<StgValue><ssdm name="p_read323"/></StgValue>
+</operation>
+
+<operation id="21" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="239" bw="10" op_0_bw="10" op_1_bw="2" op_2_bw="8">
+<![CDATA[
+entry:6 %tmp = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i2.i8, i2 %noisy_frame_offset_read, i8 0
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="22" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="247" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="16" op_167_bw="16" op_168_bw="16" op_169_bw="16" op_170_bw="16" op_171_bw="16" op_172_bw="16" op_173_bw="16" op_174_bw="16" op_175_bw="16" op_176_bw="16" op_177_bw="16" op_178_bw="16" op_179_bw="16" op_180_bw="16" op_181_bw="16" op_182_bw="16" op_183_bw="16" op_184_bw="16" op_185_bw="16" op_186_bw="16" op_187_bw="16" op_188_bw="16" op_189_bw="16" op_190_bw="16" op_191_bw="16" op_192_bw="16" op_193_bw="16" op_194_bw="16" op_195_bw="16" op_196_bw="16" op_197_bw="16" op_198_bw="16" op_199_bw="16" op_200_bw="16" op_201_bw="16" op_202_bw="16" op_203_bw="16" op_204_bw="16" op_205_bw="16" op_206_bw="16" op_207_bw="16" op_208_bw="16" op_209_bw="16" op_210_bw="16" op_211_bw="16" op_212_bw="16" op_213_bw="16" op_214_bw="16" op_215_bw="16" op_216_bw="16" op_217_bw="16" op_218_bw="16" op_219_bw="16" op_220_bw="16" op_221_bw="16" op_222_bw="16" op_223_bw="16" op_224_bw="16" op_225_bw="7" op_226_bw="10" op_227_bw="10" op_228_bw="8" op_229_bw="10" op_230_bw="16" op_231_bw="16">
+<![CDATA[
+entry:14 %call_ln2656 = call void @(anonymous namespace)BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_2651_1, i16 %input_buffer_0, i16 %input_buffer_223, i16 %input_buffer_222, i16 %input_buffer_221, i16 %input_buffer_220, i16 %input_buffer_219, i16 %input_buffer_218, i16 %input_buffer_217, i16 %input_buffer_216, i16 %input_buffer_215, i16 %input_buffer_214, i16 %input_buffer_213, i16 %input_buffer_212, i16 %input_buffer_211, i16 %input_buffer_210, i16 %input_buffer_209, i16 %input_buffer_208, i16 %input_buffer_207, i16 %input_buffer_206, i16 %input_buffer_205, i16 %input_buffer_204, i16 %input_buffer_203, i16 %input_buffer_202, i16 %input_buffer_201, i16 %input_buffer_200, i16 %input_buffer_199, i16 %input_buffer_198, i16 %input_buffer_197, i16 %input_buffer_196, i16 %input_buffer_195, i16 %input_buffer_194, i16 %input_buffer_193, i16 %input_buffer_192, i16 %input_buffer_191, i16 %input_buffer_190, i16 %input_buffer_189, i16 %input_buffer_188, i16 %input_buffer_187, i16 %input_buffer_186, i16 %input_buffer_185, i16 %input_buffer_184, i16 %input_buffer_183, i16 %input_buffer_182, i16 %input_buffer_181, i16 %input_buffer_180, i16 %input_buffer_179, i16 %input_buffer_178, i16 %input_buffer_177, i16 %input_buffer_176, i16 %input_buffer_175, i16 %input_buffer_174, i16 %input_buffer_173, i16 %input_buffer_172, i16 %input_buffer_171, i16 %input_buffer_170, i16 %input_buffer_169, i16 %input_buffer_168, i16 %input_buffer_167, i16 %input_buffer_166, i16 %input_buffer_165, i16 %input_buffer_164, i16 %input_buffer_163, i16 %input_buffer_162, i16 %input_buffer_161, i16 %input_buffer_160, i16 %input_buffer_159, i16 %input_buffer_158, i16 %input_buffer_157, i16 %input_buffer_156, i16 %input_buffer_155, i16 %input_buffer_154, i16 %input_buffer_153, i16 %input_buffer_152, i16 %input_buffer_151, i16 %input_buffer_150, i16 %input_buffer_149, i16 %input_buffer_148, i16 %input_buffer_147, i16 %input_buffer_146, i16 %input_buffer_145, i16 %input_buffer_144, i16 %input_buffer_143, i16 %input_buffer_142, i16 %input_buffer_141, i16 %input_buffer_140, i16 %input_buffer_139, i16 %input_buffer_138, i16 %input_buffer_137, i16 %input_buffer_136, i16 %input_buffer_135, i16 %input_buffer_134, i16 %input_buffer_133, i16 %input_buffer_132, i16 %input_buffer_131, i16 %input_buffer_130, i16 %input_buffer_129, i16 %input_buffer_128, i16 %input_buffer_127, i16 %input_buffer_126, i16 %input_buffer_125, i16 %input_buffer_124, i16 %input_buffer_123, i16 %input_buffer_122, i16 %input_buffer_121, i16 %input_buffer_120, i16 %input_buffer_119, i16 %input_buffer_118, i16 %input_buffer_117, i16 %input_buffer_116, i16 %input_buffer_115, i16 %input_buffer_114, i16 %input_buffer_113, i16 %input_buffer_112, i16 %input_buffer_111, i16 %input_buffer_110, i16 %input_buffer_109, i16 %input_buffer_108, i16 %input_buffer_107, i16 %input_buffer_106, i16 %input_buffer_105, i16 %input_buffer_104, i16 %input_buffer_103, i16 %input_buffer_102, i16 %input_buffer_101, i16 %input_buffer_100, i16 %input_buffer_99, i16 %input_buffer_98, i16 %input_buffer_97, i16 %input_buffer_96, i16 %input_buffer_95, i16 %input_buffer_94, i16 %input_buffer_93, i16 %input_buffer_92, i16 %input_buffer_91, i16 %input_buffer_90, i16 %input_buffer_89, i16 %input_buffer_88, i16 %input_buffer_87, i16 %input_buffer_86, i16 %input_buffer_85, i16 %input_buffer_84, i16 %input_buffer_83, i16 %input_buffer_82, i16 %input_buffer_81, i16 %input_buffer_80, i16 %input_buffer_79, i16 %input_buffer_78, i16 %input_buffer_77, i16 %input_buffer_76, i16 %input_buffer_75, i16 %input_buffer_74, i16 %input_buffer_73, i16 %input_buffer_72, i16 %input_buffer_71, i16 %input_buffer_70, i16 %input_buffer_69, i16 %input_buffer_68, i16 %input_buffer_67, i16 %input_buffer_66, i16 %input_buffer_65, i16 %input_buffer_64, i16 %input_buffer_63, i16 %input_buffer_62, i16 %input_buffer_61, i16 %input_buffer_60, i16 %input_buffer_59, i16 %input_buffer_58, i16 %input_buffer_57, i16 %input_buffer_56, i16 %input_buffer_55, i16 %input_buffer_54, i16 %input_buffer_53, i16 %input_buffer_52, i16 %input_buffer_51, i16 %input_buffer_50, i16 %input_buffer_49, i16 %input_buffer_48, i16 %input_buffer_47, i16 %input_buffer_46, i16 %input_buffer_45, i16 %input_buffer_44, i16 %input_buffer_43, i16 %input_buffer_42, i16 %input_buffer_41, i16 %input_buffer_40, i16 %input_buffer_39, i16 %input_buffer_38, i16 %input_buffer_37, i16 %input_buffer_36, i16 %input_buffer_35, i16 %input_buffer_34, i16 %input_buffer_33, i16 %input_buffer_32, i16 %input_buffer_31, i16 %input_buffer_30, i16 %input_buffer_29, i16 %input_buffer_28, i16 %input_buffer_27, i16 %input_buffer_26, i16 %input_buffer_25, i16 %input_buffer_24, i16 %input_buffer_23, i16 %input_buffer_22, i16 %input_buffer_21, i16 %input_buffer_20, i16 %input_buffer_19, i16 %input_buffer_18, i16 %input_buffer_17, i16 %input_buffer_16, i16 %input_buffer_15, i16 %input_buffer_14, i16 %input_buffer_13, i16 %input_buffer_12, i16 %input_buffer_11, i16 %input_buffer_10, i16 %input_buffer_9, i16 %input_buffer_8, i16 %input_buffer_7, i16 %input_buffer_6, i16 %input_buffer_5, i16 %input_buffer_4, i16 %input_buffer_3, i16 %input_buffer_2, i16 %input_buffer_1, i7 %p_read323, i10 %center_start, i10 %center_start, i8 %p_read424, i10 %tmp, i16 %noisy_frame, i16 %fb_frame
+
+]]></Node>
+<StgValue><ssdm name="call_ln2656"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="23" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="243" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:10 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i16 %fb_frame, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="24" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="244" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="64" op_4_bw="64">
+<![CDATA[
+entry:11 %specmemcore_ln0 = specmemcore void @_ssdm_op_SpecMemCore, i16 %noisy_frame, i64 666, i64 22, i64 18446744073709551615
+
+]]></Node>
+<StgValue><ssdm name="specmemcore_ln0"/></StgValue>
+</operation>
+
+<operation id="25" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="247" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="16" op_167_bw="16" op_168_bw="16" op_169_bw="16" op_170_bw="16" op_171_bw="16" op_172_bw="16" op_173_bw="16" op_174_bw="16" op_175_bw="16" op_176_bw="16" op_177_bw="16" op_178_bw="16" op_179_bw="16" op_180_bw="16" op_181_bw="16" op_182_bw="16" op_183_bw="16" op_184_bw="16" op_185_bw="16" op_186_bw="16" op_187_bw="16" op_188_bw="16" op_189_bw="16" op_190_bw="16" op_191_bw="16" op_192_bw="16" op_193_bw="16" op_194_bw="16" op_195_bw="16" op_196_bw="16" op_197_bw="16" op_198_bw="16" op_199_bw="16" op_200_bw="16" op_201_bw="16" op_202_bw="16" op_203_bw="16" op_204_bw="16" op_205_bw="16" op_206_bw="16" op_207_bw="16" op_208_bw="16" op_209_bw="16" op_210_bw="16" op_211_bw="16" op_212_bw="16" op_213_bw="16" op_214_bw="16" op_215_bw="16" op_216_bw="16" op_217_bw="16" op_218_bw="16" op_219_bw="16" op_220_bw="16" op_221_bw="16" op_222_bw="16" op_223_bw="16" op_224_bw="16" op_225_bw="7" op_226_bw="10" op_227_bw="10" op_228_bw="8" op_229_bw="10" op_230_bw="16" op_231_bw="16">
+<![CDATA[
+entry:14 %call_ln2656 = call void @(anonymous namespace)BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_2651_1, i16 %input_buffer_0, i16 %input_buffer_223, i16 %input_buffer_222, i16 %input_buffer_221, i16 %input_buffer_220, i16 %input_buffer_219, i16 %input_buffer_218, i16 %input_buffer_217, i16 %input_buffer_216, i16 %input_buffer_215, i16 %input_buffer_214, i16 %input_buffer_213, i16 %input_buffer_212, i16 %input_buffer_211, i16 %input_buffer_210, i16 %input_buffer_209, i16 %input_buffer_208, i16 %input_buffer_207, i16 %input_buffer_206, i16 %input_buffer_205, i16 %input_buffer_204, i16 %input_buffer_203, i16 %input_buffer_202, i16 %input_buffer_201, i16 %input_buffer_200, i16 %input_buffer_199, i16 %input_buffer_198, i16 %input_buffer_197, i16 %input_buffer_196, i16 %input_buffer_195, i16 %input_buffer_194, i16 %input_buffer_193, i16 %input_buffer_192, i16 %input_buffer_191, i16 %input_buffer_190, i16 %input_buffer_189, i16 %input_buffer_188, i16 %input_buffer_187, i16 %input_buffer_186, i16 %input_buffer_185, i16 %input_buffer_184, i16 %input_buffer_183, i16 %input_buffer_182, i16 %input_buffer_181, i16 %input_buffer_180, i16 %input_buffer_179, i16 %input_buffer_178, i16 %input_buffer_177, i16 %input_buffer_176, i16 %input_buffer_175, i16 %input_buffer_174, i16 %input_buffer_173, i16 %input_buffer_172, i16 %input_buffer_171, i16 %input_buffer_170, i16 %input_buffer_169, i16 %input_buffer_168, i16 %input_buffer_167, i16 %input_buffer_166, i16 %input_buffer_165, i16 %input_buffer_164, i16 %input_buffer_163, i16 %input_buffer_162, i16 %input_buffer_161, i16 %input_buffer_160, i16 %input_buffer_159, i16 %input_buffer_158, i16 %input_buffer_157, i16 %input_buffer_156, i16 %input_buffer_155, i16 %input_buffer_154, i16 %input_buffer_153, i16 %input_buffer_152, i16 %input_buffer_151, i16 %input_buffer_150, i16 %input_buffer_149, i16 %input_buffer_148, i16 %input_buffer_147, i16 %input_buffer_146, i16 %input_buffer_145, i16 %input_buffer_144, i16 %input_buffer_143, i16 %input_buffer_142, i16 %input_buffer_141, i16 %input_buffer_140, i16 %input_buffer_139, i16 %input_buffer_138, i16 %input_buffer_137, i16 %input_buffer_136, i16 %input_buffer_135, i16 %input_buffer_134, i16 %input_buffer_133, i16 %input_buffer_132, i16 %input_buffer_131, i16 %input_buffer_130, i16 %input_buffer_129, i16 %input_buffer_128, i16 %input_buffer_127, i16 %input_buffer_126, i16 %input_buffer_125, i16 %input_buffer_124, i16 %input_buffer_123, i16 %input_buffer_122, i16 %input_buffer_121, i16 %input_buffer_120, i16 %input_buffer_119, i16 %input_buffer_118, i16 %input_buffer_117, i16 %input_buffer_116, i16 %input_buffer_115, i16 %input_buffer_114, i16 %input_buffer_113, i16 %input_buffer_112, i16 %input_buffer_111, i16 %input_buffer_110, i16 %input_buffer_109, i16 %input_buffer_108, i16 %input_buffer_107, i16 %input_buffer_106, i16 %input_buffer_105, i16 %input_buffer_104, i16 %input_buffer_103, i16 %input_buffer_102, i16 %input_buffer_101, i16 %input_buffer_100, i16 %input_buffer_99, i16 %input_buffer_98, i16 %input_buffer_97, i16 %input_buffer_96, i16 %input_buffer_95, i16 %input_buffer_94, i16 %input_buffer_93, i16 %input_buffer_92, i16 %input_buffer_91, i16 %input_buffer_90, i16 %input_buffer_89, i16 %input_buffer_88, i16 %input_buffer_87, i16 %input_buffer_86, i16 %input_buffer_85, i16 %input_buffer_84, i16 %input_buffer_83, i16 %input_buffer_82, i16 %input_buffer_81, i16 %input_buffer_80, i16 %input_buffer_79, i16 %input_buffer_78, i16 %input_buffer_77, i16 %input_buffer_76, i16 %input_buffer_75, i16 %input_buffer_74, i16 %input_buffer_73, i16 %input_buffer_72, i16 %input_buffer_71, i16 %input_buffer_70, i16 %input_buffer_69, i16 %input_buffer_68, i16 %input_buffer_67, i16 %input_buffer_66, i16 %input_buffer_65, i16 %input_buffer_64, i16 %input_buffer_63, i16 %input_buffer_62, i16 %input_buffer_61, i16 %input_buffer_60, i16 %input_buffer_59, i16 %input_buffer_58, i16 %input_buffer_57, i16 %input_buffer_56, i16 %input_buffer_55, i16 %input_buffer_54, i16 %input_buffer_53, i16 %input_buffer_52, i16 %input_buffer_51, i16 %input_buffer_50, i16 %input_buffer_49, i16 %input_buffer_48, i16 %input_buffer_47, i16 %input_buffer_46, i16 %input_buffer_45, i16 %input_buffer_44, i16 %input_buffer_43, i16 %input_buffer_42, i16 %input_buffer_41, i16 %input_buffer_40, i16 %input_buffer_39, i16 %input_buffer_38, i16 %input_buffer_37, i16 %input_buffer_36, i16 %input_buffer_35, i16 %input_buffer_34, i16 %input_buffer_33, i16 %input_buffer_32, i16 %input_buffer_31, i16 %input_buffer_30, i16 %input_buffer_29, i16 %input_buffer_28, i16 %input_buffer_27, i16 %input_buffer_26, i16 %input_buffer_25, i16 %input_buffer_24, i16 %input_buffer_23, i16 %input_buffer_22, i16 %input_buffer_21, i16 %input_buffer_20, i16 %input_buffer_19, i16 %input_buffer_18, i16 %input_buffer_17, i16 %input_buffer_16, i16 %input_buffer_15, i16 %input_buffer_14, i16 %input_buffer_13, i16 %input_buffer_12, i16 %input_buffer_11, i16 %input_buffer_10, i16 %input_buffer_9, i16 %input_buffer_8, i16 %input_buffer_7, i16 %input_buffer_6, i16 %input_buffer_5, i16 %input_buffer_4, i16 %input_buffer_3, i16 %input_buffer_2, i16 %input_buffer_1, i7 %p_read323, i10 %center_start, i10 %center_start, i8 %p_read424, i10 %tmp, i16 %noisy_frame, i16 %fb_frame
+
+]]></Node>
+<StgValue><ssdm name="call_ln2656"/></StgValue>
+</operation>
+
+<operation id="26" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="248" bw="0">
+<![CDATA[
+entry:15 %ret_ln2664 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln2664"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

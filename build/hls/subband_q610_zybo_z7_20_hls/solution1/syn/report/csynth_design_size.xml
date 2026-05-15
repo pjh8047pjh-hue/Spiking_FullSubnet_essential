@@ -1,0 +1,199 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 20283, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll,  9584, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  7744, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  6822, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  6056, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition, 14826, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 11703, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 11703, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 12786, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 13781, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification, 11531, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 11531, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 11531, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 11531, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering, 11547, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 11646, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="SubbandBand0TopQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:2228" col2="20283" col3="6056" col4="13781" col5="11531" col6="11646">
+                    <row id="16" col0="LoadBand0Weights2DQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1722" col2="303" col3="182" col4="355" col5="355" col6="423">
+                        <row id="11" col0="LoadMatrixQ610&lt;224, 38&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703" col2="30" col3="17" col4="36" col5="36" col6="42"/>
+                        <row id="31" col0="LoadMatrixQ610&lt;224, 224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703" col2="90" col2_disp="   90 (3 calls)" col3="51" col3_disp="  51 (3 calls)" col4="108" col4_disp="  108 (3 calls)" col5="108" col5_disp="  108 (3 calls)" col6="126" col6_disp="  126 (3 calls)"/>
+                        <row id="41" col0="LoadMatrixQ610&lt;2, 224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703" col2="60" col2_disp="   60 (2 calls)" col3="34" col3_disp="  34 (2 calls)" col4="66" col4_disp="   66 (2 calls)" col5="66" col5_disp="   66 (2 calls)" col6="78" col6_disp="   78 (2 calls)"/>
+                        <row id="9" col0="LoadVectorQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1714" col2="64" col2_disp="   64 (4 calls)" col3="40" col3_disp="  40 (4 calls)" col4="96" col4_disp="   96 (4 calls)" col5="96" col5_disp="   96 (4 calls)" col6="116" col6_disp="  116 (4 calls)"/>
+                        <row id="30" col0="LoadMatrixQ610&lt;40, 224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1703" col2="30" col3="17" col4="24" col5="24" col6="30"/>
+                        <row id="40" col0="LoadVectorQ610&lt;40&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1714" col2="16" col3="10" col4="12" col5="12" col6="17"/>
+                    </row>
+                    <row id="1" col0="RunBand0OptimizedCoreQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:2170" col2="19926" col3="5820" col4="13310" col5="11060" col6="11133">
+                        <row id="22" col0="ClearStateVectorQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1781" col2="192" col2_disp="  192 (4 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="12" col0="RunBand0OptimizedDataflowQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:2101" col2="19724" col3="5814" col4="13292" col5="11042" col6="11114">
+                            <row id="5" col0="GenerateBand0SequenceStreamOptimizedQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1791" col2="72" col3="40" col4="41" col5="41" col6="66">
+                                <row id="10" col0="InputIndex" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:107" col2="12" col2_disp="   12 (2 calls)" col3="" col4="" col5="" col6=""/>
+                            </row>
+                            <row id="18" col0="RunGSULayer0StreamParallelQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1964" col2="8987" col3="2279" col4="4507" col5="4008" col6="4018">
+                                <row id="21" col0="ReadFixedVectorFromStreamQ610&lt;38&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763" col2="26" col3="" col4="" col5="" col6=""/>
+                                <row id="39" col0="RunGSUCellBand0ParallelQ610&lt;38, 2, 4, 32, true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1939" col2="8897" col3="2243" col4="4196" col5="3774" col6="3765">
+                                    <row id="27" col0="SnapshotGSUStateQ610&lt;2&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1921" col2="32" col3="23" col4="1027" col5="1027" col6="1032"/>
+                                    <row id="19" col0="RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1853" col2="982" col3="1391" col4="1673" col5="1077" col6="1099">
+                                        <row id="29" col0="DotProductDspQ610&lt;38, 4, 38&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820" col2="365" col3="" col4="" col5="" col6="">
+                                            <row id="26" col0="MulForMacDspQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621" col2="227" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="13" col0="DotProductDspQ610&lt;224, 32, 224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820" col2="365" col3="" col4="" col5="" col6="">
+                                            <row id="26" col0="MulForMacDspQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621" col2="227" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                    <row id="35" col0="RunGSUGatePhaseBand0Q610&lt;2, true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1877" col2="7855" col3="816" col4="1041" col5="767" col6="729">
+                                        <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="1338" col2_disp="1,338 (2 calls)" col3="190" col3_disp=" 190 (10 calls)" col4="190" col4_disp="  190 (10 calls)" col5="180" col5_disp="  180 (10 calls)" col6="180" col6_disp="  180 (10 calls)"/>
+                                        <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="156" col3_disp=" 156 (12 calls)" col4="156" col4_disp="  156 (12 calls)" col5="144" col5_disp="  144 (12 calls)" col6="144" col6_disp="  144 (12 calls)">
+                                            <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                            <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="33" col0="SigmoidPwlQ610Fabric" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1660" col2="1046" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                            <row id="14" col0="SubQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:185" col2="374" col3="" col4="" col5="" col6="">
+                                                <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                    <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                    <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                </row>
+                                            </row>
+                                        </row>
+                                        <row id="14" col0="SubQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:185" col2="374" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="3" col0="MulGateUpdateQ610&lt;true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1649" col2="2124" col2_disp="2,124 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="2" col0="MulQ610Dsp" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637" col2="2108" col2_disp="2,108 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="1338" col2_disp="1,338 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="" col4="" col5="" col6="">
+                                                    <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                    <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                </row>
+                                            </row>
+                                        </row>
+                                        <row id="6" col0="AddQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:181" col2="748" col2_disp="  748 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="2" col0="MulQ610Dsp" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637" col2="1054" col3="" col4="" col5="" col6="">
+                                            <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="669" col3="" col4="" col5="" col6=""/>
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="32" col0="StepActivationQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:189" col2="35" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                                <row id="23" col0="WriteFixedVectorToStreamQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1772" col2="17" col3="" col4="" col5="" col6=""/>
+                            </row>
+                            <row id="20" col0="RunGSULayer1StreamParallelQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1999" col2="8987" col3="3299" col4="7001" col5="5702" col6="5712">
+                                <row id="25" col0="ReadFixedVectorFromStreamQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763" col2="26" col3="" col4="" col5="" col6=""/>
+                                <row id="17" col0="RunGSUCellBand0ParallelQ610&lt;224, 2, 32, 32, true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1939" col2="8897" col3="3263" col4="5388" col5="4538" col6="4529">
+                                    <row id="27" col0="SnapshotGSUStateQ610&lt;2&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1921" col2="32" col3="23" col4="1027" col5="1027" col6="1032"/>
+                                    <row id="15" col0="RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1853" col2="982" col3="2411" col4="2865" col5="1841" col6="1863">
+                                        <row id="13" col0="DotProductDspQ610&lt;224, 32, 224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1820" col2="730" col2_disp="  730 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="26" col0="MulForMacDspQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621" col2="454" col2_disp="  454 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                    <row id="35" col0="RunGSUGatePhaseBand0Q610&lt;2, true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1877" col2="7855" col3="816" col4="1041" col5="767" col6="729">
+                                        <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="1338" col2_disp="1,338 (2 calls)" col3="190" col3_disp=" 190 (10 calls)" col4="190" col4_disp="  190 (10 calls)" col5="180" col5_disp="  180 (10 calls)" col6="180" col6_disp="  180 (10 calls)"/>
+                                        <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="156" col3_disp=" 156 (12 calls)" col4="156" col4_disp="  156 (12 calls)" col5="144" col5_disp="  144 (12 calls)" col6="144" col6_disp="  144 (12 calls)">
+                                            <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                            <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="33" col0="SigmoidPwlQ610Fabric" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1660" col2="1046" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                            <row id="14" col0="SubQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:185" col2="374" col3="" col4="" col5="" col6="">
+                                                <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                    <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                    <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                </row>
+                                            </row>
+                                        </row>
+                                        <row id="14" col0="SubQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:185" col2="374" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="3" col0="MulGateUpdateQ610&lt;true&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1649" col2="2124" col2_disp="2,124 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="2" col0="MulQ610Dsp" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637" col2="2108" col2_disp="2,108 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="1338" col2_disp="1,338 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="" col4="" col5="" col6="">
+                                                    <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                    <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                </row>
+                                            </row>
+                                        </row>
+                                        <row id="6" col0="AddQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:181" col2="748" col2_disp="  748 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="308" col2_disp="  308 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="4" col2_disp="    4 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="2" col0="MulQ610Dsp" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1637" col2="1054" col3="" col4="" col5="" col6="">
+                                            <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="669" col3="" col4="" col5="" col6=""/>
+                                            <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                                <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="32" col0="StepActivationQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:189" col2="35" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                                <row id="23" col0="WriteFixedVectorToStreamQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1772" col2="17" col3="" col4="" col5="" col6=""/>
+                            </row>
+                            <row id="28" col0="RunProjectionStoreBand0StreamParallelQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:2064" col2="1623" col3="156" col4="1707" col5="1255" col6="1277">
+                                <row id="25" col0="ReadFixedVectorFromStreamQ610&lt;224&gt;" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1763" col2="26" col3="" col4="" col5="" col6=""/>
+                                <row id="4" col0="ProjectionDotProductDspQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:2034" col2="362" col3="" col4="" col5="" col6="">
+                                    <row id="26" col0="MulForMacDspQ610" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:1621" col2="227" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="24" col0="RoundShiftRight" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:164" col2="669" col3="" col4="" col5="" col6=""/>
+                                <row id="37" col0="SaturateInt16" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:152" col2="154" col3="" col4="" col5="" col6="">
+                                    <row id="8" col0="max" col1="limits:862" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="43" col0="min" col1="limits:859" col2="2" col2_disp="    2 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="36" col0="DfCoefIndex" col1="subband_ref_q610_opt_stage4_latency_stepL2.cpp:136" col2="10" col3="" col4="" col5="" col6=""/>
+                            </row>
+                        </row>
+                    </row>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

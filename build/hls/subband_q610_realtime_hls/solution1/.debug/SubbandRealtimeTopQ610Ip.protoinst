@@ -1,0 +1,359 @@
+{
+	"version": "1.0",
+	"modules": {
+		"SubbandRealtimeTopQ610Ip": {
+			"proto_instances": {
+				"/AESL_inst_SubbandRealtimeTopQ610Ip_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst_n"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_ClearRealtimeStatesQ610_fu_277/grp_p_anonymous_namespace_ClearRealtimeStatesQ610_fu_277_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_EmitRealtimeOutputChunkQ610_fu_409/grp_p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2_fu_78/grp_p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_2473_2_fu_78_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_EmitRealtimeOutputChunkQ610_fu_409/grp_p_anonymous_namespace_EmitRealtimeOutputChunkQ610_fu_409_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_fu_252/grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2453_2_fu_84/grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2453_2_fu_84_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_fu_252/grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2457_3_fu_99/grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_2457_3_fu_99_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_fu_252/grp_p_anonymous_namespace_ReadRealtimeInputChunkQ610_fu_252_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2599_s_fu_88/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2599_s_fu_88_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_s_fu_102/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_s_fu_102_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277/grp_p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_fu_277_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_BuildRealtimeBandInputQ610_fu_3099/grp_p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_2651_1_fu_522/grp_p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_2651_1_fu_522_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_BuildRealtimeBandInputQ610_fu_3099/grp_p_anonymous_namespace_BuildRealtimeBandInputQ610_fu_3099_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_s_fu_80/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2513_1_s_fu_80_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_s_fu_94/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2534_5_s_fu_94_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_s_fu_106/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2555_9_s_fu_106_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12_fu_118/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12_fu_118_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14_fu_130/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2580_14_fu_130_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614/grp_p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_fu_2614_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s_fu_4921/grp_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s_fu_4921_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s_fu_4921/grp_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_1887_1_fu_1954/grp_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_1887_1_fu_1954_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_27_fu_4436/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_27_fu_4436_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_28_fu_4699/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_28_fu_4699_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_29_fu_4962/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_29_fu_4962_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s_fu_4236/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_2_fu_4173/grp_p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_2713_2_fu_4173_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_SnapshotGSUStateQ610_2_s_fu_3760/grp_p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_1927_1_fu_990/grp_p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_1927_1_fu_990_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s_fu_1938/grp_p_anonymous_namespace_SnapshotGSUStateQ610_2_s_fu_3760/grp_p_anonymous_namespace_SnapshotGSUStateQ610_2_s_fu_3760_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044/grp_p_anonymous_namespace_RunRealtimeGSUCellSharedQ610_fu_2044_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_Pipeline_VITIS_LOOP_2801_fu_2642/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_Pipeline_VITIS_LOOP_2801_fu_2642_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202/grp_p_anonymous_namespace_RunRealtimeGSULayersSharedBandQ610_fu_202_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_Pipeline_VITIS_LOOP_2801_1_fu_2307/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_Pipeline_VITIS_LOOP_2801_1_fu_2307_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_Pipeline_VITIS_LOOP_3012_2_fu_2764/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_Pipeline_VITIS_LOOP_3012_2_fu_2764_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_anonymous_namespace_RunRealtimeBandQ610_fu_297/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305/grp_p_anonymous_namespace_RunRealtimeProjectionBandQ610_fu_305_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				}
+			}
+		}
+	}
+}

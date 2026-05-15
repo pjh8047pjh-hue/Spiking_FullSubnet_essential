@@ -1,0 +1,214 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_RunBand0OptimizedDataflowQ610'
+================================================================
+* Date:           Wed May 13 19:58:39 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_zybo_z7_20_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.733 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +----------+----------+-----------+-----------+----------+----------+----------+
+    |   Latency (cycles)  |   Latency (absolute)  |       Interval      | Pipeline |
+    |    min   |    max   |    min    |    max    |    min   |    max   |   Type   |
+    +----------+----------+-----------+-----------+----------+----------+----------+
+    |  57109944|  57109944|  0.571 sec|  0.571 sec|  57109922|  57109922|  dataflow|
+    +----------+----------+-----------+-----------+----------+----------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 8, States = { 1 2 3 4 5 6 7 8 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%fb_output_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %fb_output_q610"   --->   Operation 9 'read' 'fb_output_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%noisy_input_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %noisy_input_q610"   --->   Operation 10 'read' 'noisy_input_q610_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%df_coef_q610_c = alloca i32 1"   --->   Operation 11 'alloca' 'df_coef_q610_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.61> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 5> <FIFO>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%sequence_stream = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2134]   --->   Operation 12 'alloca' 'sequence_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.52> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 128> <FIFO>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%layer0_output_stream = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2135]   --->   Operation 13 'alloca' 'layer0_output_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.61> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 512> <FIFO>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%layer1_output_stream = alloca i32 1" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2136]   --->   Operation 14 'alloca' 'layer1_output_stream' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.61> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 512> <FIFO>
+ST_1 : Operation 15 [2/2] (0.00ns)   --->   "%call_ln2142 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610, i16 %gmem_in, i32 %noisy_input_q610_read, i32 %fb_output_q610_read, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2142]   --->   Operation 15 'call' 'call_ln2142' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 16 [1/2] (0.00ns)   --->   "%call_ln2142 = call void @(anonymous namespace)GenerateBand0SequenceStreamOptimizedQ610, i16 %gmem_in, i32 %noisy_input_q610_read, i32 %fb_output_q610_read, i16 %sequence_stream" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2142]   --->   Operation 16 'call' 'call_ln2142' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 17 [2/2] (0.00ns)   --->   "%call_ln2143 = call void @(anonymous namespace)RunGSULayer0StreamParallelQ610, i16 %sequence_stream, i16 %layer0_output_stream, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2143]   --->   Operation 17 'call' 'call_ln2143' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 18 [1/2] (0.00ns)   --->   "%call_ln2143 = call void @(anonymous namespace)RunGSULayer0StreamParallelQ610, i16 %sequence_stream, i16 %layer0_output_stream, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_5, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_4, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_7, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_6, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2143]   --->   Operation 18 'call' 'call_ln2143' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 19 [2/2] (0.00ns)   --->   "%call_ln2153 = call void @(anonymous namespace)RunGSULayer1StreamParallelQ610, i16 %layer0_output_stream, i16 %layer1_output_stream, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2153]   --->   Operation 19 'call' 'call_ln2153' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 3.61>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%df_coef_q610_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %df_coef_q610"   --->   Operation 20 'read' 'df_coef_q610_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (3.61ns)   --->   "%call_ln0 = call void @entry_proc, i32 %df_coef_q610_read, i32 %df_coef_q610_c"   --->   Operation 21 'call' 'call_ln0' <Predicate = true> <Delay = 3.61> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln2153 = call void @(anonymous namespace)RunGSULayer1StreamParallelQ610, i16 %layer0_output_stream, i16 %layer1_output_stream, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_1, i11 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_3, i16 %p_anonymous_namespace_RunBand0OptimizedCoreQ610_ap_int_const_ap_int_const_ap_in_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, i14 %subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610, i11 %subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2153]   --->   Operation 22 'call' 'call_ln2153' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 23 [2/2] (0.00ns)   --->   "%call_ln2163 = call void @(anonymous namespace)RunProjectionStoreBand0StreamParallelQ610, i16 %layer1_output_stream, i16 %gmem_out, i32 %df_coef_q610_c, i16 %proj_bias_local, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2163]   --->   Operation 23 'call' 'call_ln2163' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 24 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i"   --->   Operation 24 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 25 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12"   --->   Operation 25 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 26 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11"   --->   Operation 26 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 27 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2"   --->   Operation 27 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 28 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4"   --->   Operation 28 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 29 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14"   --->   Operation 29 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 30 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1"   --->   Operation 30 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 31 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3"   --->   Operation 31 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 32 [1/1] (0.00ns)   --->   "%specbramwithbyteenable_ln0 = specbramwithbyteenable void @_ssdm_op_SpecBRAMWithByteEnable, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13"   --->   Operation 32 'specbramwithbyteenable' 'specbramwithbyteenable_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 33 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @df_coef_q610_c_str, i32 1, void @p_str, void @p_str, i32 5, i32 0, i32 %df_coef_q610_c, i32 %df_coef_q610_c"   --->   Operation 33 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %df_coef_q610_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str, i32 4294967295, i32 0"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 35 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_25"   --->   Operation 35 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_in, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 618240, void @empty_175, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gmem_out, void @empty_173, i32 0, i32 0, void @empty_25, i32 0, i32 772800, void @empty_178, void @empty_176, void @empty_25, i32 1, i32 1, i32 16, i32 16, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 38 [1/1] (0.00ns)   --->   "%empty_1046 = specchannel i32 @_ssdm_op_SpecChannel, void @sequence_stream_str, i32 1, void @p_str, void @p_str, i32 128, i32 128, i16 %sequence_stream, i16 %sequence_stream"   --->   Operation 38 'specchannel' 'empty_1046' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %sequence_stream, void @empty_199, i32 0, i32 0, void @empty_25, i32 0, i32 0, void @empty_25, void @empty_25, void @empty_25, i32 0, i32 0, i32 0, i32 0, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "%empty_1047 = specchannel i32 @_ssdm_op_SpecChannel, void @layer0_output_stream_str, i32 1, void @p_str, void @p_str, i32 512, i32 512, i16 %layer0_output_stream, i16 %layer0_output_stream"   --->   Operation 40 'specchannel' 'empty_1047' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %layer0_output_stream, void @empty_199, i32 0, i32 0, void @empty_25, i32 0, i32 0, void @empty_25, void @empty_25, void @empty_25, i32 0, i32 0, i32 0, i32 0, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%empty_1048 = specchannel i32 @_ssdm_op_SpecChannel, void @layer1_output_stream_str, i32 1, void @p_str, void @p_str, i32 512, i32 512, i16 %layer1_output_stream, i16 %layer1_output_stream"   --->   Operation 42 'specchannel' 'empty_1048' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %layer1_output_stream, void @empty_199, i32 0, i32 0, void @empty_25, i32 0, i32 0, void @empty_25, void @empty_25, void @empty_25, i32 0, i32 0, i32 0, i32 0, void @empty_25, void @empty_25, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%specstablecontent_ln2122 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_11, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2122]   --->   Operation 44 'specstablecontent' 'specstablecontent_ln2122' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%specstablecontent_ln2122 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_12, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2122]   --->   Operation 45 'specstablecontent' 'specstablecontent_ln2122' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%specstablecontent_ln2123 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_13, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2123]   --->   Operation 46 'specstablecontent' 'specstablecontent_ln2123' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%specstablecontent_ln2123 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_14, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2123]   --->   Operation 47 'specstablecontent' 'specstablecontent_ln2123' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 48 [1/1] (0.00ns)   --->   "%specstablecontent_ln2124 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_19, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2124]   --->   Operation 48 'specstablecontent' 'specstablecontent_ln2124' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 49 [1/1] (0.00ns)   --->   "%specstablecontent_ln2124 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_20, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2124]   --->   Operation 49 'specstablecontent' 'specstablecontent_ln2124' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 50 [1/1] (0.00ns)   --->   "%specstablecontent_ln2125 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_15, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2125]   --->   Operation 50 'specstablecontent' 'specstablecontent_ln2125' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%specstablecontent_ln2125 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_16, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2125]   --->   Operation 51 'specstablecontent' 'specstablecontent_ln2125' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%specstablecontent_ln2126 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_17, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2126]   --->   Operation 52 'specstablecontent' 'specstablecontent_ln2126' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 53 [1/1] (0.00ns)   --->   "%specstablecontent_ln2126 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_18, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2126]   --->   Operation 53 'specstablecontent' 'specstablecontent_ln2126' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 54 [1/1] (0.00ns)   --->   "%specstablecontent_ln2127 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_1, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2127]   --->   Operation 54 'specstablecontent' 'specstablecontent_ln2127' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 55 [1/1] (0.00ns)   --->   "%specstablecontent_ln2127 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_2, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2127]   --->   Operation 55 'specstablecontent' 'specstablecontent_ln2127' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 56 [1/1] (0.00ns)   --->   "%specstablecontent_ln2128 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_3, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2128]   --->   Operation 56 'specstablecontent' 'specstablecontent_ln2128' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 57 [1/1] (0.00ns)   --->   "%specstablecontent_ln2128 = specstablecontent void @_ssdm_op_SpecStableContent, i512 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_4, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2128]   --->   Operation 57 'specstablecontent' 'specstablecontent_ln2128' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 58 [1/1] (0.00ns)   --->   "%specstablecontent_ln2129 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_9, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2129]   --->   Operation 58 'specstablecontent' 'specstablecontent_ln2129' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 59 [1/1] (0.00ns)   --->   "%specstablecontent_ln2129 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_10, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2129]   --->   Operation 59 'specstablecontent' 'specstablecontent_ln2129' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%specstablecontent_ln2130 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_5, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2130]   --->   Operation 60 'specstablecontent' 'specstablecontent_ln2130' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%specstablecontent_ln2130 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_6, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2130]   --->   Operation 61 'specstablecontent' 'specstablecontent_ln2130' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 62 [1/1] (0.00ns)   --->   "%specstablecontent_ln2131 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_7, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2131]   --->   Operation 62 'specstablecontent' 'specstablecontent_ln2131' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 63 [1/1] (0.00ns)   --->   "%specstablecontent_ln2131 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i_8, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2131]   --->   Operation 63 'specstablecontent' 'specstablecontent_ln2131' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 64 [1/1] (0.00ns)   --->   "%specstablecontent_ln2132 = specstablecontent void @_ssdm_op_SpecStableContent, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2132]   --->   Operation 64 'specstablecontent' 'specstablecontent_ln2132' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 65 [1/1] (0.00ns)   --->   "%specstablecontent_ln2133 = specstablecontent void @_ssdm_op_SpecStableContent, i16 %proj_bias_local, void " [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2133]   --->   Operation 65 'specstablecontent' 'specstablecontent_ln2133' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 66 [1/2] (0.00ns)   --->   "%call_ln2163 = call void @(anonymous namespace)RunProjectionStoreBand0StreamParallelQ610, i16 %layer1_output_stream, i16 %gmem_out, i32 %df_coef_q610_c, i16 %proj_bias_local, i64 %SubbandBand0TopQ610_ap_int_const_ap_int_const_ap_int_const_ap_int_const_ap_i" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2163]   --->   Operation 66 'call' 'call_ln2163' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 67 [1/1] (0.00ns)   --->   "%ret_ln2168 = ret" [H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2168]   --->   Operation 67 'ret' 'ret_ln2168' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 0.000ns
+The critical path consists of the following:
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 3.613ns
+The critical path consists of the following:
+	wire read operation ('df_coef_q610_read') on port 'df_coef_q610' [47]  (0.000 ns)
+	'call' operation 0 bit ('call_ln0') to 'entry_proc' [87]  (3.613 ns)
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

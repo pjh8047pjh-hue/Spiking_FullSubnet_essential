@@ -1,0 +1,257 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12'
+================================================================
+* Date:           Thu May 14 12:27:22 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.739 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       68|       68|  0.680 us|  0.680 us|   68|   68|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                      |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |       Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_2569_12  |       66|       66|        15|          4|          1|    14|       yes|
+        +----------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    285|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    315|    -|
+|Register         |        -|    -|     497|     64|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     497|    664|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln2373_3_fu_368_p2     |         +|   0|  0|  39|          32|          32|
+    |add_ln2373_fu_354_p2       |         +|   0|  0|  23|          16|          16|
+    |add_ln2569_fu_394_p2       |         +|   0|  0|  15|           8|           5|
+    |add_ln2571_fu_442_p2       |         +|   0|  0|  39|          32|          32|
+    |sub_ln2373_6_fu_412_p2     |         -|   0|  0|  34|           1|          27|
+    |sub_ln2373_fu_378_p2       |         -|   0|  0|  38|           1|          31|
+    |ap_block_state3_io         |       and|   0|  0|   2|           1|           1|
+    |icmp_ln2569_fu_334_p2      |      icmp|   0|  0|  15|           8|           7|
+    |ap_block_pp0_stage2_11001  |        or|   0|  0|   2|           1|           1|
+    |or_ln2574_1_fu_637_p2      |        or|   0|  0|   7|           7|           2|
+    |or_ln2574_2_fu_648_p2      |        or|   0|  0|   7|           7|           2|
+    |or_ln2574_3_fu_659_p2      |        or|   0|  0|   7|           7|           3|
+    |or_ln2574_4_fu_670_p2      |        or|   0|  0|   7|           7|           3|
+    |or_ln2574_5_fu_681_p2      |        or|   0|  0|   7|           7|           3|
+    |or_ln2574_6_fu_692_p2      |        or|   0|  0|   7|           7|           3|
+    |or_ln2574_fu_626_p2        |        or|   0|  0|   7|           7|           1|
+    |select_ln2373_fu_426_p3    |    select|   0|  0|  27|           1|          27|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 285|         151|         198|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                           Name                                          | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_address0  |  25|          5|    7|         35|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_address1  |  25|          5|    7|         35|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_d0        |  25|          5|   16|         80|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_d1        |  25|          5|   16|         80|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_address0    |  25|          5|    7|         35|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_address1    |  25|          5|    7|         35|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_d0          |  25|          5|   16|         80|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_d1          |  25|          5|   16|         80|
+    |ap_NS_fsm                                                                                |  25|          5|    1|          5|
+    |ap_done_int                                                                              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0                                                                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                                                                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter3                                                                  |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter1_reg                                                         |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter2_reg                                                         |   9|          2|    1|          2|
+    |ap_sig_allocacmp_hidden_base_2                                                           |   9|          2|    8|         16|
+    |hidden_base_fu_152                                                                       |   9|          2|    8|         16|
+    |weights_blk_n_AR                                                                         |   9|          2|    1|          2|
+    |weights_blk_n_R                                                                          |   9|          2|    1|          2|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                    | 315|         65|  117|        513|
+    +-----------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add_ln2373_3_reg_731              |  32|   0|   32|          0|
+    |ap_CS_fsm                         |   4|   0|    4|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |hidden_base_fu_152                |   8|   0|    8|          0|
+    |icmp_ln2569_reg_715               |   1|   0|    1|          0|
+    |lshr_ln8_reg_719                  |   7|   0|    7|          0|
+    |trunc_ln2373_s_reg_737            |  27|   0|   27|          0|
+    |trunc_ln_reg_742                  |  27|   0|   27|          0|
+    |value_56_reg_758                  |  16|   0|   16|          0|
+    |value_57_reg_763                  |  16|   0|   16|          0|
+    |value_58_reg_768                  |  16|   0|   16|          0|
+    |value_59_reg_773                  |  16|   0|   16|          0|
+    |value_60_reg_778                  |  16|   0|   16|          0|
+    |value_61_reg_783                  |  16|   0|   16|          0|
+    |value_62_reg_788                  |  16|   0|   16|          0|
+    |value_63_reg_793                  |  16|   0|   16|          0|
+    |value_64_reg_798                  |  16|   0|   16|          0|
+    |value_65_reg_803                  |  16|   0|   16|          0|
+    |value_66_reg_808                  |  16|   0|   16|          0|
+    |value_67_reg_813                  |  16|   0|   16|          0|
+    |value_68_reg_818                  |  16|   0|   16|          0|
+    |value_69_reg_823                  |  16|   0|   16|          0|
+    |value_70_reg_828                  |  16|   0|   16|          0|
+    |value_reg_753                     |  16|   0|   16|          0|
+    |icmp_ln2569_reg_715               |  64|  32|    1|          0|
+    |lshr_ln8_reg_719                  |  64|  32|    7|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 497|  64|  377|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|                                        RTL Ports                                        | Dir | Bits|  Protocol  |                                   Source Object                                  |    C Type    |
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                   |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|ap_rst                                                                                   |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|ap_start                                                                                 |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|ap_done                                                                                  |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|ap_idle                                                                                  |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|ap_ready                                                                                 |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_2569_12|  return value|
+|weight_offset_read                                                                       |   in|   32|     ap_none|                                                                weight_offset_read|        scalar|
+|weights_q610                                                                             |   in|   32|     ap_none|                                                                      weights_q610|        scalar|
+|m_axi_weights_AWVALID                                                                    |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWREADY                                                                    |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWADDR                                                                     |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWID                                                                       |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWLEN                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWSIZE                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWBURST                                                                    |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWLOCK                                                                     |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWCACHE                                                                    |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWPROT                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWQOS                                                                      |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWREGION                                                                   |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWUSER                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WVALID                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WREADY                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WDATA                                                                      |  out|  256|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WSTRB                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WLAST                                                                      |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WID                                                                        |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WUSER                                                                      |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARVALID                                                                    |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARREADY                                                                    |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARADDR                                                                     |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARID                                                                       |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARLEN                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARSIZE                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARBURST                                                                    |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARLOCK                                                                     |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARCACHE                                                                    |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARPROT                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARQOS                                                                      |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARREGION                                                                   |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARUSER                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RVALID                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RREADY                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RDATA                                                                      |   in|  256|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RLAST                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RID                                                                        |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RFIFONUM                                                                   |   in|    5|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RUSER                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RRESP                                                                      |   in|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BVALID                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BREADY                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BRESP                                                                      |   in|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BID                                                                        |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BUSER                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_address0  |  out|    7|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_address1  |  out|    7|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_address0    |  out|    7|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_ce0         |  out|    1|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_we0         |  out|    1|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_d0          |  out|   16|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_address1    |  out|    7|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_ce1         |  out|    1|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_we1         |  out|    1|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_d1          |  out|   16|   ap_memory|      RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn|         array|
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+

@@ -1,0 +1,1138 @@
+---
+MainSourceFile:  'H:/subband_q610_zybo_z7_20_hls/solution1/.autopilot/db/subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1207_1:  '
+    FileOffset:      1207
+    FilePath:        'C:\Xilinx\Vitis_HLS\2023.2\common\technology\autopilot\etc\ap_int_base.h'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          100774
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1207_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        'C:\Xilinx\Vitis_HLS\2023.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          328518
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        'C:\Xilinx\Vitis_HLS\2023.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          328986
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        'C:\Xilinx\Vitis_HLS\2023.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          329455
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        'C:\Xilinx\Vitis_HLS\2023.2\common\technology\autopilot\etc\ap_fixed_base.h'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          613305
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_67_1:  '
+    FileOffset:      67
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1739218
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_67_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_75_1:  '
+    FileOffset:      75
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1739431
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_75_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_83_1:  '
+    FileOffset:      83
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1739643
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_83_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_92_1:  '
+    FileOffset:      92
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1739981
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_92_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_101_1:  '
+    FileOffset:      101
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1740335
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_101_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_208_1:  '
+    FileOffset:      208
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1743693
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_208_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_243_1:  '
+    FileOffset:      243
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1745320
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_243_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_303_1:  '
+    FileOffset:      303
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1748067
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_303_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_319_1:  '
+    FileOffset:      319
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1748575
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_319_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_320_2:  '
+    FileOffset:      320
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1748648
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_320_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_322_3:  '
+    FileOffset:      322
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1748823
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_322_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_325_4:  '
+    FileOffset:      325
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1749041
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_325_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_350_1:  '
+    FileOffset:      350
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1749769
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_350_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_351_2:  '
+    FileOffset:      351
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1749842
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_351_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_352_3:  '
+    FileOffset:      352
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1749930
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_352_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_353_4:  '
+    FileOffset:      353
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1750014
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_353_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_374_5:  '
+    FileOffset:      374
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1750661
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_374_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_375_6:  '
+    FileOffset:      375
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1750742
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_375_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_406_1:  '
+    FileOffset:      406
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1751616
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_406_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_407_2:  '
+    FileOffset:      407
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1751689
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_407_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_409_3:  '
+    FileOffset:      409
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1751857
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_409_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_410_4:  '
+    FileOffset:      410
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1751943
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_410_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_437_1:  '
+    FileOffset:      437
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1752855
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_437_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_438_2:  '
+    FileOffset:      438
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1752935
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_438_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_439_3:  '
+    FileOffset:      439
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1753018
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_439_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_458_1:  '
+    FileOffset:      458
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1753722
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_458_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_459_2:  '
+    FileOffset:      459
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1753795
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_459_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_461_3:  '
+    FileOffset:      461
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1753963
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_461_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_462_4:  '
+    FileOffset:      462
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1754058
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_462_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_501_1:  '
+    FileOffset:      501
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1755190
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_501_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_507_2:  '
+    FileOffset:      507
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1755419
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_507_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_513_3:  '
+    FileOffset:      513
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1755795
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_513_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_525_4:  '
+    FileOffset:      525
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1756358
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_525_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_575_1:  '
+    FileOffset:      575
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1758675
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_575_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_576_2:  '
+    FileOffset:      576
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1758748
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_576_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_646_1:  '
+    FileOffset:      646
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1760943
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_646_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_647_2:  '
+    FileOffset:      647
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1761016
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_647_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_648_3:  '
+    FileOffset:      648
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1761091
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_648_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_653_4:  '
+    FileOffset:      653
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1761478
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_653_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_672_5:  '
+    FileOffset:      672
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1762112
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_672_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_684_6:  '
+    FileOffset:      684
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1762536
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_684_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1763133
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_705_2:  '
+    FileOffset:      705
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1763206
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_705_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_708_3:  '
+    FileOffset:      708
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1763430
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_708_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_713_4:  '
+    FileOffset:      713
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1763790
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_713_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_735_1:  '
+    FileOffset:      735
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1764604
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_735_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_736_2:  '
+    FileOffset:      736
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1764677
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_736_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_738_3:  '
+    FileOffset:      738
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1764845
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_738_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_739_4:  '
+    FileOffset:      739
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1764919
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_739_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_740_5:  '
+    FileOffset:      740
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1764995
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_740_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_743_6:  '
+    FileOffset:      743
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1765267
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_743_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_777_1:  '
+    FileOffset:      777
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1766229
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_777_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_779_2:  '
+    FileOffset:      779
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1766357
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_779_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_781_3:  '
+    FileOffset:      781
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1766507
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_781_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_789_4:  '
+    FileOffset:      789
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1766894
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_789_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_815_1:  '
+    FileOffset:      815
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1767784
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_815_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_817_2:  '
+    FileOffset:      817
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1767905
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_817_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_846_1:  '
+    FileOffset:      846
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1768948
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_846_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_848_2:  '
+    FileOffset:      848
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1769069
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_848_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_850_3:  '
+    FileOffset:      850
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1769235
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_850_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_854_4:  '
+    FileOffset:      854
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1769583
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_854_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_866_1:  '
+    FileOffset:      866
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1770040
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_866_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_868_2:  '
+    FileOffset:      868
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1770168
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_868_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_869_3:  '
+    FileOffset:      869
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1770256
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_869_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1305_1:  '
+    FileOffset:      1305
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1785595
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1305_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1310_2:  '
+    FileOffset:      1310
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1785801
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1310_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1316_3:  '
+    FileOffset:      1316
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1786161
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1316_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1328_4:  '
+    FileOffset:      1328
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1786724
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1328_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1378_1:  '
+    FileOffset:      1378
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1789059
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1378_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1379_2:  '
+    FileOffset:      1379
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1789132
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1379_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1405_1:  '
+    FileOffset:      1405
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1790095
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1405_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1406_2:  '
+    FileOffset:      1406
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1790168
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1406_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1409_3:  '
+    FileOffset:      1409
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1790392
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1409_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1413_4:  '
+    FileOffset:      1413
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1790739
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1413_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1435_1:  '
+    FileOffset:      1435
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1791531
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1435_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1436_2:  '
+    FileOffset:      1436
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1791604
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1436_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1440_3:  '
+    FileOffset:      1440
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1791829
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1440_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1444_4:  '
+    FileOffset:      1444
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1792176
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1444_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1523_1:  '
+    FileOffset:      1523
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1795100
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1523_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1524_2:  '
+    FileOffset:      1524
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1795173
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1524_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1528_3:  '
+    FileOffset:      1528
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1795403
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1528_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1534_4:  '
+    FileOffset:      1534
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1795785
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1534_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1564_5:  '
+    FileOffset:      1564
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1796833
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1564_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1568_6:  '
+    FileOffset:      1568
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1797190
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1568_6: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      1624
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + fabric is invalid combination for bind_op'
+    FileOffset:      1632
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      1640
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + fabric is invalid combination for bind_op'
+    FileOffset:      1694
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1705_1:  '
+    FileOffset:      1705
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1802922
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1705_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1706_2:  '
+    FileOffset:      1706
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1802965
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1706_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1716_1:  '
+    FileOffset:      1716
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1803223
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1716_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1765_1:  '
+    FileOffset:      1765
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1805725
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1765_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1774_1:  '
+    FileOffset:      1774
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1805978
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1774_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1783_1:  '
+    FileOffset:      1783
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1806205
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1783_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1784_2:  '
+    FileOffset:      1784
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1806291
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1784_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1798_1:  '
+    FileOffset:      1798
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1806706
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1798_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1800_2:  '
+    FileOffset:      1800
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1806848
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1800_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1802_3:  '
+    FileOffset:      1802
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1806998
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1802_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1810_4:  '
+    FileOffset:      1810
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1807385
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1810_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1828_1:  '
+    FileOffset:      1828
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1807970
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1828_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1833_2:  '
+    FileOffset:      1833
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1808059
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1833_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1835_3:  '
+    FileOffset:      1835
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1808152
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1835_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1845_4:  '
+    FileOffset:      1845
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1808414
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1845_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1860_1:  '
+    FileOffset:      1860
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1808926
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1860_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1862_2:  '
+    FileOffset:      1862
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1809059
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1862_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1887_1:  '
+    FileOffset:      1887
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1810177
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1887_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1889_2:  '
+    FileOffset:      1889
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1810333
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1889_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1927_1:  '
+    FileOffset:      1927
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1812161
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1927_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1929_2:  '
+    FileOffset:      1929
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1812271
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1929_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1980_1:  '
+    FileOffset:      1980
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1814663
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1980_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1982_2:  '
+    FileOffset:      1982
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1814805
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1982_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2015_1:  '
+    FileOffset:      2015
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1816189
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2015_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2017_2:  '
+    FileOffset:      2017
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1816331
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2017_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2042_1:  '
+    FileOffset:      2042
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1817199
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2042_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2047_2:  '
+    FileOffset:      2047
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1817302
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2047_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2049_3:  '
+    FileOffset:      2049
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1817420
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2049_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2057_4:  '
+    FileOffset:      2057
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1817679
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2057_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2073_1:  '
+    FileOffset:      2073
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1818193
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2073_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2075_2:  '
+    FileOffset:      2075
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1818335
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2075_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_2077_3:  '
+    FileOffset:      2077
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+      - FilePath:        'H:\subband_q610_zybo_z7_20_hls\solution1\.autopilot\db\subband_ref_q610_opt_stage4_latency_stepL2.pp.0.cpp'
+        Offset:          1818497
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_2077_3: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      2289
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      2290
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      2291
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      2292
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      2293
+    FilePath:        'H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp'
+    Replacements:    
+...

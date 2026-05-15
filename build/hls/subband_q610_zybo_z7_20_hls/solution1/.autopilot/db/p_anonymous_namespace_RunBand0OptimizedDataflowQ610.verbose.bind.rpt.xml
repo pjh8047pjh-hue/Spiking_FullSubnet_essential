@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'p_anonymous_namespace_RunBand0OptimizedDataflowQ610'" level="0">
+<item name = "Date">Wed May 13 19:58:39 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">subband_q610_zybo_z7_20_hls</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 8.733 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">57109944, 57109944, 0.571 sec, 0.571 sec, 57109922, 57109922, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610_fu_176">p_anonymous_namespace_GenerateBand0SequenceStreamOptimizedQ610, 1391041, 1391041, 13.910 ms, 13.910 ms, 1391041, 1391041, no</column>
+<column name="grp_p_anonymous_namespace_RunGSULayer0StreamParallelQ610_fu_187">p_anonymous_namespace_RunGSULayer0StreamParallelQ610, 53516401, 53516401, 0.535 sec, 0.535 sec, 53516401, 53516401, no</column>
+<column name="grp_p_anonymous_namespace_RunGSULayer1StreamParallelQ610_fu_225">p_anonymous_namespace_RunGSULayer1StreamParallelQ610, 57109921, 57109921, 0.571 sec, 0.571 sec, 57109921, 57109921, no</column>
+<column name="call_ln0_entry_proc_fu_263">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_p_anonymous_namespace_RunProjectionStoreBand0StreamParallelQ610_fu_270">p_anonymous_namespace_RunProjectionStoreBand0StreamParallelQ610, 48261361, 48261361, 0.483 sec, 0.483 sec, 48261361, 48261361, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

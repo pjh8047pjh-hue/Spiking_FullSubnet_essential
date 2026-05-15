@@ -1,0 +1,43 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="SubbandRealtimeTopQ610Ip" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="noisy_fft_stream" src_type="stream&lt;hls::axis&lt;ap_uint&lt;16&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="64" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="noisy_fft_stream" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="r" src_name="fb_fft_stream" src_type="stream&lt;hls::axis&lt;ap_uint&lt;16&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="64" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="fb_fft_stream" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="r" src_name="weights_q610" src_type="ap_uint&lt;256&gt; const *" src_isptr="1" src_bitwidth="256" src_size_or_depth="43031">
+        <hw hw_usage="data" hw_interface="MAXI" hw_name="weights" hw_bitwidth="256" hw_size_or_depth="0" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="1" num_write_outstanding="1" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0"/>
+          <constraint constraint_type="bitwidth" orig_bitwidth="256" final_bitwidth="256"/>
+        </hw>
+        <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="256" hw_size_or_depth="0" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="r" src_name="num_frames" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24"/>
+        </hw>
+      </arg>
+      <arg id="4" access_type="r" src_name="reset_state" src_type="bool" src_isptr="0" src_bitwidth="1" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="1" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32"/>
+        </hw>
+      </arg>
+      <arg id="5" access_type="w" src_name="df_coef_stream" src_type="stream&lt;hls::axis&lt;ap_uint&lt;16&gt;, 0, 0, 0, &apos;8&apos;, false&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="64" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="df_coef_stream" hw_bitwidth="16" hw_size_or_depth="1" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="void" src_bitwidth="0" offset="0x0">
+      <hw hw_usage="data" hw_interface="" hw_name="" hw_bitwidth="0" hw_kernel_support="true"/>
+    </return>
+  </kernel>
+</root>

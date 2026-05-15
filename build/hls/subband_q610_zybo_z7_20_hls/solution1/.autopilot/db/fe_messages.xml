@@ -1,0 +1,750 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:966:15" msg_body="unused parameter 'projected_output_q610'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:68:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="CopyExternalToLocalQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:76:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="PointerToStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:84:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="StreamToPointerQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:93:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ReadVectorFromStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:102:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="WriteVectorToStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:209:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SigmoidPwlQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:304:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ClearBufferQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:326:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FreqUnfoldQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:327:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="FreqUnfoldQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:354:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ConcatQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:355:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ConcatQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:376:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ConcatQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:377:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ConcatQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:411:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="PackQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:412:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="PackQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:440:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="PackedToSequenceQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:441:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="PackedToSequenceQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:463:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SbInputToSequenceQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:464:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SbInputToSequenceQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:502:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:514:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:526:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:744:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectToDfCoefQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:745:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectToDfCoefQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:774:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:778:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:782:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:790:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:807:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayerStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:816:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayerStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:839:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunProjectionStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:847:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunProjectionStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kMaxNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:865:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectBand0DfCoefQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:867:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectBand0DfCoefQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:870:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectBand0DfCoefQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:900:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:906:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sequence_stream depth=64" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:907:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_output_stream depth=64" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:908:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_output_stream depth=64" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:909:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=projected_output_stream depth=64" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:916:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0StreamingCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1071:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadBand0WeightsQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1091:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadBand0InputsQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1112:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ComputeBand0FromStreamsQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1158:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="StoreBand0OutputQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1317:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0DirectQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1329:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0DirectQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1622:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulForMacDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulForMacDspQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=product_q20 op=mul impl=dsp latency=2" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1630:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulQ610Fabric" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1632:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulQ610Fabric" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=product_q20 op=mul impl=fabric" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1638:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulQ610Dsp" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1640:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulQ610Dsp" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=product_q20 op=mul impl=dsp latency=2" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1650:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulGateUpdateQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1656:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="MulGateUpdateQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1661:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SigmoidPwlQ610Fabric" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1694:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SigmoidPwlQ610Fabric" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=interp_product_q610 op=mul impl=fabric" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1704:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadMatrixQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1707:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadMatrixQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1715:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadVectorQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1717:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadVectorQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1747:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="LoadBand0Weights2DQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1764:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ReadFixedVectorFromStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1766:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ReadFixedVectorFromStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1773:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="WriteFixedVectorToStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1775:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="WriteFixedVectorToStreamQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1782:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ClearStateVectorQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1785:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ClearStateVectorQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1795:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamOptimizedQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1799:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamOptimizedQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=kFixedNumFrames max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1803:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamOptimizedQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1811:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="GenerateBand0SequenceStreamOptimizedQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1824:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1826:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lane_sums complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1829:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1834:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1836:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1846:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="DotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1859:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUMacPhaseBand0Q610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1863:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUMacPhaseBand0Q610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1886:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUGatePhaseBand0Q610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1890:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUGatePhaseBand0Q610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1926:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SnapshotGSUStateQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1928:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SnapshotGSUStateQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1930:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SnapshotGSUStateQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1949:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0ParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1953:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0ParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=prev_hx_q610 complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1954:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0ParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=prev_cx_q610 complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1955:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSUCellBand0ParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=common_sum_stream depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1974:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1977:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=input_buffer complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1978:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=output_buffer cyclic factor=kLayer0HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1981:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=kFixedNumFrames max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2009:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer1StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2012:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer1StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=input_buffer complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2013:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer1StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=output_buffer cyclic factor=kLayer1HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2016:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunGSULayer1StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=kFixedNumFrames max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2038:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2040:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lane_sums complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2043:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2048:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2050:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2058:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ProjectionDotProductDspQ610" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2069:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunProjectionStoreBand0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2071:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunProjectionStoreBand0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=input_buffer complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2074:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunProjectionStoreBand0StreamParallelQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=kFixedNumFrames max=kFixedNumFrames" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2121:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2122:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_ih_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2123:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_hh_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2124:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bias_ih_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bn_mul_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2126:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bn_add_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2127:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_ih_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2128:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_hh_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2129:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bias_ih_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bn_mul_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2131:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bn_add_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2132:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=proj_weight_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2133:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=proj_bias_q610" ARG_PragmaType="stable" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2137:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sequence_stream depth=128" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2138:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_output_stream depth=512" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2139:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_output_stream depth=512" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2141:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedDataflowQ610" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2186:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2191:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_hx_state_q610 cyclic factor=kLayer0HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2192:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_cx_state_q610 cyclic factor=kLayer0HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2193:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_hx_state_q610 cyclic factor=kLayer1HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2194:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="RunBand0OptimizedCoreQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_cx_state_q610 cyclic factor=kLayer1HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/run_hls_zybo_z7_20_synth_only.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=SubbandBand0TopQ610" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2244:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=noisy_input_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2245:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=fb_output_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2246:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer0_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kBand0PackedInputSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2247:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer0_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2248:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer0_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2249:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer0_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2250:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer0_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2251:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer1_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2252:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer1_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2253:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer1_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2254:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer1_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2255:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=layer1_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2256:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=proj_weight_q610 offset=slave bundle=weights depth=(kBand0ProjSize * kSbHiddenSize)" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2257:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=proj_bias_q610 offset=slave bundle=weights depth=kBand0ProjSize" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2258:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=df_coef_q610 offset=slave bundle=gmem_out depth=kBand0DfCoefElementCount" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2259:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=noisy_input_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2260:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=fb_output_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2261:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer0_weight_ih_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2262:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer0_weight_hh_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2263:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer0_bias_ih_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2264:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer0_bn_mul_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2265:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer0_bn_add_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2266:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer1_weight_ih_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2267:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer1_weight_hh_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2268:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer1_bias_ih_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2269:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer1_bn_mul_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2270:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=layer1_bn_add_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2271:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=proj_weight_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2272:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=proj_bias_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2273:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=df_coef_q610 bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2274:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2289:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_ih_local type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2290:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_hh_local type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2291:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_ih_local type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2292:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_hh_local type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2293:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=proj_weight_local type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2294:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_ih_local cyclic factor=kLayer0HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2295:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_ih_local cyclic factor=kLayer0InputPar dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2296:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_hh_local cyclic factor=kLayer0HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2297:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_weight_hh_local cyclic factor=kLayer0RecurrentPar dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2298:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bias_ih_local cyclic factor=kLayer0HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2299:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bn_mul_local cyclic factor=kLayer0HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2300:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer0_bn_add_local cyclic factor=kLayer0HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2301:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_ih_local cyclic factor=kLayer1HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2302:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_ih_local cyclic factor=kLayer1InputPar dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2303:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_hh_local cyclic factor=kLayer1HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2304:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_weight_hh_local cyclic factor=kLayer1RecurrentPar dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2305:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bias_ih_local cyclic factor=kLayer1HiddenPar dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2306:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bn_mul_local cyclic factor=kLayer1HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2307:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=layer1_bn_add_local cyclic factor=kLayer1HiddenPar dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2308:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SubbandBand0TopQ610" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=proj_weight_local cyclic factor=kProjectionDotPar dim=2" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839:28" msg_body="Inlining function 'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;38, 4, 38&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], int)'">
+        <args Callee="subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1621 Column 0" Caller="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;38, 4, 38&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], int)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1839:28" msg_body="Inlining function 'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)'">
+        <args Callee="subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1621 Column 0" Caller="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1868:11" msg_body="Inlining function 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)' into 'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)'">
+        <args Callee="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1858 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866:11" msg_body="Inlining function 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;38, 4, 38&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], int)' into 'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)'">
+        <args Callee="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;38, 4, 38&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [38], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1858 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1651:9" msg_body="Inlining function 'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)'">
+        <args Callee="subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1637 Column 0" Caller="ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1649 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1909:36" msg_body="Inlining function 'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1637 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1906:11" msg_body="Inlining function 'ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1649 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1904:11" msg_body="Inlining function 'ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="ap_int&lt;16&gt; subband_q610::(anonymous namespace)::MulGateUpdateQ610&lt;true&gt;(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1649 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1901:41" msg_body="Inlining function 'subband_q610::(anonymous namespace)::SigmoidPwlQ610Fabric(ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::(anonymous namespace)::SigmoidPwlQ610Fabric(ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1660 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1983:7" msg_body="Inlining function 'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;38&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [38])' into 'subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][38], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)'">
+        <args Callee="void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;38&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [38])" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1763 Column 0" Caller="subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][38], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1973 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1994:7" msg_body="Inlining function 'void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610&lt;224&gt;(ap_int&lt;16&gt; const (&amp;) [224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)' into 'subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][38], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)'">
+        <args Callee="void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610&lt;224&gt;(ap_int&lt;16&gt; const (&amp;) [224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1772 Column 0" Caller="subband_q610::(anonymous namespace)::RunGSULayer0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][38], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1973 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1868:11" msg_body="Inlining function 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)' into 'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)'">
+        <args Callee="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1858 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1866:11" msg_body="Inlining function 'ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)' into 'void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)'">
+        <args Callee="ap_int&lt;48&gt; subband_q610::(anonymous namespace)::DotProductDspQ610&lt;224, 32, 224&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1823 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1858 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2018:7" msg_body="Inlining function 'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;224&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [224])' into 'subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)'">
+        <args Callee="void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;224&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [224])" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1763 Column 0" Caller="subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2008 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2029:7" msg_body="Inlining function 'void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610&lt;224&gt;(ap_int&lt;16&gt; const (&amp;) [224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)' into 'subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)'">
+        <args Callee="void subband_q610::(anonymous namespace)::WriteFixedVectorToStreamQ610&lt;224&gt;(ap_int&lt;16&gt; const (&amp;) [224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1772 Column 0" Caller="subband_q610::(anonymous namespace)::RunGSULayer1StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [224][224], ap_int&lt;16&gt; const (&amp;) [2][224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; const (&amp;) [224], ap_int&lt;16&gt; (&amp;) [8][224], ap_int&lt;16&gt; (&amp;) [8][224], hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2008 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2052:26" msg_body="Inlining function 'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)'">
+        <args Callee="subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1621 Column 0" Caller="subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2037 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2076:7" msg_body="Inlining function 'void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;224&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [224])' into 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)'">
+        <args Callee="void subband_q610::(anonymous namespace)::ReadFixedVectorFromStreamQ610&lt;224&gt;(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; (&amp;) [224])" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1763 Column 0" Caller="subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2068 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2080:35" msg_body="Inlining function 'subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)' into 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::(anonymous namespace)::ProjectionDotProductDspQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const (*) [224], int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2037 Column 0" Caller="subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2068 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2049:21" msg_body="Loop 'VITIS_LOOP_2049_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_2049_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21" msg_body="Loop 'VITIS_LOOP_1835_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_1835_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1929:21" msg_body="Loop 'VITIS_LOOP_1929_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_1929_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Unrolling loop 'VITIS_LOOP_2042_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2042:21) in function 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2042:21" LoopName="VITIS_LOOP_2042_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Unrolling loop 'VITIS_LOOP_2049_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2049:21) in function 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2049:21" LoopName="VITIS_LOOP_2049_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Unrolling loop 'VITIS_LOOP_2057_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2057:22) in function 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2057:22" LoopName="VITIS_LOOP_2057_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1862_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24" LoopName="VITIS_LOOP_1862_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1845_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22" LoopName="VITIS_LOOP_1845_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1835_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21" LoopName="VITIS_LOOP_1835_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1828_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;224, 2, 32, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21" LoopName="VITIS_LOOP_1828_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1885:0" msg_body="Unrolling loop 'VITIS_LOOP_1889_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1889:24) in function 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1889:24" LoopName="VITIS_LOOP_1889_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1862_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1862:24" LoopName="VITIS_LOOP_1862_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1845_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22" LoopName="VITIS_LOOP_1845_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1835_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21" LoopName="VITIS_LOOP_1835_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1828_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 32">
+        <args Factor="32" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21" LoopName="VITIS_LOOP_1828_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1845_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1845:22" LoopName="VITIS_LOOP_1845_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1835_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1835:21" LoopName="VITIS_LOOP_1835_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1858:0" msg_body="Unrolling loop 'VITIS_LOOP_1828_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21) in function 'subband_q610::(anonymous namespace)::RunGSUMacPhaseBand0Q610&lt;38, 2, 4, 32&gt;' completely with a factor of 4">
+        <args Factor="4" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1828:21" LoopName="VITIS_LOOP_1828_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1925:0" msg_body="Unrolling loop 'VITIS_LOOP_1929_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1929:21) in function 'subband_q610::(anonymous namespace)::SnapshotGSUStateQ610&lt;2&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1929:21" LoopName="VITIS_LOOP_1929_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1794:0" msg_body="Inlining function 'subband_q610::(anonymous namespace)::InputIndex(int, int, int, int)' into 'subband_q610::(anonymous namespace)::GenerateBand0SequenceStreamOptimizedQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)'">
+        <args Callee="subband_q610::(anonymous namespace)::InputIndex(int, int, int, int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 107 Column 0" Caller="subband_q610::(anonymous namespace)::GenerateBand0SequenceStreamOptimizedQ610(ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1794 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:185:0" msg_body="Inlining function 'subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)' into 'subband_q610::SubQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)'">
+        <args Callee="subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 152 Column 0" Caller="subband_q610::SubQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 185 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:181:0" msg_body="Inlining function 'subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)' into 'subband_q610::AddQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)'">
+        <args Callee="subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 152 Column 0" Caller="subband_q610::AddQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 181 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1885:0" msg_body="Inlining function 'subband_q610::SubQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::SubQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 185 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1885:0" msg_body="Inlining function 'subband_q610::AddQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::AddQ610(ap_int&lt;16&gt;, ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 181 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1885:0" msg_body="Inlining function 'subband_q610::StepActivationQ610(ap_int&lt;16&gt;)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::StepActivationQ610(ap_int&lt;16&gt;)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 189 Column 0" Caller="void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610&lt;2, true&gt;(hls::stream&lt;ap_int&lt;(48) * (2)&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (*) [224], ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt; const*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*, ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 1885 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Inlining function 'subband_q610::RoundShiftRight(ap_int&lt;48&gt;, int)' into 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::RoundShiftRight(ap_int&lt;48&gt;, int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 164 Column 0" Caller="subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2068 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Inlining function 'subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)' into 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::SaturateInt16(ap_int&lt;48&gt;) (.26)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 152 Column 0" Caller="subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2068 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2068:0" msg_body="Inlining function 'subband_q610::(anonymous namespace)::DfCoefIndex(int, int, int, int, int, int, int, int)' into 'subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)'">
+        <args Callee="subband_q610::(anonymous namespace)::DfCoefIndex(int, int, int, int, int, int, int, int)" Callee-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 144 Column 0" Caller="subband_q610::(anonymous namespace)::RunProjectionStoreBand0StreamParallelQ610(hls::stream&lt;ap_int&lt;16&gt;, 0&gt;&amp;, ap_int&lt;16&gt; const (&amp;) [40][224], ap_int&lt;16&gt; const (&amp;) [40], ap_int&lt;16&gt;*)" Caller-DebugLoc="File H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp Line 2068 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2190:0" msg_body="Applying array_partition to '_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_cx_state_q610': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_cx_state_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2189:0" msg_body="Applying array_partition to '_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_hx_state_q610': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer1_hx_state_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2188:0" msg_body="Applying array_partition to '_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_cx_state_q610': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_cx_state_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2187:0" msg_body="Applying array_partition to '_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_hx_state_q610': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61012_GLOBAL__N_125RunBand0OptimizedCoreQ610EPK6ap_intILi16EES4_RA224_A38_S3_RA224_A224_S3_RA2_S8_RS8_SD_SA_SA_SC_SD_SD_RA40_S8_RA40_S3_PS2_E20layer0_hx_state_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2285:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_add_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_add_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2284:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_mul_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer1_bn_mul_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2283:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer1_bias_ih_local': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer1_bias_ih_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2282:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_hh_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_hh_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2281:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_ih_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer1_weight_ih_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2280:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_add_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_add_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2279:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_mul_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E19layer0_bn_mul_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2278:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer0_bias_ih_local': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E20layer0_bias_ih_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2277:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_hh_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_hh_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2276:0" msg_body="Applying array_partition to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_ih_local': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E22layer0_weight_ih_local"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1950:11" msg_body="Applying array_partition to 'prev_hx_q610': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="prev_hx_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1951:12" msg_body="Applying array_partition to 'prev_cx_q610': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="prev_cx_q610"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1975:11" msg_body="Applying array_partition to 'input_buffer': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="input_buffer"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1976:12" msg_body="Applying array_partition to 'output_buffer': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="output_buffer"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2010:11" msg_body="Applying array_partition to 'input_buffer': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="input_buffer"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2011:12" msg_body="Applying array_partition to 'output_buffer': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="output_buffer"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2070:11" msg_body="Applying array_partition to 'input_buffer': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="input_buffer"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2286:0" msg_body="Applying array_reshape to '_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E17proj_weight_local': Cyclic reshaping with factor 4 on dimension 2.">
+        <args Dim="2" Factor="4" Mode="Cyclic" UOName="_ZZN12subband_q61019SubbandBand0TopQ610EPK6ap_intILi16EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_S3_PS1_E17proj_weight_local"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

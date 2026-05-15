@@ -1,0 +1,367 @@
+
+
+================================================================
+== Vitis HLS Report for 'p_anonymous_namespace_LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_s'
+================================================================
+* Date:           Thu May 14 12:27:33 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        subband_q610_realtime_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  8.481 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       24|       24|  0.240 us|  0.240 us|   24|   24|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_2624_5  |       22|       22|        12|          1|          1|    12|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    851|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     90|    -|
+|Register         |        -|    -|    3583|     96|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|    3583|   1037|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       3|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                                   Variable Name                                   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln2373_1_fu_485_p2                                                             |         +|   0|  0|  32|          32|          32|
+    |add_ln2373_fu_491_p2                                                               |         +|   0|  0|  32|          32|          32|
+    |add_ln2624_fu_517_p2                                                               |         +|   0|  0|  15|           8|           5|
+    |add_ln2628_fu_565_p2                                                               |         +|   0|  0|  39|          32|          32|
+    |sub_ln2373_1_fu_535_p2                                                             |         -|   0|  0|  34|           1|          27|
+    |sub_ln2373_fu_501_p2                                                               |         -|   0|  0|  38|           1|          31|
+    |ap_block_state11_pp0_stage0_iter10                                                 |       and|   0|  0|   2|           1|           1|
+    |ap_block_state3_io                                                                 |       and|   0|  0|   2|           1|           1|
+    |ap_condition_352                                                                   |       and|   0|  0|   2|           1|           1|
+    |ap_predicate_op46_readreq_state3                                                   |       and|   0|  0|   2|           1|           1|
+    |ap_predicate_op54_read_state11                                                     |       and|   0|  0|   2|           1|           1|
+    |icmp_ln2624_fu_469_p2                                                              |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2627_fu_475_p2                                                              |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_10_fu_948_p2                                                           |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_11_fu_972_p2                                                           |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_12_fu_996_p2                                                           |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_13_fu_1020_p2                                                          |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_14_fu_1044_p2                                                          |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_1_fu_714_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_2_fu_738_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_3_fu_762_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_4_fu_786_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_5_fu_810_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_6_fu_834_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_7_fu_858_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_8_fu_900_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_9_fu_924_p2                                                            |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln2634_fu_690_p2                                                              |      icmp|   0|  0|  15|           8|           8|
+    |ap_block_pp0_stage0_11001                                                          |        or|   0|  0|   2|           1|           1|
+    |or_ln2624_10_fu_644_p2                                                             |        or|   0|  0|   8|           8|           3|
+    |or_ln2624_11_fu_649_p2                                                             |        or|   0|  0|   8|           8|           3|
+    |or_ln2624_12_fu_654_p2                                                             |        or|   0|  0|   8|           8|           2|
+    |or_ln2624_13_fu_659_p2                                                             |        or|   0|  0|   8|           8|           2|
+    |or_ln2624_14_fu_664_p2                                                             |        or|   0|  0|   8|           8|           1|
+    |or_ln2624_1_fu_599_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_2_fu_604_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_3_fu_609_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_4_fu_614_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_5_fu_619_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_6_fu_624_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_7_fu_629_p2                                                              |        or|   0|  0|   8|           8|           4|
+    |or_ln2624_8_fu_634_p2                                                              |        or|   0|  0|   8|           8|           3|
+    |or_ln2624_9_fu_639_p2                                                              |        or|   0|  0|   8|           8|           3|
+    |or_ln2624_fu_594_p2                                                                |        or|   0|  0|   8|           8|           4|
+    |or_ln2637_fu_882_p2                                                                |        or|   0|  0|   5|           5|           1|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_d0  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_d1  |    select|   0|  0|  16|           1|          16|
+    |RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_d0  |    select|   0|  0|  16|           1|          16|
+    |select_ln2373_fu_549_p3                                                            |    select|   0|  0|  27|           1|          27|
+    |ap_enable_pp0                                                                      |       xor|   0|  0|   2|           1|           2|
+    +-----------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                                              |          |   0|  0| 851|         390|         620|
+    +-----------------------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                            |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                |   9|          2|    1|          2|
+    |ap_phi_mux_value_10_phi_fu_449_p4      |   9|          2|   16|         32|
+    |ap_phi_mux_word_067_phi_fu_438_p4      |   9|          2|  256|        512|
+    |ap_phi_reg_pp0_iter1_value_10_reg_445  |   9|          2|   16|         32|
+    |ap_phi_reg_pp0_iter1_word_067_reg_434  |   9|          2|  256|        512|
+    |ap_sig_allocacmp_proj_base             |   9|          2|    8|         16|
+    |proj_index_fu_194                      |   9|          2|    8|         16|
+    |weights_blk_n_AR                       |   9|          2|    1|          2|
+    |weights_blk_n_R                        |   9|          2|    1|          2|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  |  90|         20|  564|       1128|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+-----+----+-----+-----------+
+    |                  Name                  |  FF | LUT| Bits| Const Bits|
+    +----------------------------------------+-----+----+-----+-----------+
+    |add_ln2373_reg_1127                     |   32|   0|   32|          0|
+    |ap_CS_fsm                               |    1|   0|    1|          0|
+    |ap_done_reg                             |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10                |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11                |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8                 |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9                 |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter10_reg       |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter7_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter8_reg        |    1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter9_reg        |    1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter10_value_10_reg_445  |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter10_word_067_reg_434  |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter11_value_10_reg_445  |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter11_word_067_reg_434  |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter1_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter1_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter2_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter2_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter3_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter3_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter4_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter4_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter5_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter5_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter6_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter6_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter7_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter7_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter8_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter8_word_067_reg_434   |  256|   0|  256|          0|
+    |ap_phi_reg_pp0_iter9_value_10_reg_445   |   16|   0|   16|          0|
+    |ap_phi_reg_pp0_iter9_word_067_reg_434   |  256|   0|  256|          0|
+    |icmp_ln2624_reg_1119                    |    1|   0|    1|          0|
+    |icmp_ln2627_reg_1123                    |    1|   0|    1|          0|
+    |proj_base_reg_1099                      |    8|   0|    8|          0|
+    |proj_index_fu_194                       |    8|   0|    8|          0|
+    |trunc_ln2373_2_reg_1133                 |   27|   0|   27|          0|
+    |trunc_ln_reg_1138                       |   27|   0|   27|          0|
+    |value_reg_1154                          |   16|   0|   16|          0|
+    |word_reg_1149                           |  256|   0|  256|          0|
+    |icmp_ln2624_reg_1119                    |   64|  32|    1|          0|
+    |icmp_ln2627_reg_1123                    |   64|  32|    1|          0|
+    |proj_base_reg_1099                      |   64|  32|    8|          0|
+    +----------------------------------------+-----+----+-----+-----------+
+    |Total                                   | 3583|  96| 3401|          0|
+    +----------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|                                        RTL Ports                                        | Dir | Bits|  Protocol  |                                   Source Object                                  |    C Type    |
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                   |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|ap_rst                                                                                   |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|ap_start                                                                                 |   in|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|ap_done                                                                                  |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|ap_idle                                                                                  |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|ap_ready                                                                                 |  out|    1|  ap_ctrl_hs|  (anonymous namespace)LoadRealtimeProjectionWeightsQ610_Pipeline_VITIS_LOOP_2624_|  return value|
+|m_axi_weights_AWVALID                                                                    |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWREADY                                                                    |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWADDR                                                                     |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWID                                                                       |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWLEN                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWSIZE                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWBURST                                                                    |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWLOCK                                                                     |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWCACHE                                                                    |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWPROT                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWQOS                                                                      |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWREGION                                                                   |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_AWUSER                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WVALID                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WREADY                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WDATA                                                                      |  out|  256|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WSTRB                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WLAST                                                                      |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WID                                                                        |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_WUSER                                                                      |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARVALID                                                                    |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARREADY                                                                    |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARADDR                                                                     |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARID                                                                       |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARLEN                                                                      |  out|   32|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARSIZE                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARBURST                                                                    |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARLOCK                                                                     |  out|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARCACHE                                                                    |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARPROT                                                                     |  out|    3|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARQOS                                                                      |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARREGION                                                                   |  out|    4|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_ARUSER                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RVALID                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RREADY                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RDATA                                                                      |   in|  256|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RLAST                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RID                                                                        |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RFIFONUM                                                                   |   in|    5|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RUSER                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_RRESP                                                                      |   in|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BVALID                                                                     |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BREADY                                                                     |  out|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BRESP                                                                      |   in|    2|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BID                                                                        |   in|    1|       m_axi|                                                                           weights|       pointer|
+|m_axi_weights_BUSER                                                                      |   in|    1|       m_axi|                                                                           weights|       pointer|
+|proj_size                                                                                |   in|    8|     ap_none|                                                                         proj_size|        scalar|
+|weight_offset_read                                                                       |   in|   32|     ap_none|                                                                weight_offset_read|        scalar|
+|zext_ln2624                                                                              |   in|   16|     ap_none|                                                                       zext_ln2624|        scalar|
+|weights_q610                                                                             |   in|   32|     ap_none|                                                                      weights_q610|        scalar|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_8|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_7|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_6|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_5|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_4|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_3|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_2|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_address0  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_ce0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_we0       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_d0        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_address1  |  out|    5|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_ce1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_we1       |  out|    1|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
+|RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1_d1        |  out|   16|   ap_memory|    RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_pr_1|         array|
++-----------------------------------------------------------------------------------------+-----+-----+------------+----------------------------------------------------------------------------------+--------------+
+

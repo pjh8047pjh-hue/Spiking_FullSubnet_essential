@@ -1,0 +1,963 @@
+In file included from H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1:
+In file included from H://subband_ref_q610.hpp:26:
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:135:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=get_data_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:140:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=set_data_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:205:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=keep_all_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:317:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=empty_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:325:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=full_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:334:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=read_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:345:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=read_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:357:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=write_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:368:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=read_nb_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot\ap_axi_sdata.h:385:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=write_nb_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:68:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=CopyExternalToLocalQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:76:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PointerToStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:84:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=StreamToPointerQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:93:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadVectorFromStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:102:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=WriteVectorToStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:209:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SigmoidPwlQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:304:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClearBufferQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:326:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=FreqUnfoldQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:327:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=FreqUnfoldQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:354:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ConcatQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:355:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ConcatQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:376:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ConcatQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:377:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ConcatQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:411:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PackQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:412:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PackQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:440:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PackedToSequenceQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:441:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PackedToSequenceQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:463:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SbInputToSequenceQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:464:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SbInputToSequenceQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:502:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:514:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellQ610_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:526:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellQ610_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:744:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectToDfCoefQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:745:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectToDfCoefQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:774:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:778:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamQ610_XLX_SEP_ PragmaOptions=min=1 max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:782:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:790:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:807:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayerStreamQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:816:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayerStreamQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:839:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunProjectionStreamQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:847:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunProjectionStreamQ610_XLX_SEP_ PragmaOptions=min=1 max=kMaxNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kMaxNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:865:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectBand0DfCoefQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:867:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectBand0DfCoefQ610_XLX_SEP_ PragmaOptions=min=1 max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:870:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectBand0DfCoefQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:900:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:906:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=variable=sequence_stream depth=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=sequence_stream depth=64
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:907:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_output_stream depth=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=layer0_output_stream depth=64
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:908:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_output_stream depth=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=layer1_output_stream depth=64
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:909:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=variable=projected_output_stream depth=64_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=projected_output_stream depth=64
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:916:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0StreamingCoreQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS dataflow
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:966:15: warning: unused parameter 'projected_output_q610' [-Wunused-parameter]
+    q_data_t* projected_output_q610,
+              ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1071:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadBand0WeightsQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1091:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadBand0InputsQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1112:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ComputeBand0FromStreamsQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1158:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=StoreBand0OutputQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1317:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0DirectQ610_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1329:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0DirectQ610_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS UNROLL factor=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1622:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulForMacDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1624:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulForMacDspQ610_XLX_SEP_ PragmaOptions=variable=product_q20 op=mul impl=dsp latency=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_op variable=product_q20 op=mul impl=dsp latency=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1630:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulQ610Fabric_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1632:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulQ610Fabric_XLX_SEP_ PragmaOptions=variable=product_q20 op=mul impl=fabric_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_op variable=product_q20 op=mul impl=fabric
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1638:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulQ610Dsp_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1640:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulQ610Dsp_XLX_SEP_ PragmaOptions=variable=product_q20 op=mul impl=dsp latency=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_op variable=product_q20 op=mul impl=dsp latency=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1650:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulGateUpdateQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1656:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MulGateUpdateQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1661:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SigmoidPwlQ610Fabric_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1694:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_op_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SigmoidPwlQ610Fabric_XLX_SEP_ PragmaOptions=variable=interp_product_q610 op=mul impl=fabric_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_op variable=interp_product_q610 op=mul impl=fabric
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1704:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadMatrixQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1707:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadMatrixQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1715:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadVectorQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1717:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadVectorQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1747:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadBand0Weights2DQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1764:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadFixedVectorFromStreamQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1766:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadFixedVectorFromStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1773:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=WriteFixedVectorToStreamQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1775:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=WriteFixedVectorToStreamQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1782:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClearStateVectorQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1785:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClearStateVectorQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1795:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamOptimizedQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1799:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamOptimizedQ610_XLX_SEP_ PragmaOptions=min=kFixedNumFrames max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1803:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamOptimizedQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1811:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=GenerateBand0SequenceStreamOptimizedQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1824:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1826:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=variable=lane_sums complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=lane_sums complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1829:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1834:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1836:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1846:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1859:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUMacPhaseBand0Q610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1863:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUMacPhaseBand0Q610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1886:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUGatePhaseBand0Q610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1890:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUGatePhaseBand0Q610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1926:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SnapshotGSUStateQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1928:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SnapshotGSUStateQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1930:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SnapshotGSUStateQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1949:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0ParallelQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1953:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0ParallelQ610_XLX_SEP_ PragmaOptions=variable=prev_hx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1954:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0ParallelQ610_XLX_SEP_ PragmaOptions=variable=prev_cx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1955:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSUCellBand0ParallelQ610_XLX_SEP_ PragmaOptions=variable=common_sum_stream depth=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=common_sum_stream depth=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1974:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer0StreamParallelQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1977:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer0StreamParallelQ610_XLX_SEP_ PragmaOptions=variable=input_buffer complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=input_buffer complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1978:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer0StreamParallelQ610_XLX_SEP_ PragmaOptions=variable=output_buffer cyclic factor=kLayer0HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=output_buffer cyclic factor=kLayer0HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1981:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer0StreamParallelQ610_XLX_SEP_ PragmaOptions=min=kFixedNumFrames max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2009:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer1StreamParallelQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2012:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer1StreamParallelQ610_XLX_SEP_ PragmaOptions=variable=input_buffer complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=input_buffer complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2013:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer1StreamParallelQ610_XLX_SEP_ PragmaOptions=variable=output_buffer cyclic factor=kLayer1HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=output_buffer cyclic factor=kLayer1HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2016:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunGSULayer1StreamParallelQ610_XLX_SEP_ PragmaOptions=min=kFixedNumFrames max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2038:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2040:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=variable=lane_sums complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=lane_sums complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2043:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2048:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2050:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2058:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2069:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunProjectionStoreBand0StreamParallelQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2071:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunProjectionStoreBand0StreamParallelQ610_XLX_SEP_ PragmaOptions=variable=input_buffer complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=input_buffer complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2074:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunProjectionStoreBand0StreamParallelQ610_XLX_SEP_ PragmaOptions=min=kFixedNumFrames max=kFixedNumFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=kFixedNumFrames max=kFixedNumFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2121:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2122:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_ih_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer0_weight_ih_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2123:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_hh_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer0_weight_hh_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2124:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_bias_ih_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer0_bias_ih_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2125:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_bn_mul_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer0_bn_mul_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2126:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_bn_add_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer0_bn_add_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2127:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_ih_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer1_weight_ih_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2128:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_hh_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer1_weight_hh_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2129:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_bias_ih_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer1_bias_ih_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2130:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_bn_mul_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer1_bn_mul_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2131:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_bn_add_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=layer1_bn_add_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2132:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=proj_weight_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=proj_weight_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2133:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stable_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=proj_bias_q610_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stable variable=proj_bias_q610
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2137:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=sequence_stream depth=128_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=sequence_stream depth=128
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2138:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer0_output_stream depth=512_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=layer0_output_stream depth=512
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2139:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=variable=layer1_output_stream depth=512_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=layer1_output_stream depth=512
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2141:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=dataflow_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedDataflowQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS dataflow
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2186:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedCoreQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2191:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_hx_state_q610 cyclic factor=kLayer0HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_hx_state_q610 cyclic factor=kLayer0HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2192:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_cx_state_q610 cyclic factor=kLayer0HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_cx_state_q610 cyclic factor=kLayer0HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2193:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_hx_state_q610 cyclic factor=kLayer1HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_hx_state_q610 cyclic factor=kLayer1HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2194:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunBand0OptimizedCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_cx_state_q610 cyclic factor=kLayer1HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_cx_state_q610 cyclic factor=kLayer1HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2244:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=noisy_input_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=noisy_input_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2245:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=fb_output_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=fb_output_q610 offset=slave bundle=gmem_in depth=kBand0InputElementCount
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2246:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer0_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kBand0PackedInputSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer0_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kBand0PackedInputSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2247:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer0_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer0_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2248:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer0_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer0_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2249:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer0_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer0_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2250:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer0_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer0_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2251:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer1_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer1_weight_ih_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2252:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer1_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer1_weight_hh_q610 offset=slave bundle=weights depth=(kSbHiddenSize * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2253:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer1_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer1_bias_ih_q610 offset=slave bundle=weights depth=(2 * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2254:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer1_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer1_bn_mul_q610 offset=slave bundle=weights depth=kSbHiddenSize
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2255:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=layer1_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=layer1_bn_add_q610 offset=slave bundle=weights depth=kSbHiddenSize
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2256:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=proj_weight_q610 offset=slave bundle=weights depth=(kBand0ProjSize * kSbHiddenSize)_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=proj_weight_q610 offset=slave bundle=weights depth=(kBand0ProjSize * kSbHiddenSize)
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2257:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=proj_bias_q610 offset=slave bundle=weights depth=kBand0ProjSize_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=proj_bias_q610 offset=slave bundle=weights depth=kBand0ProjSize
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2258:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=m_axi port=df_coef_q610 offset=slave bundle=gmem_out depth=kBand0DfCoefElementCount_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=df_coef_q610 offset=slave bundle=gmem_out depth=kBand0DfCoefElementCount
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2259:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=noisy_input_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=noisy_input_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2260:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=fb_output_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=fb_output_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2261:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer0_weight_ih_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer0_weight_ih_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2262:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer0_weight_hh_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer0_weight_hh_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2263:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer0_bias_ih_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer0_bias_ih_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2264:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer0_bn_mul_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer0_bn_mul_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2265:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer0_bn_add_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer0_bn_add_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2266:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer1_weight_ih_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer1_weight_ih_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2267:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer1_weight_hh_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer1_weight_hh_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2268:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer1_bias_ih_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer1_bias_ih_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2269:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer1_bn_mul_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer1_bn_mul_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2270:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=layer1_bn_add_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=layer1_bn_add_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2271:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=proj_weight_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=proj_weight_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2272:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=proj_bias_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=proj_bias_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2273:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=df_coef_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=df_coef_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2274:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2289:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_ih_local type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer0_weight_ih_local type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2290:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_hh_local type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer0_weight_hh_local type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2291:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_ih_local type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer1_weight_ih_local type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2292:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_hh_local type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer1_weight_hh_local type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2293:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=proj_weight_local type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=proj_weight_local type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2294:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_ih_local cyclic factor=kLayer0HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_weight_ih_local cyclic factor=kLayer0HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2295:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_ih_local cyclic factor=kLayer0InputPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=layer0_weight_ih_local cyclic factor=kLayer0InputPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2296:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_hh_local cyclic factor=kLayer0HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_weight_hh_local cyclic factor=kLayer0HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2297:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_weight_hh_local cyclic factor=kLayer0RecurrentPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=layer0_weight_hh_local cyclic factor=kLayer0RecurrentPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2298:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_bias_ih_local cyclic factor=kLayer0HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_bias_ih_local cyclic factor=kLayer0HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2299:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_bn_mul_local cyclic factor=kLayer0HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_bn_mul_local cyclic factor=kLayer0HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2300:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer0_bn_add_local cyclic factor=kLayer0HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_bn_add_local cyclic factor=kLayer0HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2301:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_ih_local cyclic factor=kLayer1HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_weight_ih_local cyclic factor=kLayer1HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2302:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_ih_local cyclic factor=kLayer1InputPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=layer1_weight_ih_local cyclic factor=kLayer1InputPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2303:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_hh_local cyclic factor=kLayer1HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_weight_hh_local cyclic factor=kLayer1HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2304:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_weight_hh_local cyclic factor=kLayer1RecurrentPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=layer1_weight_hh_local cyclic factor=kLayer1RecurrentPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2305:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_bias_ih_local cyclic factor=kLayer1HiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_bias_ih_local cyclic factor=kLayer1HiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2306:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_bn_mul_local cyclic factor=kLayer1HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_bn_mul_local cyclic factor=kLayer1HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2307:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=layer1_bn_add_local cyclic factor=kLayer1HiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_bn_add_local cyclic factor=kLayer1HiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2308:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandBand0TopQ610_XLX_SEP_ PragmaOptions=variable=proj_weight_local cyclic factor=kProjectionDotPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=proj_weight_local cyclic factor=kProjectionDotPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2365:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ExtractPackedRealtimeWeightQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2372:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RealtimeWeightWordIndex_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2377:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=MakeAxisQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2387:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=AxisToQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2394:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClampRealtimeFrameCount_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2406:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RealtimeBandWeightOffset_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2417:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RealtimeBandOutputOffset_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2428:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RealtimeBandTotalFreqs_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2433:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReflectFrequencyIndexRealtimeQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2449:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadRealtimeInputChunkQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2451:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadRealtimeInputChunkQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2454:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadRealtimeInputChunkQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2458:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ReadRealtimeInputChunkQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2469:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=EmitRealtimeOutputChunkQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2471:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=EmitRealtimeOutputChunkQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2474:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=EmitRealtimeOutputChunkQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2488:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClearRealtimeStatesQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2492:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ClearRealtimeStatesQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2511:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2515:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2522:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2526:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2536:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2543:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2547:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2557:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2561:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2570:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2573:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2581:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2584:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeGSULayerWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2597:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2601:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2611:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2615:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2625:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2631:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=LoadRealtimeProjectionWeightsQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2649:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=BuildRealtimeBandInputQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2652:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=BuildRealtimeBandInputQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2671:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2673:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=variable=lane_sums complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=lane_sums complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2676:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2681:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2683:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2693:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2704:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2706:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=variable=lane_sums complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=lane_sums complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2709:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2714:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2716:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2726:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=DotProductRealtimeFixedDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2739:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUMacPhaseFixedQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2743:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUMacPhaseFixedQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2767:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellFixedQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2771:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellFixedQ610_XLX_SEP_ PragmaOptions=variable=prev_hx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2772:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellFixedQ610_XLX_SEP_ PragmaOptions=variable=prev_cx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2773:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=stream_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellFixedQ610_XLX_SEP_ PragmaOptions=variable=common_sum_stream depth=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS stream variable=common_sum_stream depth=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2792:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellSharedQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2800:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=CopyRealtimeHiddenVectorQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2802:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=CopyRealtimeHiddenVectorQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2818:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2821:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=variable=prev_hx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_hx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2822:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=variable=prev_cx_q610 complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=prev_cx_q610 complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2825:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2827:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2836:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSUCellQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2884:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSULayersSharedBandQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2885:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=allocation_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSULayersSharedBandQ610_XLX_SEP_ PragmaOptions=function instances=RunRealtimeGSUCellSharedQ610 limit=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS allocation function instances=RunRealtimeGSUCellSharedQ610 limit=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2887:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSULayersSharedBandQ610_XLX_SEP_ PragmaOptions=variable=cell_input complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=cell_input complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2895:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeGSULayersSharedBandQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2939:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeLayer0BandQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2941:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeLayer0BandQ610_XLX_SEP_ PragmaOptions=variable=input_buffer complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=input_buffer complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2944:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeLayer0BandQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2977:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeLayer1BandQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2979:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeLayer1BandQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3003:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3005:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=variable=lane_sums complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=lane_sums complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3008:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3013:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS pipeline II=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3015:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3023:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=ProjectionDotProductRealtimeDspQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS unroll
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3036:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeProjectionBandQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3038:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeProjectionBandQ610_XLX_SEP_ PragmaOptions=variable=projection_input complete dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=projection_input complete dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3042:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeProjectionBandQ610_XLX_SEP_ PragmaOptions=min=1 max=kRealtimeChunkFrames_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS loop_tripcount min=1 max=kRealtimeChunkFrames
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3097:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunRealtimeBandQ610_XLX_SEP_ PragmaOptions=off_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline off
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3116:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS inline
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3117:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=allocation_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=function instances=RunRealtimeGSUCellSharedQ610 limit=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS allocation function instances=RunRealtimeGSUCellSharedQ610 limit=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3136:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=noisy_chunk type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=noisy_chunk type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3137:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=fb_chunk type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=fb_chunk type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3138:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=output_chunk type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=output_chunk type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3139:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_ih type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=weight_ih type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3140:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_hh type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=weight_hh type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3141:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=proj_weight type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=proj_weight type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3142:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_hx_state type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer0_hx_state type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3143:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_cx_state type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer0_cx_state type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3144:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_hx_state type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer1_hx_state type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3145:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_cx_state type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer1_cx_state type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3146:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_output type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer0_output type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3147:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=bind_storage_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_output type=ram_2p impl=bram_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS bind_storage variable=layer1_output type=ram_2p impl=bram
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3148:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_ih cyclic factor=kRealtimeHiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=weight_ih cyclic factor=kRealtimeHiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3149:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_ih cyclic factor=kRealtimeDotPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=weight_ih cyclic factor=kRealtimeDotPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3150:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_hh cyclic factor=kRealtimeHiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=weight_hh cyclic factor=kRealtimeHiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3151:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=weight_hh cyclic factor=kRealtimeDotPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=weight_hh cyclic factor=kRealtimeDotPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3152:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=bias_ih cyclic factor=kRealtimeHiddenPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=bias_ih cyclic factor=kRealtimeHiddenPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3153:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=bn_mul cyclic factor=kRealtimeHiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=bn_mul cyclic factor=kRealtimeHiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3154:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=bn_add cyclic factor=kRealtimeHiddenPar dim=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=bn_add cyclic factor=kRealtimeHiddenPar dim=1
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3155:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_reshape_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=proj_weight cyclic factor=kRealtimeProjectionDotPar dim=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_reshape variable=proj_weight cyclic factor=kRealtimeProjectionDotPar dim=2
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3156:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_hx_state cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_hx_state cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3157:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_cx_state cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_cx_state cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3158:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_hx_state cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_hx_state cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3159:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_cx_state cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_cx_state cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3160:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer0_output cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer0_output cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3161:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=RunSubbandRealtimeTopCoreQ610_XLX_SEP_ PragmaOptions=variable=layer1_output cyclic factor=kRealtimeHiddenPar dim=3_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS array_partition variable=layer1_output cyclic factor=kRealtimeHiddenPar dim=3
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3193:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=axis port=noisy_fft_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=noisy_fft_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3194:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=axis port=fb_fft_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=fb_fft_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3195:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=axis port=df_coef_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=df_coef_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3196:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=m_axi port=weights_q610 offset=slave bundle=weights depth=kRealtimeWeightsWordCount_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=weights_q610 offset=slave bundle=weights depth=kRealtimeWeightsWordCount
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3197:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=s_axilite port=weights_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=weights_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3198:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=s_axilite port=num_frames bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=num_frames bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3199:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=s_axilite port=reset_state bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=reset_state bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3200:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+        ^
+H:/run_hls_realtime_export_only.tcl:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=name=SubbandRealtimeTopQ610Ip_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=SubbandRealtimeTopQ610Ip
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3349:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=axis port=noisy_fft_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=noisy_fft_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3350:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=axis port=fb_fft_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=fb_fft_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3351:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=axis port=df_coef_stream_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE axis port=df_coef_stream
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3352:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=m_axi port=weights_q610 offset=slave bundle=weights depth=subband_q610::kRealtimeWeightsWordCount_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE m_axi port=weights_q610 offset=slave bundle=weights depth=subband_q610::kRealtimeWeightsWordCount
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3353:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=s_axilite port=weights_q610 bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=weights_q610 bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3354:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=s_axilite port=num_frames bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=num_frames bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3355:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=s_axilite port=reset_state bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=reset_state bundle=control
+        ^
+H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3356:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=SubbandRealtimeTopQ610Ip_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=control_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+        ^
+320 warnings generated.
