@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="subband_ref_q610_opt_stage4_latency_stepL2.cpp" path="H:\subband_ref_q610_opt_stage4_latency_stepL2.cpp"/>
-  </source>
-  <testbench>
-    <originFiles name="subband_q610_hls_tb.cpp" path="H:\subband_q610_hls_tb.cpp"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

@@ -4,6 +4,10 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
+#ifdef USE_PROJECTION_EXTERNAL
+#include <thread>
+#include "ap_int.h"
+#endif
 
 namespace {
 
@@ -266,6 +270,52 @@ void BuildExpectedFrameOrder(
   }
 }
 
+#ifdef USE_PROJECTION_EXTERNAL
+// C단계 외부 projection IP를 모사하는 testbench 헬퍼.
+// HLS top의 CallExternalProjectionIpQ610가 (1) 224 input lane word + 224 proj_row word를 push하고
+// (2) 3 word (lo/mid/hi)로 분할된 48-bit dot product 결과를 받는 프로토콜과 정확히 짝.
+inline int ProjectionDotCountPerChunkQ610(int frames) {
+  using subband_q610::kBand0NumSubbands;
+  using subband_q610::kBand1NumSubbands;
+  using subband_q610::kBand2NumSubbands;
+  using subband_q610::kBand0ProjSize;
+  using subband_q610::kBand1ProjSize;
+  using subband_q610::kBand2ProjSize;
+  return frames * (kBand0ProjSize * kBand0NumSubbands +
+                   kBand1ProjSize * kBand1NumSubbands +
+                   kBand2ProjSize * kBand2NumSubbands);
+}
+
+void ExternalProjectionIpThreadQ610(
+    hls::stream<axis_q610_t>* request_stream,
+    hls::stream<axis_q610_t>* response_stream,
+    int dot_count) {
+  using subband_q610::kSbHiddenSize;
+  using subband_q610::accum_q_t;
+  for (int dot = 0; dot < dot_count; ++dot) {
+    q_data_t input_lanes[kSbHiddenSize];
+    q_data_t proj_row[kSbHiddenSize];
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      input_lanes[i] = AxisToQ(request_stream->read());
+    }
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      proj_row[i] = AxisToQ(request_stream->read());
+    }
+    accum_q_t acc = 0;
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      acc += static_cast<accum_q_t>(input_lanes[i]) * static_cast<accum_q_t>(proj_row[i]);
+    }
+    q_data_t lo, mid, hi;
+    lo.range(15, 0) = acc.range(15, 0);
+    mid.range(15, 0) = acc.range(31, 16);
+    hi.range(15, 0) = acc.range(47, 32);
+    response_stream->write(MakeAxis(lo, false));
+    response_stream->write(MakeAxis(mid, false));
+    response_stream->write(MakeAxis(hi, true));
+  }
+}
+#endif  // USE_PROJECTION_EXTERNAL
+
 bool RunRealtimeScenario(
     const char* name,
     const int* chunk_sizes,
@@ -295,7 +345,15 @@ bool RunRealtimeScenario(
       }
     }
 
+#ifdef USE_PROJECTION_EXTERNAL
+    // csim에서 cpp가 stream 통신을 우회(직접 dot product 호출)하므로 stream은 empty placeholder
+    hls::stream<axis_q610_t> projection_request_stream;
+    hls::stream<axis_q610_t> projection_response_stream;
+    SubbandRealtimeTopQ610Ip(noisy_stream, fb_stream, weights.data(), chunk_frames, chunk_index == 0,
+                              projection_request_stream, projection_response_stream, df_stream);
+#else
     SubbandRealtimeTopQ610Ip(noisy_stream, fb_stream, weights.data(), chunk_frames, chunk_index == 0, df_stream);
+#endif
 
     for (int output_index = 0; output_index < chunk_frames * kRealtimeDfCoefPerFrame; ++output_index) {
       const axis_q610_t word = df_stream.read();

@@ -1,0 +1,1193 @@
+ECHO is off.
+ECHO is off.
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'User' on host 'desktop-pmq3qcf' (Windows NT_amd64 version 6.2) on Sat May 23 20:28:57 +0900 2026
+INFO: [HLS 200-10] In directory 'H:/'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'H:/scripts/hls/run_hls_realtime_rtl_engine_export_only.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset H:/build/hls/subband_q610_realtime_rtl_engine_hls 
+INFO: [HLS 200-10] Opening and resetting project 'H:/build/hls/subband_q610_realtime_rtl_engine_hls'.
+INFO: [HLS 200-1510] Running: set_top SubbandRealtimeTopQ610Ip 
+INFO: [HLS 200-1510] Running: add_files H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp -cflags -std=c++14 -IH:/ -DUSE_RTL_BAND_ENGINE 
+INFO: [HLS 200-10] Adding design file 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb H:/testbench/subband_realtime_hls_tb.cpp -cflags -std=c++14 -IH:/ -DUSE_RTL_BAND_ENGINE 
+INFO: [HLS 200-10] Adding test bench file 'H:/testbench/subband_realtime_hls_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution 'H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64=false -m_axi_num_read_outstanding=1 -m_axi_num_write_outstanding=1 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 102.832 MB.
+INFO: [HLS 200-10] Analyzing design file 'H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp' ... 
+WARNING: [HLS 207-5292] unused parameter 'input_size' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:287:9)
+WARNING: [HLS 207-5292] unused parameter 'hidden_base' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:288:9)
+WARNING: [HLS 207-5292] unused parameter 'hx_tile_in' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:291:30)
+WARNING: [HLS 207-5292] unused parameter 'cx_tile_in' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:292:30)
+WARNING: [HLS 207-5292] unused parameter 'output_tile_in' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:293:30)
+WARNING: [HLS 207-5292] unused parameter 'projected_output_q610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1838:15)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.21 seconds; current allocated memory: 115.301 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 75,166 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 37,027 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 30,206 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 25,806 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 23,508 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+WARNING: [HLS 200-1995] There were 143,428 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,272 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,272 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 54,242 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 47,707 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,226 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,214 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,155 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,155 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,209 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 43,371 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: H:/build/hls/subband_q610_realtime_rtl_engine_hls/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int<16>, ap_int<16>)' into 'ap_int<48> subband_q610::(anonymous namespace)::DotProductRealtimeFixedDspQ610<224, 32>(ap_int<16> const*, ap_int<16> const (*) [224], int)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3989:28)
+INFO: [HLS 214-131] Inlining function 'ap_int<48> subband_q610::(anonymous namespace)::DotProductRealtimeFixedDspQ610<224, 32>(ap_int<16> const*, ap_int<16> const (*) [224], int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>(ap_int<16> const*, ap_int<16> const (*) [224], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4018:11)
+INFO: [HLS 214-131] Inlining function 'ap_int<48> subband_q610::(anonymous namespace)::DotProductRealtimeFixedDspQ610<224, 32>(ap_int<16> const*, ap_int<16> const (*) [224], int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>(ap_int<16> const*, ap_int<16> const (*) [224], ap_int<16> const (*) [224], ap_int<16> const*, hls::stream<ap_int<(48) * (2)>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4016:11)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int<16>, ap_int<16>)' into 'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2523:9)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::MulQ610Dsp(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2781:36)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2778:11)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::MulGateUpdateQ610<true>(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2776:11)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::SigmoidPwlQ610Fabric(ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2773:41)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3787:24)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855:31)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3852:49)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844:31)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3841:49)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832:44)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3829:24)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3818:63)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3814:36)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3810:24)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3808:24)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3797:63)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3793:36)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610(ap_uint<256> const*, int&, int, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3789:24)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ReflectFrequencyIndexRealtimeQ610(int)' into 'subband_q610::(anonymous namespace)::BuildRealtimeBandInputQ610(subband_q610::BandSpec const&, ap_int<16> const*, ap_int<16> const*, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3929:31)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ReflectFrequencyIndexRealtimeQ610(int)' into 'subband_q610::(anonymous namespace)::BuildRealtimeBandInputQ610(subband_q610::BandSpec const&, ap_int<16> const*, ap_int<16> const*, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3925:31)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::CopyRealtimeHiddenVectorQ610(ap_int<16> const*, ap_int<16>*)' into 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandQ610(subband_q610::BandSpec const&, ap_uint<256> const*, int&, int, ap_int<16> const (*) [256], ap_int<16> const (*) [256], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*, ap_int<16> (*) [8][224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4176:15)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<0>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3261:30)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<15>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3276:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<14>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3275:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<13>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3274:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<12>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3273:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<11>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3272:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<10>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3271:32)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<9>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3270:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<8>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3269:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<7>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3268:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<6>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3267:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<5>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3266:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<4>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3265:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<3>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3264:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<2>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3263:31)
+INFO: [HLS 214-131] Inlining function 'ap_int<16> subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightLaneQ610<1>(ap_uint<256> const&)' into 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3262:31)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeProjectionRowPackedQ610(ap_uint<256> const*, int, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4423:55)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' into 'subband_q610::(anonymous namespace)::LoadRealtimeProjectionRowPackedQ610(ap_uint<256> const*, int, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4427:5)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::UnpackPackedRealtimeWeightWordToRowQ610(ap_uint<256> const&, int, ap_int<16>*)' into 'subband_q610::(anonymous namespace)::LoadRealtimeProjectionRowPackedQ610(ap_uint<256> const*, int, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4426:5)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadRealtimeProjectionRowPackedQ610(ap_uint<256> const*, int, int, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4425:22)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::MulForMacDspQ610(ap_int<16>, ap_int<16>)' into 'ap_int<48> subband_q610::(anonymous namespace)::ProjectionDotProductRealtimeRowFixedDspQ610<16>(ap_int<16> const*, ap_int<16> const*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4480:28)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::AxisToQ610(hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false> const&)' into 'subband_q610::(anonymous namespace)::ReadRealtimeInputChunkQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, int, ap_int<16> (*) [256], ap_int<16> (*) [256])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378:38)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::AxisToQ610(hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false> const&)' into 'subband_q610::(anonymous namespace)::ReadRealtimeInputChunkQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, int, ap_int<16> (*) [256], ap_int<16> (*) [256])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374:41)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandStateOffset(int)' into 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610(subband_q610::BandSpec const&, ap_uint<256> const*, int&, int, ap_int<16> const (*) [256], ap_int<16> const (*) [256], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4222:35)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::CopyRealtimeHiddenVectorQ610(ap_int<16> const*, ap_int<16>*)' into 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610(subband_q610::BandSpec const&, ap_uint<256> const*, int&, int, ap_int<16> const (*) [256], ap_int<16> const (*) [256], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16>*, ap_int<16>*, ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [224], ap_int<16> (*) [8][224], ap_int<16> (*) [8][224])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4238:15)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeWeightWordIndex(int)' into 'subband_q610::(anonymous namespace)::LoadPackedRealtimeWeightQ610(ap_uint<256> const*, int)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4366:25)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ExtractPackedRealtimeWeightQ610(ap_uint<256> const&, int)' into 'subband_q610::(anonymous namespace)::LoadPackedRealtimeWeightQ610(ap_uint<256> const*, int)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4369:10)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandOutputOffset(int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4630:34)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::LoadPackedRealtimeWeightQ610(ap_uint<256> const*, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4638:32)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandOutputOffset(int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4630:34)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::LoadPackedRealtimeWeightQ610(ap_uint<256> const*, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4638:32)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandOutputOffset(int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4630:34)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::LoadPackedRealtimeWeightQ610(ap_uint<256> const*, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4638:32)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::MakeAxisQ610(ap_int<16>, bool)' into 'subband_q610::(anonymous namespace)::EmitRealtimeOutputChunkQ610(ap_int<16> const (*) [1152], int, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3397:30)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::ClampRealtimeFrameCount(int)' into 'subband_q610::RunSubbandRealtimeTopCoreQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5395:21)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandWeightOffset(int)' into 'subband_q610::RunSubbandRealtimeTopCoreQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5524:29)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandWeightOffset(int)' into 'subband_q610::RunSubbandRealtimeTopCoreQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5533:29)
+INFO: [HLS 214-131] Inlining function 'subband_q610::(anonymous namespace)::RealtimeBandWeightOffset(int)' into 'subband_q610::RunSubbandRealtimeTopCoreQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5542:29)
+INFO: [HLS 214-131] Inlining function 'subband_q610::RunSubbandRealtimeTopCoreQ610(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'SubbandRealtimeTopQ610Ip(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5760:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_4476_3' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4476:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3985_3' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3985:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_2801_2' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2801:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3853_15' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3853:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3842_13' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3842:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3830_11' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3830:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3812_7' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3812:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3816_8' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3816:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3791_3' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3791:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_3795_4' is marked as complete unroll implied by the pipeline pragma (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3795:26)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_4165_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4165:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandQ610'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4153:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_3369_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3369:21) in function 'subband_q610::(anonymous namespace)::ReadRealtimeInputChunkQ610'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3367:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_4640_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4640:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_4640_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4640:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_4640_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4640:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_3389_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3389:21) in function 'subband_q610::(anonymous namespace)::EmitRealtimeOutputChunkQ610'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3387:0)
+WARNING: [HLS 214-398] Updating loop lower bound from 1 to 4 for loop 'VITIS_LOOP_4228_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4228:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610'. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4216:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_4486_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4486:22) in function 'subband_q610::(anonymous namespace)::ProjectionDotProductRealtimeRowFixedDspQ610<16>' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4464:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_4476_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4476:21) in function 'subband_q610::(anonymous namespace)::ProjectionDotProductRealtimeRowFixedDspQ610<16>' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4464:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_4469_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4469:21) in function 'subband_q610::(anonymous namespace)::ProjectionDotProductRealtimeRowFixedDspQ610<16>' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4464:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_2761_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2761:24) in function 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>' completely with a factor of 2 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_4012_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4012:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' completely with a factor of 2 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4008:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3995_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3995:22) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' completely with a factor of 32 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4008:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3985_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3985:21) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' completely with a factor of 32 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4008:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3978_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3978:21) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' completely with a factor of 32 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4008:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_2801_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2801:21) in function 'subband_q610::(anonymous namespace)::SnapshotGSUStateQ610<2>' completely with a factor of 2 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2797:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3853_15' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3853:25) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3842_13' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3842:25) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3830_11' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3830:27) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3812_7' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3812:26) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3816_8' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3816:26) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3791_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3791:26) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_3795_4' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3795:26) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' completely with a factor of 16 (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3780:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SaturateInt16(ap_int<48>) (.32)' into 'subband_q610::SubQ610(ap_int<16>, ap_int<16>)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1057:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SaturateInt16(ap_int<48>) (.32)' into 'subband_q610::AddQ610(ap_int<16>, ap_int<16>)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1053:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SubQ610(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::AddQ610(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::StepActivationQ610(ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SubQ610(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*) (.114.134.150.169.199.217)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::AddQ610(ap_int<16>, ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*) (.114.134.150.169.199.217)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::StepActivationQ610(ap_int<16>)' into 'void subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>(hls::stream<ap_int<(48) * (2)>, 0>&, ap_int<16> const (*) [224], ap_int<16> const*, ap_int<16> const*, ap_int<16> const*, ap_int<16>*, ap_int<16>*, ap_int<16>*) (.114.134.150.169.199.217)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2757:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::RoundShiftRight(ap_int<48>, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SaturateInt16(ap_int<48>) (.32)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::RoundShiftRight(ap_int<48>, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SaturateInt16(ap_int<48>) (.32)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::RoundShiftRight(ap_int<48>, int)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::SaturateInt16(ap_int<48>) (.32)' into 'void subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>(ap_uint<256> const*, int, int, ap_int<16> const (*) [8][224], ap_int<16> (*) [1152])' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4622:0)
+INFO: [HLS 214-178] Inlining function 'subband_q610::GetBandSpec(int)' into 'SubbandRealtimeTopQ610Ip(hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<256> const*, int, bool, hls::stream<hls::axis<ap_uint<16>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5746:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E13layer1_output': Cyclic partitioning with factor 2 on dimension 3. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5295:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E13layer0_output': Cyclic partitioning with factor 2 on dimension 3. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5294:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E15layer1_cx_state': Cyclic partitioning with factor 2 on dimension 2. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5291:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E15layer1_hx_state': Cyclic partitioning with factor 2 on dimension 2. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5290:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E15layer0_cx_state': Cyclic partitioning with factor 2 on dimension 2. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5289:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E15layer0_hx_state': Cyclic partitioning with factor 2 on dimension 2. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5288:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E6bn_add': Cyclic partitioning with factor 2 on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5278:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E6bn_mul': Cyclic partitioning with factor 2 on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5277:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E7bias_ih': Cyclic partitioning with factor 2 on dimension 2. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5276:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_hh': Cyclic partitioning with factor 2 on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5275:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_ih': Cyclic partitioning with factor 2 on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5274:0)
+INFO: [HLS 214-248] Applying array_partition to 'prev_hx_q610': Complete partitioning on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4038:11)
+INFO: [HLS 214-248] Applying array_partition to 'prev_cx_q610': Complete partitioning on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4039:12)
+INFO: [HLS 214-248] Applying array_partition to 'cell_input': Complete partitioning on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4156:11)
+INFO: [HLS 214-248] Applying array_partition to 'cell_input': Complete partitioning on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4219:11)
+INFO: [HLS 214-248] Applying array_partition to 'proj_row': Complete partitioning on dimension 1. (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4626:12)
+INFO: [HLS 214-248] Applying array_reshape to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_hh_1': Cyclic reshaping with factor 32 on dimension 2.
+INFO: [HLS 214-248] Applying array_reshape to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_hh_0': Cyclic reshaping with factor 32 on dimension 2.
+INFO: [HLS 214-248] Applying array_reshape to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_ih_1': Cyclic reshaping with factor 32 on dimension 2.
+INFO: [HLS 214-248] Applying array_reshape to '_ZZN12subband_q61029RunSubbandRealtimeTopCoreQ610ERN3hls6streamINS0_4axisI7ap_uintILi16EELm0ELm0ELm0ELh56ELb0EEELi0EEES7_PKS3_ILi256EEibS7_E9weight_ih_0': Cyclic reshaping with factor 32 on dimension 2.
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_2759_1> at H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2759:21 
+WARNING: [HLS 214-209] Ignoring ALLOCATION pragma, because the corresponding call is removed (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5267:9)
+WARNING: [HLS 214-209] Ignoring ALLOCATION pragma, because the corresponding call is removed (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5266:9)
+WARNING: [HLS 214-209] Ignoring ALLOCATION pragma, because the corresponding call is removed (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5250:9)
+WARNING: [HLS 214-209] Ignoring ALLOCATION pragma, because the corresponding call is removed (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:5249:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 69.708 seconds; current allocated memory: 120.023 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 120.145 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.821 seconds; current allocated memory: 147.176 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.295 seconds; current allocated memory: 169.859 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1027:13) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1034:1) in function 'subband_q610::SaturateInt16'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1042:13) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:1046:1) in function 'subband_q610::RoundShiftRight'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:37) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:28) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<2, 2, 64, 1, 128, 16>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:37) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:28) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4657:5) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4636:22) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<1, 3, 32, 3, 192, 16>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:37) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4643:28) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4657:5) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4636:22) in function 'subband_q610::(anonymous namespace)::RunRealtimeProjectionBandRowCachedFixedQ610<0, 8, 4, 5, 40, 16>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2541:45) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2571:10) in function 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2541:45) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2571:10) in function 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3922:9) to (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3932:31) in function 'subband_q610::(anonymous namespace)::BuildRealtimeBandInputQ610'... converting 9 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'subband_q610::RoundShiftRight' into 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2770) automatically.
+INFO: [XFORM 203-602] Inlining function 'subband_q610::SaturateInt16' into 'subband_q610::(anonymous namespace)::RunGSUGatePhaseBand0Q610<2, true>' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2770) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'subband_q610::(anonymous namespace)::RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2495:21)...126 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'subband_q610::(anonymous namespace)::ProjectionDotProductRealtimeRowFixedDspQ610<16>' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2495:1)...15 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242:1)...6 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 8.644 seconds; current allocated memory: 215.062 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_3783_1'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3783:22) and 'VITIS_LOOP_3784_2'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784:24) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_3804_5'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3804:22) and 'VITIS_LOOP_3805_6'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805:24) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_3825_9'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3825:22) and 'VITIS_LOOP_3826_10'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826:25) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_3428_1'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3428:21) and 'VITIS_LOOP_3429_2'(H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429:24) in function 'subband_q610::(anonymous namespace)::ClearRealtimeCompactStatesQ610' into perfectly nested loops.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_4231_3' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4231:28) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_4228_2' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4228:24) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_4223_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4223:22) in function 'subband_q610::(anonymous namespace)::RunRealtimeGSULayersSharedBandCompactStateQ610' the outer loop is not a perfect loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3783_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3783:22) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3804_5' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3804:22) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3825_9' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3825:22) in function 'subband_q610::(anonymous namespace)::LoadRealtimeGSULayerWeightsQ610'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_3428_1' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3428:21) in function 'subband_q610::(anonymous namespace)::ClearRealtimeCompactStatesQ610'.
+WARNING: [XFORM 203-631] Renaming function '(anonymous namespace)RunRealtimeGSUCellSharedQ610' to 'p_anonymous_namespace_RunRealtimeGSUCellSharedQ610' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4063:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 8.032 seconds; current allocated memory: 648.590 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'SubbandRealtimeTopQ610Ip' ...
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2' to 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3' to 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ReadRealtimeInputChunkQ610' to 'p_anonymous_namespace_ReadRealtimeInputChunkQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ClearRealtimeCompactStatesQ610' to 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeGSULayerWeightsQ610' to 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)SnapshotGSUStateQ610<2>_Pipeline_VITIS_LOOP_2799_1' to 'p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_2799_1'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)SnapshotGSUStateQ610<2>' to 'p_anonymous_namespace_SnapshotGSUStateQ610_2_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2' to 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27' to 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28' to 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29' to 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUMacPhaseFixedQ610<224, 2, 32, 32>' to 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1' to 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunGSUGatePhaseBand0Q610<2, true>' to 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSUCellFixedQ610<224, 2, 32, 32, true>' to 'p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1' to 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)BuildRealtimeBandInputQ610' to 'p_anonymous_namespace_BuildRealtimeBandInputQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeGSULayersSharedBandCompactStateQ610' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' to 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)LoadRealtimeProjectionRowPackedQ610' to 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_' to 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ProjectionDotProductRealtimeRowFixedDspQ610<16>' to 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_16_s'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)ProjectionDotProductRealtimeRtlDspQ610' to 'p_anonymous_namespace_ProjectionDotProductRealtimeRtlDspQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeProjectionBandRowCachedFixedQ610.2' to 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_2'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeProjectionBandRowCachedFixedQ610.1' to 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_1'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)RunRealtimeProjectionBandRowCachedFixedQ610' to 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2' to 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2'.
+WARNING: [SYN 201-103] Legalizing function name '(anonymous namespace)EmitRealtimeOutputChunkQ610' to 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3372_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_3372_2'
+WARNING: [HLS 200-871] Estimated clock period (7.665 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2' consists of the following:
+	'store' operation 0 bit ('freq_index_write_ln3372', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3372) of constant 0 on local variable 'freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3372 [12]  (1.588 ns)
+	'load' operation 9 bit ('freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374) on local variable 'freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3372 [15]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3372', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3372) [16]  (1.823 ns)
+	axis read operation ('empty_626', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374) on port 'noisy_fft_stream_V_data_V' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374) [23]  (1.000 ns)
+	'store' operation 0 bit ('noisy_chunk_addr_write_ln3374', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3374 on array 'noisy_chunk' [29]  (3.254 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.483 seconds; current allocated memory: 657.414 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 658.547 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3376_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_3376_3'
+WARNING: [HLS 200-871] Estimated clock period (7.665 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3' consists of the following:
+	'store' operation 0 bit ('freq_index_write_ln3376', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3376) of constant 0 on local variable 'freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3376 [12]  (1.588 ns)
+	'load' operation 9 bit ('freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378) on local variable 'freq_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3376 [15]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3376', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3376) [16]  (1.823 ns)
+	axis read operation ('empty_625', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378) on port 'fb_fft_stream_V_data_V' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378) [23]  (1.000 ns)
+	'store' operation 0 bit ('fb_chunk_addr_write_ln3378', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3378 on array 'fb_chunk' [29]  (3.254 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.109 seconds; current allocated memory: 658.742 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.062 seconds; current allocated memory: 658.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 658.785 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 658.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3428_1_VITIS_LOOP_3429_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_3428_1_VITIS_LOOP_3429_2'
+WARNING: [HLS 200-871] Estimated clock period (8.254 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610' consists of the following:
+	'store' operation 0 bit ('hidden_index_write_ln3429', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429) of constant 0 on local variable 'hidden_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429 [22]  (1.588 ns)
+	'load' operation 8 bit ('hidden_index_load', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429) on local variable 'hidden_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429 [30]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3429', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429) [35]  (1.915 ns)
+	'select' operation 8 bit ('select_ln3428', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3428) [36]  (1.248 ns)
+	'add' operation 8 bit ('add_ln3429', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429) [70]  (1.915 ns)
+	'store' operation 0 bit ('hidden_index_write_ln3429', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429) of variable 'add_ln3429', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429 on local variable 'hidden_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3429 [73]  (1.588 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.132 seconds; current allocated memory: 659.477 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 659.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3783_1_VITIS_LOOP_3784_2'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s' (loop 'VITIS_LOOP_3783_1_VITIS_LOOP_3784_2'): Unable to schedule bus request operation ('word_hi_req', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3789) on port 'weights' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3789) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 14, loop 'VITIS_LOOP_3783_1_VITIS_LOOP_3784_2'
+WARNING: [HLS 200-871] Estimated clock period (8.254 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s' consists of the following:
+	'store' operation 0 bit ('col_base_write_ln3784', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784) of constant 0 on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784 [16]  (1.588 ns)
+	'load' operation 8 bit ('col_base_load', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784) on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784 [24]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3784', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784) [29]  (1.915 ns)
+	'select' operation 8 bit ('select_ln3783', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3783) [30]  (1.248 ns)
+	'add' operation 8 bit ('add_ln3784', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784) [90]  (1.915 ns)
+	'store' operation 0 bit ('col_base_write_ln3784', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784) of variable 'add_ln3784', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784 on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3784 [93]  (1.588 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 660.043 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 660.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3804_5_VITIS_LOOP_3805_6'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s' (loop 'VITIS_LOOP_3804_5_VITIS_LOOP_3805_6'): Unable to schedule bus request operation ('word_hi_1_req', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3810) on port 'weights' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3810) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 14, loop 'VITIS_LOOP_3804_5_VITIS_LOOP_3805_6'
+WARNING: [HLS 200-871] Estimated clock period (8.254 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s' consists of the following:
+	'store' operation 0 bit ('col_base_write_ln3805', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805) of constant 0 on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805 [16]  (1.588 ns)
+	'load' operation 8 bit ('col_base_load', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805) on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805 [24]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3805', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805) [29]  (1.915 ns)
+	'select' operation 8 bit ('select_ln3804', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3804) [30]  (1.248 ns)
+	'add' operation 8 bit ('add_ln3805', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805) [92]  (1.915 ns)
+	'store' operation 0 bit ('col_base_write_ln3805', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805) of variable 'add_ln3805', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805 on local variable 'col_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3805 [95]  (1.588 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 660.711 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 660.809 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' (loop 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_4_write_ln3832', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' (loop 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_8_write_ln3832', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' (loop 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_12_write_ln3832', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3832 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 16, loop 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10'
+WARNING: [HLS 200-871] Estimated clock period (8.254 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' consists of the following:
+	'store' operation 0 bit ('hidden_base_1_write_ln3826', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826) of constant 0 on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826 [14]  (1.588 ns)
+	'load' operation 8 bit ('hidden_base_1_load', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826) on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826 [22]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3826', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826) [27]  (1.915 ns)
+	'select' operation 8 bit ('select_ln3825', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3825) [28]  (1.248 ns)
+	'add' operation 8 bit ('add_ln3826', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826) [138]  (1.915 ns)
+	'store' operation 0 bit ('hidden_base_1_write_ln3826', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826) of variable 'add_ln3826', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826 on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3826 [141]  (1.588 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 661.934 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 662.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3839_12'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' (loop 'VITIS_LOOP_3839_12'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_22_write_ln3844', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' (loop 'VITIS_LOOP_3839_12'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_26_write_ln3844', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' (loop 'VITIS_LOOP_3839_12'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_30_write_ln3844', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3844 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 15, loop 'VITIS_LOOP_3839_12'
+WARNING: [HLS 200-871] Estimated clock period (8.739 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' consists of the following:
+	'store' operation 0 bit ('hidden_base_write_ln3839', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3839) of constant 0 on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3839 [10]  (1.588 ns)
+	'load' operation 8 bit ('hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3839) on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3839 [13]  (0.000 ns)
+	'add' operation 16 bit ('add_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3841) [22]  (2.077 ns)
+	'add' operation 32 bit ('add_ln3281_3', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3841) [25]  (2.552 ns)
+	'sub' operation 31 bit ('sub_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3841) [28]  (2.522 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.197 seconds; current allocated memory: 662.566 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 662.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3850_14'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' (loop 'VITIS_LOOP_3850_14'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_6_write_ln3855', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' (loop 'VITIS_LOOP_3850_14'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_10_write_ln3855', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' (loop 'VITIS_LOOP_3850_14'): Unable to schedule 'store' operation 0 bit ('RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_14_write_ln3855', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855) of variable 'value', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3242->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3855 on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 15, loop 'VITIS_LOOP_3850_14'
+WARNING: [HLS 200-871] Estimated clock period (8.739 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' consists of the following:
+	'store' operation 0 bit ('hidden_base_write_ln3850', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3850) of constant 0 on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3850 [10]  (1.588 ns)
+	'load' operation 8 bit ('hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3850) on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3850 [13]  (0.000 ns)
+	'add' operation 16 bit ('add_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3852) [22]  (2.077 ns)
+	'add' operation 32 bit ('add_ln3281_3', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3852) [25]  (2.552 ns)
+	'sub' operation 31 bit ('sub_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3852) [28]  (2.522 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 663.668 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 663.750 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 663.914 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.067 seconds; current allocated memory: 663.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_4071_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_4071_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.961 seconds; current allocated memory: 676.398 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.286 seconds; current allocated memory: 692.516 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_2799_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_2799_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_2799_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.386 seconds; current allocated memory: 692.516 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.168 seconds; current allocated memory: 692.516 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_SnapshotGSUStateQ610_2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 692.516 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 692.516 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3983_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_3983_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.442 seconds; current allocated memory: 696.469 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.162 seconds; current allocated memory: 696.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3983_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_3983_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 701.750 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.171 seconds; current allocated memory: 702.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3983_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_3983_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.526 seconds; current allocated memory: 706.879 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.173 seconds; current allocated memory: 707.539 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3983_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_3983_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 712.449 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.163 seconds; current allocated memory: 712.820 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.059 seconds; current allocated memory: 719.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.245 seconds; current allocated memory: 721.457 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_2759_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 21, loop 'VITIS_LOOP_2759_1'
+WARNING: [HLS 200-871] Estimated clock period (8.563 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1' consists of the following:
+	'mul' operation 25 bit ('interp_product_q610', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2567->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:2773) [618]  (8.563 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.715 seconds; current allocated memory: 727.273 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 728.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.239 seconds; current allocated memory: 729.680 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.119 seconds; current allocated memory: 730.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.406 seconds; current allocated memory: 736.648 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.328 seconds; current allocated memory: 738.809 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSUCellSharedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.336 seconds; current allocated memory: 740.391 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 741.316 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3921_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_3921_1'
+WARNING: [HLS 200-871] Estimated clock period (8.726 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1' consists of the following:
+	'store' operation 0 bit ('input_index_write_ln3921', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3921) of constant 0 on local variable 'input_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3921 [243]  (1.588 ns)
+	'load' operation 8 bit ('input_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3921) on local variable 'input_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3921 [246]  (0.000 ns)
+	'add' operation 11 bit ('add_ln3925', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3925) [258]  (3.757 ns)
+	'icmp' operation 1 bit ('icmp_ln3356', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3356->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3925) [266]  (1.650 ns)
+	'select' operation 10 bit ('select_ln3356', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3356->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3925) [269]  (0.000 ns)
+	'select' operation 10 bit ('source_freq', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3353->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3925) [277]  (0.000 ns)
+	'add' operation 10 bit ('add_ln3926', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3926) [278]  (1.731 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.381 seconds; current allocated memory: 759.934 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.173 seconds; current allocated memory: 759.934 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_BuildRealtimeBandInputQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=center_start) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 759.934 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 759.934 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.402 seconds; current allocated memory: 769.055 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.551 seconds; current allocated memory: 769.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_4420_1'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' (loop 'VITIS_LOOP_4420_1'): Unable to schedule bus request operation ('word_hi_req', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4425) on port 'weights' (H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4425) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 12, loop 'VITIS_LOOP_4420_1'
+WARNING: [HLS 200-871] Estimated clock period (8.481 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' consists of the following:
+	'store' operation 0 bit ('hidden_base_write_ln3258', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3258->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4426) of constant 0 on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3258->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4426 [235]  (1.588 ns)
+	'load' operation 8 bit ('hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4420) on local variable 'hidden_base', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3258->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4426 [238]  (0.000 ns)
+	'add' operation 32 bit ('add_ln3281_2', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4423) [246]  (0.000 ns)
+	'add' operation 32 bit ('add_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4423) [247]  (4.371 ns)
+	'sub' operation 31 bit ('sub_ln3281', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3281->H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4423) [250]  (2.522 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.774 seconds; current allocated memory: 771.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.132 seconds; current allocated memory: 772.406 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.136 seconds; current allocated memory: 772.922 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 773.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_4474_2'.
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' (loop 'VITIS_LOOP_4474_2'): Unable to schedule 'load' operation 16 bit ('lhs', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4480) on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' (loop 'VITIS_LOOP_4474_2'): Unable to schedule 'load' operation 16 bit ('lhs', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4480) on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' (loop 'VITIS_LOOP_4474_2'): Unable to schedule 'load' operation 16 bit ('lhs', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:4480) on array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 7, loop 'VITIS_LOOP_4474_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.451 seconds; current allocated memory: 776.695 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 777.113 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.234 seconds; current allocated memory: 778.184 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.123 seconds; current allocated memory: 779.719 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_ProjectionDotProductRealtimeRtlDspQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 780.875 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.119 seconds; current allocated memory: 782.090 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 785.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 786.191 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.307 seconds; current allocated memory: 789.848 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.195 seconds; current allocated memory: 790.594 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.284 seconds; current allocated memory: 794.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.184 seconds; current allocated memory: 795.371 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_3393_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_3393_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.192 seconds; current allocated memory: 796.016 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.081 seconds; current allocated memory: 796.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (7.562 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610' consists of the following:
+	'load' operation 3 bit ('frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3397) on local variable 'frame_index', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3389 [16]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln3389', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3389) [17]  (1.650 ns)
+	'call' operation 0 bit ('_ln3397', H:/subband_ref_q610_opt_stage4_latency_stepL2.cpp:3397) to '(anonymous namespace)EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2' [30]  (4.934 ns)
+	blocking operation 0.978 ns on control path)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.121 seconds; current allocated memory: 796.020 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 796.133 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SubbandRealtimeTopQ610Ip' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 796.578 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 796.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3372_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 798.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ReadRealtimeInputChunkQ610_Pipeline_VITIS_LOOP_3376_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 799.898 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ReadRealtimeInputChunkQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ReadRealtimeInputChunkQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 800.527 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610' pipeline 'VITIS_LOOP_3428_1_VITIS_LOOP_3429_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ClearRealtimeCompactStatesQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.138 seconds; current allocated memory: 801.145 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s' pipeline 'VITIS_LOOP_3783_1_VITIS_LOOP_3784_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3783_1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 802.742 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s' pipeline 'VITIS_LOOP_3804_5_VITIS_LOOP_3805_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3804_5_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.208 seconds; current allocated memory: 804.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s' pipeline 'VITIS_LOOP_3825_9_VITIS_LOOP_3826_10' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3825_9_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.213 seconds; current allocated memory: 807.277 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12' pipeline 'VITIS_LOOP_3839_12' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3839_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 810.391 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14' pipeline 'VITIS_LOOP_3850_14' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610_Pipeline_VITIS_LOOP_3850_14'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.218 seconds; current allocated memory: 812.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeGSULayerWeightsQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.207 seconds; current allocated memory: 815.938 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT' pipeline 'VITIS_LOOP_4071_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_Pipeline_VIT'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.432 seconds; current allocated memory: 826.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_2799_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_2799_1' pipeline 'VITIS_LOOP_2799_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_SnapshotGSUStateQ610_2_Pipeline_VITIS_LOOP_2799_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.929 seconds; current allocated memory: 853.938 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_SnapshotGSUStateQ610_2_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_SnapshotGSUStateQ610_2_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.72 seconds; current allocated memory: 871.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2' pipeline 'VITIS_LOOP_3983_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_34s_34_3_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_15_8_16_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.484 seconds; current allocated memory: 881.230 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27' pipeline 'VITIS_LOOP_3983_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_34s_34_3_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_15_8_16_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_27'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.717 seconds; current allocated memory: 896.148 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28' pipeline 'VITIS_LOOP_3983_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_34s_34_3_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_15_8_16_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_28'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.713 seconds; current allocated memory: 912.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29' pipeline 'VITIS_LOOP_3983_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_34s_34_3_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_15_8_16_1_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_Pipeline_VITIS_LOOP_3983_29'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.739 seconds; current allocated memory: 926.793 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUMacPhaseFixedQ610_224_2_32_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.628 seconds; current allocated memory: 948.117 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subband_q610_anonymous_namespace_kSigmoidPwlKnotsQ610_ROM_AUTO_1R' to 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subband_q610_anonymous_namespace_kSigmoidPwlValuesQ610_ROM_AUTO_1R' to 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subcud' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1' pipeline 'VITIS_LOOP_2759_1' pipeline type 'loop pipeline'
+INFO: [HLS 200-1553] Disabling free running pipeline (frp) architecture on pipeline 'VITIS_LOOP_2759_1' in module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1', because the estimated Stream Port Number is 23, which is bigger than the frp_stream_port_number threshold of 20.
+Resolution: For help on HLS 200-1553 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1553.html
+INFO: [RTGEN 206-100] Generating core module 'mul_11s_14s_25_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_16s_32_3_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_225_8_16_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1'.
+INFO: [RTMG 210-279] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunGSUGatePhaseBand0Q610_Pipeline_VITIS_LOOP_2759_1_subcud' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.009 seconds; current allocated memory: 970.910 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunGSUGatePhaseBand0Q610_2_true_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.642 seconds; current allocated memory: 985.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUCellFixedQ610_224_2_32_32_true_s'.
+INFO: [RTMG 210-285] Implementing FIFO 'common_sum_stream_U(SubbandRealtimeTopQ610Ip_fifo_w96_d2_S)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.496 seconds; current allocated memory: 1002.562 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSUCellSharedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSUCellSharedQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.841 seconds; current allocated memory: 1022.406 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1' pipeline 'VITIS_LOOP_3921_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_BuildRealtimeBandInputQ610_Pipeline_VITIS_LOOP_3921_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.351 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_BuildRealtimeBandInputQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_7ns_3ns_8ns_10_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_BuildRealtimeBandInputQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.643 seconds; current allocated memory: 1.016 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_1_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbadEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbaeOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_3_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbafYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_we_2_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbag8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_1_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbahbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bi_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbaibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_1_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbajbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbakbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_3_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbalbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_bn_2_RAM_AUTO_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbamb6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_7_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbancg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_6_RAM_2P_BRAM_1R1W' to 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbaocq' due to the length limit 80
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610'.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbadEe' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbahbi' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbajbC' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_p_anonymous_namespace_RunRealtimeGSULayersSharedBandCompactStateQ610_RunSubbancg' using block RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.645 seconds; current allocated memory: 1.031 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442' pipeline 'VITIS_LOOP_4420_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610_Pipeline_VITIS_LOOP_442'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.218 seconds; current allocated memory: 1.056 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_LoadRealtimeProjectionRowPackedQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.447 seconds; current allocated memory: 1.061 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s' pipeline 'VITIS_LOOP_4474_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_16s_35s_35_3_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_29_8_16_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_Pipeline_VITIS_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.425 seconds; current allocated memory: 1.068 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_16_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ProjectionDotProductRealtimeRowFixedDspQ610_16_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.482 seconds; current allocated memory: 1.080 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_ProjectionDotProductRealtimeRtlDspQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_ProjectionDotProductRealtimeRtlDspQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.285 seconds; current allocated memory: 1.087 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.394 seconds; current allocated memory: 1.097 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.571 seconds; current allocated memory: 1.111 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_RunRealtimeProjectionBandRowCachedFixedQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.543 seconds; current allocated memory: 1.125 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2' pipeline 'VITIS_LOOP_3393_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610_Pipeline_VITIS_LOOP_3393_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.497 seconds; current allocated memory: 1.135 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'p_anonymous_namespace_EmitRealtimeOutputChunkQ610'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.139 seconds; current allocated memory: 1.138 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SubbandRealtimeTopQ610Ip' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/weights' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/noisy_fft_stream_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/noisy_fft_stream_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/noisy_fft_stream_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/noisy_fft_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/fb_fft_stream_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/fb_fft_stream_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/fb_fft_stream_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/fb_fft_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/weights_q610' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/num_frames' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/reset_state' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/df_coef_stream_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/df_coef_stream_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/df_coef_stream_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'SubbandRealtimeTopQ610Ip/df_coef_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'SubbandRealtimeTopQ610Ip' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_9_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_pcA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_11_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_qcK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_3_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_rcU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_5_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_sc4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_8_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_tde' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_10_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_udo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_2_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_vdy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_4_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_wdI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_1_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_xdS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_RAM_2P_BRAM_1R1W' to 'RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_yd2' due to the length limit 80
+INFO: [RTGEN 206-100] Bundling port 'weights_q610', 'num_frames', 'reset_state' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SubbandRealtimeTopQ610Ip'.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_noisy_chunk_RAM_2P_BRAM_1R1W' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_pcA' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_RunSubbandRealtimeTopCoreQ610_stream_stream_ap_uint_const_int_bool_stream_la_xdS' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SubbandRealtimeTopQ610Ip_output_chunk_RAM_2P_BRAM_1R1W' using block RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.818 seconds; current allocated memory: 1.139 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.628 seconds; current allocated memory: 1.155 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 5.206 seconds; current allocated memory: 1.183 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for SubbandRealtimeTopQ610Ip.
+INFO: [VLOG 209-307] Generating Verilog RTL for SubbandRealtimeTopQ610Ip.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.43 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 57 seconds. CPU system time: 7 seconds. Elapsed time: 145.129 seconds; current allocated memory: 1.084 GB.
+INFO: [HLS 200-1510] Running: export_design -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+CRITICAL WARNING: [Common 17-741] No write access right to the local Tcl store at 'C'. XilinxTclStore is reverted to the installation area. If you want to use local Tcl Store, please change the access right and relaunch Vivado.
+source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 479.766 ; gain = 175.027
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Sat May 23 20:33:25 2026...
+INFO: [HLS 200-802] Generated output file build/hls/subband_q610_realtime_rtl_engine_hls/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 75 seconds. CPU system time: 28 seconds. Elapsed time: 121.602 seconds; current allocated memory: 31.418 MB.
+INFO: [HLS 200-112] Total CPU user time: 133 seconds. Total CPU system time: 36 seconds. Total elapsed time: 268.621 seconds; peak allocated memory: 1.214 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Sat May 23 20:33:25 2026...

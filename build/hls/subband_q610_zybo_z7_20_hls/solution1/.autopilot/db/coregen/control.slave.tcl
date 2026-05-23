@@ -1,4 +1,0 @@
-dict set slaves control {ports {noisy_input_q610 {type i_ap_none width 32} fb_output_q610 {type i_ap_none width 32} layer0_weight_ih_q610 {type i_ap_none width 32} layer0_weight_hh_q610 {type i_ap_none width 32} layer0_bias_ih_q610 {type i_ap_none width 32} layer0_bn_mul_q610 {type i_ap_none width 32} layer0_bn_add_q610 {type i_ap_none width 32} layer1_weight_ih_q610 {type i_ap_none width 32} layer1_weight_hh_q610 {type i_ap_none width 32} layer1_bias_ih_q610 {type i_ap_none width 32} layer1_bn_mul_q610 {type i_ap_none width 32} layer1_bn_add_q610 {type i_ap_none width 32} proj_weight_q610 {type i_ap_none width 32} proj_bias_q610 {type i_ap_none width 32} df_coef_q610 {type i_ap_none width 32} ap_start {type ap_ctrl width 1} ap_done {type ap_ctrl width 1} ap_ready {type ap_ctrl width 1} ap_idle {type ap_ctrl width 1}} mems {} has_ctrl 1}
-set datawidth 32
-set addrwidth 32
-set intr_clr_mode TOW

@@ -42,6 +42,11 @@ proc hls_prepare_project {project_name tb_file} {
 
 proc hls_add_core_and_tb {} {
   global hls_core_file hls_tb_file
-  add_files $hls_core_file -cflags "-std=c++14"
-  add_files -tb $hls_tb_file -cflags "-std=c++14"
+  set hls_include_dir [file dirname $hls_core_file]
+  set hls_cflags "-std=c++14 -I$hls_include_dir"
+  if {[info exists ::env(HLS_EXTRA_CFLAGS)] && $::env(HLS_EXTRA_CFLAGS) ne ""} {
+    append hls_cflags " " $::env(HLS_EXTRA_CFLAGS)
+  }
+  add_files $hls_core_file -cflags $hls_cflags
+  add_files -tb $hls_tb_file -cflags $hls_cflags
 }

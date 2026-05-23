@@ -1,110 +1,126 @@
 # Subband Validation Guide
 
-## 목적
+이 문서는 현재 active 코드 기준의 검증 절차를 정리한다. FPGA 보드 후보의 1차 정확도 기준은 wav 품질 비교가 아니라 realtime HLS IP의 `df_coef`가 C++ Q6.10 golden reference와 bit-exact로 일치하는지 확인하는 것이다.
 
-subband 관련 리팩터링이나 하드웨어 준비 작업 이후에도 추론 결과가 기존 기준 출력과 동일한지, 모두가 같은 방식으로 검증하기 위한 공통 절차다.
+## 1. HLS Smoke C-sim
 
-## 검증 범위
-
-- 학습 재수행 없이 기존 체크포인트를 그대로 사용한다.
-- `infer.py` 기준 추론 결과를 golden wav와 비교한다.
-- 비교 기준은 "청감상 유사"가 아니라 "파일/샘플 값 동일"이다.
-
-## 고정 기준
-
-- 입력 1: `JH_test/test1.wav`
-- 입력 2: `JH_test/test2.wav`
-- 기준 출력 1: `JH_test/test1_refactor_check.wav`
-- 기준 출력 2: `JH_test/test2_refactor_check.wav`
-- 추론 스크립트: `infer.py`
-- 설정 파일: `recipes/intel_ndns/spiking_fullsubnet/baseline_m_qat.toml`
-- 체크포인트: `best_model_qat.pt`
-- Python: `C:\Users\JH\anaconda3\envs\spiking-fullsubnet\python.exe`
-
-## 검증 절차
-
-### 1. test1 추론
+목적: 짧은 chunk 패턴에서 stream count, TLAST, 기본 값 비교가 통과하는지 확인한다.
 
 ```powershell
-& 'C:\Users\JH\anaconda3\envs\spiking-fullsubnet\python.exe' infer.py `
-  -i JH_test\test1.wav `
-  -o JH_test\test1_refactor_rerun.wav
+& 'C:\Xilinx\Vitis_HLS\2023.2\bin\vitis_hls.bat' `
+  -f .\scripts\hls\run_hls_realtime_rtl_engine_csim_only.tcl `
+  -l .\logs\hls\vitis_hls_realtime_rtl_engine_csim.log
 ```
 
-### 2. test2 추론
+PASS 기준:
+
+- `chunk4 passed`
+- `chunk2 passed`
+- `chunk1 passed`
+- `Realtime 3-band stream smoke test passed`
+
+## 2. High-Coverage C-sim
+
+목적: `SubbandRealtimeTopQ610Ip`의 AXI-stream `df_coef` 전체를 C++ Q6.10 golden reference와 전수 비교한다.
 
 ```powershell
-& 'C:\Users\JH\anaconda3\envs\spiking-fullsubnet\python.exe' infer.py `
-  -i JH_test\test2.wav `
-  -o JH_test\test2_refactor_rerun.wav
+powershell -ExecutionPolicy Bypass `
+  -File .\scripts\hls\run_realtime_rtl_engine_coverage_segments.ps1 `
+  -ParallelJobs 1
 ```
 
-### 3. 해시 비교
+기준 결과:
 
-```powershell
-Get-FileHash JH_test\test1_refactor_rerun.wav, JH_test\test1_refactor_check.wav
-Get-FileHash JH_test\test2_refactor_rerun.wav, JH_test\test2_refactor_check.wav
-```
+| 항목 | 기준 |
+|---|---:|
+| Total scenarios | 960 |
+| Compared `df_coef` elements | 4,423,680 |
+| `df_coef_mismatches` | 0 |
+| `tlast_mismatches` | 0 |
+| `size_mismatches` | 0 |
+| `extra_output_errors` | 0 |
 
-### 4. 샘플 단위 exact 비교
-
-```powershell
-@'
-import soundfile as sf
-import numpy as np
-
-pairs = [
-    ("JH_test/test1_refactor_rerun.wav", "JH_test/test1_refactor_check.wav"),
-    ("JH_test/test2_refactor_rerun.wav", "JH_test/test2_refactor_check.wav"),
-]
-
-for rerun_path, ref_path in pairs:
-    rerun, sr_rerun = sf.read(rerun_path)
-    ref, sr_ref = sf.read(ref_path)
-
-    print("pair", rerun_path, ref_path)
-    print("sr_equal", sr_rerun == sr_ref, sr_rerun, sr_ref)
-    print("shape_equal", rerun.shape == ref.shape, rerun.shape, ref.shape)
-    print("sample_exact_equal", np.array_equal(rerun, ref))
-
-    if rerun.shape == ref.shape:
-        diff = np.abs(rerun - ref)
-        print("max_abs_diff", float(diff.max()) if diff.size else 0.0)
-        print("num_diff_samples", int(np.count_nonzero(diff)))
-
-    print()
-'@ | & 'C:\Users\JH\anaconda3\envs\spiking-fullsubnet\python.exe' -
-```
-
-## 통과 조건
-
-- 체크포인트 로딩이 성공해야 한다.
-- `Get-FileHash` 결과가 기준 파일과 동일해야 한다.
-- `sample_exact_equal`이 `True`여야 한다.
-- `max_abs_diff = 0.0`
-- `num_diff_samples = 0`
-
-## 실패로 판정하는 경우
-
-- 체크포인트 키 불일치로 로딩 실패
-- 출력 wav 길이 불일치
-- 샘플레이트 불일치
-- 해시 불일치
-- 샘플 값 하나라도 다름
-
-## 기록 방식
-
-검증 결과를 공유할 때는 아래 네 줄만 통일해서 남긴다.
+최종 보드 후보의 통과 로그는 아래 release bundle에 보존되어 있다.
 
 ```text
-test1: PASS/FAIL
-test2: PASS/FAIL
-checkpoint load: PASS/FAIL
-note: mismatch가 있으면 max_abs_diff, num_diff_samples만 기록
+release/rtl_engine_board_candidate_20260523/verification_logs/coverage_segments_rtl_engine/
 ```
 
-## 주의
+## 3. HLS Synthesis
 
-- golden 파일 `test1_refactor_check.wav`, `test2_refactor_check.wav`는 덮어쓰지 않는다.
-- 리팩터링 중 클래스 구조를 바꾸더라도 기존 체크포인트 키와 호환되어야 한다.
-- 비교는 반드시 같은 체크포인트, 같은 config, 같은 Python 환경에서 수행한다.
+목적: stable `USE_RTL_BAND_ENGINE` 경로가 Zybo Z7-20 resource와 latency 기준 안에 들어오는지 확인한다.
+
+```powershell
+& 'C:\Xilinx\Vitis_HLS\2023.2\bin\vitis_hls.bat' `
+  -f .\scripts\hls\run_hls_realtime_rtl_engine_synth_only.tcl `
+  -l .\logs\hls\vitis_hls_realtime_rtl_engine_synth.log
+```
+
+기준:
+
+- latency `<= 1,000,000 cycles`
+- BRAM_18K `<= 280`
+- DSP `<= 220`
+- LUT `<= 53,200`
+- estimated clock `<= 10 ns`
+
+최종 보드 후보의 보존 리포트:
+
+```text
+release/rtl_engine_board_candidate_20260523/hls_reports/SubbandRealtimeTopQ610Ip_csynth.rpt
+```
+
+## 4. Vivado Implementation
+
+목적: DMA block design 포함 post-route timing/resource/DRC를 확인한다.
+
+권장 실행은 safe wrapper를 사용한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass `
+  -File .\scripts\vivado\run_vivado_safe.ps1 `
+  -Script .\scripts\vivado\run_vivado_realtime_dma_rtl_engine_impl.tcl
+```
+
+기준:
+
+- bitstream 생성 성공
+- post-route `WNS >= 0`
+- DRC error 0
+- LUT/FF/BRAM/DSP가 `xc7z020clg400-1` 한도 내
+
+최종 보드 후보 산출물과 리포트는 아래에 보존되어 있다.
+
+```text
+release/rtl_engine_board_candidate_20260523/fpga/
+release/rtl_engine_board_candidate_20260523/vivado_reports/
+```
+
+## 5. Board DMA Self-Test
+
+목적: 실제 Zybo Z7-20에서 bitstream programming, bare-metal ELF 실행, DMA stream, HLS register access, DDR result block을 확인한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\vitis\run_realtime_dma_selftest.ps1 -ProbeOnly
+powershell -ExecutionPolicy Bypass -File .\scripts\vitis\run_realtime_dma_selftest.ps1 -Run
+```
+
+PASS 기준은 `docs/rtl_engine_board_bringup_readiness_ko.md`의 result block 표를 따른다.
+
+## 6. Optional Wav Regression
+
+Python inference의 wav 출력 회귀 검증은 system-level 보조 검증이다. HLS `df_coef` bit-exact 검증을 대체하지 않는다.
+
+예시:
+
+```powershell
+python .\infer.py -i .\JH_test\test1.wav -o .\JH_test\test1_rerun.wav
+python .\infer.py -i .\JH_test\test2.wav -o .\JH_test\test2_rerun.wav
+```
+
+비교 방식:
+
+- sample rate 동일
+- shape 동일
+- sample-level exact 또는 허용 오차 기반 비교
+- 기존 golden wav가 있을 경우 `Get-FileHash`로 파일 해시 비교

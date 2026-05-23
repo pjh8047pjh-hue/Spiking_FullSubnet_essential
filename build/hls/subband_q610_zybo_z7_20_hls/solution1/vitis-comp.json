@@ -1,9 +1,0 @@
-{
-  "name": "subband_q610_zybo_z7_20_hls-solution1",
-  "type": "HLS",
-  "configuration": {
-    "componentType": "HLS",
-    "configFiles": ["hls_config.cfg"],
-    "work_dir": "..\/..\/."
-  }
-}

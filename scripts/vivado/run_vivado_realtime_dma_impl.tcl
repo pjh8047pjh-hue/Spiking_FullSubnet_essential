@@ -1,10 +1,26 @@
 set script_dir [file dirname [file normalize [info script]]]
 set repo_dir [file normalize [file join $script_dir .. ..]]
+cd $repo_dir
 set proj_name vivado_realtime_dma_zybo_z7_20
+if {[info exists ::env(VIVADO_PROJ_NAME)] && $::env(VIVADO_PROJ_NAME) ne ""} {
+  set proj_name $::env(VIVADO_PROJ_NAME)
+}
 set proj_dir [file join $repo_dir build vivado $proj_name]
 set bd_name realtime_dma_bd
+if {[info exists ::env(VIVADO_BD_NAME)] && $::env(VIVADO_BD_NAME) ne ""} {
+  set bd_name $::env(VIVADO_BD_NAME)
+}
 set reports_dir [file join $proj_dir reports]
 set hls_ip_repo [file join $repo_dir build hls subband_q610_realtime_hls solution1 impl ip]
+if {[info exists ::env(VIVADO_HLS_IP_REPO)] && $::env(VIVADO_HLS_IP_REPO) ne ""} {
+  set hls_ip_repo [file normalize $::env(VIVADO_HLS_IP_REPO)]
+}
+set max_threads 6
+if {[info exists ::env(VIVADO_MAX_THREADS)] && $::env(VIVADO_MAX_THREADS) ne ""} {
+  set max_threads $::env(VIVADO_MAX_THREADS)
+}
+set_param general.maxThreads $max_threads
+puts "INFO: Vivado general.maxThreads set to $max_threads."
 
 proc warn_msg {msg} {
   puts "WARNING: $msg"

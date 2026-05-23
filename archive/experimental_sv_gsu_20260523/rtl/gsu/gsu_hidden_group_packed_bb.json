@@ -1,0 +1,157 @@
+{
+  "c_function_name": "RunSvGsuHiddenGroupPackedQ610",
+  "rtl_top_module_name": "RunSvGsuHiddenGroupPackedQ610",
+  "c_files": [],
+  "rtl_files": [
+    "H:/rtl/gsu/gsu_q610_pkg.sv",
+    "H:/rtl/gsu/gsu_hidden_group_scalar_bb.sv",
+    "H:/rtl/gsu/gsu_hidden_group_packed_bb.sv"
+  ],
+  "c_parameters": [
+    { "c_name": "input_size", "c_port_direction": "in", "rtl_ports": { "data_read_in": "input_size" } },
+    { "c_name": "hidden_base", "c_port_direction": "in", "rtl_ports": { "data_read_in": "hidden_base" } },
+    {
+      "c_name": "input_tiles",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "input_tiles_address0",
+        "RAM_clock_enable": "input_tiles_ce0",
+        "RAM_data_read_in": "input_tiles_q0",
+        "RAM_address_snd": "input_tiles_address1",
+        "RAM_clock_enable_snd": "input_tiles_ce1",
+        "RAM_data_read_in_snd": "input_tiles_q1"
+      }
+    },
+    {
+      "c_name": "prev_hx_tiles",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "prev_hx_tiles_address0",
+        "RAM_clock_enable": "prev_hx_tiles_ce0",
+        "RAM_data_read_in": "prev_hx_tiles_q0",
+        "RAM_address_snd": "prev_hx_tiles_address1",
+        "RAM_clock_enable_snd": "prev_hx_tiles_ce1",
+        "RAM_data_read_in_snd": "prev_hx_tiles_q1"
+      }
+    },
+    { "c_name": "hx_tile_in", "c_port_direction": "in", "rtl_ports": { "data_read_in": "hx_tile_in" } },
+    { "c_name": "cx_tile_in", "c_port_direction": "in", "rtl_ports": { "data_read_in": "cx_tile_in" } },
+    { "c_name": "output_tile_in", "c_port_direction": "in", "rtl_ports": { "data_read_in": "output_tile_in" } },
+    {
+      "c_name": "weight_ih_group",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "weight_ih_group_address0",
+        "RAM_clock_enable": "weight_ih_group_ce0",
+        "RAM_data_read_in": "weight_ih_group_q0",
+        "RAM_address_snd": "weight_ih_group_address1",
+        "RAM_clock_enable_snd": "weight_ih_group_ce1",
+        "RAM_data_read_in_snd": "weight_ih_group_q1"
+      }
+    },
+    {
+      "c_name": "weight_hh_group",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "weight_hh_group_address0",
+        "RAM_clock_enable": "weight_hh_group_ce0",
+        "RAM_data_read_in": "weight_hh_group_q0",
+        "RAM_address_snd": "weight_hh_group_address1",
+        "RAM_clock_enable_snd": "weight_hh_group_ce1",
+        "RAM_data_read_in_snd": "weight_hh_group_q1"
+      }
+    },
+    {
+      "c_name": "forget_bias",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "forget_bias_address0",
+        "RAM_clock_enable": "forget_bias_ce0",
+        "RAM_data_read_in": "forget_bias_q0",
+        "RAM_address_snd": "forget_bias_address1",
+        "RAM_clock_enable_snd": "forget_bias_ce1",
+        "RAM_data_read_in_snd": "forget_bias_q1"
+      }
+    },
+    {
+      "c_name": "cell_bias",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "cell_bias_address0",
+        "RAM_clock_enable": "cell_bias_ce0",
+        "RAM_data_read_in": "cell_bias_q0",
+        "RAM_address_snd": "cell_bias_address1",
+        "RAM_clock_enable_snd": "cell_bias_ce1",
+        "RAM_data_read_in_snd": "cell_bias_q1"
+      }
+    },
+    {
+      "c_name": "bn_mul",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "bn_mul_address0",
+        "RAM_clock_enable": "bn_mul_ce0",
+        "RAM_data_read_in": "bn_mul_q0",
+        "RAM_address_snd": "bn_mul_address1",
+        "RAM_clock_enable_snd": "bn_mul_ce1",
+        "RAM_data_read_in_snd": "bn_mul_q1"
+      }
+    },
+    {
+      "c_name": "bn_add",
+      "c_port_direction": "in",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "bn_add_address0",
+        "RAM_clock_enable": "bn_add_ce0",
+        "RAM_data_read_in": "bn_add_q0",
+        "RAM_address_snd": "bn_add_address1",
+        "RAM_clock_enable_snd": "bn_add_ce1",
+        "RAM_data_read_in_snd": "bn_add_q1"
+      }
+    },
+    {
+      "c_name": "result_tiles",
+      "c_port_direction": "out",
+      "RAM_type": "RAM_T2P",
+      "rtl_ports": {
+        "RAM_address": "result_tiles_address0",
+        "RAM_clock_enable": "result_tiles_ce0",
+        "RAM_write_enable": "result_tiles_we0",
+        "RAM_data_write_out": "result_tiles_d0",
+        "RAM_address_snd": "result_tiles_address1",
+        "RAM_clock_enable_snd": "result_tiles_ce1",
+        "RAM_write_enable_snd": "result_tiles_we1",
+        "RAM_data_write_out_snd": "result_tiles_d1"
+      }
+    }
+  ],
+  "rtl_common_signal": {
+    "module_clock": "ap_clk",
+    "module_reset": "ap_rst",
+    "module_clock_enable": "ap_ce",
+    "ap_ctrl_chain_protocol_idle": "ap_idle",
+    "ap_ctrl_chain_protocol_start": "ap_start",
+    "ap_ctrl_chain_protocol_ready": "ap_ready",
+    "ap_ctrl_chain_protocol_done": "ap_done",
+    "ap_ctrl_chain_protocol_continue": "ap_continue"
+  },
+  "rtl_performance": {
+    "latency": "48",
+    "II": "0"
+  },
+  "rtl_resource_usage": {
+    "FF": "14000",
+    "LUT": "14000",
+    "BRAM": "0",
+    "URAM": "0",
+    "DSP": "72"
+  }
+}

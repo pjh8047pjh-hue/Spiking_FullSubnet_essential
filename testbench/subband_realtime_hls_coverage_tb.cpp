@@ -1,10 +1,15 @@
 #include "subband_ref_q610.hpp"
 
 #include <array>
+#include <cstdlib>
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
 #include <vector>
+#ifdef USE_PROJECTION_EXTERNAL
+#include <thread>
+#include "ap_int.h"
+#endif
 
 namespace {
 
@@ -457,6 +462,50 @@ void PrintValueMismatch(
             << " expected=" << static_cast<int>(expected) << '\n';
 }
 
+#ifdef USE_PROJECTION_EXTERNAL
+// C단계 외부 projection IP 모사 (subband_realtime_hls_tb.cpp와 동일 프로토콜)
+inline int ProjectionDotCountPerChunkQ610(int frames) {
+  using subband_q610::kBand0NumSubbands;
+  using subband_q610::kBand1NumSubbands;
+  using subband_q610::kBand2NumSubbands;
+  using subband_q610::kBand0ProjSize;
+  using subband_q610::kBand1ProjSize;
+  using subband_q610::kBand2ProjSize;
+  return frames * (kBand0ProjSize * kBand0NumSubbands +
+                   kBand1ProjSize * kBand1NumSubbands +
+                   kBand2ProjSize * kBand2NumSubbands);
+}
+
+void ExternalProjectionIpThreadQ610(
+    hls::stream<axis_q610_t>* request_stream,
+    hls::stream<axis_q610_t>* response_stream,
+    int dot_count) {
+  using subband_q610::kSbHiddenSize;
+  using subband_q610::accum_q_t;
+  for (int dot = 0; dot < dot_count; ++dot) {
+    q_data_t input_lanes[kSbHiddenSize];
+    q_data_t proj_row[kSbHiddenSize];
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      input_lanes[i] = AxisToQ(request_stream->read());
+    }
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      proj_row[i] = AxisToQ(request_stream->read());
+    }
+    accum_q_t acc = 0;
+    for (int i = 0; i < kSbHiddenSize; ++i) {
+      acc += static_cast<accum_q_t>(input_lanes[i]) * static_cast<accum_q_t>(proj_row[i]);
+    }
+    q_data_t lo, mid, hi;
+    lo.range(15, 0) = acc.range(15, 0);
+    mid.range(15, 0) = acc.range(31, 16);
+    hi.range(15, 0) = acc.range(47, 32);
+    response_stream->write(MakeAxis(lo, false));
+    response_stream->write(MakeAxis(mid, false));
+    response_stream->write(MakeAxis(hi, true));
+  }
+}
+#endif  // USE_PROJECTION_EXTERNAL
+
 bool RunRealtimePattern(
     int seed_index,
     int profile_index,
@@ -490,7 +539,15 @@ bool RunRealtimePattern(
       }
     }
 
+#ifdef USE_PROJECTION_EXTERNAL
+    // csim에서 cpp가 stream 통신을 우회(직접 dot product 호출)하므로 stream은 empty placeholder
+    hls::stream<axis_q610_t> projection_request_stream;
+    hls::stream<axis_q610_t> projection_response_stream;
+    SubbandRealtimeTopQ610Ip(noisy_stream, fb_stream, weights.data(), chunk_frames, chunk_index == 0,
+                              projection_request_stream, projection_response_stream, df_stream);
+#else
     SubbandRealtimeTopQ610Ip(noisy_stream, fb_stream, weights.data(), chunk_frames, chunk_index == 0, df_stream);
+#endif
 
     const int chunk_output_count = chunk_frames * kRealtimeDfCoefPerFrame;
     for (int output_index = 0; output_index < chunk_output_count; ++output_index) {
@@ -625,6 +682,21 @@ bool BuildExpected(
   return true;
 }
 
+int GetEnvIntClamped(const char* name, int default_value, int min_value, int max_value) {
+  const char* value_text = std::getenv(name);
+  if (value_text == nullptr || value_text[0] == '\0') {
+    return default_value;
+  }
+  int value = std::atoi(value_text);
+  if (value < min_value) {
+    value = min_value;
+  }
+  if (value > max_value) {
+    value = max_value;
+  }
+  return value;
+}
+
 }  // namespace
 
 int main() {
@@ -638,8 +710,13 @@ int main() {
 
   CoverageStats stats;
   bool pass = true;
+  const int seed_begin = GetEnvIntClamped("SUBBAND_COVERAGE_SEED_BEGIN", 0, 0, kNumSeeds);
+  int seed_end = GetEnvIntClamped("SUBBAND_COVERAGE_SEED_END", kNumSeeds, 0, kNumSeeds);
+  if (seed_end < seed_begin) {
+    seed_end = seed_begin;
+  }
 
-  for (int seed_index = 0; seed_index < kNumSeeds; ++seed_index) {
+  for (int seed_index = seed_begin; seed_index < seed_end; ++seed_index) {
     for (int profile_index = 0; profile_index < kNumProfiles; ++profile_index) {
       std::vector<q_data_t> noisy_input;
       std::vector<q_data_t> fb_output;
@@ -686,6 +763,9 @@ int main() {
   const long long total_scenarios = stats.primary_scenarios + stats.reset_replay_scenarios;
   std::cout << "COVERAGE SUMMARY\n";
   std::cout << "seeds=" << kNumSeeds << '\n';
+  std::cout << "seed_begin=" << seed_begin << '\n';
+  std::cout << "seed_end=" << seed_end << '\n';
+  std::cout << "seeds_executed=" << (seed_end - seed_begin) << '\n';
   std::cout << "profiles=" << kNumProfiles << '\n';
   std::cout << "chunk_patterns=" << kNumChunkPatterns << '\n';
   std::cout << "primary_scenarios=" << stats.primary_scenarios << '\n';

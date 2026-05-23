@@ -20,7 +20,9 @@ inline void sleep_for(const chrono::duration<Rep, Period>&) {}
 }  // namespace std
 #endif
 #ifndef HLS_STREAM_THREAD_UNSAFE
+#ifndef USE_PROJECTION_EXTERNAL  // C단계 testbench는 std::thread driver를 쓰므로 thread-safe 모드 유지
 #define HLS_STREAM_THREAD_UNSAFE
+#endif
 #endif
 #endif
 #include "ap_axi_sdata.h"
@@ -32,6 +34,7 @@ using q_data_t = ap_int<16>;
 using accum_q_t = ap_int<48>;
 using axis_q610_t = ap_axiu<16, 0, 0, 0>;
 using packed_weight_word_t = ap_uint<256>;
+using q_pack32_t = ap_uint<512>;
 
 constexpr int kQFrac = 10;
 constexpr int kQScale = 1 << kQFrac;
@@ -134,6 +137,13 @@ constexpr int kRealtimeWeightsWordCount = kRealtimeWeightsElementCount / kRealti
 constexpr int kMaxBatchSize = kFixedBatchSize;
 constexpr int kMaxNumFrames = kFixedNumFrames;
 constexpr int kMaxNumSubbands = kBand0NumSubbands;
+constexpr int kRealtimeTotalSubbands = kBand0NumSubbands + kBand1NumSubbands + kBand2NumSubbands;
+constexpr int kSvGsuTileLanes = 32;
+constexpr int kSvGsuHiddenTiles = kSbHiddenSize / kSvGsuTileLanes;
+constexpr int kSvGsuSequenceTileCount = kRealtimeChunkFrames * kMaxNumSubbands * kSvGsuHiddenTiles;
+constexpr int kSvGsuWeightTileCount = kSbHiddenSize * kSvGsuHiddenTiles;
+constexpr int kSvGsuBiasTileCount = 2 * kSvGsuHiddenTiles;
+constexpr int kSvGsuStateTileCount = kRealtimeTotalSubbands * kSvGsuHiddenTiles;
 constexpr int kMaxCtrFreq = 64;
 constexpr int kMaxNoisyFreqSize = kBand2NoisyFreqSize;
 constexpr int kMaxFbFreqSize = kBand2FbFreqSize;
@@ -370,6 +380,10 @@ void SubbandRealtimeTopQ610(
     const packed_weight_word_t weights_q610[kRealtimeWeightsWordCount],
     int num_frames,
     bool reset_state,
+#ifdef USE_PROJECTION_EXTERNAL
+    hls::stream<axis_q610_t>& projection_request_stream,
+    hls::stream<axis_q610_t>& projection_response_stream,
+#endif
     hls::stream<axis_q610_t>& df_coef_stream);
 
 #ifndef __SYNTHESIS__
@@ -400,6 +414,10 @@ void SubbandRealtimeTopQ610Ip(
     const subband_q610::packed_weight_word_t weights_q610[subband_q610::kRealtimeWeightsWordCount],
     int num_frames,
     bool reset_state,
+#ifdef USE_PROJECTION_EXTERNAL
+    hls::stream<subband_q610::axis_q610_t>& projection_request_stream,
+    hls::stream<subband_q610::axis_q610_t>& projection_response_stream,
+#endif
     hls::stream<subband_q610::axis_q610_t>& df_coef_stream);
 
 #endif  // SUBBAND_REF_Q610_HPP
